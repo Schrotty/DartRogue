@@ -1,9 +1,31 @@
+=== Präfixe ===
+Einfach
+Verstärkt
+Abgenutzt
+Abgetragen
+Beschädigt
+Verstärkt
+Gefüttert
+Beschlagen
+Verziehrt
+Gehärtet
+Spröde
+Stabil
+Gerissen
+Zerbochen
+Beschädigt
+Verbessert
+
 === Armor - Helmet (0) ===
 == Normal/ Magic/ Rare ==
 Einfache Kapuze
+Zaubererkapuze
 Abgetragene Kapuze
-Lederhelm
+Einfacher Lederhelm
 Verstärkter Lederhelm
+Eisenhelm
+Stahlhelm
+Stahlhaube
 
 == Epic/ Legendary ==
 Aschekapuze
@@ -33,6 +55,8 @@ Aschemantel
 == Normal/ Magic/ Rare ==
 Stoffhandschuhe
 Lederhandschuhe
+Eisenhandschuh
+Stahlhandschuh
 
 == Epic/ Legendary ==
 Aschehandschuhe
@@ -50,6 +74,8 @@ Aschehose
 == Normal/ Magic/ Legendary ==
 Sandahlen
 Lederstiefel
+Eisenstulpen
+Stahlstulpen
 
 == Epic/ Legendary ==
 Aschestiefel
@@ -57,6 +83,8 @@ Aschestiefel
 === Armor - Shield (5) ===
 == Normal/ Magic/ Rare ==
 Lederschild
+Eisenschild
+Stahlschild
 
 == Epic/ Legendary ==
 Wächter
