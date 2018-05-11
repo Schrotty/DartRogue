@@ -1,0 +1,10 @@
+[
+  {
+    "id": 0,
+    "name":"Small Healing Potion",
+    "type":1,
+    "value": 10,
+    "quality": 0,
+    "icon":"potion_red.png"
+  }
+]

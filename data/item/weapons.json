@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name":"Schwert",
+    "type":1,
+    "value-range":[
+      [1,4],
+      [4,7],
+      [7,10],
+      [10,13],
+      [13,16]
+    ],
+    "icon":"sword.png"
+  },
+  {
+    "id": 1,
+    "name":"Dolch",
+    "type":1,
+    "quality": 4,
+    "value": 26,
+    "mods": {
+      "fire": 1
+    },
+    "icon":"dagger.png"
+  }
+]

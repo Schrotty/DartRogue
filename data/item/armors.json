@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "name":"Brustpanzer",
+    "type":1,
+    "value-range":[
+      [1,4],
+      [4,7],
+      [7,10],
+      [10,13],
+      [13,16]
+    ],
+    "mods":{
+      "health":5
+    },
+    "icon":"chest.png"
+  },
+  {
+    "id": 1,
+    "name":"Brustpanzer",
+    "type":1,
+    "value-range":[
+      [1,4],
+      [4,7],
+      [7,10],
+      [10,13],
+      [13,16]
+    ],
+    "mods":{
+      "health":5
+    },
+    "icon":"chest.png"
+  }
+]
