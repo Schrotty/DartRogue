@@ -1,0 +1,10 @@
+[
+  {
+    "id": 0,
+    "name":"Kurzschwert",
+    "type": 6,
+    "quality": 0,
+    "value": 6,
+    "icon":"sword.png"
+  }
+]

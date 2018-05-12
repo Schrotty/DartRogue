@@ -37,11 +37,13 @@ class Item {
     }
 
     this.quality = _getQuality();
-    this.modifier = data['mods'];
+    this.modifier = data.containsKey('mods') ? data['mods'] : new Map();
 
     if (data.containsKey('value-range')) {
-      this._min = data['value-range'][this._quality][0];
-      this._max = data['value-range'][this._quality][1];
+      int index = quality != -1 ? this._quality : 0;
+
+      this._min = data['value-range'][index][0];
+      this._max = data['value-range'][index][1];
       this.value = _getValue();
       return;
     }

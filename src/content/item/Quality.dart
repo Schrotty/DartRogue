@@ -1,3 +1,3 @@
 List<String> Qualities = [
-  "Normal", "Magic", "Rare", "Epic", "Legendary"
+  "Common", "Magic", "Rare", "Epic", "Legendary"
 ];

@@ -1,10 +1,13 @@
+import 'config/Settings.dart';
 import 'content/Storage.dart';
-import 'content/item/Item.dart';
 
-main () async {
-  await buildStorage();
+main () {
+  Settings.loadSettings();
+  buildStorage();
 
-  weapons.forEach((int key, List<Item> items) => items.forEach((w) => print(w)));
-  armors.forEach((int key, List<Item> items) => items.forEach((w) => print(w)));
-  potions.forEach((int key, List<Item> items) => items.forEach((w) => print(w)));
+  print(player.health);
+  player.takeDamage(5);
+  print(player.health);
+  player.usePotion(0);
+  print(player.health);
 }
