@@ -1,5 +1,5 @@
 import 'Item.dart';
 
-Item createArmor(Map data) => new Item.fromJson(data);
-Item createWeapon(Map data) => new Item.fromJson(data);
-Item createPotion(Map data) => new Item.fromJson(data);
+Item createArmor(Map data, [int quality = -1]) => new Item.fromJson(data, quality);
+Item createWeapon(Map data, [int quality = -1]) => new Item.fromJson(data, quality);
+Item createPotion(Map data, [int quality = -1]) => new Item.fromJson(data, quality);

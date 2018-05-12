@@ -3,12 +3,13 @@ import 'dart:io';
 import 'dart:async';
 import 'item/Item.dart';
 import 'item/ItemGenerator.dart';
+import 'item/Quality.dart';
 import 'monster/Monster.dart';
 import 'monster/MonsterGenerator.dart';
 
-Map<int, Item> weapons = new Map();
-Map<int, Item> armors = new Map();
-Map<int, Item> potions = new Map();
+Map<int, List<Item>> weapons = new Map();
+Map<int, List<Item>> armors = new Map();
+Map<int, List<Item>> potions = new Map();
 Map<int, Monster> monsters = new Map();
 
 buildStorage() async {
@@ -36,15 +37,39 @@ Future<String> _loadMonsterData() {
 
 /* === ITEMS ===*/
 _buildWeapons() async {
-  JSON.decode(await _loadWeaponsData()).forEach((w) => weapons[w['id']] = createWeapon(w));
+  JSON.decode(await _loadWeaponsData()).forEach((Map w) {
+    weapons[w['id']] = new List();
+    if (w.containsKey('multi')) {
+      Qualities.forEach((q) => weapons[w['id']].add(createWeapon(w, Qualities.indexOf(q))));
+      return;
+    }
+
+    weapons[w['id']].add(createWeapon(w));
+  });
 }
 
 _buildArmors() async {
-  JSON.decode(await _loadArmorsData()).forEach((a) => armors[a['id']] = createArmor(a));
+  JSON.decode(await _loadPotionsData()).forEach((Map a) {
+    armors[a['id']] = new List();
+    if (a.containsKey('multi')) {
+      Qualities.forEach((q) => armors[a['id']].add(createArmor(a, Qualities.indexOf(q))));
+      return;
+    }
+
+    armors[a['id']].add(createArmor(a));
+  });
 }
 
 _buildPotions() async {
-  JSON.decode(await _loadPotionsData()).forEach((p) => potions[p['id']] = createArmor(p));
+  JSON.decode(await _loadArmorsData()).forEach((Map p) {
+    potions[p['id']] = new List();
+    if (p.containsKey('multi')) {
+      Qualities.forEach((q) => potions[p['id']].add(createPotion(p, Qualities.indexOf(q))));
+      return;
+    }
+
+    potions[p['id']].add(createPotion(p));
+  });
 }
 
 /* === Monster === */

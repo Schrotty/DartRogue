@@ -22,21 +22,24 @@ class Item {
 
   int _max;
 
-  Item.fromJson(Map data) {
+  Item.fromJson(Map data, [int quality]) {
     this._id = data['id'];
     this.name = data['name'];
     this.type = data['type'];
     this.icon = data['icon'];
 
-    this._quality = new Random().nextInt(5);
-    if (data.containsKey('quality')) {
-      this._quality = data['quality'];
+    this._quality = quality;
+    if (quality  == -1) {
+      this._quality = new Random().nextInt(5);
+      if (data.containsKey('quality')) {
+        this._quality = data['quality'];
+      }
     }
 
     this.quality = _getQuality();
     this.modifier = data['mods'];
 
-    if (data.containsKey('val-range')) {
+    if (data.containsKey('value-range')) {
       this._min = data['value-range'][this._quality][0];
       this._max = data['value-range'][this._quality][1];
       this.value = _getValue();

@@ -3,6 +3,7 @@
     "id": 0,
     "name":"Schwert",
     "type":1,
+    "multi": true,
     "value-range":[
       [1,4],
       [4,7],

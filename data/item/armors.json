@@ -1,8 +1,9 @@
 [
   {
     "id": 0,
-    "name":"Brustpanzer",
+    "name":"Stoffrobe",
     "type":1,
+    "multi": true,
     "value-range":[
       [1,4],
       [4,7],
@@ -17,8 +18,9 @@
   },
   {
     "id": 1,
-    "name":"Brustpanzer",
+    "name":"Lederharnisch",
     "type":1,
+    "multi": true,
     "value-range":[
       [1,4],
       [4,7],
@@ -26,9 +28,6 @@
       [10,13],
       [13,16]
     ],
-    "mods":{
-      "health":5
-    },
     "icon":"chest.png"
   }
 ]
