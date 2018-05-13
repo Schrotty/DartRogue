@@ -6,5 +6,13 @@
     "quality": 0,
     "value": 6,
     "icon":"sword.png"
+  },
+  {
+    "id": 1,
+    "name":"Langschwert",
+    "type": 6,
+    "quality": 0,
+    "value": 12,
+    "icon":"sword.png"
   }
 ]

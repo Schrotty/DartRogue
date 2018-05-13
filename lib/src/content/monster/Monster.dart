@@ -2,13 +2,18 @@ part of rogue;
 
 class Monster {
   String name;
+  // player = health - monster = hitpoints?
   int hitPoints;
+  int maxHitPoints;
+  int attackPoints;
   List loot;
   String icon;
 
   Monster.fromMap(Map data) {
     this.name = data['name'];
     this.hitPoints = data['hp'];
+    this.maxHitPoints = data['hp'];
+    this.attackPoints = data['attack'];
     this.loot = [];
   }
 

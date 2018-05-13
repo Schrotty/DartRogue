@@ -38,13 +38,13 @@ main() {
   print("==== Storage ====");
   print("=== Armors ===");
   armors.forEach((type, map) => map.forEach((id, arms) => arms.forEach((arm) {
-    print("${arm.name} (${arm.value})");
-  })));
+        print("${arm.name} (${arm.value})");
+      })));
 
   print("\r\n=== Weapons ===");
   weapons.forEach((type, map) => map.forEach((id, weas) => weas.forEach((wea) {
-    print("${wea.name} (${wea.value})");
-  })));
+        print("${wea.name} (${wea.value})");
+      })));
 
   print("\r\n=== Potions ===");
   potions.forEach((type, pot) {
@@ -52,9 +52,29 @@ main() {
   });
 
   print("\r\n==== Combat ====");
-  print("Health: ${player.health}/ ${player.maxHealth}");
-  player.takeDamage(9);
-  print("Health: ${player.health}/ ${player.maxHealth}");
-  player.usePotion(0); //Small 25% potion
-  print("Health: ${player.health}/ ${player.maxHealth}");
+  var endboss = monsters[666];
+  var longsword = weapons['swords'][1][0];
+
+  print("Boss Health: ${endboss.hitPoints}/${endboss.maxHitPoints}");
+  print("Player Health: ${player.health}/${player.maxHealth}");
+  print("Player attacks!");
+  endboss.takeDamage(player.calcDamage());
+  print("Boss Health: ${endboss.hitPoints}/${endboss.maxHitPoints}");
+  print("\nPlayer equips epic Longsword!\n${longsword}");
+  player.weapon = longsword;
+  print("Player attacks!");
+  endboss.takeDamage(player.calcDamage());
+  print("Boss Health: ${endboss.hitPoints}/${endboss.maxHitPoints}");
+  print("Boss attacks!");
+  player.takeDamage(endboss.attackPoints);
+  print("Player Health: ${player.health}/${player.maxHealth}");
+  print("Player uses a small potion!");
+  player.usePotion(0); // 25% potion
+  print("Player Health: ${player.health}/${player.maxHealth}");
+  print("Player attacks!");
+  endboss.takeDamage(player.calcDamage());
+  print("Boss Health: ${endboss.hitPoints}/${endboss.maxHitPoints}");
+  print("Boss attacks!");
+  player.takeDamage(endboss.attackPoints);
+  print("Player Health: ${player.health}/${player.maxHealth}");
 }
