@@ -1,5 +1,4 @@
-import 'Quality.dart';
-import 'dart:math';
+part of rogue;
 
 class Item {
   int _id;

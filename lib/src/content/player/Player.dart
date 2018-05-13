@@ -1,7 +1,4 @@
-import '../../config/Settings.dart';
-import '../Storage.dart';
-import '../item/Item.dart';
-import 'dart:math';
+part of rogue;
 
 class Player {
   int _health;
@@ -60,7 +57,7 @@ class Player {
   int calcDamage() {
     var rand = new Random().nextInt(101);
     if (rand <= critChance) {
-      return (damage * critDamage).round();
+      return critDamage;
     }
 
     return damage;
@@ -72,7 +69,7 @@ class Player {
 
   void usePotion(int type) {
     if (pots[type] >= 1) {
-      health += (maxHealth * (potions[type].value / 100)).floor();
+      health += (maxHealth * (potions[type].value / 100)).round().floor();
       pots[type]--;
     }
   }
@@ -153,7 +150,11 @@ class Player {
     return critMod + _critChance;
   }
 
-  get critDamage {
+  get critMulti {
     return critDamageMod + _critDamage;
+  }
+
+  get critDamage {
+    return (critMulti * damage).round();
   }
 }

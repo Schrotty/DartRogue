@@ -1,3 +1,5 @@
+part of rogue;
+
 class Monster {
   String name;
   int hitPoints;

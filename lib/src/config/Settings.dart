@@ -1,5 +1,4 @@
-import 'dart:convert';
-import 'dart:io';
+part of rogue;
 
 class Settings {
   static String _dataPath;
@@ -24,7 +23,7 @@ class Settings {
   }
 
   static void loadSettings() {
-    Map<String, dynamic> settings = JSON.decode(new File('config/config.json').readAsStringSync());
+    Map<String, dynamic> settings = JSON.decode(new io.File('lib/src/config/config.json').readAsStringSync());
 
     _dataPath = settings['data-path'];
     _strengthMod = settings['modifiers']['strength'];

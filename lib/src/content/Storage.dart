@@ -1,12 +1,4 @@
-import '../config/Settings.dart';
-import 'dart:convert';
-import 'dart:io';
-import 'item/Item.dart';
-import 'item/ItemGenerator.dart';
-import 'item/Quality.dart';
-import 'monster/Monster.dart';
-import 'monster/MonsterGenerator.dart';
-import 'player/Player.dart';
+part of rogue;
 
 Player player;
 
@@ -58,11 +50,11 @@ void _buildArmors() {
 }
 
 void _buildPlayer() {
-  player = new Player.fromMap(JSON.decode(new File(Settings.getDataPath() + 'player/player.json').readAsStringSync())[0]);
+  player = new Player.fromMap(JSON.decode(new io.File(Settings.getDataPath() + 'player/player.json').readAsStringSync())[0]);
 }
 
 void _buildWeaponType(String type) {
-  JSON.decode(new File('../data/item/weapons/$type.json').readAsStringSync()).forEach((Map w) {
+  JSON.decode(new io.File(Settings.getDataPath() + 'item/weapons/$type.json').readAsStringSync()).forEach((Map w) {
     weapons[type][w['id']] = new List();
     if (w.containsKey('multi')) {
       Qualities.forEach((q) => weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q))));
@@ -74,7 +66,7 @@ void _buildWeaponType(String type) {
 }
 
 void _buildArmorType(String type) {
-  JSON.decode(new File(Settings.getDataPath() + 'item/armor/$type.json').readAsStringSync()).forEach((Map a) {
+  JSON.decode(new io.File(Settings.getDataPath() + 'item/armor/$type.json').readAsStringSync()).forEach((Map a) {
     armors[type][a['id']] = new List();
       if (a.containsKey('multi')) {
         Qualities.forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
@@ -86,7 +78,7 @@ void _buildArmorType(String type) {
 }
 
 void _buildPotions() {
-  JSON.decode(new File(Settings.getDataPath() + 'item/potions.json').readAsStringSync()).forEach((Map p) {
+  JSON.decode(new io.File(Settings.getDataPath() + 'item/potions.json').readAsStringSync()).forEach((Map p) {
     if (p.containsKey('multi')) {
       Qualities.forEach((q) => potions[p['id']] = createPotion(p, Qualities.indexOf(q)));
       return;
@@ -97,5 +89,5 @@ void _buildPotions() {
 }
 
 void _buildMonsters() {
-  JSON.decode(new File(Settings.getDataPath() + 'monster/monster.json').readAsStringSync()).forEach((m) => monsters[m['id']] = createMonster(m));
+  JSON.decode(new io.File(Settings.getDataPath() + 'monster/monster.json').readAsStringSync()).forEach((m) => monsters[m['id']] = createMonster(m));
 }
