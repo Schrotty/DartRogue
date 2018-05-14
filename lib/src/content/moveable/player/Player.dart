@@ -1,8 +1,6 @@
 part of rogue;
 
-class Player {
-  int _health;
-  int _currHealth;
+class Player extends Moveable{
 
   int _strength;
   int _constitution;
@@ -50,7 +48,7 @@ class Player {
       pots[2] = data['potions'][2];
     }
 
-    _health = data['health'];
+    _maxHealth = data['health'];
     _currHealth = maxHealth;
   }
 
@@ -63,13 +61,9 @@ class Player {
     return damage;
   }
 
-  void takeDamage(int damage) {
-    this.health -= damage;
-  }
-
   void usePotion(int type) {
     if (pots[type] >= 1) {
-      health += (maxHealth * (potions[type].value / 100)).round().floor();
+      _currHealth += (maxHealth * (potions[type].value / 100)).round().floor();
       pots[type]--;
     }
   }
@@ -83,10 +77,6 @@ class Player {
     });
 
     return value;
-  }
-
-  void _die() {
-    print("Player died!");
   }
 
   /* === MODS === */
@@ -116,14 +106,14 @@ class Player {
 
   /* === ATTRIBUTES === */
   get maxHealth {
-    return healthMod + (_health + (_constitution * Settings.getConstMod()));
+    return healthMod + (_maxHealth + (_constitution * Settings.getConstMod()));
   }
 
-  get health {
+  get currHealth {
     return _currHealth > 0 ? _currHealth : 0;
   }
 
-  set health(int health) {
+  set currHealth(int health) {
     this._currHealth = health;
     if (_currHealth > maxHealth) {
       _currHealth = maxHealth;
