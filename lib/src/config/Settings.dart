@@ -3,7 +3,7 @@ part of rogue;
 class Settings {
   static String _dataPath;
   static int _strengthMod;
-  static int _costMod;
+  static int _constMod;
   static int _luckMod;
 
   static String getDataPath() {
@@ -15,7 +15,7 @@ class Settings {
   }
 
   static int getConstMod() {
-    return _costMod;
+    return _constMod;
   }
 
   static int getLuckMod() {
@@ -27,7 +27,7 @@ class Settings {
 
     _dataPath = settings['data-path'];
     _strengthMod = settings['modifiers']['strength'];
-    _costMod = settings['modifiers']['constitution'];
+    _constMod = settings['modifiers']['constitution'];
     _luckMod = settings['modifiers']['luck'];
   }
 }
