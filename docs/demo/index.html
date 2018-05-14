@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>DartRogue</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link rel="stylesheet" href="style/style.css">
+
+        <script type='application/dart' src='rogue.dart'></script>
+        <script src='packages/browser/dart.js'></script>
+    </head>
+
+    <body>
+        <div id="home">
+            <div id="start-menu" class="full-screen visible">
+                <h1>DartRogue</h1>
+
+                <ul>
+                    <li><input type="button" id="start-game-button" value="Start New Game"></li>
+                    <li><input type="button" id="highscore-button" value="Highscore"></li>
+                    <li><input type="button" id="howToPlay-button" value="How To Play"></li>
+                    <li><input type="button" id="about-button" value="About"></li>
+                </ul>
+            </div>
+
+            <div id="highscore" class="full-screen invisible">
+                <h1>Highscore</h1>
+
+                <ol>
+                    <li>Schrottler - 5000</li>
+                    <li>Dieter - 4596</li>
+                    <li>Herman - 2560</li>
+                </ol>
+
+                <ul>
+                    <li><input type="button" id="back-highscore-button" value="Back"></li>
+                </ul>
+            </div>
+
+            <div id="how-to-play" class="full-screen invisible">
+                <h1>How To Play</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                </p>
+
+                <ul>
+                    <li><input type="button" id="back-howToPlay-button" value="Back"></li>
+                </ul>
+            </div>
+
+            <div id="about" class="full-screen invisible">
+                <h1>About</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                </p>
+
+                <ul>
+                    <li><input type="button" id="back-about-button" value="Back"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="game">
+            <div id="level" class="full-screen invisible">
+                <!-- LEVEL -->
+            </div>
+        </div>
+    </body>
+</html>

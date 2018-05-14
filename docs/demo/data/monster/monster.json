@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "name": "Spinne",
+    "hp": 20,
+    "attack": 1
+  },
+  {
+    "id": 1,
+    "name": "Wolf",
+    "hp": 30,
+    "attack": 4
+  },
+  {
+    "id": 2,
+    "name": "Fledermaus",
+    "hp": 15,
+    "attack": 1
+  },
+  {
+    "id": 3,
+    "name": "Ratte",
+    "hp": 20,
+    "attack": 3
+  },
+  {
+    "id": 4,
+    "name": "Goblin",
+    "hp": 50,
+    "attack": 3
+  },
+  {
+    "id": 5,
+    "name": "Kobra",
+    "hp": 40,
+    "attack": 4
+  },
+  {
+    "id": 6,
+    "name": "Höllenhund",
+    "hp": 70,
+    "attack": 7
+  },
+  {
+    "id": 666,
+    "name": "Evil-Knevel-Endboss",
+    "hp": 100,
+    "attack": 10
+  }
+]

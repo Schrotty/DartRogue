@@ -1,0 +1,8 @@
+{
+  "data-path": "web/data/",
+  "modifiers": {
+    "strength": 1,
+    "constitution": 3,
+    "luck": 2
+  }
+}
