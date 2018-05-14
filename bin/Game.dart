@@ -2,11 +2,11 @@ import 'package:rogue/rogue.dart';
 import 'package:start/start.dart';
 
 main() {
-  /*start(host: '0.0.0.0', port: 80).then((Server app) {
+  start(host: '0.0.0.0', port: 80).then((Server app) {
     app.static('../build/web');
-  });*/
+  });
 
-  Settings.loadSettings();
+  /*Settings.loadSettings();
   buildStorage();
 
   print("==== Player ====");
@@ -76,5 +76,5 @@ main() {
   print("Boss Health: ${endboss.hitPoints}/${endboss.maxHitPoints}");
   print("Boss attacks!");
   player.takeDamage(endboss.attackPoints);
-  print("Player Health: ${player.health}/${player.maxHealth}");
+  print("Player Health: ${player.health}/${player.maxHealth}");*/
 }

@@ -1,11 +1,12 @@
 library rogue;
 
-//import 'dart:html';
+import 'dart:html';
 import 'dart:math';
 import 'dart:io' as io;
 import 'dart:convert';
 
 part 'src/RogueController.dart';
+part 'src/RogueView.dart';
 part 'src/config/Settings.dart';
 part 'src/content/Storage.dart';
 part 'src/content/item/Item.dart';
