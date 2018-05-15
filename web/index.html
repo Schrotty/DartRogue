@@ -13,7 +13,7 @@
     <body>
         <div id="home">
             <div id="start-menu" class="full-screen visible">
-                <h1>DartRogue</h1>
+                <img src="img/main/title.png">
 
                 <ul>
                     <li><input type="button" id="start-game-button" value="Start New Game"></li>
@@ -24,47 +24,67 @@
             </div>
 
             <div id="highscore" class="full-screen invisible">
-                <h1>Highscore</h1>
+                <img src="img/main/highscore.png">
 
-                <ol>
-                    <li>Schrottler - 5000</li>
-                    <li>Dieter - 4596</li>
-                    <li>Herman - 2560</li>
-                </ol>
+                <div id="highscore-board">
+                    <ul>
+                        <li>Schrottler - 5000</li>
+                        <li>Dieter - 4000</li>
+                        <li>Herman - 3000</li>
+                    </ul>
+                </div>
 
                 <ul>
-                    <li><input type="button" id="back-highscore-button" value="Back"></li>
+                    <li><input type="button" id="back-highscore-button" class="back-button" value="Back"></li>
                 </ul>
             </div>
 
             <div id="how-to-play" class="full-screen invisible">
-                <h1>How To Play</h1>
+                <img src="img/main/howToPlay.png">
 
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                </p>
+                <div class="plain">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    </p>
+                </div>
 
                 <ul>
-                    <li><input type="button" id="back-howToPlay-button" value="Back"></li>
+                    <li><input type="button" id="back-howToPlay-button" class="back-button" value="Back"></li>
                 </ul>
             </div>
 
             <div id="about" class="full-screen invisible">
-                <h1>About</h1>
+                <img src="img/main/about.png">
 
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                </p>
+                <div class="plain">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    </p>
+                </div>
 
                 <ul>
-                    <li><input type="button" id="back-about-button" value="Back"></li>
+                    <li><input type="button" id="back-about-button" class="back-button" value="Back"></li>
                 </ul>
             </div>
         </div>
 
-        <div id="game">
-            <div id="level" class="full-screen invisible">
+        <div id="game" class="invisible full-screen">
+            <div id="level">
+                <div id="overlay" class="full-screen">
+                    <div id="player-health">
+                        <span id="health"></span>/ <span id="max-health"></span> HP
+                    </div>
+
+                    <div id="hero-screen" class="invisible">
+                        <div id="hero-top-bar">Hero Screen</div>
+                    </div>
+                </div>
+
                 <!-- LEVEL -->
+            </div>
+
+            <div id="right-bar">
+                <input type="submit" id="hero-screen-button" class="bar-button" value="H">
             </div>
         </div>
     </body>

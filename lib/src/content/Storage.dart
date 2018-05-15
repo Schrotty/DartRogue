@@ -7,18 +7,21 @@ Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Item> potions = new Map();
 Map<int, Monster> monsters = new Map();
 
-void buildStorage() {
-  _initMaps();
-
-  _buildWeapons();
-  _buildArmors();
-  _buildPotions();
-  _buildMonsters();
-
-  _buildPlayer();
+buildStorage() {
+  _initMaps().then((b) {
+    _build();
+  });
 }
 
-void _initMaps() {
+_build() async {
+  await _buildWeapons();
+  await _buildArmors();
+  await _buildPotions();
+  await _buildMonsters();
+  await _buildPlayer();
+}
+
+Future<bool> _initMaps() async {
   weapons = new Map<String, Map<int, List<Item>>>();
   weapons['daggers'] = new Map<int, List<Item>>();
   weapons['swords'] = new Map<int, List<Item>>();
@@ -32,29 +35,35 @@ void _initMaps() {
   armors['gloves'] = new Map<int, List<Item>>();
   armors['legs'] = new Map<int, List<Item>>();
   armors['boots'] = new Map<int, List<Item>>();
+
+  return true;
 }
 
-void _buildWeapons() {
-  _buildWeaponType("daggers");
-  _buildWeaponType("swords");
-  _buildWeaponType("axes");
-  _buildWeaponType("hammers");
+_buildWeapons() async {
+  await _buildWeaponType("daggers");
+  await _buildWeaponType("swords");
+  await _buildWeaponType("axes");
+  await _buildWeaponType("hammers");
 }
 
-void _buildArmors() {
-  _buildArmorType("helmets");
-  _buildArmorType("chests");
-  _buildArmorType("gloves");
-  _buildArmorType("legs");
-  _buildArmorType("boots");
+_buildArmors() async {
+  await _buildArmorType("helmets");
+  await _buildArmorType("chests");
+  await _buildArmorType("gloves");
+  await _buildArmorType("legs");
+  await _buildArmorType("boots");
 }
 
-void _buildPlayer() {
-  player = new Player.fromMap(JSON.decode(new io.File(Settings.getDataPath() + 'player/player.json').readAsStringSync())[0]);
+_buildPlayer() async {
+  await _requestData(Settings.getDataPath() + 'player/player.json').then((response) {
+    player = new Player.fromMap(JSON.decode(response));
+  });
 }
 
-void _buildWeaponType(String type) {
-  JSON.decode(new io.File(Settings.getDataPath() + 'item/weapons/$type.json').readAsStringSync()).forEach((Map w) {
+_buildWeaponType(String type) async {
+  await _requestData(Settings.getDataPath() + 'item/weapons/$type.json').then((response) {
+    Map w = JSON.decode(response).asMap()[0];
+
     weapons[type][w['id']] = new List();
     if (w.containsKey('multi')) {
       Qualities.forEach((q) => weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q))));
@@ -62,23 +71,28 @@ void _buildWeaponType(String type) {
     }
 
     weapons[type][w['id']].add(createWeapon(w));
+    weapons[type][w['id']].add(createWeapon(w));
   });
 }
 
-void _buildArmorType(String type) {
-  JSON.decode(new io.File(Settings.getDataPath() + 'item/armor/$type.json').readAsStringSync()).forEach((Map a) {
+_buildArmorType(String type) async {
+  await _requestData(Settings.getDataPath() + 'item/armor/$type.json').then((response) {
+    Map a = JSON.decode(response).asMap()[0];
+
     armors[type][a['id']] = new List();
-      if (a.containsKey('multi')) {
-        Qualities.forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
-        return;
+    if (a.containsKey('multi')) {
+      Qualities.forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
+      return;
     }
 
     armors[type][a['id']].add(createArmor(a));
   });
 }
 
-void _buildPotions() {
-  JSON.decode(new io.File(Settings.getDataPath() + 'item/potions.json').readAsStringSync()).forEach((Map p) {
+_buildPotions() async {
+  await _requestData(Settings.getDataPath() + 'item/potions.json').then((response) {
+    Map p = JSON.decode(response).asMap()[0];
+
     if (p.containsKey('multi')) {
       Qualities.forEach((q) => potions[p['id']] = createPotion(p, Qualities.indexOf(q)));
       return;
@@ -88,6 +102,14 @@ void _buildPotions() {
   });
 }
 
-void _buildMonsters() {
-  JSON.decode(new io.File(Settings.getDataPath() + 'monster/monster.json').readAsStringSync()).forEach((m) => monsters[m['id']] = createMonster(m));
+_buildMonsters() async {
+  _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
+    JSON.decode(response).asMap()[0].forEach((m) {
+      monsters[m['id']] = createMonster(m);
+    });
+  });
+}
+
+Future<String> _requestData(String url) async {
+  return HttpRequest.getString(url);
 }

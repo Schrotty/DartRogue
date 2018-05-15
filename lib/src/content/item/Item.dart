@@ -22,6 +22,8 @@ class Item {
   int _max;
 
   Item.fromJson(Map data, [int quality]) {
+    data = data[0];
+
     this._id = data['id'];
     this.name = data['name'];
     this.type = data['type'];
