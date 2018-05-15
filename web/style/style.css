@@ -1,6 +1,8 @@
 html {
     font-family: 'Press Start 2P', cursive;
     height: 100vh;
+    width: 100vw;
+    background: url(../img/main/background.png);
 }
 
 body {
@@ -37,7 +39,6 @@ h1 {
     grid-template-columns: auto;
     text-align: center;
     color: white;
-    background: url(../img/main/background.png);
 }
 
 #home ul input {
@@ -50,7 +51,7 @@ h1 {
     vertical-align: middle;
     line-height: 42px;
     margin: 5px 0 5px 0;
-    background: url(../img/main/highscore_entry.png) no-repeat center;
+    background: url(../img/main/button.png) no-repeat center;
 }
 
 /* GAME IDs */
