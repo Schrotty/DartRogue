@@ -13,7 +13,7 @@
     <body>
         <div id="home">
             <div id="start-menu" class="full-screen visible">
-                <h1>DartRogue</h1>
+                <h1 id="test">DartRogue</h1>
 
                 <ul>
                     <li><input type="button" id="start-game-button" value="Start New Game"></li>
@@ -62,9 +62,19 @@
             </div>
         </div>
 
-        <div id="game">
-            <div id="level" class="full-screen invisible">
+        <div id="game" class="invisible full-screen">
+            <div id="level">
+                <div id="overlay" class="full-screen">
+                    <div id="hero-screen" class="invisible">
+                        <div id="hero-top-bar">Hero Screen</div>
+                    </div>
+                </div>
+
                 <!-- LEVEL -->
+            </div>
+
+            <div id="right-bar">
+                <input type="button" id="hero-screen-button" class="bar-button" value="H">
             </div>
         </div>
     </body>
