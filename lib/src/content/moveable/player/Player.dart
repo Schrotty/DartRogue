@@ -1,12 +1,14 @@
 part of rogue;
 
-class Player extends Moveable{
-
+class Player extends Moveable {
   int _strength;
   int _constitution;
   int _luck;
   int _critChance;
   double _critDamage;
+  int _baseXp;
+  int _gainedXp;
+  int _neededXp;
 
   Item helmet;
   Item chest;
@@ -20,22 +22,32 @@ class Player extends Moveable{
 
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
-      if (data['attributes'].containsKey('strength')) _strength = data['attributes']['strength'];
-      if (data['attributes'].containsKey('constitution')) _constitution = data['attributes']['constitution'];
-      if (data['attributes'].containsKey('luck')) _luck = data['attributes']['luck'];
+      if (data['attributes'].containsKey('strength'))
+        _strength = data['attributes']['strength'];
+      if (data['attributes'].containsKey('constitution'))
+        _constitution = data['attributes']['constitution'];
+      if (data['attributes'].containsKey('luck'))
+        _luck = data['attributes']['luck'];
     }
 
     if (data.containsKey('talents')) {
-      if (data['talents'].containsKey('crit-chance')) _critChance = data['talents']['crit-chance'];
-      if (data['talents'].containsKey('crit-damage-mod')) _critDamage = data['talents']['crit-damage-mod'];
+      if (data['talents'].containsKey('crit-chance'))
+        _critChance = data['talents']['crit-chance'];
+      if (data['talents'].containsKey('crit-damage-mod'))
+        _critDamage = data['talents']['crit-damage-mod'];
     }
 
     if (data.containsKey('armor')) {
-      if (data['armor'].containsKey('helmet')) helmet = armors['helmets'][data['armor']['helmet']][0];
-      if (data['armor'].containsKey('chest')) chest = armors['chests'][data['armor']['chest']][0];
-      if (data['armor'].containsKey('gloves')) gloves = armors['gloves'][data['armor']['gloves']][0];
-      if (data['armor'].containsKey('legs')) legs = armors['legs'][data['armor']['legs']][0];
-      if (data['armor'].containsKey('boots')) boots = armors['boots'][data['armor']['boots']][0];
+      if (data['armor'].containsKey('helmet'))
+        helmet = armors['helmets'][data['armor']['helmet']][0];
+      if (data['armor'].containsKey('chest'))
+        chest = armors['chests'][data['armor']['chest']][0];
+      if (data['armor'].containsKey('gloves'))
+        gloves = armors['gloves'][data['armor']['gloves']][0];
+      if (data['armor'].containsKey('legs'))
+        legs = armors['legs'][data['armor']['legs']][0];
+      if (data['armor'].containsKey('boots'))
+        boots = armors['boots'][data['armor']['boots']][0];
     }
 
     if (data.containsKey('weapon')) {
@@ -49,7 +61,12 @@ class Player extends Moveable{
     }
 
     _maxHealth = data['health'];
+    _speed = data['speed'];
     _currHealth = maxHealth;
+    _lvl = 1;
+    _baseXp = data['baseXp'];
+    _gainedXp = 0;
+    _neededXp = data['baseXp'];
   }
 
   int calcDamage() {
@@ -61,11 +78,51 @@ class Player extends Moveable{
     return damage;
   }
 
+  // monsters must give xp less than two full lvl!
+  gainXP(int xp) {
+    this._gainedXp += xp;
+    if (_gainedXp >= _neededXp) {
+      _levelUp();
+    }
+  }
+
+  _levelUp() {
+    this._lvl = ++this._lvl;
+    double scale = Settings.playerStatScaling;
+    this._neededXp +=
+        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+    this._maxHealth = (this._maxHealth * scale).ceil();
+    this._currHealth = _maxHealth; // restore to full health;
+    this._constitution = (this._constitution * scale).ceil();
+    this._strength = (this._strength * scale).ceil();
+    this._luck = (this._luck * scale).ceil();
+    // Balancing: maybe use different scaling for crit? we'll see...
+    this._critChance = (this._critChance * scale).ceil();
+    this._critDamage = (this._critDamage * scale);
+  }
+
   void usePotion(int type) {
     if (pots[type] >= 1) {
       _currHealth += (maxHealth * (potions[type].value / 100)).round().floor();
       pots[type]--;
     }
+  }
+
+  int getGainedXpByCurrentLvl() {
+    return _lvl == 1 ? gainedXp : gainedXp - _currentLvlXp();
+  }
+
+  int getNeededXpByCurrentLvl() {
+    return _lvl == 1 ? neededXp : neededXp - _currentLvlXp();
+  }
+
+  int _currentLvlXp() {
+    return neededXp -
+        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+  }
+
+  int getLeftXpUntilLvlUp() {
+    return neededXp - gainedXp;
   }
 
   int _getMod(String type) {
@@ -125,7 +182,8 @@ class Player extends Moveable{
   }
 
   get armor {
-    return armorMod + (helmet.value + chest.value + gloves.value + legs.value + boots.value);
+    return armorMod +
+        (helmet.value + chest.value + gloves.value + legs.value + boots.value);
   }
 
   get damage {
@@ -147,4 +205,8 @@ class Player extends Moveable{
   get critDamage {
     return (critMulti * damage).round();
   }
+
+  get gainedXp => _gainedXp;
+
+  get neededXp => _neededXp;
 }
