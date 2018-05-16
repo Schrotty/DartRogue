@@ -1,8 +1,8 @@
 library rogue;
 
+import 'dart:async';
 import 'dart:html';
 import 'dart:math';
-import 'dart:io' as io;
 import 'dart:convert';
 
 part 'src/RogueController.dart';

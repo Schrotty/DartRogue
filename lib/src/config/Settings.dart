@@ -1,15 +1,10 @@
 part of rogue;
 
 class Settings {
-  static String _dataPath;
-  static int _strengthMod;
-  static int _constMod;
-  static int _luckMod;
-
-  // Balancing
-  static double _monsterScaling;
-  static double _playerStatScaling;
-  static double _playerXpScaling;
+  static String _dataPath = 'data/';
+  static int _strengthMod = 1;
+  static int _constMod = 3;
+  static int _luckMod = 2;
 
   static String getDataPath() {
     return _dataPath;

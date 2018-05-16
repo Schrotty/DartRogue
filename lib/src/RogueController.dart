@@ -5,10 +5,19 @@ class RogueController {
   final RogueView view = new RogueView();
 
   RogueController() {
+    _init();
 
+    _registerMenuEvents();
+    _registerGameEvents();
+
+    const oneSec = const Duration(milliseconds: 16);
+    new Timer.periodic(oneSec, (Timer t) => _update());
+  }
+
+  _registerMenuEvents() {
     /* MAIN MENU EVENTS */
     view.startButton.onClick.listen((e) {
-      //start button clicked
+      _switchMenu(view.game, view.home);
     });
 
     view.highscoreButton.onClick.listen((e) {
@@ -39,11 +48,31 @@ class RogueController {
     });
   }
 
+  _registerGameEvents() {
+    view.heroScreenButton.onClick.listen((e) {
+      _toggleOverlay(view.heroScreen);
+    });
+  }
+
   _switchMenu(Element toShow, Element toHide) {
     toShow.classes.add("visible");
     toShow.classes.remove("invisible");
 
     toHide.classes.add("invisible");
     toHide.classes.remove("visible");
+  }
+
+  _toggleOverlay(Element overlay) {
+    overlay.classes.toggle("invisible");
+    overlay.classes.toggle("visible");
+  }
+
+  _init() {
+    buildStorage();
+  }
+
+  _update() {
+    view.playerHealth.text = player.health;
+    view.playerMaxHealth.text = player.maxHealth;
   }
 }
