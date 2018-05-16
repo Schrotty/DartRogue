@@ -6,6 +6,12 @@ class Settings {
   static int _constMod = 3;
   static int _luckMod = 2;
 
+  static double _monsterScaling = 1.2;
+  static double _playerStatScaling = 1.1;
+  static double _playerXpScaling = 1.3;
+
+  static const _refreshRate = 1/60; // 60Hz => 16,67ms
+
   static String getDataPath() {
     return _dataPath;
   }
@@ -28,15 +34,5 @@ class Settings {
 
   static get playerXpScaling => _playerXpScaling;
 
-  static void loadSettings() {
-    Map<String, dynamic> settings = JSON.decode(new io.File('lib/src/config/config.json').readAsStringSync());
-
-    _dataPath = settings['data-path'];
-    _strengthMod = settings['modifiers']['strength'];
-    _constMod = settings['modifiers']['constitution'];
-    _luckMod = settings['modifiers']['luck'];
-    _monsterScaling = settings['balancing']['monsterScale'];
-    _playerStatScaling = settings['balancing']['playerStatScale'];
-    _playerXpScaling = settings['balancing']['playerXpScale'];
-  }
+  static get refreshRate => _refreshRate;
 }

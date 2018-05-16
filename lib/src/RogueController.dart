@@ -10,7 +10,7 @@ class RogueController {
     _registerMenuEvents();
     _registerGameEvents();
 
-    const oneSec = const Duration(milliseconds: 16);
+    const oneSec = const Duration(milliseconds: 16); // TODO proposal: use Settings.refreshRate instead?
     new Timer.periodic(oneSec, (Timer t) => _update());
   }
 
@@ -72,7 +72,7 @@ class RogueController {
   }
 
   _update() {
-    view.playerHealth.text = player.health;
+    view.playerHealth.text = player.currHealth;
     view.playerMaxHealth.text = player.maxHealth;
   }
 }
