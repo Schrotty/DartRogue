@@ -11,6 +11,11 @@ class RogueView {
 
   final Element heroScreen = querySelector("#hero-screen");
 
+  final Element healthContainer = querySelector("#health-container");
+  final Element playerHealth = querySelector("#health");
+  final Element playerMaxHealth = querySelector("#max-health");
+  final Element playerHealthBar = querySelector("#health-bar-inner");
+
   /* MAIN MENU BUTTONS */
   final ButtonInputElement startButton = querySelector("#start-game-button");
   final ButtonInputElement highscoreButton = querySelector("#highscore-button");
@@ -28,7 +33,4 @@ class RogueView {
 
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton = querySelector("#hero-screen-button");
-
-  final Element playerHealth = querySelector("#health");
-  final Element playerMaxHealth = querySelector("#max-health");
 }

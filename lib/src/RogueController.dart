@@ -7,17 +7,19 @@ class RogueController {
   RogueController() {
     _init();
 
+    print(player.toString());
+
     _registerMenuEvents();
     _registerGameEvents();
-
-    const oneSec = const Duration(milliseconds: 16); // TODO proposal: use Settings.refreshRate instead?
-    new Timer.periodic(oneSec, (Timer t) => _update());
   }
 
   _registerMenuEvents() {
     /* MAIN MENU EVENTS */
     view.startButton.onClick.listen((e) {
       _switchMenu(view.game, view.home);
+
+      const oneSec = const Duration(milliseconds: 16); // TODO proposal: use Settings.refreshRate instead?
+      new Timer.periodic(oneSec, (Timer t) => _update());
     });
 
     view.highscoreButton.onClick.listen((e) {
@@ -50,6 +52,7 @@ class RogueController {
 
   _registerGameEvents() {
     view.heroScreenButton.onClick.listen((e) {
+      _toggleOverlay(view.healthContainer);
       _toggleOverlay(view.heroScreen);
     });
   }
@@ -72,7 +75,12 @@ class RogueController {
   }
 
   _update() {
+    _updatePlayerHealth();
+  }
+
+  _updatePlayerHealth() {
     view.playerHealth.text = player.currHealth;
     view.playerMaxHealth.text = player.maxHealth;
+    view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 }

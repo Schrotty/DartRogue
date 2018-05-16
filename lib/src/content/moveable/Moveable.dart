@@ -40,6 +40,8 @@ abstract class Moveable {
 
   set currHealth(int health) => this._currHealth = health;
 
+  get currHealthPercent => (this._currHealth / this.maxHealth) * 100;
+
   get speed => this._speed;
 
   set speed(int speed) => this._speed = speed;

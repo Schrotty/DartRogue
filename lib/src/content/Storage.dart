@@ -56,7 +56,7 @@ _buildArmors() async {
 
 _buildPlayer() async {
   await _requestData(Settings.getDataPath() + 'player/player.json').then((response) {
-    player = new Player.fromMap(JSON.decode(response));
+    player = new Player.fromMap(JSON.decode(response).asMap()[0]);
   });
 }
 
@@ -70,7 +70,6 @@ _buildWeaponType(String type) async {
       return;
     }
 
-    weapons[type][w['id']].add(createWeapon(w));
     weapons[type][w['id']].add(createWeapon(w));
   });
 }
