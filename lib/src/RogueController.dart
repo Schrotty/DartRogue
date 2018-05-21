@@ -1,7 +1,6 @@
 part of rogue;
 
 class RogueController {
-
   final RogueView view = new RogueView();
 
   RogueController() {
@@ -18,7 +17,7 @@ class RogueController {
     view.startButton.onClick.listen((e) {
       _switchMenu(view.game, view.home);
 
-      const oneSec = const Duration(milliseconds: 16); // TODO proposal: use Settings.refreshRate instead?
+      const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
     });
 
@@ -76,11 +75,40 @@ class RogueController {
 
   _update() {
     _updatePlayerHealth();
+    _updatePlayerEquipment();
+    _updatePlayerAttributes();
+    _updatePlayerXp();
   }
 
   _updatePlayerHealth() {
     view.playerHealth.text = player.currHealth;
     view.playerMaxHealth.text = player.maxHealth;
-    view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+    view.playerHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
+  }
+
+  _updatePlayerEquipment() {
+    view.helmet.text = player.helmet.name;
+    view.gloves.text = player.gloves.name;
+    view.chest.text = player.chest.name;
+    view.legs.text = player.legs.name;
+    view.boots.text = player.boots.name;
+    view.weapon.text = player.weapon.name;
+  }
+
+  _updatePlayerAttributes() {
+    view.level.text = player.level;
+    view.strength.text = player.strength;
+    view.constitution.text = player.constitution;
+    view.luck.text = player.luck;
+    view.damage.text = player.damage;
+    view.critDamage.text = player.critDamage;
+    view.critChance.text = player.critChance;
+  }
+
+  _updatePlayerXp() {
+    view.playerXp.text = "${player.getGainedXpByCurrentLvl()}";
+    view.playerLvlXp.text = "${player.getNeededXpByCurrentLvl()}";
+    view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
   }
 }
