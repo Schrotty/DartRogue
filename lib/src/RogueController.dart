@@ -54,6 +54,16 @@ class RogueController {
       _toggleOverlay(view.healthContainer);
       _toggleOverlay(view.heroScreen);
     });
+    view.fightingScreenButton.onClick.listen((e) {
+      _toggleOverlay(view.healthContainer);
+      _toggleOverlay(view.fightingScreen);
+    });
+    view.attackButton.onClick.listen((e) {
+      player.takeDamage(10);
+    });
+    view.usePotionButton.onClick.listen((e) {
+      player.usePotion(0);
+    });
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -78,6 +88,7 @@ class RogueController {
     _updatePlayerEquipment();
     _updatePlayerAttributes();
     _updatePlayerXp();
+    _updateFightScreen();
   }
 
   _updatePlayerHealth() {
@@ -110,5 +121,17 @@ class RogueController {
     view.playerXp.text = "${player.getGainedXpByCurrentLvl()}";
     view.playerLvlXp.text = "${player.getNeededXpByCurrentLvl()}";
     view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
+  }
+
+  _updateFightScreen() {
+    view.playerFightHealth.text = player.currHealth;
+    view.playerFightMaxHealth.text = player.maxHealth;
+    view.playerFightHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
+
+    view.monsterFightHealth.text = monsters[0].maxHealth;
+    view.monsterFightMaxHealth.text = monsters[0].maxHealth;
+    view.monsterFightHealthBar.style
+        .setProperty("width", "${monsters[0].currHealthPercent}");
   }
 }

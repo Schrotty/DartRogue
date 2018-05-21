@@ -9,10 +9,13 @@ class RogueView {
   final Element howToPlay = querySelector("#how-to-play");
   final Element about = querySelector("#about");
 
-  // Hero Screen
+  //Temporarily
+  final Element fightingScreen = querySelector("#fighting-screen");
+
+  /* ########## HERO SCREEN START ########## */
   final Element heroScreen = querySelector("#hero-screen");
 
-  // Equipment
+  /* EQUIPMENT */
   final Element equipment = querySelector("#equipment");
   final Element helmet = querySelector("#helmet");
   final Element gloves = querySelector("#gloves");
@@ -21,7 +24,7 @@ class RogueView {
   final Element boots = querySelector("#boots");
   final Element weapon = querySelector("#weapon");
 
-  // Attributes
+  /* ATTRIBUTES */
   final Element level = querySelector("#lvl");
   final Element strength = querySelector("#strength");
   final Element constitution = querySelector("#const");
@@ -30,13 +33,40 @@ class RogueView {
   final Element critDamage = querySelector("#cd");
   final Element critChance = querySelector("#cc");
 
-  //XpBar
+  /*XP-BAR*/
   final Element xpContainer = querySelector("#xp-container");
   final Element playerXp = querySelector("#xp");
   final Element playerLvlXp = querySelector("#lvl-xp");
   final Element playerXpBar = querySelector("#xp-bar-inner");
 
-  //HealthBar
+  /* ########## HERO SCREEN END ########### */
+
+  /* ########## FIGHTING SCREEN START ########### */
+  /* PLAYER */
+  final Element playerFightHealthContainer =
+      querySelector("#player-fight-health-container");
+  final Element playerFightHealth = querySelector("#player-fight-health");
+  final Element playerFightMaxHealth =
+      querySelector("#player-fight-max-health");
+  final Element playerFightHealthBar =
+      querySelector("#player-fight-health-inner");
+
+  /* MONSTER */
+  final Element monsterFightHealthContainer =
+      querySelector("#monster-fight-health-container");
+  final Element monsterFightHealth = querySelector("#monster-fight-health");
+  final Element monsterFightMaxHealth =
+      querySelector("#monster-fight-max-health");
+  final Element monsterFightHealthBar =
+      querySelector("#monster-fight-health-inner");
+
+  /* OPTIONS */
+  final ButtonInputElement attackButton = querySelector("#attack");
+  final ButtonInputElement usePotionButton = querySelector("#use-potion");
+
+  /* ########## FIGHTING SCREEN END ########### */
+
+  /* HEALTH BAR */
   final Element healthContainer = querySelector("#health-container");
   final Element playerHealth = querySelector("#health");
   final Element playerMaxHealth = querySelector("#max-health");
@@ -63,4 +93,7 @@ class RogueView {
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton =
       querySelector("#hero-screen-button");
+
+  final ButtonInputElement fightingScreenButton =
+      querySelector("#fighting-screen-button");
 }
