@@ -69,12 +69,14 @@ class RogueView {
   /* ########## FIGHTING SCREEN END ########### */
 
   /* HEALTH BAR */
-  final Element healthContainer = querySelector("#health-container");
-  final Element playerHealth = querySelector("#health");
-  final Element playerMaxHealth = querySelector("#max-health");
+  final Element playerHealth = querySelector("#player-health-text");
   final Element playerHealthBar = querySelector("#health-bar-inner");
-
   final Element potionsMenu = querySelector("#potions-menu");
+
+  /* EP BAR */
+  final Element playerEp = querySelector("#player-ep-text");
+  final Element playerEpBar = querySelector("#ep-bar-inner");
+  final Element playerLevel = querySelector("#level-value");
 
   /* MAIN MENU BUTTONS */
   final ButtonInputElement startButton = querySelector("#start-game-button");

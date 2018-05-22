@@ -67,7 +67,7 @@ h3 {
             "play-field side-bar";
 
     grid-template-columns: 90% 10%;
-    grid-template-rows: 30px auto;
+    grid-template-rows: auto auto;
     padding: 0;
 }
 
@@ -103,6 +103,67 @@ h3 {
     font-size: 12px;
 }
 
+#health-container {
+    display: grid;
+    grid-template-columns: 50px 100px 75px 50px;
+    grid-template-rows: 15px 20px 20px;
+    grid-template-areas:
+            "name empty-space l-title l-value"
+            "health-bar health-bar health-bar health-bar"
+            "ep-bar ep-bar ep-bar ep-bar";
+}
+
+#health-container #name {
+    grid-area: name;
+}
+
+#health-container #level-key {
+    grid-area: l-title;
+    text-align: right;
+}
+
+#health-container #level-value {
+    grid-area: l-value;
+    text-align: right;
+}
+
+#health-container #health-bar-outer,
+#health-container #ep-bar-outer {
+    color: white;
+    font-size: 10px;
+    background-color: dimgray;
+    padding: 3px;
+    text-align: right;
+    line-height: 14px;
+}
+
+#health-container #health-bar-inner,
+#health-container #ep-bar-inner {
+    height: 14px;
+}
+
+#health-container #health-bar-inner {
+    background-color: indianred;
+}
+
+#health-container #health-bar-outer span,
+#health-container #ep-bar-outer span {
+    position: absolute;
+    left: 205px;
+}
+
+#health-container #ep-bar-inner {
+    background-color: lightblue;
+}
+
+#health-container #health-bar-outer {
+    grid-area: health-bar;
+}
+
+#health-container #ep-bar-outer {
+    grid-area: ep-bar;
+}
+
 #player-health {
     font-size: small;
     padding: 2px;
@@ -112,18 +173,6 @@ h3 {
     color: white;
     z-index: 25;
     background: black;
-}
-
-#health-bar-outer {
-    background: grey;
-    width: 100%;
-    height: 100%;
-}
-
-#health-bar-inner {
-    width: 50%;
-    height: 100%;
-    background: red;
 }
 
 #hero-screen, #fighting-screen {

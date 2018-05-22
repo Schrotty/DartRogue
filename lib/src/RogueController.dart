@@ -65,7 +65,6 @@ class RogueController {
 
       //querySelector("#level").scroll(e.client.x, e.client.y);
 
-
       //d.scrollIntoView(ScrollAlignment.TOP);
       //view.game.scrollTop = -5;
     });
@@ -131,8 +130,7 @@ class RogueController {
   }
 
   _updatePlayerHealth() {
-    /*view.playerHealth.text = player.currHealth;
-    view.playerMaxHealth.text = player.maxHealth;*/
+    view.playerHealth.text = "${player.currHealth}/ ${player.maxHealth}";
     view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
@@ -163,6 +161,11 @@ class RogueController {
     view.playerXp.text = "${player.getGainedXpByCurrentLvl()}";
     view.playerLvlXp.text = "${player.getNeededXpByCurrentLvl()}";
     view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
+
+    /* Dungeon Map */
+    view.playerEp.text = "${player.gainedXp}/ ${player.neededXp}";
+    view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
+    view.playerLevel.text = player.level;
   }
 
   _updateFightScreen() {
