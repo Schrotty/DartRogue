@@ -48,8 +48,6 @@ class RogueController {
   }
 
   _registerGameEvents() {
-    Element el = new Element.div()..classes.add("tile");
-
     for (int i = 0; i < 1024; i++) {
       querySelector("#tiles").append(new Element.div()..classes.add("tile"));
     }
@@ -58,15 +56,7 @@ class RogueController {
       DivElement d = e.target;
       d.classes.add("clicked");
 
-      print(e.client.x);
-      print(e.client.y);
-
       _moveCamera(64);
-
-      //querySelector("#level").scroll(e.client.x, e.client.y);
-
-      //d.scrollIntoView(ScrollAlignment.TOP);
-      //view.game.scrollTop = -5;
     });
 
     view.heroScreenButton.onClick.listen((e) {
@@ -130,7 +120,7 @@ class RogueController {
   }
 
   _updatePlayerHealth() {
-    view.playerHealth.text = "${player.currHealth}/ ${player.maxHealth}";
+    view.playerHealth.text = "${player.currHealth}/${player.maxHealth}";
     view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
@@ -163,7 +153,7 @@ class RogueController {
     view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
 
     /* Dungeon Map */
-    view.playerEp.text = "${player.gainedXp}/ ${player.neededXp}";
+    view.playerEp.text = "${player.gainedXp}/${player.neededXp}";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
     view.playerLevel.text = player.level;
   }

@@ -104,7 +104,7 @@ h3 {
     display: grid;
     color: black;
     grid-template-columns: 100px 50px 100px;
-    grid-template-rows: 15px 20px 20px;
+    grid-template-rows: 15px 17px 20px;
     grid-template-areas:
             "l-title l-value empty-space"
             "health-bar health-bar health-bar"
