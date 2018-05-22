@@ -112,10 +112,12 @@ class RogueController {
   }
 
   _update() {
+    //player.gainXP(100);
+
+    _updatePlayerXp();
+    _updatePlayerAttributes();
     _updatePlayerHealth();
     _updatePlayerEquipment();
-    _updatePlayerAttributes();
-    _updatePlayerXp();
     _updateFightScreen();
   }
 

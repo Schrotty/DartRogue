@@ -91,14 +91,15 @@ class Player extends Moveable {
     double scale = Settings.playerStatScaling;
     this._neededXp +=
         (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
-    this._maxHealth = (this._maxHealth * scale).ceil();
-    this._currHealth = _maxHealth; // restore to full health;
     this._constitution = (this._constitution * scale).ceil();
     this._strength = (this._strength * scale).ceil();
     this._luck = (this._luck * scale).ceil();
     // Balancing: maybe use different scaling for crit? we'll see...
     this._critChance = (this._critChance * scale).ceil();
     this._critDamage = (this._critDamage * scale);
+
+    this._maxHealth = (this._maxHealth * scale).ceil();
+    this._currHealth = maxHealth; // restore to full health;
   }
 
   void usePotion(int type) {
