@@ -68,9 +68,9 @@
             </div>
         </div>
 
-        <div id="game" class="invisible full-screen">
+        <!--<div id="game" class="invisible full-screen">
             <div id="level">
-                <div id="overlay" class="full-screen">
+                <div id="overlay" class="full-screen invisible">
                     <div id="health-container">
                         <span id="health"></span>/ <span id="max-health"></span>
                         <div id="player-health">
@@ -81,14 +81,47 @@
                     </div>
 
                     <div id="hero-screen" class="invisible">
-                        <div id="hero-top-bar">Hero Screen</div>
+                        <div class="top-bar">Hero Screen</div>
                     </div>
                 </div>
 
-                <!-- LEVEL -->
+                <div id="tiles">
+
+                </div>
             </div>
 
             <div id="right-bar">
+                <input type="submit" id="hero-screen-button" class="bar-button" value="H">
+                <div>
+                    <div id="potions-menu" class="invisible">
+                        <div id="potion-s" class="potion-button">S</div>
+                        <div id="potion-m" class="potion-button">M</div>
+                        <div id="potion-l" class="potion-button">L</div>
+                    </div>
+
+                    <input type="submit" id="potions-button" class="bar-button" value="P">
+                </div>
+            </div>
+        </div>-->
+        <div id="game" class="full-screen invisible">
+            <div id="upper-bar">
+                <div id="health-container">
+                    <div id="player-health">
+                        <div id="health-bar-outer">
+                            <div id="health-bar-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="level">
+                <div id="tiles"></div>
+                <div id="hero-screen" class="invisible">
+                    <div class="top-bar">Hero Screen</div>
+                </div>
+            </div>
+
+            <div id="side-bar">
                 <input type="submit" id="hero-screen-button" class="bar-button" value="H">
             </div>
         </div>

@@ -2,6 +2,7 @@ library rogue;
 
 import 'dart:async';
 import 'dart:html';
+import 'dart:js';
 import 'dart:math';
 import 'dart:convert';
 

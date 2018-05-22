@@ -57,19 +57,42 @@ h1 {
 /* GAME IDs */
 #game {
     display: grid;
-    height: 100%;
+    height: 100vh;
+    grid-template-areas:
+            "upper-bar upper-bar"
+            "play-field side-bar";
+
     grid-template-columns: 90% 10%;
+    grid-template-rows: 30px auto;
     padding: 0;
 }
 
-#level {
-    height: 100%;
-    background-color: papayawhip;
+#upper-bar {
+    background: greenyellow;
+    grid-area: upper-bar;
+    padding: 5px;
 }
 
-#right-bar {
-    height: 100%;
-    background-color: cornflowerblue;
+#level {
+    grid-area: play-field;
+    overflow: scroll;
+    background: black;
+}
+
+#side-bar {
+    background: plum;
+    grid-area: side-bar;
+    padding: 5px;
+}
+
+#tiles {
+    zoom: 150%;
+    display: grid;
+    grid-template-columns: repeat(32, 32px);
+    grid-template-rows: repeat(32, 32px);
+    z-index: 5;
+    max-width: 100%;
+    text-align: center;
 }
 
 #health, #max-health {
@@ -96,26 +119,35 @@ h1 {
 #health-bar-inner {
     width: 50%;
     height: 100%;
-    background: darkred;
+    background: red;
 }
 
 #hero-screen {
-    width: 95%;
-    height: 89%;
-    border: 1px solid black;
-    background-color: plum;
+    background-color: darkcyan;
     padding: 5px;
     z-index: 50;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    grid-area: play-field;
+}
+
+#hero-screen, #potions-menu {
     margin: auto;
 }
 
-#hero-screen {
-    margin: auto;
+#potions-menu {
+    background-color: greenyellow;
+    position: fixed;
+    right: 10%;
+    height: 15%;
+    width: 30%;
+    border: 1px solid black;
 }
 
-#hero-top-bar {
-    text-align: center;
-    border-bottom: 1px solid black;
+.tile {
+    background: grey;
+    border: 1px solid black;
 }
 
 /* CLASSES */
@@ -136,6 +168,15 @@ h1 {
     width: 100%;
     height: 15%;
     background-color: azure;
+    border: 1px solid black;
+}
+
+.potion-button {
+    height: 100%;
+    width: 33%;
+    float: left;
+    text-align: center;
+    horiz-align: center;
 }
 
 .plain {
@@ -147,4 +188,13 @@ h1 {
 
 .plain p {
     padding: 15px;
+}
+
+.top-bar {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.clicked {
+    border: 1px solid yellow;
 }

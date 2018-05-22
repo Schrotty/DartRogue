@@ -90,14 +90,9 @@ _buildArmorType(String type) async {
 
 _buildPotions() async {
   await _requestData(Settings.getDataPath() + 'item/potions.json').then((response) {
-    Map p = JSON.decode(response).asMap()[0];
+    Map p = JSON.decode(response).asMap();
 
-    if (p.containsKey('multi')) {
-      Qualities.forEach((q) => potions[p['id']] = createPotion(p, Qualities.indexOf(q)));
-      return;
-    }
-
-    potions[p['id']] = createPotion(p);
+    p.forEach((id, pot) => potions[id] = createPotion(pot));
   });
 }
 
