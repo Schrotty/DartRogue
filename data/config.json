@@ -4,5 +4,10 @@
     "strength": 1,
     "constitution": 3,
     "luck": 2
+  },
+  "balancing": {
+    "monsterScale": 1.2,
+    "playerStatScale": 1.1,
+    "playerXpScale":1.3
   }
 }

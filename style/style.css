@@ -28,6 +28,10 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-decoration: underline;
+}
+
 /* HOME IDs */
 #title {
     content: url(../img/main/title.png);
@@ -57,44 +61,158 @@ h1 {
 /* GAME IDs */
 #game {
     display: grid;
-    height: 100%;
+    height: 100vh;
+    grid-template-areas:
+            "upper-bar upper-bar"
+            "play-field side-bar";
+
     grid-template-columns: 90% 10%;
+    grid-template-rows: auto auto;
     padding: 0;
 }
 
-#level {
-    height: 100%;
-    background-color: papayawhip;
+#upper-bar {
+    background: greenyellow;
+    grid-area: upper-bar;
+    padding: 5px;
 }
 
-#right-bar {
-    height: 100%;
-    background-color: cornflowerblue;
+#dungeon {
+    grid-area: play-field;
+    overflow: scroll;
+    background: black;
+}
+
+#side-bar {
+    background: plum;
+    grid-area: side-bar;
+    padding: 5px;
+}
+
+#tiles {
+    zoom: 150%;
+    display: grid;
+    grid-template-columns: repeat(32, 32px);
+    grid-template-rows: repeat(32, 32px);
+    z-index: 5;
+    max-width: 100%;
+    text-align: center;
+}
+
+#health, #max-health {
+    font-size: 12px;
+}
+
+#health-container {
+    display: grid;
+    grid-template-columns: 50px 100px 75px 50px;
+    grid-template-rows: 15px 20px 20px;
+    grid-template-areas:
+            "name empty-space l-title l-value"
+            "health-bar health-bar health-bar health-bar"
+            "ep-bar ep-bar ep-bar ep-bar";
+}
+
+#health-container #name {
+    grid-area: name;
+}
+
+#health-container #level-key {
+    grid-area: l-title;
+    text-align: right;
+}
+
+#health-container #level-value {
+    grid-area: l-value;
+    text-align: right;
+}
+
+#health-container #health-bar-outer,
+#health-container #ep-bar-outer {
+    color: white;
+    font-size: 10px;
+    background-color: dimgray;
+    padding: 3px;
+    text-align: right;
+    line-height: 14px;
+}
+
+#health-container #health-bar-inner,
+#health-container #ep-bar-inner {
+    height: 14px;
+}
+
+#health-container #health-bar-inner {
+    background-color: indianred;
+}
+
+#health-container #health-bar-outer span,
+#health-container #ep-bar-outer span {
+    position: absolute;
+    left: 205px;
+}
+
+#health-container #ep-bar-inner {
+    background-color: lightblue;
+}
+
+#health-container #health-bar-outer {
+    grid-area: health-bar;
+}
+
+#health-container #ep-bar-outer {
+    grid-area: ep-bar;
 }
 
 #player-health {
     font-size: small;
-    padding: 3px;
-    text-align: left;
-    z-index: 25;
-}
-
-#hero-screen {
-    width: 80%;
-    height: 80%;
-    border: 1px solid black;
-    background-color: plum;
-    padding: 5px;
-    z-index: 50;
-}
-
-#hero-screen {
-    margin: auto;
-}
-
-#hero-top-bar {
+    padding: 2px;
+    width: 30%;
+    height: 16px;
     text-align: center;
-    border-bottom: 1px solid black;
+    color: white;
+    z-index: 25;
+    background: black;
+}
+
+#hero-screen, #fighting-screen {
+    border: 1px solid black;
+    background: plum;
+    position: absolute;
+    height: 75vh;
+    width: 75vw;
+    left: 50px;
+    top: 50px;
+    padding: 10px;
+    z-index: 50;
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: play-field;
+    overflow: scroll;
+}
+
+#potions-menu {
+    background-color: greenyellow;
+    position: fixed;
+    right: 10%;
+    height: 15%;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.tile {
+    background: grey;
+    border: 1px solid black;
+}
+
+#fighting-options {
+    width: 100%;
+    height: 35%;
+    border-top: 1px solid black;
+    background: lightblue;
+    z-index: 60;
+    position: absolute;
+    bottom: 0;
 }
 
 /* CLASSES */
@@ -111,10 +229,34 @@ h1 {
     display: block;
 }
 
+.top-bar {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.top-right-bar{
+    float: right;
+    padding: 20px;
+}
+
+.top-left-bar {
+    float: left;
+    padding: 20px;
+}
+
 .bar-button {
     width: 100%;
     height: 15%;
     background-color: azure;
+    border: 1px solid black;
+}
+
+.potion-button {
+    height: 100%;
+    width: 33%;
+    float: left;
+    text-align: center;
+    horiz-align: center;
 }
 
 .plain {
@@ -126,4 +268,64 @@ h1 {
 
 .plain p {
     padding: 15px;
+}
+
+.top-bar {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.clicked {
+    border: 1px solid yellow;
+}
+
+.item-size {
+    width: 3%;
+    height: auto;
+}
+
+.progress-bar {
+    font-size: small;
+    padding: 2px;
+    width: 250px;
+    height: 16px;
+    text-align: center;
+    color: white;
+    z-index: 25;
+    background: black;
+}
+
+.progress-bar-outer {
+    background: grey;
+    width: 100%;
+    height: 100%;
+}
+
+.health-bar-inner {
+    width: 50%;
+    height: 100%;
+    background: darkred;
+}
+
+.xp-bar-inner {
+    width: 50%;
+    height: 100%;
+    background: darkgreen;
+}
+
+.picture {
+    width: 15%;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.monster {
+    right: 20%;
+}
+
+.player {
+    left: 20%;
 }

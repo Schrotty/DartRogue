@@ -1,11 +1,13 @@
 [
   {
     "id": 0,
-    "health": 8,
+    "health": 30,
+    "speed": 10,
+    "baseXp": 100,
     "attributes": {
-      "strength": 2,
-      "constitution": 2,
-      "luck": 1
+      "strength": 10,
+      "constitution": 10,
+      "luck": 10
     },
     "talents": {
       "crit-chance": 5,
@@ -21,6 +23,6 @@
     "weapon": [
       "swords", 0
     ],
-    "potions": [5, 1, 0]
+    "potions": [5, 1, 1]
   }
 ]
