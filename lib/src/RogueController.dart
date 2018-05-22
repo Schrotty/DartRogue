@@ -1,13 +1,10 @@
 part of rogue;
 
 class RogueController {
-
   final RogueView view = new RogueView();
 
   RogueController() {
     _init();
-
-    print(player.toString());
 
     _registerMenuEvents();
     _registerGameEvents();
@@ -18,7 +15,7 @@ class RogueController {
     view.startButton.onClick.listen((e) {
       _switchMenu(view.game, view.home);
 
-      const oneSec = const Duration(milliseconds: 16); // TODO proposal: use Settings.refreshRate instead?
+      const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
     });
 
@@ -75,7 +72,12 @@ class RogueController {
 
     view.heroScreenButton.onClick.listen((e) {
       _toggleOverlay(view.heroScreen);
-      _toggleOverlay(view.tiles);
+      //_toggleOverlay(view.tiles);
+    });
+
+    view.fightingScreenButton.onClick.listen((e) {
+      //_toggleOverlay(view.healthContainer);
+      _toggleOverlay(view.fightingScreen);
     });
 
     view.potionsMenuButton.onClick.listen((e) {
@@ -92,6 +94,14 @@ class RogueController {
 
     view.potionLargeButton.onClick.listen((e) {
       player.usePotion(2);
+    });
+
+    view.attackButton.onClick.listen((e) {
+      player.takeDamage(10);
+    });
+
+    view.usePotionButton.onClick.listen((e) {
+      player.usePotion(0);
     });
   }
 
@@ -114,6 +124,10 @@ class RogueController {
 
   _update() {
     _updatePlayerHealth();
+    _updatePlayerEquipment();
+    _updatePlayerAttributes();
+    _updatePlayerXp();
+    _updateFightScreen();
   }
 
   _updatePlayerHealth() {
@@ -123,6 +137,43 @@ class RogueController {
   }
 
   _moveCamera(int value) {
-    view.level.scrollLeft += value;
+    view.dungeon.scrollLeft += value;
+  }
+
+  _updatePlayerEquipment() {
+    view.helmet.text = player.helmet.name;
+    view.gloves.text = player.gloves.name;
+    view.chest.text = player.chest.name;
+    view.legs.text = player.legs.name;
+    view.boots.text = player.boots.name;
+    view.weapon.text = player.weapon.name;
+  }
+
+  _updatePlayerAttributes() {
+    view.level.text = player.level;
+    view.strength.text = player.strength;
+    view.constitution.text = player.constitution;
+    view.luck.text = player.luck;
+    view.damage.text = player.damage;
+    view.critDamage.text = player.critDamage;
+    view.critChance.text = player.critChance;
+  }
+
+  _updatePlayerXp() {
+    view.playerXp.text = "${player.getGainedXpByCurrentLvl()}";
+    view.playerLvlXp.text = "${player.getNeededXpByCurrentLvl()}";
+    view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
+  }
+
+  _updateFightScreen() {
+    view.playerFightHealth.text = player.currHealth;
+    view.playerFightMaxHealth.text = player.maxHealth;
+    view.playerFightHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
+
+    view.monsterFightHealth.text = monsters[0].maxHealth;
+    view.monsterFightMaxHealth.text = monsters[0].maxHealth;
+    view.monsterFightHealthBar.style
+        .setProperty("width", "${monsters[0].currHealthPercent}");
   }
 }

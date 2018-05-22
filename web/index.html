@@ -44,7 +44,8 @@
 
                 <div class="plain">
                     <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At
                     </p>
                 </div>
 
@@ -58,7 +59,8 @@
 
                 <div class="plain">
                     <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At
                     </p>
                 </div>
 
@@ -68,61 +70,92 @@
             </div>
         </div>
 
-        <!--<div id="game" class="invisible full-screen">
-            <div id="level">
-                <div id="overlay" class="full-screen invisible">
-                    <div id="health-container">
-                        <span id="health"></span>/ <span id="max-health"></span>
-                        <div id="player-health">
-                            <div id="health-bar-outer">
-                                <div id="health-bar-inner"></div>
+        <div id="game" class="invisible full-screen">
+            <div id="upper-bar">
+                <div id="health-container">
+                    <div id="player-health" class="progress-bar">
+                        <div id="health-bar-outer" class="progress-bar-outer">
+                            <div id="health-bar-inner" class="health-bar-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dungeon">
+                <div id="overlay">
+                    <div id="hero-screen" class="invisible">
+                        <div id="hero-top-bar" class="top-bar">Hero Screen</div>
+                        <div id="equipment">
+                            <h3>Equipment</h3>
+                            <ul>
+                                <li>Helmet: <span id="helmet"></span></li>
+                                <li>Gloves: <span id="gloves"></span></li>
+                                <li>Chest: <span id="chest"></span></li>
+                                <li>Legs: <span id="legs"></span></li>
+                                <li>Boots: <span id="boots"></span><br/><br/></li>
+                                <li>Weapon: <span id="weapon"></span></li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div id="stats">
+                            <h3>Attributes</h3>
+                            <ul>
+                                <li>Level: <span id="lvl"></span><br/><br/></li>
+                                <li>Strength: <span id="strength"></span></li>
+                                <li>Constitution: <span id="const"></span></li>
+                                <li>Luck: <span id="luck"></span><br/><br/></li>
+                                <li>Damage: <span id="damage"></span></li>
+                                <li>Critical Damage: <span id="cd"></span></li>
+                                <li>Critical Chance: <span id="cc"></span>%</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <h3>XP-Progress</h3>
+                        <div id="xp-container">
+                            <span id="xp"></span>/<span id="lvl-xp"></span>
+                            <div id="player-xp" class="progress-bar">
+                                <div id="xp-bar-outer" class="progress-bar-outer">
+                                    <div id="xp-bar-inner" class="xp-bar-inner"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="hero-screen" class="invisible">
-                        <div class="top-bar">Hero Screen</div>
-                    </div>
-                </div>
+                    <div id="fighting-screen" class="invisible">
+                        <div id="fight-top-bar" class="top-bar">Fighting-Screen</div>
+                        <div id="player-fight-health-container" class="top-left-bar">
+                            <span id="player-fight-health"></span>/<span id="player-fight-max-health"></span>
+                            <div id="player-health-bar" class="progress-bar">
+                                <div id="player-health-outer" class="progress-bar-outer">
+                                    <div id="player-fight-health-inner" class="health-bar-inner"></div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div id="tiles">
+                        <div id="monster-fight-health-container" class="top-right-bar">
+                            <span id="monster-fight-health"></span>/<span id="monster-fight-max-health"></span>
+                            <div id="monster-health-bar" class="progress-bar">
+                                <div id="monster-health-outer" class="progress-bar-outer">
+                                    <div id="monster-fight-health-inner" class="health-bar-inner"></div>
+                                </div>
+                            </div>
+                        </div>
 
-                </div>
-            </div>
-
-            <div id="right-bar">
-                <input type="submit" id="hero-screen-button" class="bar-button" value="H">
-                <div>
-                    <div id="potions-menu" class="invisible">
-                        <div id="potion-s" class="potion-button">S</div>
-                        <div id="potion-m" class="potion-button">M</div>
-                        <div id="potion-l" class="potion-button">L</div>
-                    </div>
-
-                    <input type="submit" id="potions-button" class="bar-button" value="P">
-                </div>
-            </div>
-        </div>-->
-        <div id="game" class="full-screen invisible">
-            <div id="upper-bar">
-                <div id="health-container">
-                    <div id="player-health">
-                        <div id="health-bar-outer">
-                            <div id="health-bar-inner"></div>
+                        <img src="img/monsters/uglyGuardian.png" class="picture player"/>
+                        <img src="img/monsters/bat.png" class="picture monster"/>
+                        <div id="fighting-options">
+                            <input type="button" id="attack" value="Attack" class="bar-button">
+                            <input type="button" id="use-potion" value="Use Potion" class="bar-button">
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="level">
                 <div id="tiles"></div>
-                <div id="hero-screen" class="invisible">
-                    <div class="top-bar">Hero Screen</div>
-                </div>
             </div>
 
             <div id="side-bar">
                 <input type="submit" id="hero-screen-button" class="bar-button" value="H">
+                <input type="submit" id="fighting-screen-button" class="bar-button" value="F">
             </div>
         </div>
     </body>

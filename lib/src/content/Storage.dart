@@ -98,7 +98,7 @@ _buildPotions() async {
 
 _buildMonsters() async {
   _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
-    JSON.decode(response).asMap()[0].forEach((m) {
+    JSON.decode(response).forEach((m) {
       monsters[m['id']] = createMonster(m);
     });
   });

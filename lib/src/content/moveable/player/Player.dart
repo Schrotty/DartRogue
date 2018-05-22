@@ -65,7 +65,7 @@ class Player extends Moveable {
     _currHealth = maxHealth;
     _lvl = 1;
     _baseXp = data['baseXp'];
-    _gainedXp = 0;
+    _gainedXp = 35;
     _neededXp = data['baseXp'];
   }
 
@@ -78,7 +78,7 @@ class Player extends Moveable {
     return damage;
   }
 
-  // monsters must give xp less than two full lvl!
+  // TODO monsters must give xp less than two full lvl!
   gainXP(int xp) {
     this._gainedXp += xp;
     if (_gainedXp >= _neededXp) {
@@ -205,6 +205,13 @@ class Player extends Moveable {
   get critDamage {
     return (critMulti * damage).round();
   }
+
+  get currXpPercent => (this.getGainedXpByCurrentLvl() / this.getNeededXpByCurrentLvl()) * 100;
+
+  // TODO mods missing?
+  get strength => _strength;
+
+  get constitution => _constitution;
 
   get gainedXp => _gainedXp;
 
