@@ -104,7 +104,14 @@ class Player extends Moveable {
 
   void usePotion(int type) {
     if (pots[type] >= 1) {
-      _currHealth += (maxHealth * (potions[type].value / 100)).round().floor();
+      var potionHealth =
+          (maxHealth * (potions[type].value / 100)).round().floor();
+
+      if ((currHealth + potionHealth) > maxHealth) {
+        currHealth = maxHealth;
+      } else {
+        currHealth += potionHealth;
+      }
       pots[type]--;
     }
   }
@@ -207,7 +214,8 @@ class Player extends Moveable {
     return (critMulti * damage).round();
   }
 
-  get currXpPercent => (this.getGainedXpByCurrentLvl() / this.getNeededXpByCurrentLvl()) * 100;
+  get currXpPercent =>
+      (this.getGainedXpByCurrentLvl() / this.getNeededXpByCurrentLvl()) * 100;
 
   // TODO mods missing?
   get strength => _strength;

@@ -59,6 +59,15 @@ class RogueController {
       _moveCamera(64);
     });
 
+    view.attackButton.onClick.listen((e) {
+      monsters[0].takeDamage(player.calcDamage());
+      player.takeDamage(monsters[0].calcDamage());
+    });
+
+    view.usePotionButton.onClick.listen((e) {
+      player.usePotion(0);
+    });
+
     view.heroScreenButton.onClick.listen((e) {
       _toggleOverlay(view.heroScreen);
       //_toggleOverlay(view.tiles);
@@ -83,14 +92,6 @@ class RogueController {
 
     view.potionLargeButton.onClick.listen((e) {
       player.usePotion(2);
-    });
-
-    view.attackButton.onClick.listen((e) {
-      player.takeDamage(10);
-    });
-
-    view.usePotionButton.onClick.listen((e) {
-      player.usePotion(0);
     });
   }
 
@@ -123,7 +124,8 @@ class RogueController {
 
   _updatePlayerHealth() {
     view.playerHealth.text = "${player.currHealth}/${player.maxHealth}";
-    view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+    view.playerHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
   }
 
   _moveCamera(int value) {
@@ -161,14 +163,14 @@ class RogueController {
   }
 
   _updateFightScreen() {
+    view.monsterFightHealth.text = monsters[0].currHealth;
+    view.monsterFightMaxHealth.text = monsters[0].maxHealth;
+    view.monsterFightHealthBar.style
+        .setProperty("width", "${monsters[0].currHealthPercent}%");
+
     view.playerFightHealth.text = player.currHealth;
     view.playerFightMaxHealth.text = player.maxHealth;
     view.playerFightHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
-
-    view.monsterFightHealth.text = monsters[0].maxHealth;
-    view.monsterFightMaxHealth.text = monsters[0].maxHealth;
-    view.monsterFightHealthBar.style
-        .setProperty("width", "${monsters[0].currHealthPercent}");
   }
 }

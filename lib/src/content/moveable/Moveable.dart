@@ -8,7 +8,12 @@ abstract class Moveable {
   int _speed;
 
   takeDamage(int damage) {
-    this._currHealth -= damage;
+    if ((_currHealth - damage) <= 0) {
+      _currHealth = 0;
+    } else {
+      _currHealth -= damage;
+    }
+
     if (_currHealth <= 0) {
       _die();
     }

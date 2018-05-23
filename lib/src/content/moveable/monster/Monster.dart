@@ -9,7 +9,7 @@ class Monster extends Moveable {
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
     this.level = data['lvl'];
-    double scale = pow(Settings.monsterScaling, this._lvl);
+    double scale = pow(Settings.monsterScaling, this._lvl - 1);
 
     this.name = data['name'];
     this.currHealth = (data['hp'] * scale).ceil();

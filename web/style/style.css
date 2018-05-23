@@ -187,7 +187,7 @@ h3 {
     width: 75vw;
     left: 50px;
     top: 50px;
-    padding: 10px;
+    padding: 2%;
     z-index: 50;
     max-width: 100%;
     max-height: 100%;
@@ -210,8 +210,8 @@ h3 {
 }
 
 #fighting-options {
-    width: 100%;
-    height: 35%;
+    width: 95%;
+    height: 30%;
     border-top: 1px solid black;
     background: lightblue;
     z-index: 60;
@@ -290,9 +290,9 @@ h3 {
 
 .progress-bar {
     font-size: small;
-    padding: 2px;
-    width: 250px;
-    height: 16px;
+    padding: 1px;
+    width: 20vw;
+    height: 3vh;
     text-align: center;
     color: white;
     z-index: 25;
@@ -322,12 +322,12 @@ h3 {
     height: auto;
     margin: 0;
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 
 .monster {
-    right: 20%;
+    left: 80%;
 }
 
 .player {
