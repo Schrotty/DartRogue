@@ -106,6 +106,16 @@ class RogueView {
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
 
+  /* ########## INVENTORY START ########### */
+  final Element inventorySelectedName = querySelector("#hero-screen-item-name");
+  final Element inventoryHelmet = querySelector("#hero-screen-head");
+  final Element inventoryChest = querySelector("#hero-screen-chest");
+  final Element inventoryGloves = querySelector("#hero-screen-gloves");
+  final Element inventoryLegs = querySelector("#hero-screen-legs");
+  final Element inventoryBoots = querySelector("#hero-screen-boots");
+  final Element inventoryWeapon = querySelector("#hero-screen-weapon");
+  final Element inventorySecond = querySelector("#hero-screen-second");
+
   /* ########## DEBUG START ########### */
   final Element debugButton = querySelector("#debug-screen-button");
   final Element debugScreen = querySelector("#debug-screen");

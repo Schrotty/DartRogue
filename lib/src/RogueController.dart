@@ -79,7 +79,35 @@ class RogueController {
       _toggleOverlay(view.fightingScreen);
     });
 
-    view.potionsMenuButton.onClick.listen((e) {
+    view.inventoryHelmet.onClick.listen((e) {
+      _updateInventoryItemStats(player.helmet);
+    });
+
+    view.inventoryChest.onClick.listen((e) {
+      _updateInventoryItemStats(player.chest);
+    });
+
+    view.inventoryGloves.onClick.listen((e) {
+      _updateInventoryItemStats(player.gloves);
+    });
+
+    view.inventoryWeapon.onClick.listen((e) {
+      _updateInventoryItemStats(player.weapon);
+    });
+
+    view.inventoryLegs.onClick.listen((e) {
+      _updateInventoryItemStats(player.legs);
+    });
+
+    view.inventoryBoots.onClick.listen((e) {
+      _updateInventoryItemStats(player.boots);
+    });
+
+    view.inventorySecond.onClick.listen((e) {
+      //_updateInventoryItemStats(player.helmet);
+    });
+
+    /*view.potionsMenuButton.onClick.listen((e) {
       _toggleOverlay(view.potionsMenu);
     });
 
@@ -93,7 +121,7 @@ class RogueController {
 
     view.potionLargeButton.onClick.listen((e) {
       player.usePotion(2);
-    });
+    });*/
   }
 
   _registerDebugEvents() {
@@ -167,11 +195,6 @@ class RogueController {
   }
 
   _updatePlayerXp() {
-    view.playerXp.text = "${player.getGainedXpByCurrentLvl()}";
-    view.playerLvlXp.text = "${player.getNeededXpByCurrentLvl()}";
-    view.playerXpBar.style.setProperty("width", "${player.currXpPercent}%");
-
-    /* Dungeon Map */
     view.playerEp.text = "${player.gainedXp}/${player.neededXp}";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
     view.playerLevel.text = player.level;
@@ -187,5 +210,9 @@ class RogueController {
     view.playerFightMaxHealth.text = player.maxHealth;
     view.playerFightHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
+  }
+
+  _updateInventoryItemStats(Item item) {
+    view.inventorySelectedName.text = item.name;
   }
 }

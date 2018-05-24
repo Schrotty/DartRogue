@@ -189,7 +189,7 @@ h3 {
     background: black;
 }
 
-/* ########## HERO/ FIGHT-SCREEN ########## */
+/* ########## DEBUG-SCREEN ########## */
 #debug-screen {
     display: grid;
     grid-template-rows: 32px auto;
@@ -197,14 +197,13 @@ h3 {
     grid-column-gap: 5px;
     grid-template-areas:
             "debug-title debug-title";
+
     background-color: plum;
-    position: absolute;
-    height: 75vh;
+    position: fixed;
+    right: 76px;
+    height: 100%;
     width: auto;
-    left: 50px;
-    top: 50px;
     padding: 5px;
-    z-index: 50;
     grid-area: play-field;
     overflow: scroll;
 }
@@ -214,19 +213,124 @@ h3 {
     text-align: center;
 }
 
+/* ########## HERO-SCREEN ########## */
+#hero-screen {
+    display: grid;
+    grid-template-rows: 32px auto auto;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "hero-title hero-title"
+            "item-stats hero"
+            "stats stats";
+
+    font-size: 16px;
+    background-color: plum;
+    position: absolute;
+    right: 76px;
+    height: calc(100vh - 74px);
+    max-height: 100%;
+    width: auto;
+    padding: 5px;
+    grid-area: play-field;
+    overflow: scroll;
+}
+
+#hero-screen-title {
+    grid-area: hero-title;
+    text-align: center;
+}
+
+#hero-screen-item-stats {
+    grid-area: stats;
+    display: grid;
+    grid-template-rows: 32px;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+            "title title"
+            "key value";
+}
+
+#hero-screen-item-name {
+    grid-area: title;
+}
+
+#hero-screen-hero {
+    grid-area: hero;
+    display: grid;
+    text-align: center;
+    grid-template-rows: repeat(5, 64px);
+    grid-template-columns: repeat(3, 64px);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "emptys head empty"
+            "gloves chest-top emptya"
+            "weapon-top chest-bottom second-top"
+            "weapon-bottom legs second-bottom"
+            "emptyh boots emptyz"
+}
+
+#hero-screen-item-stats {
+    grid-area: item-stats;
+}
+
+#hero-screen-head {
+    grid-area: head;
+}
+
+#hero-screen-chest {
+    grid-area: 2 / chest-top / chest-bottom;
+}
+
+#hero-screen-gloves {
+    grid-area: gloves;
+}
+
+#hero-screen-legs {
+    grid-area: legs;
+}
+
+#hero-screen-boots {
+    grid-area: boots;
+}
+
+#hero-screen-weapon {
+    grid-area: 3 / weapon-top / weapon-bottom;
+}
+
+#hero-screen-second {
+    grid-area: 3 / second-top / second-bottom;
+}
+
+.item-frame {
+    background: url(../img/items/frame.png);
+}
+
+.item-frame-large {
+    background: url(../img/items/frame-large.png);
+}
+
+.inv-item:hover .inv-item-tooltip {
+    visibility: hidden;
+}
+
+.inv-item-tooltip {
+    position: absolute;
+    background: white;
+    visibility: hidden;
+}
+
 /* ########## HERO/ FIGHT-SCREEN ########## */
-#hero-screen, #fighting-screen {
+#fighting-screen {
     border: 1px solid black;
     background: plum;
     position: absolute;
-    height: 75vh;
-    width: 75vw;
-    left: 50px;
-    top: 50px;
-    padding: 2%;
-    z-index: 50;
+    right: 76px;
+    height: 100vh;
+    padding: 5px;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100vh;
     grid-area: play-field;
     overflow: scroll;
 }

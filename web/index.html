@@ -91,20 +91,42 @@
             <div id="dungeon">
                 <div id="overlay">
                     <div id="hero-screen" class="invisible">
-                        <div id="hero-top-bar" class="top-bar">Hero Screen</div>
-                        <div id="equipment">
-                            <h3>Equipment</h3>
-                            <ul>
-                                <li>Helmet: <span id="helmet"></span></li>
-                                <li>Gloves: <span id="gloves"></span></li>
-                                <li>Chest: <span id="chest"></span></li>
-                                <li>Legs: <span id="legs"></span></li>
-                                <li>Boots: <span id="boots"></span><br/><br/></li>
-                                <li>Weapon: <span id="weapon"></span></li>
-                            </ul>
+                        <div id="hero-screen-title">=== HERO ===</div>
+                        <div id="hero-screen-item-stats">
+                            <div id="hero-screen-item-name"></div>
                         </div>
-                        <br>
-                        <div id="stats">
+
+                        <div id="hero-screen-hero">
+                            <div id="hero-screen-head" class="item-frame inv-item">
+                                <div id="helmet" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-chest" class="item-frame-large inv-item">
+                                <div id="chest" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-gloves" class="item-frame inv-item">
+                                <div id="gloves" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-legs" class="item-frame inv-item">
+                                <div id="legs" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-boots" class="item-frame inv-item">
+                                <div id="boots" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-weapon" class="item-frame-large inv-item">
+                                <div id="weapon" class="inv-item-tooltip"></div>
+                            </div>
+
+                            <div id="hero-screen-second" class="item-frame-large inv-item">
+                                <div id="second" class="inv-item-tooltip"></div>
+                            </div>
+                        </div>
+
+                        <div id="hero-screen-stats">
                             <h3>Attributes</h3>
                             <ul>
                                 <li>Level: <span id="lvl"></span><br/><br/></li>
@@ -115,16 +137,6 @@
                                 <li>Critical Damage: <span id="cd"></span></li>
                                 <li>Critical Chance: <span id="cc"></span>%</li>
                             </ul>
-                        </div>
-                        <br>
-                        <h3>XP-Progress</h3>
-                        <div id="xp-container">
-                            <span id="xp"></span>/<span id="lvl-xp"></span>
-                            <div id="player-xp" class="progress-bar">
-                                <div id="xp-bar-outer" class="progress-bar-outer">
-                                    <div id="xp-bar-inner" class="xp-bar-inner"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
