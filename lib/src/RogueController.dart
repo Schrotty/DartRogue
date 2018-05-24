@@ -107,6 +107,10 @@ class RogueController {
       //_updateInventoryItemStats(player.helmet);
     });
 
+    view.inventorySelectedItem.onClick.listen((e) {
+      _switchMenu(null, view.inventorySelectedItem);
+    });
+
     /*view.potionsMenuButton.onClick.listen((e) {
       _toggleOverlay(view.potionsMenu);
     });
@@ -136,14 +140,22 @@ class RogueController {
     view.debugTakeDMGButton.onClick.listen((e) {
       player.takeDamage(15);
     });
+
+    view.debugEquipLegendaryButton.onClick.listen((e) {
+      player.weapon = weapons['axes'][0][4];
+    });
   }
 
   _switchMenu(Element toShow, Element toHide) {
-    toShow.classes.add("visible");
-    toShow.classes.remove("invisible");
+    if (toShow != null) {
+      toShow.classes.add("visible");
+      toShow.classes.remove("invisible");
+    }
 
-    toHide.classes.add("invisible");
-    toHide.classes.remove("visible");
+    if (toHide != null) {
+      toHide.classes.add("invisible");
+      toHide.classes.remove("visible");
+    }
   }
 
   _toggleOverlay(Element overlay) {
@@ -161,8 +173,9 @@ class RogueController {
     _updatePlayerXp();
     _updatePlayerAttributes();
     _updatePlayerHealth();
-    _updatePlayerEquipment();
+    //_updatePlayerEquipment();
     _updateFightScreen();
+    //_updateDebugScreen();
   }
 
   _updatePlayerHealth() {
@@ -213,6 +226,13 @@ class RogueController {
   }
 
   _updateInventoryItemStats(Item item) {
-    view.inventorySelectedName.text = item.name;
+    view.inventorySelectedItemName.text = item.name;
+    view.inventorySelectedItemQuality.text = "== ${item.quality} ==";
+
+    _switchMenu(view.inventorySelectedItem, null);
+  }
+
+  _updateDebugScreen() {
+    view.debugWeapons.text = weapons.toString();
   }
 }

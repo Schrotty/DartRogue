@@ -92,42 +92,22 @@
                 <div id="overlay">
                     <div id="hero-screen" class="invisible">
                         <div id="hero-screen-title">=== HERO ===</div>
-                        <div id="hero-screen-item-stats">
-                            <div id="hero-screen-item-name"></div>
-                        </div>
-
                         <div id="hero-screen-hero">
-                            <div id="hero-screen-head" class="item-frame inv-item">
-                                <div id="helmet" class="inv-item-tooltip"></div>
+                            <div id="hero-screen-selected-item" class="invisible">
+                                <div id="hero-screen-selected-item-quality"></div>
+                                <div id="hero-screen-selected-item-name"></div>
                             </div>
 
-                            <div id="hero-screen-chest" class="item-frame-large inv-item">
-                                <div id="chest" class="inv-item-tooltip"></div>
-                            </div>
-
-                            <div id="hero-screen-gloves" class="item-frame inv-item">
-                                <div id="gloves" class="inv-item-tooltip"></div>
-                            </div>
-
-                            <div id="hero-screen-legs" class="item-frame inv-item">
-                                <div id="legs" class="inv-item-tooltip"></div>
-                            </div>
-
-                            <div id="hero-screen-boots" class="item-frame inv-item">
-                                <div id="boots" class="inv-item-tooltip"></div>
-                            </div>
-
-                            <div id="hero-screen-weapon" class="item-frame-large inv-item">
-                                <div id="weapon" class="inv-item-tooltip"></div>
-                            </div>
-
-                            <div id="hero-screen-second" class="item-frame-large inv-item">
-                                <div id="second" class="inv-item-tooltip"></div>
-                            </div>
+                            <div id="hero-screen-head" class="item-frame inv-item"></div>
+                            <div id="hero-screen-chest" class="item-frame-large inv-item"></div>
+                            <div id="hero-screen-gloves" class="item-frame inv-item"></div>
+                            <div id="hero-screen-legs" class="item-frame inv-item"></div>
+                            <div id="hero-screen-boots" class="item-frame inv-item"></div>
+                            <div id="hero-screen-weapon" class="item-frame-large inv-item"></div>
+                            <div id="hero-screen-second" class="item-frame-large inv-item"></div>
                         </div>
 
                         <div id="hero-screen-stats">
-                            <h3>Attributes</h3>
                             <ul>
                                 <li>Level: <span id="lvl"></span><br/><br/></li>
                                 <li>Strength: <span id="strength"></span></li>
@@ -173,6 +153,8 @@
                         <div id="debug-screen-title">=== DEBUG ===</div>
                         <input type="submit" id="debug-add-exp" class="bar-button" value="Add EXP">
                         <input type="submit" id="debug-take-dmg" class="bar-button" value="Take Damage">
+                        <input type="submit" id="debug-equip-legendary" class="bar-button" value="Equip Legendary Weapon">
+                        <div id="debug-weapons"></div>
                     </div>
                 </div>
 

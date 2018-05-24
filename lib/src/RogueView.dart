@@ -107,7 +107,10 @@ class RogueView {
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
 
   /* ########## INVENTORY START ########### */
-  final Element inventorySelectedName = querySelector("#hero-screen-item-name");
+  final Element inventorySelectedItem = querySelector("#hero-screen-selected-item");
+  final Element inventorySelectedItemName = querySelector("#hero-screen-selected-item-name");
+  final Element inventorySelectedItemQuality = querySelector("#hero-screen-selected-item-quality");
+
   final Element inventoryHelmet = querySelector("#hero-screen-head");
   final Element inventoryChest = querySelector("#hero-screen-chest");
   final Element inventoryGloves = querySelector("#hero-screen-gloves");
@@ -119,8 +122,10 @@ class RogueView {
   /* ########## DEBUG START ########### */
   final Element debugButton = querySelector("#debug-screen-button");
   final Element debugScreen = querySelector("#debug-screen");
+  final Element debugWeapons = querySelector("#debug-weapons");
 
   final Element debugAddEXPButton = querySelector("#debug-add-exp");
   final Element debugTakeDMGButton = querySelector("#debug-take-dmg");
+  final Element debugEquipLegendaryButton = querySelector("#debug-equip-legendary");
 }
 

@@ -192,7 +192,7 @@ h3 {
 /* ########## DEBUG-SCREEN ########## */
 #debug-screen {
     display: grid;
-    grid-template-rows: 32px auto;
+    grid-template-rows: repeat(4, 32px);
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 5px;
     grid-template-areas:
@@ -218,13 +218,13 @@ h3 {
     display: grid;
     grid-template-rows: 32px auto auto;
     grid-template-columns: repeat(2, auto);
-    grid-column-gap: 5px;
+    grid-column-gap: 10px;
     grid-template-areas:
             "hero-title hero-title"
             "item-stats hero"
             "stats stats";
 
-    font-size: 16px;
+    font-size: 12px;
     background-color: plum;
     position: absolute;
     right: 76px;
@@ -243,16 +243,36 @@ h3 {
 
 #hero-screen-item-stats {
     grid-area: stats;
+    font-size: 12px;
     display: grid;
-    grid-template-rows: 32px;
-    grid-template-columns: auto auto;
-    grid-template-areas:
-            "title title"
-            "key value";
+    grid-template-rows: repeat(6, 32px);
+    grid-template-columns: auto;
+    grid-row-gap: 5px;
 }
 
-#hero-screen-item-name {
-    grid-area: title;
+#hero-screen-selected-item {
+    padding: 5px;
+    display: grid;
+    color: whitesmoke;
+    text-align: center;
+    grid-template-columns: 202px;
+    grid-template-rows: repeat(2, 16px);
+    grid-template-areas:
+            "item-quality"
+            "item-name";
+
+    opacity: 0.75;
+    background: black;
+    grid-area: 1 / gloves / boots / 4;
+    z-index: 10;
+}
+
+#hero-screen-selected-item-quality {
+    grid-area: item-quality;
+}
+
+#hero-screen-selected-item-name {
+    grid-area: item-name;
 }
 
 #hero-screen-hero {
@@ -390,7 +410,6 @@ h3 {
 
 .bar-button {
     width: 100%;
-    height: 15%;
     background-color: azure;
 }
 
