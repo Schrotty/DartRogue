@@ -3,8 +3,8 @@
     "id": 0,
     "lvl": 1,
     "name": "Spinne",
-    "hp": 10,
-    "attack": 1,
+    "hp": 20,
+    "attack": 3,
     "speed": 10,
     "grantedXP": 10
   },

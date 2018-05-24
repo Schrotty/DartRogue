@@ -66,15 +66,16 @@ h3 {
             "upper-bar upper-bar"
             "play-field side-bar";
 
-    grid-template-columns: 90% 10%;
+    grid-template-columns: auto 76px;
     grid-template-rows: auto auto;
     padding: 0;
 }
 
 #upper-bar {
-    background: greenyellow;
     grid-area: upper-bar;
     padding: 5px;
+    height: 54px;
+    background-image: url(../img/main/topBarBack.png);
 }
 
 #dungeon {
@@ -84,9 +85,19 @@ h3 {
 }
 
 #side-bar {
-    background: plum;
     grid-area: side-bar;
+    display: grid;
     padding: 5px;
+    text-align: center;
+    background-image: url(../img/main/sideBarBack.png);
+    grid-template-rows: repeat(3, 64px);
+    grid-row-gap: 5px;
+}
+
+#side-bar input {
+    width: 64px;
+    height: 64px;
+    background-image: url(../img/icon/side-bar-frame.png);
 }
 
 #tiles {
@@ -102,7 +113,7 @@ h3 {
 /* ########## PLAYER HEALTH ########## */
 #health-container {
     display: grid;
-    color: black;
+    color: whitesmoke;
     grid-template-columns: 100px 50px 100px;
     grid-template-rows: 15px 17px 20px;
     grid-template-areas:
@@ -147,7 +158,7 @@ h3 {
 }
 
 #health-container #ep-bar-inner {
-    background-color: lightblue;
+    background-color: cornflowerblue;
 }
 
 #health-container #health-bar-outer {
@@ -178,19 +189,168 @@ h3 {
     background: black;
 }
 
+/* ########## DEBUG-SCREEN ########## */
+#debug-screen {
+    display: grid;
+    grid-template-rows: repeat(4, 32px);
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "debug-title debug-title";
+
+    background-color: plum;
+    position: fixed;
+    right: 76px;
+    height: 100%;
+    width: auto;
+    padding: 5px;
+    grid-area: play-field;
+    overflow: scroll;
+}
+
+#debug-screen-title {
+    grid-area: debug-title;
+    text-align: center;
+}
+
+/* ########## HERO-SCREEN ########## */
+#hero-screen {
+    display: grid;
+    grid-template-rows: 32px auto auto;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 10px;
+    grid-template-areas:
+            "hero-title hero-title"
+            "item-stats hero"
+            "stats stats";
+
+    font-size: 12px;
+    background-color: plum;
+    position: absolute;
+    right: 76px;
+    height: calc(100vh - 74px);
+    max-height: 100%;
+    width: auto;
+    padding: 5px;
+    grid-area: play-field;
+    overflow: scroll;
+}
+
+#hero-screen-title {
+    grid-area: hero-title;
+    text-align: center;
+}
+
+#hero-screen-item-stats {
+    grid-area: stats;
+    font-size: 12px;
+    display: grid;
+    grid-template-rows: repeat(6, 32px);
+    grid-template-columns: auto;
+    grid-row-gap: 5px;
+}
+
+#hero-screen-selected-item {
+    padding: 5px;
+    display: grid;
+    color: whitesmoke;
+    text-align: center;
+    grid-template-columns: 202px;
+    grid-template-rows: repeat(2, 16px);
+    grid-template-areas:
+            "item-quality"
+            "item-name";
+
+    opacity: 0.75;
+    background: black;
+    grid-area: 1 / gloves / boots / 4;
+    z-index: 10;
+}
+
+#hero-screen-selected-item-quality {
+    grid-area: item-quality;
+}
+
+#hero-screen-selected-item-name {
+    grid-area: item-name;
+}
+
+#hero-screen-hero {
+    grid-area: hero;
+    display: grid;
+    text-align: center;
+    grid-template-rows: repeat(5, 64px);
+    grid-template-columns: repeat(3, 64px);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "emptys head empty"
+            "gloves chest-top emptya"
+            "weapon-top chest-bottom second-top"
+            "weapon-bottom legs second-bottom"
+            "emptyh boots emptyz"
+}
+
+#hero-screen-item-stats {
+    grid-area: item-stats;
+}
+
+#hero-screen-head {
+    grid-area: head;
+}
+
+#hero-screen-chest {
+    grid-area: 2 / chest-top / chest-bottom;
+}
+
+#hero-screen-gloves {
+    grid-area: gloves;
+}
+
+#hero-screen-legs {
+    grid-area: legs;
+}
+
+#hero-screen-boots {
+    grid-area: boots;
+}
+
+#hero-screen-weapon {
+    grid-area: 3 / weapon-top / weapon-bottom;
+}
+
+#hero-screen-second {
+    grid-area: 3 / second-top / second-bottom;
+}
+
+.item-frame {
+    background: url(../img/items/frame.png);
+}
+
+.item-frame-large {
+    background: url(../img/items/frame-large.png);
+}
+
+.inv-item:hover .inv-item-tooltip {
+    visibility: hidden;
+}
+
+.inv-item-tooltip {
+    position: absolute;
+    background: white;
+    visibility: hidden;
+}
+
 /* ########## HERO/ FIGHT-SCREEN ########## */
-#hero-screen, #fighting-screen {
+#fighting-screen {
     border: 1px solid black;
     background: plum;
     position: absolute;
-    height: 75vh;
-    width: 75vw;
-    left: 50px;
-    top: 50px;
-    padding: 10px;
-    z-index: 50;
+    right: 76px;
+    height: 100vh;
+    padding: 5px;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100vh;
     grid-area: play-field;
     overflow: scroll;
 }
@@ -210,8 +370,8 @@ h3 {
 }
 
 #fighting-options {
-    width: 100%;
-    height: 35%;
+    width: 95%;
+    height: 30%;
     border-top: 1px solid black;
     background: lightblue;
     z-index: 60;
@@ -250,9 +410,7 @@ h3 {
 
 .bar-button {
     width: 100%;
-    height: 15%;
     background-color: azure;
-    border: 1px solid black;
 }
 
 .potion-button {
@@ -290,9 +448,9 @@ h3 {
 
 .progress-bar {
     font-size: small;
-    padding: 2px;
-    width: 250px;
-    height: 16px;
+    padding: 1px;
+    width: 20vw;
+    height: 3vh;
     text-align: center;
     color: white;
     z-index: 25;
@@ -322,12 +480,12 @@ h3 {
     height: auto;
     margin: 0;
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 
 .monster {
-    right: 20%;
+    left: 80%;
 }
 
 .player {
