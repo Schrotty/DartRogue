@@ -150,10 +150,17 @@
 
                         <img src="img/monsters/uglyGuardian.png" class="picture player"/>
                         <img src="img/monsters/bat.png" class="picture monster"/>
+
                         <div id="fighting-options">
                             <input type="button" id="attack" value="Attack" class="bar-button">
                             <input type="button" id="use-potion" value="Use Potion" class="bar-button">
                         </div>
+                    </div>
+
+                    <div id="debug-screen" class="invisible">
+                        <div id="debug-screen-title">=== DEBUG ===</div>
+                        <input type="submit" id="debug-add-exp" class="bar-button" value="Add EXP">
+                        <input type="submit" id="debug-take-dmg" class="bar-button" value="Take Damage">
                     </div>
                 </div>
 
@@ -163,6 +170,7 @@
             <div id="side-bar">
                 <input type="submit" id="hero-screen-button" class="bar-button" value="H">
                 <input type="submit" id="fighting-screen-button" class="bar-button" value="F">
+                <input type="submit" id="debug-screen-button" class="bar-button" value="D">
             </div>
         </div>
     </body>

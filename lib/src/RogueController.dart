@@ -6,6 +6,7 @@ class RogueController {
   RogueController() {
     _init();
 
+    _registerDebugEvents();
     _registerMenuEvents();
     _registerGameEvents();
   }
@@ -92,6 +93,20 @@ class RogueController {
 
     view.potionLargeButton.onClick.listen((e) {
       player.usePotion(2);
+    });
+  }
+
+  _registerDebugEvents() {
+    view.debugButton.onClick.listen((e) {
+      _toggleOverlay(view.debugScreen);
+    });
+
+    view.debugAddEXPButton.onClick.listen((e) {
+      player.gainXP(50);
+    });
+
+    view.debugTakeDMGButton.onClick.listen((e) {
+      player.takeDamage(15);
     });
   }
 

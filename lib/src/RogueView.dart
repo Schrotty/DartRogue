@@ -105,5 +105,12 @@ class RogueView {
   final ButtonInputElement potionSmallButton = querySelector("#potion-s");
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
+
+  /* ########## DEBUG START ########### */
+  final Element debugButton = querySelector("#debug-screen-button");
+  final Element debugScreen = querySelector("#debug-screen");
+
+  final Element debugAddEXPButton = querySelector("#debug-add-exp");
+  final Element debugTakeDMGButton = querySelector("#debug-take-dmg");
 }
 
