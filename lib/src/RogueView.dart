@@ -19,12 +19,31 @@ class RogueView {
 
   /* EQUIPMENT */
   final Element equipment = querySelector("#equipment");
+
   final Element helmet = querySelector("#helmet");
+  final Element helmetQuality = querySelector("#helmet-quality");
+  final Element helmetValue = querySelector("#helmet-value");
+
   final Element gloves = querySelector("#gloves");
+  final Element glovesQuality = querySelector("#gloves-quality");
+  final Element glovesValue = querySelector("#gloves-value");
+
   final Element chest = querySelector("#chest");
+  final Element chestQuality = querySelector("#chest-quality");
+  final Element chestValue = querySelector("#chest-value");
+
   final Element legs = querySelector("#legs");
+  final Element legsQuality = querySelector("#legs-quality");
+  final Element legsValue = querySelector("#legs-value");
+
   final Element boots = querySelector("#boots");
+  final Element bootsQuality = querySelector("#boots-quality");
+  final Element bootsValue = querySelector("#boots-value");
+
   final Element weapon = querySelector("#weapon");
+  final Element weaponQuality = querySelector("#weapon-quality");
+  final Element weaponValue = querySelector("#weapon-value");
+  final Element weaponMods = querySelector("#weapon-mods");
 
   /* ATTRIBUTES */
   final Element level = querySelector("#lvl");
@@ -110,6 +129,8 @@ class RogueView {
   final Element inventorySelectedItem = querySelector("#hero-screen-selected-item");
   final Element inventorySelectedItemName = querySelector("#hero-screen-selected-item-name");
   final Element inventorySelectedItemQuality = querySelector("#hero-screen-selected-item-quality");
+  final Element inventorySelectedItemValue = querySelector("#hero-screen-selected-item-value");
+  final Element inventorySelectedItemMods = querySelector("#hero-screen-selected-item-mods");
 
   final Element inventoryHelmet = querySelector("#hero-screen-head");
   final Element inventoryChest = querySelector("#hero-screen-chest");

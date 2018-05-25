@@ -92,10 +92,14 @@
                 <div id="overlay">
                     <div id="hero-screen" class="invisible">
                         <div id="hero-screen-title">=== HERO ===</div>
-                        <div id="hero-screen-hero">
+                        <!--<div id="hero-screen-hero">
                             <div id="hero-screen-selected-item" class="invisible">
-                                <div id="hero-screen-selected-item-quality"></div>
                                 <div id="hero-screen-selected-item-name"></div>
+                                <div id="hero-screen-selected-item-quality"></div>
+                                <div id="hero-screen-selected-item-value"></div>
+
+                                <div id="hero-screen-selected-item-mods-title">=== Modifiers ===</div>
+                                <div id="hero-screen-selected-item-mods"></div>
                             </div>
 
                             <div id="hero-screen-head" class="item-frame inv-item"></div>
@@ -105,9 +109,10 @@
                             <div id="hero-screen-boots" class="item-frame inv-item"></div>
                             <div id="hero-screen-weapon" class="item-frame-large inv-item"></div>
                             <div id="hero-screen-second" class="item-frame-large inv-item"></div>
-                        </div>
+                        </div>-->
 
                         <div id="hero-screen-stats">
+                            <h4>=== STATS ===</h4>
                             <ul>
                                 <li>Level: <span id="lvl"></span><br/><br/></li>
                                 <li>Strength: <span id="strength"></span></li>
@@ -116,6 +121,76 @@
                                 <li>Damage: <span id="damage"></span></li>
                                 <li>Critical Damage: <span id="cd"></span></li>
                                 <li>Critical Chance: <span id="cc"></span>%</li>
+                            </ul>
+                        </div>
+
+                        <div id="hero-equipment">
+                            <h4>=== INVENTORY ===</h4>
+                            <ul>
+                                <li>
+                                    <div class="equip">Weapon: </div>
+                                    <span id="weapon"></span> <span id="weapon-quality"></span>
+
+                                    <div>
+                                        <span>Damage: </span>
+                                        <span id="weapon-value"></span>
+                                    </div>
+
+                                    <div>
+                                        <span>Modifier: </span>
+                                        <span id="weapon-mods"></span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="equip">Helmet: </div>
+                                    <span id="helmet"></span> <span id="helmet-quality"></span>
+
+                                    <div>
+                                        <span>Armor: </span>
+                                        <span id="helmet-value"></span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="equip">Chest: </div>
+                                    <span id="chest"></span> <span id="chest-quality"></span>
+
+                                    <div>
+                                        <span>Armor: </span>
+                                        <span id="chest-value"></span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="equip">Gloves: </div>
+                                    <span id="gloves"></span> <span id="gloves-quality"></span>
+
+                                    <div>
+                                        <span>Armor: </span>
+                                        <span id="gloves-value"></span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="equip">Legs: </div>
+                                    <span id="legs"></span> <span id="legs-quality"></span>
+
+                                    <div>
+                                        <span>Armor: </span>
+                                        <span id="legs-value"></span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="equip">Boots: </div>
+                                    <span id="boots"></span> <span id="boots-quality"></span>
+
+                                    <div>
+                                        <span>Armor: </span>
+                                        <span id="boots-value"></span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>

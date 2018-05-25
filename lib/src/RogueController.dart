@@ -91,15 +91,13 @@ class RogueController {
 
     view.heroScreenButton.onClick.listen((e) {
       _toggleOverlay(view.heroScreen);
-      //_toggleOverlay(view.tiles);
     });
 
     view.fightingScreenButton.onClick.listen((e) {
-      //_toggleOverlay(view.healthContainer);
       _toggleOverlay(view.fightingScreen);
     });
 
-    view.inventoryHelmet.onClick.listen((e) {
+    /*view.inventoryHelmet.onClick.listen((e) {
       _updateInventoryItemStats(player.helmet);
     });
 
@@ -129,7 +127,7 @@ class RogueController {
 
     view.inventorySelectedItem.onClick.listen((e) {
       _switchMenu(null, view.inventorySelectedItem);
-    });
+    });*/
 
     /*view.potionsMenuButton.onClick.listen((e) {
       _toggleOverlay(view.potionsMenu);
@@ -193,7 +191,7 @@ class RogueController {
     _updatePlayerXp();
     _updatePlayerAttributes();
     _updatePlayerHealth();
-    //_updatePlayerEquipment();
+    _updatePlayerEquipment();
     _updateFightScreen();
     //_updateDebugScreen();
   }
@@ -209,12 +207,36 @@ class RogueController {
   }
 
   _updatePlayerEquipment() {
+    //reset mods
+    view.weaponMods.text = "";
+
     view.helmet.text = player.helmet.name;
+    view.helmetQuality.text = "(${player.helmet.quality})";
+    view.helmetValue.text = player.helmet.value.toString();
+
     view.gloves.text = player.gloves.name;
+    view.glovesQuality.text = "(${player.gloves.quality})";
+    view.glovesValue.text = player.gloves.value.toString();
+
     view.chest.text = player.chest.name;
+    view.chestQuality.text = "(${player.chest.quality})";
+    view.chestValue.text = player.chest.value.toString();
+
     view.legs.text = player.legs.name;
+    view.legsQuality.text = "(${player.legs.quality})";
+    view.legsValue.text = player.legs.value.toString();
+
     view.boots.text = player.boots.name;
+    view.bootsQuality.text = "(${player.boots.quality})";
+    view.bootsValue.text = player.boots.value.toString();
+
     view.weapon.text = player.weapon.name;
+    view.weaponQuality.text = "(${player.weapon.quality})";
+    view.weaponValue.text = player.weapon.value.toString();
+
+    player.weapon.modifier.forEach((key, value) {
+      view.weaponMods.text += "$key ($value) ";
+    });
   }
 
   _updatePlayerAttributes() {
@@ -247,7 +269,12 @@ class RogueController {
 
   _updateInventoryItemStats(Item item) {
     view.inventorySelectedItemName.text = item.name;
-    view.inventorySelectedItemQuality.text = "== ${item.quality} ==";
+    view.inventorySelectedItemQuality.text = "Quality: ${item.quality}";
+    view.inventorySelectedItemValue.text = "Value: ${item.value}";
+
+    item.modifier.forEach((key, value) {
+      view.inventorySelectedItemMods.text += "$key: $value";
+    });
 
     _switchMenu(view.inventorySelectedItem, null);
   }
