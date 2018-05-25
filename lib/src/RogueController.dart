@@ -18,6 +18,37 @@ class RogueController {
 
       const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
+
+      levels[0].fields.forEach((row) {
+        row.forEach((tile) {
+          querySelector("#tiles").append(new Element.div()..classes.add("tile")..id = "tile-${tile.id}");
+        });
+      });
+
+      querySelectorAll(".tile").onClick.listen((MouseEvent e) {
+        Field old = null;
+        DivElement clicked = e.target;
+
+        if (Level.clicked != null) {
+          old = Level.clicked;
+          querySelector("#tile-${Level.clicked.id}").classes.remove("clicked");
+        }
+
+        Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
+        clicked.classes.add("clicked");
+
+        if (old != null) {
+          if (old.id < Level.clicked.id) {
+            view.dungeon.scrollLeft += 32;
+          }
+
+          if (old.id > Level.clicked.id) {
+            view.dungeon.scrollLeft -= 32;
+          }
+        }
+
+        //_moveCamera(64);
+      });
     });
 
     view.highscoreButton.onClick.listen((e) {
@@ -49,17 +80,6 @@ class RogueController {
   }
 
   _registerGameEvents() {
-    for (int i = 0; i < 1024; i++) {
-      querySelector("#tiles").append(new Element.div()..classes.add("tile"));
-    }
-
-    querySelectorAll(".tile").onClick.listen((MouseEvent e) {
-      DivElement d = e.target;
-      d.classes.add("clicked");
-
-      _moveCamera(64);
-    });
-
     view.attackButton.onClick.listen((e) {
       monsters[0].takeDamage(player.calcDamage());
       player.takeDamage(monsters[0].calcDamage());
@@ -163,8 +183,8 @@ class RogueController {
     overlay.classes.toggle("visible");
   }
 
-  _init() {
-    buildStorage();
+  _init() async {
+    await buildStorage();
   }
 
   _update() {

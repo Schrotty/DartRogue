@@ -6,14 +6,16 @@ Map<String, Map<int, List<Item>>> weapons = new Map();
 Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Item> potions = new Map();
 Map<int, Monster> monsters = new Map();
+List<Level> levels;
 
-buildStorage() {
+buildStorage() async {
   _initMaps().then((b) {
     _build();
   });
 }
 
 _build() async {
+  await _buildLevel();
   await _buildWeapons();
   await _buildArmors();
   await _buildPotions();
@@ -35,6 +37,8 @@ Future<bool> _initMaps() async {
   armors['gloves'] = new Map<int, List<Item>>();
   armors['legs'] = new Map<int, List<Item>>();
   armors['boots'] = new Map<int, List<Item>>();
+
+  levels = new List<Level>();
 
   return true;
 }
@@ -102,6 +106,10 @@ _buildMonsters() async {
       monsters[m['id']] = createMonster(m);
     });
   });
+}
+
+_buildLevel() async {
+  levels.add(new Level.build());
 }
 
 Future<String> _requestData(String url) async {
