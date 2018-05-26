@@ -38,17 +38,22 @@ h3 {
 }
 
 #wrapper {
-    max-width: 1920px;
-    max-height: 1080px;
+    min-width: 568px;
+    min-height: 320px;
+    max-width: 823px;
+    max-height: 411px;
     margin: 0 auto;
 }
 
 #home {
     display: grid;
-    height: 100%;
-    grid-template-columns: auto;
     text-align: center;
     color: white;
+    height: 100%;
+}
+
+#home div {
+    margin: auto;
 }
 
 #home ul input {
@@ -67,20 +72,19 @@ h3 {
 /* ########## GRID DEFINITION ########## */
 #game {
     display: grid;
-    height: 100vh;
+    height: 100%;
     grid-template-areas:
             "upper-bar upper-bar"
             "play-field side-bar";
 
-    grid-template-columns: auto 76px;
-    grid-template-rows: auto auto;
+    grid-template-columns: auto 64px;
+    grid-template-rows: 64px auto;
     padding: 0;
 }
 
 #upper-bar {
     grid-area: upper-bar;
-    padding: 5px;
-    height: 54px;
+    justify-items: center;
     background-image: url(../img/main/topBarBack.png);
 }
 
@@ -93,11 +97,8 @@ h3 {
 #side-bar {
     grid-area: side-bar;
     display: grid;
-    padding: 5px;
-    text-align: center;
     background-image: url(../img/main/sideBarBack.png);
     grid-template-rows: repeat(3, 64px);
-    grid-row-gap: 5px;
 }
 
 #side-bar input {
@@ -119,6 +120,9 @@ h3 {
 /* ########## PLAYER HEALTH ########## */
 #health-container {
     display: grid;
+    align-content: center;
+    padding-left: 5px;
+    height: 64px;
     color: whitesmoke;
     grid-template-columns: 100px 50px 100px;
     grid-template-rows: 15px 17px 20px;
@@ -195,6 +199,16 @@ h3 {
     background: black;
 }
 
+/* ########## OVERLAYS ########## */
+#debug-screen,
+#hero-screen,
+#fighting-screen {
+    right: 64px;
+    height: 100%;
+    grid-area: play-field;
+    overflow: scroll;
+}
+
 /* ########## DEBUG-SCREEN ########## */
 #debug-screen {
     display: grid;
@@ -206,12 +220,9 @@ h3 {
 
     background-color: plum;
     position: fixed;
-    right: 76px;
-    height: 100%;
     width: auto;
     padding: 5px;
-    grid-area: play-field;
-    overflow: scroll;
+
 }
 
 #debug-screen-title {
@@ -233,7 +244,6 @@ h3 {
     font-size: 12px;
     background-color: plum;
     position: absolute;
-    right: 76px;
     height: calc(100vh - 74px);
     max-height: 100%;
     width: auto;
@@ -390,16 +400,12 @@ h3 {
 
 /* ########## HERO/ FIGHT-SCREEN ########## */
 #fighting-screen {
-    border: 1px solid black;
     background: plum;
     position: absolute;
-    right: 76px;
-    height: 100vh;
+    height: calc(100vh - 74px);
     padding: 5px;
     max-width: 100%;
     max-height: 100vh;
-    grid-area: play-field;
-    overflow: scroll;
 }
 
 #potions-menu {
