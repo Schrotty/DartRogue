@@ -37,6 +37,12 @@ h3 {
     content: url(../img/main/title.png);
 }
 
+#wrapper {
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+}
+
 #home {
     display: grid;
     height: 100%;
@@ -217,12 +223,12 @@ h3 {
 #hero-screen {
     display: grid;
     grid-template-rows: 32px auto auto;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(1, auto);
     grid-column-gap: 10px;
     grid-template-areas:
-            "hero-title hero-title"
-            "item-stats hero"
-            "stats stats";
+            "hero-title"
+            "stats"
+            "items";
 
     font-size: 12px;
     background-color: plum;
@@ -243,7 +249,7 @@ h3 {
 
 #hero-screen-item-stats {
     grid-area: stats;
-    font-size: 12px;
+    font-size: 11px;
     display: grid;
     grid-template-rows: repeat(6, 32px);
     grid-template-columns: auto;
@@ -251,28 +257,51 @@ h3 {
 }
 
 #hero-screen-selected-item {
-    padding: 5px;
     display: grid;
+    font-size: 8px;
     color: whitesmoke;
-    text-align: center;
-    grid-template-columns: 202px;
-    grid-template-rows: repeat(2, 16px);
+    text-align: left;
+    vertical-align: middle;
+    grid-template-columns: repeat(1, 202px);
+    grid-template-rows: repeat(5, 32px);
     grid-template-areas:
-            "item-quality"
-            "item-name";
+            "item-name"
+            "item-quality";
+            "item-value";
 
-    opacity: 0.75;
+    opacity: 1;
     background: black;
     grid-area: 1 / gloves / boots / 4;
     z-index: 10;
 }
 
+#hero-screen-selected-item-value,
+#hero-screen-selected-item-mods,
+#hero-screen-selected-item-mods-title {
+    height: 16px;
+    line-height: 16px;
+    padding: 0 15px 0 15px;
+}
+
+#hero-screen-selected-item-mods-title {
+    text-align: center;
+}
+
 #hero-screen-selected-item-quality {
     grid-area: item-quality;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 15px 0 15px;
 }
 
 #hero-screen-selected-item-name {
     grid-area: item-name;
+    background: grey;
+    margin: auto;
+    width: calc(100% - 15px);
+    height: 32px;
+    line-height: 32px;
+    padding: 0 0 0 15px;
 }
 
 #hero-screen-hero {
@@ -339,6 +368,24 @@ h3 {
     position: absolute;
     background: white;
     visibility: hidden;
+}
+
+#hero-equipment {
+    grid-area: items;
+}
+
+#hero-equipment li {
+    margin-bottom: 10px;
+}
+
+#hero-equipment li div:first-child {
+    text-decoration: underline;
+    height: 16px;
+    line-height: 16px;
+}
+
+#hero-equipment li span {
+    line-height: 16px;
 }
 
 /* ########## HERO/ FIGHT-SCREEN ########## */
