@@ -80,6 +80,7 @@ class RogueView {
       querySelector("#monster-fight-max-health");
   final Element monsterFightHealthBar =
       querySelector("#monster-fight-health-inner");
+  final ImageElement monsterIcon = querySelector("#monster-icon");
 
   /* OPTIONS */
   final ButtonInputElement attackButton = querySelector("#attack");
@@ -116,8 +117,10 @@ class RogueView {
       querySelector("#back-about-button");
 
   /* GAME BUTTONS */
-  final ButtonInputElement heroScreenButton = querySelector("#hero-screen-button");
-  final ButtonInputElement fightingScreenButton = querySelector("#fighting-screen-button");
+  final ButtonInputElement heroScreenButton =
+      querySelector("#hero-screen-button");
+  final ButtonInputElement fightingScreenButton =
+      querySelector("#fighting-screen-button");
   final ButtonInputElement potionsMenuButton = querySelector("#potions-button");
 
   /* POTIONS BUTTONS */
@@ -126,11 +129,16 @@ class RogueView {
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
 
   /* ########## INVENTORY START ########### */
-  final Element inventorySelectedItem = querySelector("#hero-screen-selected-item");
-  final Element inventorySelectedItemName = querySelector("#hero-screen-selected-item-name");
-  final Element inventorySelectedItemQuality = querySelector("#hero-screen-selected-item-quality");
-  final Element inventorySelectedItemValue = querySelector("#hero-screen-selected-item-value");
-  final Element inventorySelectedItemMods = querySelector("#hero-screen-selected-item-mods");
+  final Element inventorySelectedItem =
+      querySelector("#hero-screen-selected-item");
+  final Element inventorySelectedItemName =
+      querySelector("#hero-screen-selected-item-name");
+  final Element inventorySelectedItemQuality =
+      querySelector("#hero-screen-selected-item-quality");
+  final Element inventorySelectedItemValue =
+      querySelector("#hero-screen-selected-item-value");
+  final Element inventorySelectedItemMods =
+      querySelector("#hero-screen-selected-item-mods");
 
   final Element inventoryHelmet = querySelector("#hero-screen-head");
   final Element inventoryChest = querySelector("#hero-screen-chest");
@@ -147,6 +155,6 @@ class RogueView {
 
   final Element debugAddEXPButton = querySelector("#debug-add-exp");
   final Element debugTakeDMGButton = querySelector("#debug-take-dmg");
-  final Element debugEquipLegendaryButton = querySelector("#debug-equip-legendary");
+  final Element debugEquipLegendaryButton =
+      querySelector("#debug-equip-legendary");
 }
-

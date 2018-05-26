@@ -4,7 +4,6 @@ class Monster extends Moveable {
   int _attackPoints;
   int _grantedXP;
   List loot;
-  String icon;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -22,6 +21,11 @@ class Monster extends Moveable {
 
   int calcDamage() {
     return _attackPoints;
+  }
+
+  _die() {
+    print("${this.name} died!");
+    this.alive = false;
   }
 
   get attackPoints => this._attackPoints;

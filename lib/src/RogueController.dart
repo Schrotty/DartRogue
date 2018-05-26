@@ -21,7 +21,9 @@ class RogueController {
 
       levels[0].fields.forEach((row) {
         row.forEach((tile) {
-          querySelector("#tiles").append(new Element.div()..classes.add("tile")..id = "tile-${tile.id}");
+          querySelector("#tiles").append(new Element.div()
+            ..classes.add("tile")
+            ..id = "tile-${tile.id}");
         });
       });
 
@@ -81,8 +83,8 @@ class RogueController {
 
   _registerGameEvents() {
     view.attackButton.onClick.listen((e) {
-      monsters[0].takeDamage(player.calcDamage());
-      player.takeDamage(monsters[0].calcDamage());
+      attacker.takeDamage(player.calcDamage());
+      player.takeDamage(attacker.calcDamage());
     });
 
     view.usePotionButton.onClick.listen((e) {
@@ -94,7 +96,18 @@ class RogueController {
     });
 
     view.fightingScreenButton.onClick.listen((e) {
-      _toggleOverlay(view.fightingScreen);
+      if (monsters.isNotEmpty) {
+        var _rnd = new Random();
+        do {
+          attackerId = _rnd.nextInt(monsterCount_DEBUG);
+        } while (!monsters.containsKey(attackerId));
+        attacker = monsters[attackerId];
+        view.monsterIcon.src = "img/monsters/${attacker.name}.png";
+        _toggleOverlay(view.fightingScreen);
+      } else {
+        if (!view.fightingScreen.classes.contains("invisible"))
+          view.fightingScreen.classes.add("invisible");
+      }
     });
 
     /*view.inventoryHelmet.onClick.listen((e) {
@@ -256,15 +269,22 @@ class RogueController {
   }
 
   _updateFightScreen() {
-    view.monsterFightHealth.text = monsters[0].currHealth;
-    view.monsterFightMaxHealth.text = monsters[0].maxHealth;
+    view.monsterFightHealth.text = attacker.currHealth;
+    view.monsterFightMaxHealth.text = attacker.maxHealth;
     view.monsterFightHealthBar.style
-        .setProperty("width", "${monsters[0].currHealthPercent}%");
+        .setProperty("width", "${attacker.currHealthPercent}%");
 
     view.playerFightHealth.text = player.currHealth;
     view.playerFightMaxHealth.text = player.maxHealth;
     view.playerFightHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
+
+    if (!attacker.alive) {
+      if (monsters.containsKey(attackerId)) {
+        monsters.remove(attackerId);
+        print(monsters.length);
+      }
+    }
   }
 
   _updateInventoryItemStats(Item item) {

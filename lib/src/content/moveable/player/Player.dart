@@ -78,6 +78,10 @@ class Player extends Moveable {
     return damage;
   }
 
+  _die() {
+    print("$name died!");
+  }
+
   // TODO monsters must give xp less than two full lvl!
   gainXP(int xp) {
     this._gainedXp += xp;

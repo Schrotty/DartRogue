@@ -6,6 +6,7 @@ abstract class Moveable {
   int _maxHealth;
   int _currHealth;
   int _speed;
+  bool alive = true;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -21,9 +22,7 @@ abstract class Moveable {
 
   int calcDamage();
 
-  _die() {
-    print("$name died!");
-  }
+  _die();
 
   move(int x, int y) {
     print("Not implemented yet!");
