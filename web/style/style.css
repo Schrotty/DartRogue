@@ -49,6 +49,7 @@ h3 {
     display: grid;
     text-align: center;
     color: white;
+    height: 100%;
 }
 
 #home div {

@@ -149,6 +149,18 @@ class Player extends Moveable {
   }
 
   /* === MODS === */
+  get strengthMod {
+    return _getMod('strength');
+  }
+
+  get constitutionMod {
+    return _getMod('const');
+  }
+
+  get luckMod {
+    return _getMod('luck');
+  }
+
   get healthMod {
     return _getMod('health');
   }
@@ -161,10 +173,6 @@ class Player extends Moveable {
     return _getMod('damage');
   }
 
-  get luckMod {
-    return _getMod('luck');
-  }
-
   get critMod {
     return _getMod('crit-chance');
   }
@@ -175,7 +183,7 @@ class Player extends Moveable {
 
   /* === ATTRIBUTES === */
   get maxHealth {
-    return healthMod + (_maxHealth + (_constitution * Settings.getConstMod()));
+    return healthMod + (_maxHealth + ((_constitution + constitutionMod) * Settings.getConstMod()));
   }
 
   get currHealth {
@@ -199,11 +207,7 @@ class Player extends Moveable {
   }
 
   get damage {
-    return damageMod + (weapon.value + (_strength * Settings.getStrengthMod()));
-  }
-
-  get luck {
-    return luckMod + (_luck * Settings.getLuckMod());
+    return damageMod + (weapon.value + ((_strength + strengthMod) * Settings.getStrengthMod()));
   }
 
   get critChance {
@@ -221,10 +225,11 @@ class Player extends Moveable {
   get currXpPercent =>
       (this.getGainedXpByCurrentLvl() / this.getNeededXpByCurrentLvl()) * 100;
 
-  // TODO mods missing?
-  get strength => _strength;
+  get luck => _luck + luckMod;
 
-  get constitution => _constitution;
+  get strength => _strength + strengthMod;
+
+  get constitution => _constitution + constitutionMod;
 
   get gainedXp => _gainedXp;
 
