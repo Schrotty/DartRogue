@@ -83,12 +83,82 @@ class RogueController {
 
   _registerGameEvents() {
     view.attackButton.onClick.listen((e) {
-      attacker.takeDamage(player.calcDamage());
-      player.takeDamage(attacker.calcDamage());
+      view.skillZeroButton.value = skills[0].name;
+      view.skillOneButton.value =
+          "${skills[1].name} ${skills[1].useableCount}/${skills[1]
+          .useableCountMax}";
+      view.skillTwoButton.value =
+          "${skills[2].name} ${skills[2].useableCount}/${skills[2]
+          .useableCountMax}";
+      view.skillThreeButton.value =
+          "${skills[3].name} ${skills[3].useableCount}/${skills[3]
+          .useableCountMax}";
+      _switchMenu(view.skills, view.fightingOptions);
+    });
+
+    view.skillZeroButton.onClick.listen((e) {
+      if (player.isAlive)
+        attacker.takeDamage(player.calcDamage(skills[0].skillMod));
+      if (attacker.isAlive) {
+        player.takeDamage(attacker.calcDamage());
+      }
+      _updateEndScreen();
+    });
+
+    view.skillOneButton.onClick.listen((e) {
+      if (skills[1].isUseable) {
+        if (player.isAlive) {
+          attacker.takeDamage(player.calcDamage(skills[1].skillMod));
+          skills[1].use();
+        }
+        if (attacker.isAlive) {
+          player.takeDamage(attacker.calcDamage());
+        }
+        _updateEndScreen();
+      }
+    });
+
+    view.skillTwoButton.onClick.listen((e) {
+      if (skills[2].isUseable) {
+        if (player.isAlive) {
+          attacker.takeDamage(player.calcDamage(skills[2].skillMod));
+          skills[2].use();
+        }
+        if (attacker.isAlive) {
+          player.takeDamage(attacker.calcDamage());
+        }
+        _updateEndScreen();
+      }
+    });
+
+    view.skillThreeButton.onClick.listen((e) {
+      if (skills[3].isUseable) {
+        if (player.isAlive) {
+          attacker.takeDamage(player.calcDamage(skills[3].skillMod));
+          skills[3].use();
+        }
+        if (attacker.isAlive) {
+          player.takeDamage(attacker.calcDamage());
+        }
+        _updateEndScreen();
+      }
+    });
+
+    view.backAttackButton.onClick.listen((e) {
+      _switchMenu(view.fightingOptions, view.skills);
     });
 
     view.usePotionButton.onClick.listen((e) {
       player.usePotion(0);
+    });
+
+    view.leaveFightButton.onClick.listen((e) {
+      _toggleOverlay(view.fightingScreen);
+    });
+
+    view.leaveFightEndButton.onClick.listen((e) {
+      _switchMenu(view.fightingOptions, view.fightEnd);
+      _toggleOverlay(view.fightingScreen);
     });
 
     view.heroScreenButton.onClick.listen((e) {
@@ -96,17 +166,19 @@ class RogueController {
     });
 
     view.fightingScreenButton.onClick.listen((e) {
-      if (monsters.isNotEmpty) {
-        var _rnd = new Random();
-        do {
-          attackerId = _rnd.nextInt(monsterCount_DEBUG);
-        } while (!monsters.containsKey(attackerId));
-        attacker = monsters[attackerId];
-        view.monsterIcon.src = "img/monsters/${attacker.name}.png";
-        _toggleOverlay(view.fightingScreen);
-      } else {
-        if (!view.fightingScreen.classes.contains("invisible"))
-          view.fightingScreen.classes.add("invisible");
+      if (player.isAlive) {
+        if (monsters.isNotEmpty) {
+          var _rnd = new Random();
+          do {
+            attackerId = _rnd.nextInt(monsterCount_DEBUG);
+          } while (!monsters.containsKey(attackerId));
+          attacker = monsters[attackerId];
+          view.monsterIcon.src = "img/monsters/${attacker.name}.png";
+          _toggleOverlay(view.fightingScreen);
+        } else {
+          if (!view.fightingScreen.classes.contains("invisible"))
+            view.fightingScreen.classes.add("invisible");
+        }
       }
     });
 
@@ -157,6 +229,19 @@ class RogueController {
     view.potionLargeButton.onClick.listen((e) {
       player.usePotion(2);
     });*/
+  }
+
+  _updateEndScreen() {
+    _switchMenu(view.fightingOptions, view.skills);
+
+    if (!attacker.isAlive || !player.isAlive) {
+      view.fightEndMessage.text = !attacker.isAlive
+          ? "You killed ${attacker.name}, you gained ${attacker
+          .grantedXP} XP!"
+          : "YOU DIED!";
+
+      _switchMenu(view.fightEnd, view.fightingOptions);
+    }
   }
 
   _registerDebugEvents() {
@@ -279,9 +364,10 @@ class RogueController {
     view.playerFightHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
 
-    if (!attacker.alive) {
+    if (!attacker.isAlive) {
       if (monsters.containsKey(attackerId)) {
         monsters.remove(attackerId);
+        player.gainXP(attacker.grantedXP);
         print(monsters.length);
       }
     }

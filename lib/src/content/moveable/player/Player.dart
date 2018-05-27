@@ -69,16 +69,17 @@ class Player extends Moveable {
     _neededXp = data['baseXp'];
   }
 
-  int calcDamage() {
+  int calcDamage([int skillMod]) {
     var rand = new Random().nextInt(101);
     if (rand <= critChance) {
-      return critDamage;
+      return (skillMod * critDamage).round();
     }
 
-    return damage;
+    return (skillMod * damage).round();
   }
 
   _die() {
+    this._alive = false;
     print("$name died!");
   }
 

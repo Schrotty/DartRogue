@@ -25,7 +25,7 @@ class Monster extends Moveable {
 
   _die() {
     print("${this.name} died!");
-    this.alive = false;
+    this._alive = false;
   }
 
   get attackPoints => this._attackPoints;

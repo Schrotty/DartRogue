@@ -83,8 +83,23 @@ class RogueView {
   final ImageElement monsterIcon = querySelector("#monster-icon");
 
   /* OPTIONS */
+  final Element fightingOptions = querySelector("#fighting-options");
   final ButtonInputElement attackButton = querySelector("#attack");
   final ButtonInputElement usePotionButton = querySelector("#use-potion");
+  final ButtonInputElement leaveFightButton = querySelector("#leave-fight");
+
+  /* SKILLS */
+  final Element skills = querySelector("#skills");
+  final ButtonInputElement skillZeroButton = querySelector("#s0");
+  final ButtonInputElement skillOneButton = querySelector("#s1");
+  final ButtonInputElement skillTwoButton = querySelector("#s2");
+  final ButtonInputElement skillThreeButton = querySelector("#s3");
+  final ButtonInputElement backAttackButton = querySelector("#backAttack");
+
+  /* FIGHT END */
+  final Element fightEnd =querySelector("#fight-end");
+  final Element fightEndMessage = querySelector("#fight-end-message");
+  final Element leaveFightEndButton = querySelector("#leave-fight-end");
 
   /* ########## FIGHTING SCREEN END ########### */
 

@@ -7,6 +7,7 @@ int monsterCount_DEBUG = 8;
 
 Map<String, Map<int, List<Item>>> weapons = new Map();
 Map<String, Map<int, List<Item>>> armors = new Map();
+Map<int, Skill> skills = new Map();
 Map<int, Item> potions = new Map();
 Map<int, Monster> monsters = new Map();
 List<Level> levels;
@@ -21,6 +22,7 @@ _build() async {
   await _buildLevel();
   await _buildWeapons();
   await _buildArmors();
+  await _buildSkills();
   await _buildPotions();
   await _buildMonsters();
   await _buildPlayer();
@@ -62,18 +64,21 @@ _buildArmors() async {
 }
 
 _buildPlayer() async {
-  await _requestData(Settings.getDataPath() + 'player/player.json').then((response) {
+  await _requestData(Settings.getDataPath() + 'player/player.json')
+      .then((response) {
     player = new Player.fromMap(JSON.decode(response).asMap()[0]);
   });
 }
 
 _buildWeaponType(String type) async {
-  await _requestData(Settings.getDataPath() + 'item/weapons/$type.json').then((response) {
+  await _requestData(Settings.getDataPath() + 'item/weapons/$type.json')
+      .then((response) {
     Map w = JSON.decode(response).asMap()[0];
 
     weapons[type][w['id']] = new List();
     if (w.containsKey('multi')) {
-      Qualities.forEach((q) => weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q))));
+      Qualities.forEach((q) =>
+          weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q))));
       return;
     }
 
@@ -82,12 +87,14 @@ _buildWeaponType(String type) async {
 }
 
 _buildArmorType(String type) async {
-  await _requestData(Settings.getDataPath() + 'item/armor/$type.json').then((response) {
+  await _requestData(Settings.getDataPath() + 'item/armor/$type.json')
+      .then((response) {
     Map a = JSON.decode(response).asMap()[0];
 
     armors[type][a['id']] = new List();
     if (a.containsKey('multi')) {
-      Qualities.forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
+      Qualities.forEach((q) =>
+          armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
       return;
     }
 
@@ -95,8 +102,18 @@ _buildArmorType(String type) async {
   });
 }
 
+_buildSkills() async {
+  await _requestData(Settings.getDataPath() + 'skill/skills.json')
+      .then((response) {
+    JSON.decode(response).forEach((s) {
+      skills[s['id']] = createSkill(s);
+    });
+  });
+}
+
 _buildPotions() async {
-  await _requestData(Settings.getDataPath() + 'item/potions.json').then((response) {
+  await _requestData(Settings.getDataPath() + 'item/potions.json')
+      .then((response) {
     Map p = JSON.decode(response).asMap();
 
     p.forEach((id, pot) => potions[id] = createPotion(pot));
@@ -104,7 +121,8 @@ _buildPotions() async {
 }
 
 _buildMonsters() async {
-  _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
+  _requestData(Settings.getDataPath() + 'monster/monster.json')
+      .then((response) {
     JSON.decode(response).forEach((m) {
       monsters[m['id']] = createMonster(m);
     });

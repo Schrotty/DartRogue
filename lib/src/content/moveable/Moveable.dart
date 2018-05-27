@@ -6,7 +6,7 @@ abstract class Moveable {
   int _maxHealth;
   int _currHealth;
   int _speed;
-  bool alive = true;
+  bool _alive = true;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -49,4 +49,6 @@ abstract class Moveable {
   get speed => this._speed;
 
   set speed(int speed) => this._speed = speed;
+
+  get isAlive => _alive;
 }
