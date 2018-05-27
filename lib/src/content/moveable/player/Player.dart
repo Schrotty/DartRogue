@@ -105,6 +105,7 @@ class Player extends Moveable {
 
     this._maxHealth = (this._maxHealth * scale).ceil();
     this._currHealth = maxHealth; // restore to full health;
+    skills.forEach((k, v) => v._useableCount = v.useableCountMax); // every skill is restored to max usability
   }
 
   void usePotion(int type) {
