@@ -21,16 +21,14 @@ class RogueView {
   final Element equipment = querySelector("#equipment");
 
   final Element helmet = querySelector("#helmet");
-  final Element helmetQuality = querySelector("#helmet-quality");
-  final Element helmetValue = querySelector("#helmet-value");
+  final Element helmetSlot = querySelector("#helmet-slot");
 
   final Element gloves = querySelector("#gloves");
   final Element glovesQuality = querySelector("#gloves-quality");
   final Element glovesValue = querySelector("#gloves-value");
 
   final Element chest = querySelector("#chest");
-  final Element chestQuality = querySelector("#chest-quality");
-  final Element chestValue = querySelector("#chest-value");
+  final Element chestSlot = querySelector("#chest-slot");
 
   final Element legs = querySelector("#legs");
   final Element legsQuality = querySelector("#legs-quality");
@@ -41,9 +39,7 @@ class RogueView {
   final Element bootsValue = querySelector("#boots-value");
 
   final Element weapon = querySelector("#weapon");
-  final Element weaponQuality = querySelector("#weapon-quality");
-  final Element weaponValue = querySelector("#weapon-value");
-  final Element weaponMods = querySelector("#weapon-mods");
+  final Element weaponSlot = querySelector("#weapon-slot");
 
   /* ATTRIBUTES */
   final Element level = querySelector("#lvl");
@@ -142,26 +138,6 @@ class RogueView {
   final ButtonInputElement potionSmallButton = querySelector("#potion-s");
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
-
-  /* ########## INVENTORY START ########### */
-  final Element inventorySelectedItem =
-      querySelector("#hero-screen-selected-item");
-  final Element inventorySelectedItemName =
-      querySelector("#hero-screen-selected-item-name");
-  final Element inventorySelectedItemQuality =
-      querySelector("#hero-screen-selected-item-quality");
-  final Element inventorySelectedItemValue =
-      querySelector("#hero-screen-selected-item-value");
-  final Element inventorySelectedItemMods =
-      querySelector("#hero-screen-selected-item-mods");
-
-  final Element inventoryHelmet = querySelector("#hero-screen-head");
-  final Element inventoryChest = querySelector("#hero-screen-chest");
-  final Element inventoryGloves = querySelector("#hero-screen-gloves");
-  final Element inventoryLegs = querySelector("#hero-screen-legs");
-  final Element inventoryBoots = querySelector("#hero-screen-boots");
-  final Element inventoryWeapon = querySelector("#hero-screen-weapon");
-  final Element inventorySecond = querySelector("#hero-screen-second");
 
   /* ########## DEBUG START ########### */
   final Element debugButton = querySelector("#debug-screen-button");

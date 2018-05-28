@@ -16,6 +16,7 @@ class RogueController {
     view.startButton.onClick.listen((e) {
       _switchMenu(view.game, view.home);
 
+      /* GAME TIMER */
       const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
 
@@ -135,6 +136,7 @@ class RogueController {
     });
 
     view.heroScreenButton.onClick.listen((e) {
+      _updatePlayerEquipment();
       _toggleOverlay(view.heroScreen);
     });
 
@@ -154,38 +156,6 @@ class RogueController {
         }
       }
     });
-
-    /*view.inventoryHelmet.onClick.listen((e) {
-      _updateInventoryItemStats(player.helmet);
-    });
-
-    view.inventoryChest.onClick.listen((e) {
-      _updateInventoryItemStats(player.chest);
-    });
-
-    view.inventoryGloves.onClick.listen((e) {
-      _updateInventoryItemStats(player.gloves);
-    });
-
-    view.inventoryWeapon.onClick.listen((e) {
-      _updateInventoryItemStats(player.weapon);
-    });
-
-    view.inventoryLegs.onClick.listen((e) {
-      _updateInventoryItemStats(player.legs);
-    });
-
-    view.inventoryBoots.onClick.listen((e) {
-      _updateInventoryItemStats(player.boots);
-    });
-
-    view.inventorySecond.onClick.listen((e) {
-      //_updateInventoryItemStats(player.helmet);
-    });
-
-    view.inventorySelectedItem.onClick.listen((e) {
-      _switchMenu(null, view.inventorySelectedItem);
-    });*/
 
     /*view.potionsMenuButton.onClick.listen((e) {
       _toggleOverlay(view.potionsMenu);
@@ -274,14 +244,10 @@ class RogueController {
   }
 
   _update() {
-    //player.gainXP(100);
-
     _updatePlayerXp();
     _updatePlayerAttributes();
     _updatePlayerHealth();
-    _updatePlayerEquipment();
     _updateFightScreen();
-    //_updateDebugScreen();
   }
 
   _updatePlayerHealth() {
@@ -295,46 +261,34 @@ class RogueController {
   }
 
   _updatePlayerEquipment() {
-    //reset mods
-    view.weaponMods.text = "";
+    /* WEAPON */
+    _updateItemIcon(view.weapon, 'weapon', player.weapon.icon);
+    view.weaponSlot.classes.removeWhere((clss) => !clss.contains("item-slot"));
+    view.weaponSlot.classes.add(player.weapon.quality);
 
-    view.helmet.text = player.helmet.name;
-    view.helmetQuality.text = "(${player.helmet.quality})";
-    view.helmetValue.text = player.helmet.value.toString();
+    /* CHEST */
+    _updateItemIcon(view.chest, 'armor', player.chest.icon);
+    view.chestSlot.classes.removeWhere((clss) => !clss.contains("item-slot"));
+    view.chestSlot.classes.add(player.chest.quality);
 
-    view.gloves.text = player.gloves.name;
-    view.glovesQuality.text = "(${player.gloves.quality})";
-    view.glovesValue.text = player.gloves.value.toString();
+    /* HELMET */
+    _updateItemIcon(view.helmet, 'armor', player.helmet.icon);
+    view.helmetSlot.classes.removeWhere((clss) => !clss.contains("item-slot"));
+    view.helmetSlot.classes.add(player.helmet.quality);
+  }
 
-    view.chest.text = player.chest.name;
-    view.chestQuality.text = "(${player.chest.quality})";
-    view.chestValue.text = player.chest.value.toString();
-
-    view.legs.text = player.legs.name;
-    view.legsQuality.text = "(${player.legs.quality})";
-    view.legsValue.text = player.legs.value.toString();
-
-    view.boots.text = player.boots.name;
-    view.bootsQuality.text = "(${player.boots.quality})";
-    view.bootsValue.text = player.boots.value.toString();
-
-    view.weapon.text = player.weapon.name;
-    view.weaponQuality.text = "(${player.weapon.quality})";
-    view.weaponValue.text = player.weapon.value.toString();
-
-    player.weapon.modifier.forEach((key, value) {
-      view.weaponMods.text += "$key ($value) ";
-    });
+  _updateItemIcon(Element element, String itemType, String icon) {
+    element.style.backgroundImage = "url(${Settings.getImgPath()}items/$itemType/$icon)";
   }
 
   _updatePlayerAttributes() {
-    view.level.text = player.level;
+    /*view.level.text = player.level;
     view.strength.text = player.strength;
     view.constitution.text = player.constitution;
     view.luck.text = player.luck;
     view.damage.text = player.damage;
     view.critDamage.text = player.critDamage;
-    view.critChance.text = player.critChance;
+    view.critChance.text = player.critChance;*/
   }
 
   _updatePlayerXp() {
