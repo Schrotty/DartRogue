@@ -235,10 +235,12 @@ class RogueController {
     _switchMenu(view.fightingOptions, view.skills);
 
     if (!attacker.isAlive || !player.isAlive) {
-      view.fightEndMessage.text = !attacker.isAlive
+      String msg = !attacker.isAlive
           ? "You killed ${attacker.name}, you gained ${attacker
-          .grantedXP} XP!"
+          .grantedXP} XP!" + (attacker.grantedXP > player.leftXpUntilLvlUp? "\nYou reched level ${player.level + 1}!" : "")
           : "YOU DIED!";
+
+      view.fightEndMessage.text = msg;
 
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
@@ -348,7 +350,8 @@ class RogueController {
   }
 
   _updatePlayerXp() {
-    view.playerEp.text = "${player.gainedXp}/${player.neededXp}";
+    view.playerEp.text =
+        "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl}";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
     view.playerLevel.text = player.level;
   }

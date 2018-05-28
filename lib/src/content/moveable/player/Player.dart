@@ -122,11 +122,11 @@ class Player extends Moveable {
     }
   }
 
-  int getGainedXpByCurrentLvl() {
+  get gainedXpByCurrentLvl {
     return _lvl == 1 ? gainedXp : gainedXp - _currentLvlXp();
   }
 
-  int getNeededXpByCurrentLvl() {
+  get neededXpByCurrentLvl {
     return _lvl == 1 ? neededXp : neededXp - _currentLvlXp();
   }
 
@@ -135,7 +135,7 @@ class Player extends Moveable {
         (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
   }
 
-  int getLeftXpUntilLvlUp() {
+  get leftXpUntilLvlUp {
     return neededXp - gainedXp;
   }
 
@@ -225,7 +225,7 @@ class Player extends Moveable {
   }
 
   get currXpPercent =>
-      (this.getGainedXpByCurrentLvl() / this.getNeededXpByCurrentLvl()) * 100;
+      (this.gainedXpByCurrentLvl / this.neededXpByCurrentLvl) * 100;
 
   get luck => _luck + luckMod;
 
