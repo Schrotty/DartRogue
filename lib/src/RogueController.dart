@@ -106,42 +106,15 @@ class RogueController {
     });
 
     view.skillOneButton.onClick.listen((e) {
-      if (skills[1].isUseable) {
-        if (player.isAlive) {
-          attacker.takeDamage(player.calcDamage(skills[1].skillMod));
-          skills[1].use();
-        }
-        if (attacker.isAlive) {
-          player.takeDamage(attacker.calcDamage());
-        }
-        _updateEndScreen();
-      }
+      _fight(1);
     });
 
     view.skillTwoButton.onClick.listen((e) {
-      if (skills[2].isUseable) {
-        if (player.isAlive) {
-          attacker.takeDamage(player.calcDamage(skills[2].skillMod));
-          skills[2].use();
-        }
-        if (attacker.isAlive) {
-          player.takeDamage(attacker.calcDamage());
-        }
-        _updateEndScreen();
-      }
+      _fight(2);
     });
 
     view.skillThreeButton.onClick.listen((e) {
-      if (skills[3].isUseable) {
-        if (player.isAlive) {
-          attacker.takeDamage(player.calcDamage(skills[3].skillMod));
-          skills[3].use();
-        }
-        if (attacker.isAlive) {
-          player.takeDamage(attacker.calcDamage());
-        }
-        _updateEndScreen();
-      }
+      _fight(3);
     });
 
     view.backAttackButton.onClick.listen((e) {
@@ -237,12 +210,27 @@ class RogueController {
     if (!attacker.isAlive || !player.isAlive) {
       String msg = !attacker.isAlive
           ? "You killed ${attacker.name}, you gained ${attacker
-          .grantedXP} XP!" + (attacker.grantedXP > player.leftXpUntilLvlUp? "\nYou reched level ${player.level + 1}!" : "")
+          .grantedXP} XP!" +
+              (attacker.grantedXP > player.leftXpUntilLvlUp
+                  ? "\nYou reched level ${player.level + 1}!"
+                  : "")
           : "YOU DIED!";
 
       view.fightEndMessage.text = msg;
-
       _switchMenu(view.fightEnd, view.fightingOptions);
+    }
+  }
+
+  _fight(int skill) {
+    if (skills[skill].isUseable) {
+      if (player.isAlive) {
+        attacker.takeDamage(player.calcDamage(skills[skill].skillMod));
+        skills[skill].use();
+      }
+      if (attacker.isAlive) {
+        player.takeDamage(attacker.calcDamage());
+      }
+      _updateEndScreen();
     }
   }
 

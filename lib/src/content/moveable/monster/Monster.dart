@@ -3,7 +3,6 @@ part of rogue;
 class Monster extends Moveable {
   int _attackPoints;
   int _grantedXP;
-  List loot;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -16,7 +15,21 @@ class Monster extends Moveable {
     this.attackPoints = (data['attack'] * scale).ceil();
     this.speed = data['speed'];
     this.grantedXP = (data['grantedXP'] * scale).ceil();
-    this.loot = [];
+
+    if (data.containsKey('loot')) {
+      if (data['loot'].containsKey('helmet'))
+        _loot['helmet'] = data['loot']['helmet'];
+      if (data['loot'].containsKey('chest'))
+        _loot['chest'] = data['loot']['chest'];
+      if (data['loot'].containsKey('gloves'))
+        _loot['gloves'] = data['loot']['gloves'];
+      if (data['loot'].containsKey('legs'))
+        _loot['legs'] = data['loot']['legs'];
+      if (data['loot'].containsKey('boots'))
+        _loot['boots'] = data['loot']['boots'];
+      if (data['loot'].containsKey('weapon'))
+        _loot['weapon'] = data['weapon']['weapon'];
+    }
   }
 
   int calcDamage() {

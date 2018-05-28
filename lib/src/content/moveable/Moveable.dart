@@ -6,6 +6,7 @@ abstract class Moveable {
   int _maxHealth;
   int _currHealth;
   int _speed;
+  Map<String, int> _loot = new Map();
   bool _alive = true;
 
   takeDamage(int damage) {
@@ -45,6 +46,8 @@ abstract class Moveable {
   set currHealth(int health) => this._currHealth = health;
 
   get currHealthPercent => (this._currHealth / this.maxHealth) * 100;
+
+  get loot => _loot;
 
   get speed => this._speed;
 
