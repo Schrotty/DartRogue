@@ -200,11 +200,18 @@ h3 {
 }
 
 /* ########## OVERLAYS ########## */
+.overlay {
+    display: grid;
+    padding: 5px;
+    position: absolute;
+    width: calc(100% - 74px);
+    height: calc(100% - 74px);
+}
+
 #debug-screen,
 #hero-screen,
 #fighting-screen {
     right: 64px;
-    height: 100%;
     grid-area: play-field;
     overflow: scroll;
 }
@@ -219,10 +226,6 @@ h3 {
             "debug-title debug-title";
 
     background-color: plum;
-    position: fixed;
-    width: auto;
-    padding: 5px;
-
 }
 
 #debug-screen-title {
@@ -243,10 +246,8 @@ h3 {
 
     font-size: 12px;
     background-color: plum;
-    position: absolute;
     height: calc(100vh - 74px);
     max-height: 100%;
-    width: auto;
     padding: 5px;
     grid-area: play-field;
     overflow: scroll;
