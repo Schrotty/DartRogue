@@ -3,6 +3,7 @@ html {
     height: 100vh;
     width: 100vw;
     background: url(../img/main/background.png);
+    image-rendering: pixelated
 }
 
 body {
@@ -236,21 +237,190 @@ h3 {
 /* ########## HERO-SCREEN ########## */
 #hero-screen {
     display: grid;
-    grid-template-rows: 32px auto auto;
-    grid-template-columns: repeat(1, auto);
-    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    grid-template-rows: 48px 64px 64px 64px;
+    grid-template-columns: 32px 64px auto 64px 32px;
     grid-template-areas:
-            "hero-title"
-            "stats"
-            "items";
+            "top-bar top-bar top-bar top-bar top-bar"
+            "lte helmet-slot content-top weapon-slot rte"
+            "lme chest-slot content-middle gloves-slot rme"
+            "lbe boots-slot content-bottom legs-slot rbe";
 
     font-size: 12px;
-    background-color: plum;
-    height: calc(100vh - 74px);
+    background-color: lightgray;
+    height: calc(100vh - 64px);
+    width: calc(100% - 64px);
     max-height: 100%;
-    padding: 5px;
+    padding: 0;
     grid-area: play-field;
     overflow: scroll;
+}
+
+#hero-screen #top-bar {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+    grid-area: top-bar;
+    background: indianred;
+    color: whitesmoke;
+}
+
+#hero-screen #top-bar .item-active {
+    text-decoration: underline;
+}
+
+#hero-screen .item-slot {
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    vertical-align: center;
+    background-image: url("../img/items/item-frame.png");
+    background-size: 64px 64px;
+    image-rendering: pixelated
+}
+
+#hero-screen .item {
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated
+}
+
+#hero-screen #helmet-slot {
+    grid-area: helmet-slot;
+}
+
+#hero-screen #chest-slot {
+    grid-area: chest-slot;
+}
+
+#hero-screen #boots-slot {
+    grid-area: boots-slot;
+}
+
+#hero-screen #weapon-slot {
+    grid-area: weapon-slot;
+}
+
+#hero-screen #gloves-slot {
+    grid-area: gloves-slot;
+}
+
+#hero-screen #legs-slot {
+    grid-area: legs-slot;
+}
+
+#hero-screen #selected-item {
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-template-columns: 64px auto auto auto;
+    grid-template-rows: 16px 64px auto;
+    grid-row-gap: 5px;
+    grid-template-areas:
+            "item-name item-name item-name"
+            "item-icon item-details item-details"
+            "item-mods item-mods item-mods";
+
+    justify-content: center;
+}
+
+#selected-item #item-name {
+    grid-area: item-name;
+    text-align: center;
+    line-height: 16px;
+}
+
+#selected-item #item-icon {
+    grid-area: item-icon;
+    background-image: url(../img/items/armor/helmet.png);
+}
+
+#selected-item #item-mods {
+    grid-area: item-mods;
+    font-size: 8px;
+}
+
+#item-mods ul {
+    margin: 0;
+}
+
+#selected-item #item-details {
+    grid-area: item-details;
+    display: grid;
+    grid-template-areas:
+            "item-quality item-type"
+            "item-value item-value"
+            "item-key item-key";
+}
+
+#item-details #item-quality {
+    grid-area: item-quality;
+    font-size: 8px;
+}
+
+#item-details #item-type {
+    grid-area: item-type;
+    text-align: right;
+    color: grey;
+    font-size: 8px;
+}
+
+#item-details #item-value {
+    grid-area: item-value;
+    font-size: 24px;
+    color: white;
+    align-self: center;
+}
+
+#item-details #item-key {
+    grid-area: item-key;
+    font-size: 6px;
+    color: grey;
+}
+
+/* ########## ITEM QUALITY COLORS ########## */
+.legendary {
+    background-color: #FF5733;
+}
+
+.legendary-color {
+    color: #FF5733;
+}
+
+.epic {
+    background-color: #6812EC;
+}
+
+.epic-color {
+    color: #6812EC;
+}
+
+.magic {
+    background-color: #1261EC;
+}
+
+.magic-color {
+    color: #1261EC;
+}
+
+.rare {
+    background-color: #6BEC12;
+}
+
+.rare-color {
+    color: #6BEC12;
+}
+
+.common {
+    background-color: #B6B6B6;
+}
+.common-color {
+    color: #B6B6B6;
 }
 
 #hero-screen-title {
@@ -381,7 +551,7 @@ h3 {
     visibility: hidden;
 }
 
-#hero-equipment {
+/*#hero-equipment {
     grid-area: items;
 }
 
@@ -397,7 +567,7 @@ h3 {
 
 #hero-equipment li span {
     line-height: 16px;
-}
+}*/
 
 /* ########## HERO/ FIGHT-SCREEN ########## */
 #fighting-screen {

@@ -2,6 +2,7 @@ part of rogue;
 
 class Settings {
   static String _dataPath = 'data/';
+  static String _imgPath = 'img/';
   static int _strengthMod = 1;
   static int _constMod = 3;
   static int _luckMod = 2;
@@ -14,6 +15,10 @@ class Settings {
 
   static String getDataPath() {
     return _dataPath;
+  }
+
+  static String getImgPath() {
+    return _imgPath;
   }
 
   static int getStrengthMod() {
