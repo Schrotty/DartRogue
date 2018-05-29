@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name":"Abgetragene Handschuhe",
-    "type":2,
+    "type":0,
     "value": 1,
     "quality": 0,
     "icon":"gloves.png"

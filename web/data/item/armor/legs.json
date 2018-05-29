@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name":"Abgetragene Stoffhose",
-    "type": 3,
+    "type": 0,
     "value": 3,
     "quality": 0,
     "icon": "legs.png"

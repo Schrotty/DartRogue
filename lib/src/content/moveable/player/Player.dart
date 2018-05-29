@@ -19,6 +19,7 @@ class Player extends Moveable {
   Item weapon;
 
   Map<int, int> pots = new Map();
+  List<Item> inventory = new List();
 
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
@@ -67,6 +68,11 @@ class Player extends Moveable {
     _baseXp = data['baseXp'];
     _gainedXp = 35;
     _neededXp = data['baseXp'];
+
+    inventory.add(weapon);
+    inventory.add(chest);
+    inventory.add(helmet);
+    inventory.add(weapons['axes'][0][4]);
   }
 
   int calcDamage([int skillMod]) {

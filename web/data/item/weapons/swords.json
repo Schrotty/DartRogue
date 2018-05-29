@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name":"Kurzschwert",
-    "type": 6,
+    "type": 1,
     "quality": 0,
     "value": 6,
     "icon":"sword.png"
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "name":"Langschwert",
-    "type": 6,
+    "type": 1,
     "quality": 0,
     "value": 12,
     "icon":"sword.png"
