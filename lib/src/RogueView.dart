@@ -16,6 +16,14 @@ class RogueView {
 
   /* ########## HERO SCREEN START ########## */
   final Element heroScreen = querySelector("#hero-screen");
+  final Element heroEquipmentButton = querySelector("#hero-equipment");
+  final Element heroEquipmentScreen = querySelector("#hero-equipment-screen");
+
+  final Element heroAttributesButton = querySelector("#hero-attributes");
+  final Element heroAttributesScreen = querySelector("#hero-attributes-screen");
+
+  final Element heroStatisticsButton = querySelector("#hero-statistics");
+  final Element heroStatisticsScreen = querySelector("#hero-statistics-screen");
 
   /* EQUIPMENT */
   final Element equipment = querySelector("#equipment");
@@ -24,22 +32,28 @@ class RogueView {
   final Element helmetSlot = querySelector("#helmet-slot");
 
   final Element gloves = querySelector("#gloves");
-  final Element glovesQuality = querySelector("#gloves-quality");
-  final Element glovesValue = querySelector("#gloves-value");
+  final Element glovesSlot = querySelector("#gloves-slot");
 
   final Element chest = querySelector("#chest");
   final Element chestSlot = querySelector("#chest-slot");
 
   final Element legs = querySelector("#legs");
-  final Element legsQuality = querySelector("#legs-quality");
-  final Element legsValue = querySelector("#legs-value");
+  final Element legsSlot = querySelector("#legs-slot");
 
   final Element boots = querySelector("#boots");
-  final Element bootsQuality = querySelector("#boots-quality");
-  final Element bootsValue = querySelector("#boots-value");
+  final Element bootsSlot = querySelector("#boots-slot");
 
   final Element weapon = querySelector("#weapon");
   final Element weaponSlot = querySelector("#weapon-slot");
+
+  /* SELECTED ITEM */
+  final Element selectedItemName = querySelector("#selected-item #item-name");
+  final Element selectedItemIcon = querySelector("#selected-item #item-icon");
+  final Element selectedItemQuality = querySelector("#selected-item #item-quality");
+  final Element selectedItemType = querySelector("#selected-item #item-type");
+  final Element selectedItemValue = querySelector("#selected-item #item-value");
+  final Element selectedItemKey = querySelector("#selected-item #item-key");
+  final Element selectedItemMods = querySelector("#selected-item #item-mods ul");
 
   /* ATTRIBUTES */
   final Element level = querySelector("#lvl");

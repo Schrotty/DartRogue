@@ -239,22 +239,20 @@ h3 {
     display: grid;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    grid-template-rows: 48px 64px 64px 64px;
-    grid-template-columns: 32px 64px auto 64px 32px;
+    grid-template-rows: 48px auto;
+    grid-template-columns: auto;
     grid-template-areas:
-            "top-bar top-bar top-bar top-bar top-bar"
-            "lte helmet-slot content-top weapon-slot rte"
-            "lme chest-slot content-middle gloves-slot rme"
-            "lbe boots-slot content-bottom legs-slot rbe";
+            "top-bar"
+            "screen";
 
     font-size: 12px;
-    background-color: lightgray;
     height: calc(100vh - 64px);
     width: calc(100% - 64px);
     max-height: 100%;
     padding: 0;
     grid-area: play-field;
     overflow: scroll;
+    background: lightgray;
 }
 
 #hero-screen #top-bar {
@@ -269,6 +267,16 @@ h3 {
 
 #hero-screen #top-bar .item-active {
     text-decoration: underline;
+}
+
+#hero-screen #hero-equipment-screen {
+    display: grid;
+    grid-area: screen;
+    grid-template-columns: 32px 64px auto 64px 32px;
+    grid-template-areas:
+            "lte helmet-slot content-top weapon-slot rte"
+            "lme chest-slot content-middle gloves-slot rme"
+            "lbe boots-slot content-bottom legs-slot rbe";
 }
 
 #hero-screen .item-slot {
@@ -313,31 +321,43 @@ h3 {
     grid-area: legs-slot;
 }
 
-#hero-screen #selected-item {
+#hero-screen #selected-item-wrapper {
     display: grid;
     grid-column-start: 3;
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-row-end: 5;
-    grid-template-columns: 64px auto auto auto;
-    grid-template-rows: 16px 64px auto;
+    justify-content: center;
+}
+
+#hero-screen #selected-item {
+    display: grid;
+    grid-template-columns: 64px 64px 64px;
+    grid-template-rows: 48px 64px 64px;
     grid-row-gap: 5px;
+    grid-column-gap: 5px;
     grid-template-areas:
             "item-name item-name item-name"
             "item-icon item-details item-details"
             "item-mods item-mods item-mods";
 
     justify-content: center;
+    background: url(../img/items/item-select-frame.png) no-repeat;
+    background-size: 218px 202px;
+    image-rendering: pixelated;
+    padding: 8px;
 }
 
 #selected-item #item-name {
+    display: flex;
     grid-area: item-name;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    line-height: 16px;
+    padding: 10px;
 }
 
 #selected-item #item-icon {
     grid-area: item-icon;
-    background-image: url(../img/items/armor/helmet.png);
 }
 
 #selected-item #item-mods {
@@ -417,10 +437,10 @@ h3 {
 }
 
 .common {
-    background-color: #B6B6B6;
+    background-color: floralwhite;
 }
 .common-color {
-    color: #B6B6B6;
+    color: floralwhite;
 }
 
 #hero-screen-title {
@@ -714,4 +734,8 @@ h3 {
 
 .player {
     left: 20%;
+}
+
+.clickable {
+    cursor: pointer;
 }

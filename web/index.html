@@ -93,54 +93,65 @@
                     <div id="overlay">
                         <div id="hero-screen" class="invisible overlay">
                             <div id="top-bar">
-                                <div id="hero-equipment" class="item-active">Equipment</div>
-                                <div id="hero-attributes">Attributes</div>
-                                <div id="hero-statistics">Statistics</div>
+                                <div id="hero-equipment" class="item-active clickable">Equipment</div>
+                                <div id="hero-attributes" class="clickable">Attributes</div>
+                                <div id="hero-statistics" class="clickable">Statistics</div>
                             </div>
 
-                            <!-- LEFT BAR -->
-                            <div id="helmet-slot" class="item-slot">
-                                <div id="helmet" class="item"></div>
-                            </div>
-
-                            <div id="chest-slot" class="item-slot">
-                                <div id="chest" class="item"></div>
-                            </div>
-
-                            <div id="boots-slot" class="item-slot">
-                                <div id="boots" class="item"></div>
-                            </div>
-
-                            <!-- RIGHT BAR -->
-                            <div id="weapon-slot" class="item-slot">
-                                <div id="weapon" class="item"></div>
-                            </div>
-
-                            <div id="gloves-slot" class="item-slot">
-                                <div id="gloves" class="item"></div>
-                            </div>
-
-                            <div id="legs-slot" class="item-slot">
-                                <div id="legs" class="item"></div>
-                            </div>
-
-                            <!-- SELECTED ITEM -->
-                            <div id="selected-item">
-                                <div id="item-name" class="magic-color">Abgetragener Helm</div>
-                                <div id="item-icon" class="item"></div>
-                                <div id="item-details">
-                                    <div id="item-quality" class="magic-color">Magic</div>
-                                    <div id="item-type">Helmet</div>
-                                    <div id="item-value">15</div>
-                                    <div id="item-key">Armor</div>
+                            <div id="hero-equipment-screen">
+                                <!-- LEFT BAR -->
+                                <div id="helmet-slot" class="item-slot">
+                                    <div id="helmet" class="item"></div>
                                 </div>
 
-                                <div id="item-mods" class="magic-color">
-                                    <ul>
-                                        <li>+8 Health</li>
-                                        <li>+3 Luck</li>
-                                    </ul>
+                                <div id="chest-slot" class="item-slot">
+                                    <div id="chest" class="item"></div>
                                 </div>
+
+                                <div id="boots-slot" class="item-slot">
+                                    <div id="boots" class="item"></div>
+                                </div>
+
+                                <!-- RIGHT BAR -->
+                                <div id="weapon-slot" class="item-slot">
+                                    <div id="weapon" class="item"></div>
+                                </div>
+
+                                <div id="gloves-slot" class="item-slot">
+                                    <div id="gloves" class="item"></div>
+                                </div>
+
+                                <div id="legs-slot" class="item-slot">
+                                    <div id="legs" class="item"></div>
+                                </div>
+
+                                <!-- SELECTED ITEM -->
+                                <div id="selected-item-wrapper">
+                                    <div id="selected-item">
+                                        <div id="item-name" class="magic-color"></div>
+                                        <div class="item-slot magic">
+                                            <div id="item-icon" class="item"></div>
+                                        </div>
+
+                                        <div id="item-details">
+                                            <div id="item-quality" class="magic-color"></div>
+                                            <div id="item-type"></div>
+                                            <div id="item-value"></div>
+                                            <div id="item-key"></div>
+                                        </div>
+
+                                        <div id="item-mods" class="magic-color">
+                                            <ul></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="hero-attributes-screen">
+                                ATTRIBUTES
+                            </div>
+
+                            <div id="hero-statistics-screen">
+                                STATS
                             </div>
                         </div>
 

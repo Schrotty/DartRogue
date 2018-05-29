@@ -3,6 +3,9 @@ part of rogue;
 class Settings {
   static String _dataPath = 'data/';
   static String _imgPath = 'img/';
+  static String _weaponImgPath = 'img/items/weapon/';
+  static String _armorImgPath = 'img/items/armor/';
+
   static int _strengthMod = 1;
   static int _constMod = 3;
   static int _luckMod = 2;
@@ -19,6 +22,14 @@ class Settings {
 
   static String getImgPath() {
     return _imgPath;
+  }
+
+  static String getWeaponImgPath() {
+    return _weaponImgPath;
+  }
+
+  static String getArmorImgPath() {
+    return _armorImgPath;
   }
 
   static int getStrengthMod() {
