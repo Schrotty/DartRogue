@@ -302,13 +302,22 @@ class RogueController {
   }
 
   _updatePlayerAttributes() {
-    /*view.level.text = player.level;
-    view.strength.text = player.strength;
-    view.constitution.text = player.constitution;
-    view.luck.text = player.luck;
-    view.damage.text = player.damage;
-    view.critDamage.text = player.critDamage;
-    view.critChance.text = player.critChance;*/
+    /* OFFENSE */
+    view.heroStrength.text = player.strength;
+    view.heroDamage.text = player.damage;
+    view.heroCritChance.text = "${player.critChance}%";
+    view.heroCritDamage.text = "${(player.critMulti * 100).ceil()}%";
+
+    /* DEFENSE */
+    view.heroArmor.text = player.armor;
+
+    /* LIFE */
+    view.heroConst.text = player.constitution;
+    view.heroMaxLife.text = player.maxHealth;
+
+    /* ADVENTURE */
+    view.heroLuck.text = player.luck;
+    view.heroSpeed.text = player.speed;
   }
 
   _updatePlayerXp() {
@@ -346,10 +355,7 @@ class RogueController {
 
     view.heroAttributesButton.onClick.listen((e) {
       _switchHeroScreenMenu(view.heroAttributesScreen, view.heroAttributesButton);
-    });
-
-    view.heroStatisticsButton.onClick.listen((e) {
-      _switchHeroScreenMenu(view.heroStatisticsScreen, view.heroStatisticsButton);
+      _updatePlayerAttributes();
     });
 
     /* EQUIPMENT EVENTS */
@@ -379,8 +385,8 @@ class RogueController {
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
-    List menus = [view.heroEquipmentScreen, view.heroAttributesScreen, view.heroStatisticsScreen];
-    List buttons = [view.heroEquipmentButton, view.heroAttributesButton, view.heroStatisticsButton];
+    List menus = [view.heroEquipmentScreen, view.heroAttributesScreen];
+    List buttons = [view.heroEquipmentButton, view.heroAttributesButton];
 
     caller.classes.add("item-active");
     target.classes.remove("invisible");
@@ -418,7 +424,11 @@ class RogueController {
     view.selectedItemKey.text = valueKey;
 
     item.modifier.forEach((String key, value) {
-      view.selectedItemMods.append(new LIElement()..text = "$value ${key[0].toUpperCase()}${key.substring(1)}");
+      String prefix = "";
+      if (value > 0) prefix = "+";
+
+      String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
+      view.selectedItemMods.append(new LIElement()..text = text);
     });
   }
 }
