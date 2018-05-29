@@ -258,7 +258,7 @@ h3 {
 
 #hero-screen #top-bar {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     justify-items: center;
     align-items: center;
     grid-area: top-bar;
@@ -370,6 +370,10 @@ h3 {
 
 #item-mods ul {
     margin: 0;
+}
+
+#item-mods li {
+    margin: 5px 0
 }
 
 #selected-item #item-details {

@@ -306,7 +306,7 @@ class RogueController {
     view.heroStrength.text = player.strength;
     view.heroDamage.text = player.damage;
     view.heroCritChance.text = "${player.critChance}%";
-    view.heroCritDamage.text = "${player.critMulti * 100}%";
+    view.heroCritDamage.text = "${(player.critMulti * 100).ceil()}%";
 
     /* DEFENSE */
     view.heroArmor.text = player.armor;
@@ -358,10 +358,6 @@ class RogueController {
       _updatePlayerAttributes();
     });
 
-    view.heroStatisticsButton.onClick.listen((e) {
-      _switchHeroScreenMenu(view.heroStatisticsScreen, view.heroStatisticsButton);
-    });
-
     /* EQUIPMENT EVENTS */
     view.weapon.onClick.listen((e) {
       _selectItem(player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
@@ -389,8 +385,8 @@ class RogueController {
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
-    List menus = [view.heroEquipmentScreen, view.heroAttributesScreen, view.heroStatisticsScreen];
-    List buttons = [view.heroEquipmentButton, view.heroAttributesButton, view.heroStatisticsButton];
+    List menus = [view.heroEquipmentScreen, view.heroAttributesScreen];
+    List buttons = [view.heroEquipmentButton, view.heroAttributesButton];
 
     caller.classes.add("item-active");
     target.classes.remove("invisible");
@@ -428,7 +424,11 @@ class RogueController {
     view.selectedItemKey.text = valueKey;
 
     item.modifier.forEach((String key, value) {
-      view.selectedItemMods.append(new LIElement()..text = "$value ${key[0].toUpperCase()}${key.substring(1)}");
+      String prefix = "";
+      if (value > 0) prefix = "+";
+
+      String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
+      view.selectedItemMods.append(new LIElement()..text = text);
     });
   }
 }

@@ -22,9 +22,6 @@ class RogueView {
   final Element heroAttributesButton = querySelector("#hero-attributes");
   final Element heroAttributesScreen = querySelector("#hero-attributes-screen");
 
-  final Element heroStatisticsButton = querySelector("#hero-statistics");
-  final Element heroStatisticsScreen = querySelector("#hero-statistics-screen");
-
   /* EQUIPMENT */
   final Element equipment = querySelector("#equipment");
 
