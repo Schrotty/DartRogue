@@ -286,6 +286,7 @@ h3 {
     vertical-align: center;
     background-image: url("../img/items/item-frame.png");
     background-size: 64px 64px;
+    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated
 }
 
@@ -294,7 +295,8 @@ h3 {
     height: 64px;
     background-size: 64px 64px;
     background-repeat: no-repeat;
-    image-rendering: pixelated
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
 }
 
 #hero-screen #helmet-slot {
