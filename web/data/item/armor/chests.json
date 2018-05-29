@@ -1,10 +1,13 @@
 [
   {
     "id": 0,
-    "name": "Abgetragene Lumpen",
+    "name": "Blutiger Kriegsmantel des Todes",
     "type": 1,
     "value": 4,
-    "quality": 0,
+    "quality": 3,
+    "mods": {
+      "health": -5
+    },
     "icon": "chest.png"
   },
   {
@@ -25,7 +28,7 @@
     "id": 2,
     "name": "Stoffrobe des Leben",
     "type": 1,
-    "quality": 1,
+    "quality": 2,
     "value-range": [
       [6, 11]
     ],
