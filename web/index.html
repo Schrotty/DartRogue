@@ -2,6 +2,7 @@
     <head>
         <title>DartRogue</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
 
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link rel="stylesheet" href="style/style.css">
@@ -147,7 +148,38 @@
                                 </div>
                             </div>
                             <div id="hero-attributes-screen" class="invisible">
-                                ATTRIBUTES
+                                <div id="offense-col" class="attribute-col">
+                                    <div>Offensiv</div>
+                                    <ul>
+                                        <li><span>Stärke: </span><span id="hero-strength"></span></li>
+                                        <li><span>Schaden: </span><span id="hero-damage"></span></li>
+                                        <li><span>Crit Chance: </span><span id="hero-crit"></span></li>
+                                        <li><span>Crit Schaden: </span><span id="hero-crit-dmg"></span></li>
+                                    </ul>
+                                </div>
+
+                                <div id="defense-col" class="attribute-col">
+                                    <div>Defensiv</div>
+                                    <ul>
+                                        <li><span>Rüstung: </span><span id="hero-armor"></span></li>
+                                    </ul>
+                                </div>
+
+                                <div id="life-col" class="attribute-col">
+                                    <div>Leben</div>
+                                    <ul>
+                                        <li><span>Konstitution: </span><span id="hero-const"></span></li>
+                                        <li><span>Max Leben: </span><span id="hero-max-life"></span></li>
+                                    </ul>
+                                </div>
+
+                                <div id="adventure-col" class="attribute-col">
+                                    <div>Abenteuer</div>
+                                    <ul>
+                                        <li><span>Geschwindigkeit: </span><span id="hero-speed"></span></li>
+                                        <li><span>Glück: </span><span id="hero-luck"></span></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div id="hero-statistics-screen" class="invisible">

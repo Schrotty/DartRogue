@@ -21,6 +21,7 @@ input {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -403,6 +404,60 @@ h3 {
     grid-area: item-key;
     font-size: 6px;
     color: grey;
+}
+
+#hero-screen #hero-attributes-screen {
+    display: grid;
+    padding: 0 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+            "offense defense"
+            "life adventure";
+}
+
+#hero-attributes-screen #offense-col {
+    grid-area: offense;
+}
+
+#hero-attributes-screen #defense-col {
+    grid-area: defense;
+}
+
+#hero-attributes-screen #life-col {
+    grid-area: life;
+}
+
+#hero-attributes-screen #adventure-col {
+    grid-area: adventure;
+}
+
+#hero-attributes-screen .attribute-col {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 32px auto;
+    grid-template-columns: 100%;
+    grid-template-areas:
+            "title"
+            "values";
+
+    font-size: 4vh;
+}
+
+.attribute-col div {
+    text-decoration: underline;
+}
+
+.attribute-col ul {
+    grid-area: values;
+    justify-content: left;
+    align-items: stretch;
+    align-self: start;
+    font-size: 3vh;
+}
+
+.attribute-col li {
+    margin: 5px 0;
 }
 
 /* ########## ITEM QUALITY COLORS ########## */

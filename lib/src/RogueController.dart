@@ -302,13 +302,22 @@ class RogueController {
   }
 
   _updatePlayerAttributes() {
-    /*view.level.text = player.level;
-    view.strength.text = player.strength;
-    view.constitution.text = player.constitution;
-    view.luck.text = player.luck;
-    view.damage.text = player.damage;
-    view.critDamage.text = player.critDamage;
-    view.critChance.text = player.critChance;*/
+    /* OFFENSE */
+    view.heroStrength.text = player.strength;
+    view.heroDamage.text = player.damage;
+    view.heroCritChance.text = "${player.critChance}%";
+    view.heroCritDamage.text = "${player.critMulti * 100}%";
+
+    /* DEFENSE */
+    view.heroArmor.text = player.armor;
+
+    /* LIFE */
+    view.heroConst.text = player.constitution;
+    view.heroMaxLife.text = player.maxHealth;
+
+    /* ADVENTURE */
+    view.heroLuck.text = player.luck;
+    view.heroSpeed.text = player.speed;
   }
 
   _updatePlayerXp() {
@@ -346,6 +355,7 @@ class RogueController {
 
     view.heroAttributesButton.onClick.listen((e) {
       _switchHeroScreenMenu(view.heroAttributesScreen, view.heroAttributesButton);
+      _updatePlayerAttributes();
     });
 
     view.heroStatisticsButton.onClick.listen((e) {

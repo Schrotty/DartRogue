@@ -56,13 +56,18 @@ class RogueView {
   final Element selectedItemMods = querySelector("#selected-item #item-mods ul");
 
   /* ATTRIBUTES */
-  final Element level = querySelector("#lvl");
-  final Element strength = querySelector("#strength");
-  final Element constitution = querySelector("#const");
-  final Element luck = querySelector("#luck");
-  final Element damage = querySelector("#damage");
-  final Element critDamage = querySelector("#cd");
-  final Element critChance = querySelector("#cc");
+  final Element heroStrength = querySelector("#hero-strength");
+  final Element heroDamage = querySelector("#hero-damage");
+  final Element heroCritChance = querySelector("#hero-crit");
+  final Element heroCritDamage = querySelector("#hero-crit-dmg");
+
+  final Element heroArmor = querySelector("#hero-armor");
+
+  final Element heroConst = querySelector("#hero-const");
+  final Element heroMaxLife = querySelector("#hero-max-life");
+
+  final Element heroLuck = querySelector("#hero-luck");
+  final Element heroSpeed = querySelector("#hero-speed");
 
   /*XP-BAR*/
   final Element xpContainer = querySelector("#xp-container");
