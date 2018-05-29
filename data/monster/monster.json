@@ -6,7 +6,10 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 10,
+    "loot": {
+      "chest": 1
+    }
   },
   {
     "id": 1,
@@ -23,7 +26,7 @@
     "name": "Scorpion",
     "hp": 10,
     "attack": 3,
-    "speed": 10  ,
+    "speed": 10,
     "grantedXP": 10
   },
   {
