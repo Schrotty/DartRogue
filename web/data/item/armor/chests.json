@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Blutiger Kriegsmantel des Todes",
-    "type": 1,
+    "type": 0,
     "value": 4,
     "quality": 3,
     "mods": {
@@ -13,7 +13,7 @@
   {
     "id": 1,
     "name":"Lederharnisch",
-    "type": 1,
+    "type": 0,
     "multi": true,
     "value-range": [
       [1, 4],
@@ -27,7 +27,7 @@
   {
     "id": 2,
     "name": "Stoffrobe des Leben",
-    "type": 1,
+    "type": 0,
     "quality": 2,
     "value-range": [
       [6, 11]

@@ -78,7 +78,7 @@ _buildWeaponType(String type) async {
     weapons[type][w['id']] = new List();
     if (w.containsKey('multi')) {
       Qualities.forEach((q) =>
-          weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q))));
+          weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q), type)));
       return;
     }
 
@@ -94,7 +94,7 @@ _buildArmorType(String type) async {
     armors[type][a['id']] = new List();
     if (a.containsKey('multi')) {
       Qualities.forEach((q) =>
-          armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q))));
+          armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q), type)));
       return;
     }
 

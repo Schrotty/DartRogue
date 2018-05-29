@@ -22,6 +22,11 @@ class RogueView {
   final Element heroAttributesButton = querySelector("#hero-attributes");
   final Element heroAttributesScreen = querySelector("#hero-attributes-screen");
 
+  final Element heroInventoryButton = querySelector("#hero-inventory");
+  final Element heroInventoryScreen = querySelector("#hero-inventory-screen");
+
+  final List<Element> inventoryGrid = querySelectorAll(".inventory-item");
+
   /* EQUIPMENT */
   final Element equipment = querySelector("#equipment");
 
@@ -51,6 +56,15 @@ class RogueView {
   final Element selectedItemValue = querySelector("#selected-item #item-value");
   final Element selectedItemKey = querySelector("#selected-item #item-key");
   final Element selectedItemMods = querySelector("#selected-item #item-mods ul");
+
+  /* PREVIEW ITEM */
+  final Element previewItemName = querySelector("#preview-item #preview-item-name");
+  final Element previewItemIcon = querySelector("#preview-item #preview-item-icon");
+  final Element previewItemQuality = querySelector("#preview-item #preview-item-quality");
+  final Element previewItemType = querySelector("#preview-item #preview-item-type");
+  final Element previewItemValue = querySelector("#preview-item #preview-item-value");
+  final Element previewItemKey = querySelector("#preview-item #preview-item-key");
+  final Element previewItemMods = querySelector("#preview-item #preview-item-mods ul");
 
   /* ATTRIBUTES */
   final Element heroStrength = querySelector("#hero-strength");

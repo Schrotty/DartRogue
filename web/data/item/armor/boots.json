@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name":"Abgetragene Stiefel",
-    "type": 4,
+    "type": 0,
     "value": 2,
     "quality": 0,
     "icon": "boots.png"
