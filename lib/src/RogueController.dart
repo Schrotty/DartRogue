@@ -184,8 +184,8 @@ class RogueController {
       String msg = !attacker.isAlive
           ? "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
           .grantedXP} XP!" +
-              (attacker.grantedXP > player.leftXpUntilLvlUp
-                  ? "\nYou reched level ${player.level + 1}!"
+              (attacker.grantedXP >= player.leftXpUntilLvlUp
+                  ? " You reached level ${player.level + 1}!"
                   : "")
           : "YOU DIED!";
 

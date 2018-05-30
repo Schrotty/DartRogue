@@ -696,10 +696,9 @@ h3 {
     color: white;
     height: 32px;
     width: 45vw;
-    margin-top: 1px;
+    margin-top: 4px;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
-    align-self: center;
 }
 
 .potion-button {
@@ -708,6 +707,15 @@ h3 {
     float: left;
     text-align: center;
     horiz-align: center;
+}
+
+.text-window {
+    height: 80px;
+    background: url(../img/main/plainText2.png) no-repeat center;
+    margin: 2px 0 2px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .plain {
@@ -798,4 +806,9 @@ h3 {
     100% {
         background-position: -288px;
     }
+}
+
+.centered {
+    text-align: center;
+    padding: 5px 0 5px 0;
 }
