@@ -148,7 +148,8 @@ class RogueController {
             attackerId = _rnd.nextInt(monsterCount_DEBUG);
           } while (!monsters.containsKey(attackerId));
           attacker = monsters[attackerId];
-          view.monsterIcon.src = "img/monsters/${attacker.name}.png";
+          view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
+          view.monsterIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
           _toggleOverlay(view.fightingScreen);
         } else {
           if (!view.fightingScreen.classes.contains("invisible"))
@@ -181,7 +182,7 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       String msg = !attacker.isAlive
-          ? "You killed ${attacker.name}, you gained ${attacker
+          ? "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
           .grantedXP} XP!" +
               (attacker.grantedXP > player.leftXpUntilLvlUp
                   ? "\nYou reched level ${player.level + 1}!"

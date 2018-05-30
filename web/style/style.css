@@ -75,10 +75,7 @@ h3 {
 #game {
     display: grid;
     height: 100%;
-    grid-template-areas:
-            "upper-bar upper-bar"
-            "play-field side-bar";
-
+    grid-template-areas: "upper-bar upper-bar" "play-field side-bar";
     grid-template-columns: auto 64px;
     grid-template-rows: 64px auto;
     padding: 0;
@@ -128,10 +125,7 @@ h3 {
     color: whitesmoke;
     grid-template-columns: 100px 50px 100px;
     grid-template-rows: 15px 17px 20px;
-    grid-template-areas:
-            "l-title l-value empty-space"
-            "health-bar health-bar health-bar"
-            "ep-bar ep-bar ep-bar";
+    grid-template-areas: "l-title l-value empty-space" "health-bar health-bar health-bar" "ep-bar ep-bar ep-bar";
 }
 
 #health-container #level-key {
@@ -224,8 +218,7 @@ h3 {
     grid-template-rows: repeat(4, 32px);
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 5px;
-    grid-template-areas:
-            "debug-title debug-title";
+    grid-template-areas: "debug-title debug-title";
 
     background-color: plum;
 }
@@ -242,9 +235,7 @@ h3 {
     grid-column-gap: 5px;
     grid-template-rows: 48px auto;
     grid-template-columns: auto;
-    grid-template-areas:
-            "top-bar"
-            "screen";
+    grid-template-areas: "top-bar" "screen";
 
     font-size: 12px;
     height: calc(100vh - 64px);
@@ -274,10 +265,7 @@ h3 {
     display: grid;
     grid-area: screen;
     grid-template-columns: 32px 64px auto 64px 32px;
-    grid-template-areas:
-            "lte helmet-slot content-top weapon-slot rte"
-            "lme chest-slot content-middle gloves-slot rme"
-            "lbe boots-slot content-bottom legs-slot rbe";
+    grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe";
 }
 
 #hero-screen .item-slot {
@@ -338,10 +326,7 @@ h3 {
     grid-template-rows: 48px 64px 64px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    grid-template-areas:
-            "item-name item-name item-name"
-            "item-icon item-details item-details"
-            "item-mods item-mods item-mods";
+    grid-template-areas: "item-name item-name item-name" "item-icon item-details item-details" "item-mods item-mods item-mods";
 
     justify-content: center;
     background: url(../img/items/item-select-frame.png) no-repeat;
@@ -379,10 +364,7 @@ h3 {
 #selected-item #item-details {
     grid-area: item-details;
     display: grid;
-    grid-template-areas:
-            "item-quality item-type"
-            "item-value item-value"
-            "item-key item-key";
+    grid-template-areas: "item-quality item-type" "item-value item-value" "item-key item-key";
 }
 
 #item-details #item-quality {
@@ -414,9 +396,7 @@ h3 {
     display: grid;
     padding: 0 10px;
     grid-template-columns: 50% 50%;
-    grid-template-areas:
-            "offense defense"
-            "life adventure";
+    grid-template-areas: "offense defense" "life adventure";
 }
 
 #hero-attributes-screen #offense-col {
@@ -441,9 +421,7 @@ h3 {
     align-items: center;
     grid-template-rows: 32px auto;
     grid-template-columns: 100%;
-    grid-template-areas:
-            "title"
-            "values";
+    grid-template-areas: "title" "values";
 
     font-size: 4vh;
 }
@@ -500,6 +478,7 @@ h3 {
 .common {
     background-color: floralwhite;
 }
+
 .common-color {
     color: floralwhite;
 }
@@ -526,10 +505,8 @@ h3 {
     vertical-align: middle;
     grid-template-columns: repeat(1, 202px);
     grid-template-rows: repeat(5, 32px);
-    grid-template-areas:
-            "item-name"
-            "item-quality";
-            "item-value";
+    grid-template-areas: "item-name" "item-quality";
+"item-value";
 
     opacity: 1;
     background: black;
@@ -574,12 +551,7 @@ h3 {
     grid-template-columns: repeat(3, 64px);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    grid-template-areas:
-            "emptys head empty"
-            "gloves chest-top emptya"
-            "weapon-top chest-bottom second-top"
-            "weapon-bottom legs second-bottom"
-            "emptyh boots emptyz"
+    grid-template-areas: "emptys head empty" "gloves chest-top emptya" "weapon-top chest-bottom second-top" "weapon-bottom legs second-bottom" "emptyh boots emptyz"
 }
 
 #hero-screen-item-stats {
@@ -652,7 +624,9 @@ h3 {
 
 /* ########## HERO/ FIGHT-SCREEN ########## */
 #fighting-screen {
-    background: plum;
+    color: white;
+    background: url("../img/main/cave.png");
+    background-size: contain;
     position: absolute;
     height: calc(100vh - 74px);
     padding: 5px;
@@ -675,10 +649,10 @@ h3 {
 }
 
 #fighting-options, #skills, #fight-end {
-    width: 95%;
+    width: 100%;
     height: 30%;
     border-top: 1px solid black;
-    background: lightblue;
+    background: url("../img/main/background.png");
     z-index: 60;
     position: absolute;
     bottom: 0;
@@ -703,7 +677,7 @@ h3 {
     border-bottom: 1px solid black;
 }
 
-.top-right-bar{
+.top-right-bar {
     float: right;
     padding: 20px;
 }
@@ -713,9 +687,19 @@ h3 {
     padding: 20px;
 }
 
+.button-list {
+    text-align: center;
+    /*width: 50vw;*/
+}
+
 .bar-button {
-    width: 100%;
-    background-color: azure;
+    color: white;
+    height: 32px;
+    width: 45vw;
+    margin-top: 1px;
+    background: url(../img/main/button.png) no-repeat center;
+    background-size: contain;
+    align-self: center;
 }
 
 .potion-button {
@@ -780,23 +764,38 @@ h3 {
     background: darkgreen;
 }
 
-.picture {
-    width: 15%;
-    height: auto;
-    margin: 0;
+.clickable {
+    cursor: pointer;
+}
+
+.sprite-container {
+    width: 96px;
+    height: 96px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+    display: block;
 }
 
-.monster {
+#sprite-player {
+    animation: sprite-player 1s steps(2) infinite;
+    background-image: url("../img/icon/Player.png");
+    left: 20%
+}
+
+@keyframes sprite-player {
+    100% {
+        background-position: -192px;
+    }
+}
+
+#sprite-monster {
+    animation: sprite-monster 1s steps(3) infinite;
     left: 80%;
 }
 
-.player {
-    left: 20%;
-}
-
-.clickable {
-    cursor: pointer;
+@keyframes sprite-monster {
+    100% {
+        background-position: -288px;
+    }
 }

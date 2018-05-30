@@ -46,11 +46,13 @@ class RogueView {
   /* SELECTED ITEM */
   final Element selectedItemName = querySelector("#selected-item #item-name");
   final Element selectedItemIcon = querySelector("#selected-item #item-icon");
-  final Element selectedItemQuality = querySelector("#selected-item #item-quality");
+  final Element selectedItemQuality =
+      querySelector("#selected-item #item-quality");
   final Element selectedItemType = querySelector("#selected-item #item-type");
   final Element selectedItemValue = querySelector("#selected-item #item-value");
   final Element selectedItemKey = querySelector("#selected-item #item-key");
-  final Element selectedItemMods = querySelector("#selected-item #item-mods ul");
+  final Element selectedItemMods =
+      querySelector("#selected-item #item-mods ul");
 
   /* ATTRIBUTES */
   final Element heroStrength = querySelector("#hero-strength");
@@ -75,6 +77,8 @@ class RogueView {
   /* ########## HERO SCREEN END ########### */
 
   /* ########## FIGHTING SCREEN START ########### */
+  final Element fightTopBar = querySelector("#fight-top-bar");
+
   /* PLAYER */
   final Element playerFightHealthContainer =
       querySelector("#player-fight-health-container");
@@ -92,7 +96,7 @@ class RogueView {
       querySelector("#monster-fight-max-health");
   final Element monsterFightHealthBar =
       querySelector("#monster-fight-health-inner");
-  final ImageElement monsterIcon = querySelector("#monster-icon");
+  final Element monsterIcon = querySelector("#sprite-monster");
 
   /* OPTIONS */
   final Element fightingOptions = querySelector("#fighting-options");
@@ -109,7 +113,7 @@ class RogueView {
   final ButtonInputElement backAttackButton = querySelector("#backAttack");
 
   /* FIGHT END */
-  final Element fightEnd =querySelector("#fight-end");
+  final Element fightEnd = querySelector("#fight-end");
   final Element fightEndMessage = querySelector("#fight-end-message");
   final Element leaveFightEndButton = querySelector("#leave-fight-end");
 
