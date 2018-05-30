@@ -2,7 +2,7 @@
   {
     "id": 0,
     "lvl": 1,
-    "name": "Spider",
+    "name": "Ghoul",
     "hp": 20,
     "attack": 3,
     "speed": 10,
@@ -14,7 +14,7 @@
   {
     "id": 1,
     "lvl": 1,
-    "name": "Bat",
+    "name": "Red_Bat",
     "hp": 8,
     "attack": 1,
     "speed": 10,
@@ -23,7 +23,7 @@
   {
     "id": 2,
     "lvl": 2,
-    "name": "Scorpion",
+    "name": "Green_Scorpion",
     "hp": 10,
     "attack": 3,
     "speed": 10,
@@ -32,7 +32,7 @@
   {
     "id": 3,
     "lvl": 3,
-    "name": "Gargoyle",
+    "name": "Dark_Pumpkin",
     "hp": 12,
     "attack": 4,
     "speed": 10,
@@ -41,7 +41,7 @@
   {
     "id": 4,
     "lvl": 3,
-    "name": "Gnome",
+    "name": "Ogre",
     "hp": 10,
     "attack": 3,
     "speed": 10,
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "lvl": 4,
-    "name": "Cobra",
+    "name": "Red_Snake",
     "hp": 14,
     "attack": 3,
     "speed": 10,
@@ -59,7 +59,7 @@
   {
     "id": 6,
     "lvl": 7,
-    "name": "Minotaur",
+    "name": "Black_Troll",
     "hp": 20,
     "attack": 6,
     "speed": 10,
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "lvl": 10,
-    "name": "Guardian",
+    "name": "Armed_Ogre",
     "hp": 100,
     "attack": 10,
     "speed": 10,
