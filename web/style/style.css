@@ -198,10 +198,10 @@ h3 {
 /* ########## OVERLAYS ########## */
 .overlay {
     display: grid;
-    padding: 5px;
+    padding: 0;
     position: absolute;
-    width: calc(100% - 74px);
-    height: calc(100% - 74px);
+    width: calc(100% - 64px);
+    height: calc(100% - 64px);
 }
 
 #debug-screen,
@@ -209,7 +209,7 @@ h3 {
 #fighting-screen {
     right: 64px;
     grid-area: play-field;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 /* ########## DEBUG-SCREEN ########## */
@@ -628,8 +628,7 @@ h3 {
     background: url("../img/main/cave.png");
     background-size: contain;
     position: absolute;
-    height: calc(100vh - 74px);
-    padding: 5px;
+    height: calc(100vh - 64px);
     max-width: 100%;
     max-height: 100vh;
 }
@@ -650,7 +649,7 @@ h3 {
 
 #fighting-options, #skills, #fight-end {
     width: 100%;
-    height: 30%;
+    height: 40%;
     border-top: 1px solid black;
     background: url("../img/main/background.png");
     z-index: 60;
@@ -679,24 +678,25 @@ h3 {
 
 .top-right-bar {
     float: right;
-    padding: 20px;
+    padding: 8px;
 }
 
 .top-left-bar {
     float: left;
-    padding: 20px;
+    padding: 8px;
 }
 
 .button-list {
-    text-align: center;
+    padding-top: 3px;
+    /*text-align: center;*/
     /*width: 50vw;*/
 }
 
 .bar-button {
     color: white;
     height: 32px;
-    width: 45vw;
-    margin-top: 4px;
+    width: 44vw;
+    margin-top: 3px;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
 }
@@ -712,7 +712,8 @@ h3 {
 .text-window {
     height: 80px;
     background: url(../img/main/plainText2.png) no-repeat center;
-    margin: 2px 0 2px 0;
+    /*margin: 2px 0 2px 0;*/
+    /*padding: 0 5px 0 5px;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -731,6 +732,7 @@ h3 {
 
 .top-bar {
     text-align: center;
+    padding-top: 0;
     border-bottom: 1px solid black;
 }
 
@@ -780,7 +782,7 @@ h3 {
     width: 96px;
     height: 96px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     display: block;
 }
@@ -810,5 +812,5 @@ h3 {
 
 .centered {
     text-align: center;
-    padding: 5px 0 5px 0;
+    /*padding: 5px 0 5px 0;*/
 }
