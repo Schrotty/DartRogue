@@ -130,7 +130,10 @@ _buildMonsters() async {
 }
 
 _buildLevel() async {
-  levels.add(new Level.build());
+  var response = await _requestData(Settings.getDataPath() + 'level/levels.json');
+  JSON.decode(response).asMap().forEach((int key, Map value) {
+    levels.add(new Level.build(key, value));
+  });
 }
 
 Future<String> _requestData(String url) async {

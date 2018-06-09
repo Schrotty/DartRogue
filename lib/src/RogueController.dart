@@ -24,6 +24,7 @@ class RogueController {
         row.forEach((tile) {
           querySelector("#tiles").append(new Element.div()
             ..classes.add("tile")
+            ..classes.add(tile.style)
             ..id = "tile-${tile.id}");
         });
       });
@@ -32,25 +33,33 @@ class RogueController {
         Field old = null;
         DivElement clicked = e.target;
 
-        if (Level.clicked != null) {
-          old = Level.clicked;
-          querySelector("#tile-${Level.clicked.id}").classes.remove("clicked");
-        }
-
-        Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
-        clicked.classes.add("clicked");
-
-        if (old != null) {
-          if (old.id < Level.clicked.id) {
-            view.dungeon.scrollLeft += 32;
+        var tmp = levels[0].getField(int.parse(clicked.id.substring(5)));
+        if (tmp.isAccessible) {
+          if (Level.clicked != null) {
+            old = Level.clicked;
+            querySelector("#tile-${Level.clicked.id}").classes.remove("clicked");
           }
 
-          if (old.id > Level.clicked.id) {
-            view.dungeon.scrollLeft -= 32;
-          }
-        }
 
-        //_moveCamera(64);
+          Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
+          clicked.classes.add("clicked");
+
+          if (old != null) {
+            if (old.id < Level.clicked.id) {
+              view.dungeon.scrollLeft += 32;
+            }
+
+            if (old.id > Level.clicked.id) {
+              view.dungeon.scrollLeft -= 32;
+            }
+          }
+
+          //_moveCamera(64);
+        }
+      });
+
+      querySelector("#tiles").onTouchMove.listen((onData) {
+        onData.preventDefault();
       });
     });
 

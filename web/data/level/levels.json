@@ -1,8 +1,90 @@
 [
   {
     "id":0,
-    "height": 50,
-    "width": 30,
-    "monsterCount": 5
+    "height": 4,
+    "width": 4,
+    "monsterCount": 5,
+    "rows": [
+      {
+        "row": [
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          }
+        ]
+      },
+      {
+        "row": [
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": true,
+            "style": "tile"
+          },
+          {
+            "accessible": true,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          }
+        ]
+      },
+      {
+        "row": [
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": true,
+            "style": "tile"
+          },
+          {
+            "accessible": true,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          }
+        ]
+      },
+      {
+        "row": [
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          },
+          {
+            "accessible": false,
+            "style": "tile"
+          }
+        ]
+      }
+    ]
   }
 ]

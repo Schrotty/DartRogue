@@ -9,16 +9,33 @@ class Level {
 
   static Field clicked;
 
-  Level.build() {
+  Level.build(int id, Map data) {
+    _id = id;
     fields = new List();
 
-    int id = 0;
-    for (int i = 0; i < 32; i++) {
-      fields.add(new List<Field>());
+    int fieldID = 0;
+    if (data.containsKey("rows")) {
 
-      for (int t = 0; t < 32; t++) {
-        fields[i].add(new Field.create(false, "tile-${id++}"));
+      int index = 0;
+      data["rows"].forEach((value) {
+        fields.add(new List<Field>());
+
+        data["rows"][index]["row"].forEach((tile) {
+          fields[index].add(new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}"));
+        });
+
+        index++;
+      });
+
+      for (int i = fields.length; i < 32; i++) {
+        fields.add(new List<Field>());
       }
+
+      fields.forEach((List<Field> row) {
+        for (int i = row.length; i < 32; i++) {
+          row.add(new Field.create(false, "none", "tile-${fieldID++}"));
+        }
+      });
     }
   }
 

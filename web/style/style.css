@@ -814,3 +814,8 @@ h3 {
     text-align: center;
     /*padding: 5px 0 5px 0;*/
 }
+
+/* ##### TILE STYLES ##### */
+.none {
+    background-color: black;
+}
