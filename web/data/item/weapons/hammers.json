@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name":"Abgenutzer Hammer",
-    "type": 6,
+    "type": 1,
     "quality": 0,
     "value": 4,
     "icon":"hammer.png"

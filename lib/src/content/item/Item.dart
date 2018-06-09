@@ -9,7 +9,9 @@ class Item {
 
   int value;
 
-  int type;
+  String type;
+
+  String classification;
 
   Map modifier;
 
@@ -21,10 +23,11 @@ class Item {
 
   int _max;
 
-  Item.fromJson(Map data, [int quality]) {
+  Item.fromJson(Map data, [int quality, String classification, String type]) {
     this._id = data['id'];
     this.name = data['name'];
-    this.type = data['type'];
+    this.type = type;
+    this.classification = classification;
     this.icon = data['icon'];
 
     this._quality = quality;

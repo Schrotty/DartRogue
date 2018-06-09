@@ -90,7 +90,7 @@ h3 {
 #dungeon {
     grid-area: play-field;
     overflow: scroll;
-    background: black;
+    background: #1c1117;
 }
 
 #side-bar {
@@ -249,12 +249,52 @@ h3 {
 
 #hero-screen #top-bar {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     justify-items: center;
     align-items: center;
     grid-area: top-bar;
     background: indianred;
     color: whitesmoke;
+}
+
+#hero-screen #hero-inventory-screen {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "inv-grid preview";
+
+    padding: 5px;
+}
+
+#hero-screen #inventory-grid {
+    display: grid;
+    grid-area: inv-grid;
+    grid-template-columns: repeat(4, 64px);
+    grid-template-rows: repeat(3, 64px);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    place-self: center;
+    align-self: start;
+}
+
+.inventory-background {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 6;
+    grid-row-end: 4;
+    background: url(../img/items/inventory-frame.png) no-repeat;
+    background-size: 100% 100%;
+    z-index:10;
+    padding: 5px;
+}
+
+.inventory-item {
+    background-size: 64px 64px;
+}
+
+#inventory-preview {
+
 }
 
 #hero-screen #top-bar .item-active {
@@ -265,7 +305,21 @@ h3 {
     display: grid;
     grid-area: screen;
     grid-template-columns: 32px 64px auto 64px 32px;
-    grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe";
+    grid-template-rows: 64px 64px 64px 32px;
+    grid-row-gap: 5px;
+    grid-template-areas:
+            "lte helmet-slot content-top weapon-slot rte"
+            "lme chest-slot content-middle gloves-slot rme"
+            "lbe boots-slot content-bottom legs-slot rbe"
+            "inv-p inv-p inv-p inv-p inv-p";
+}
+
+#hero-screen #hero-inventory-switch {
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    justify-content: center;
+    align-items: center;
 }
 
 #hero-screen .item-slot {
@@ -312,7 +366,8 @@ h3 {
     grid-area: legs-slot;
 }
 
-#hero-screen #selected-item-wrapper {
+#hero-screen #selected-item-wrapper,
+#preview-item-wrapper {
     display: grid;
     grid-column-start: 3;
     grid-row-start: 1;
@@ -320,7 +375,8 @@ h3 {
     justify-content: center;
 }
 
-#hero-screen #selected-item {
+#hero-screen #selected-item,
+#preview-item {
     display: grid;
     grid-template-columns: 64px 64px 64px;
     grid-template-rows: 48px 64px 64px;
@@ -335,7 +391,8 @@ h3 {
     padding: 8px;
 }
 
-#selected-item #item-name {
+#selected-item #item-name,
+#preview-item-name {
     display: flex;
     grid-area: item-name;
     justify-content: center;
@@ -344,49 +401,58 @@ h3 {
     padding: 10px;
 }
 
-#selected-item #item-icon {
+#selected-item #item-icon,
+#preview-item-icon {
     grid-area: item-icon;
 }
 
-#selected-item #item-mods {
+#selected-item #item-mods,
+#preview-item-mods {
     grid-area: item-mods;
     font-size: 8px;
 }
 
-#item-mods ul {
+#item-mods ul,
+#preview-item-mods ul {
     margin: 0;
 }
 
-#item-mods li {
+#item-mods li,
+#preview-item-mods li {
     margin: 5px 0
 }
 
-#selected-item #item-details {
+#selected-item #item-details,
+#preview-item-details {
     grid-area: item-details;
     display: grid;
     grid-template-areas: "item-quality item-type" "item-value item-value" "item-key item-key";
 }
 
-#item-details #item-quality {
+#item-details #item-quality,
+#preview-item-quality {
     grid-area: item-quality;
     font-size: 8px;
 }
 
-#item-details #item-type {
+#item-details #item-type,
+#preview-item-type {
     grid-area: item-type;
     text-align: right;
     color: grey;
     font-size: 8px;
 }
 
-#item-details #item-value {
+#item-details #item-value,
+#preview-item-value {
     grid-area: item-value;
     font-size: 24px;
     color: white;
     align-self: center;
 }
 
-#item-details #item-key {
+#item-details #item-key,
+#preview-item-key {
     grid-area: item-key;
     font-size: 6px;
     color: grey;
@@ -644,7 +710,8 @@ h3 {
 
 .tile {
     background: grey;
-    border: 1px solid black;
+    background-size: 16px 16px;
+    image-rendering: pixelated;
 }
 
 #fighting-options, #skills, #fight-end {
@@ -817,5 +884,91 @@ h3 {
 
 /* ##### TILE STYLES ##### */
 .none {
-    background-color: black;
+    background-color: transparent;
+}
+
+/* WALLS */
+.wall-top-1 {
+    background: url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-2 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-bottom {
+    background: url(../img/main/tiles.png) -256px 0;
+}
+
+.wall-bottom-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -256px 0;
+}
+
+/* FLOORS */
+.floor-wall-top {
+    background: url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-wall-top-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-default {
+    background: url(../img/main/tiles.png) -64px -96px;
+}
+
+.floor-default-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.stair-top-left {
+    background: url(../img/main/tiles.png) -160px 0;
+}
+
+.stair-middle-left {
+    background: url(../img/main/tiles.png) -160px -30px;
+}
+
+.stair-bottom-left {
+    background: url(../img/main/tiles.png) -160px -60px;
+}
+
+.stair-top-right {
+    background: url(../img/main/tiles.png) -193px 0;
+}
+
+.stair-middle-right {
+    background: url(../img/main/tiles.png) -193px -30px;
+}
+
+.stair-bottom-right {
+    background: url(../img/main/tiles.png) -193px -60px;
 }
