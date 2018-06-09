@@ -90,7 +90,7 @@ h3 {
 #dungeon {
     grid-area: play-field;
     overflow: scroll;
-    background: black;
+    background: #1c1117;
 }
 
 #side-bar {
@@ -710,7 +710,8 @@ h3 {
 
 .tile {
     background: grey;
-    border: 1px solid black;
+    background-size: 16px 16px;
+    image-rendering: pixelated;
 }
 
 #fighting-options, #skills, #fight-end {
@@ -883,5 +884,91 @@ h3 {
 
 /* ##### TILE STYLES ##### */
 .none {
-    background-color: black;
+    background-color: transparent;
+}
+
+/* WALLS */
+.wall-top-1 {
+    background: url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-2 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-bottom {
+    background: url(../img/main/tiles.png) -256px 0;
+}
+
+.wall-bottom-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -256px 0;
+}
+
+/* FLOORS */
+.floor-wall-top {
+    background: url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-wall-top-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-default {
+    background: url(../img/main/tiles.png) -64px -96px;
+}
+
+.floor-default-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.stair-top-left {
+    background: url(../img/main/tiles.png) -160px 0;
+}
+
+.stair-middle-left {
+    background: url(../img/main/tiles.png) -160px -30px;
+}
+
+.stair-bottom-left {
+    background: url(../img/main/tiles.png) -160px -60px;
+}
+
+.stair-top-right {
+    background: url(../img/main/tiles.png) -193px 0;
+}
+
+.stair-middle-right {
+    background: url(../img/main/tiles.png) -193px -30px;
+}
+
+.stair-bottom-right {
+    background: url(../img/main/tiles.png) -193px -60px;
 }
