@@ -68,6 +68,15 @@ class RogueView {
   final Element previewItemKey = querySelector("#preview-item #preview-item-key");
   final Element previewItemMods = querySelector("#preview-item #preview-item-mods ul");
 
+  /* PREVIEW ITEM */
+  final Element previewItemName = querySelector("#preview-item #preview-item-name");
+  final Element previewItemIcon = querySelector("#preview-item #preview-item-icon");
+  final Element previewItemQuality = querySelector("#preview-item #preview-item-quality");
+  final Element previewItemType = querySelector("#preview-item #preview-item-type");
+  final Element previewItemValue = querySelector("#preview-item #preview-item-value");
+  final Element previewItemKey = querySelector("#preview-item #preview-item-key");
+  final Element previewItemMods = querySelector("#preview-item #preview-item-mods ul");
+
   /* ATTRIBUTES */
   final Element heroStrength = querySelector("#hero-strength");
   final Element heroDamage = querySelector("#hero-damage");
