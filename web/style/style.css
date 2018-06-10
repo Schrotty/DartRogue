@@ -261,8 +261,7 @@ h3 {
     display: grid;
     grid-template-columns: 300px auto;
     grid-column-gap: 5px;
-    grid-template-areas:
-            "inv-grid preview";
+    grid-template-areas: "inv-grid preview";
 
     padding: 5px;
 }
@@ -285,7 +284,7 @@ h3 {
     grid-row-end: 4;
     background: url(../img/items/inventory-frame.png) no-repeat;
     background-size: 100% 100%;
-    z-index:10;
+    z-index: 10;
     padding: 5px;
 }
 
@@ -307,11 +306,7 @@ h3 {
     grid-template-columns: 32px 64px auto 64px 32px;
     grid-template-rows: 64px 64px 64px 32px;
     grid-row-gap: 5px;
-    grid-template-areas:
-            "lte helmet-slot content-top weapon-slot rte"
-            "lme chest-slot content-middle gloves-slot rme"
-            "lbe boots-slot content-bottom legs-slot rbe"
-            "inv-p inv-p inv-p inv-p inv-p";
+    grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe" "inv-p inv-p inv-p inv-p inv-p";
 }
 
 #hero-screen #hero-inventory-switch {
@@ -891,6 +886,12 @@ h3 {
     width: 32px;
     height: 32px;
     background: url(../img/main/tiles.png) -128px -256px !important;
+}
+
+.monster {
+    width: 32px;
+    height: 32px;
+    background: url(../img/main/tiles.png) -96px -352px !important;
 }
 
 /* WALLS */

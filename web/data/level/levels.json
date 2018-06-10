@@ -199,6 +199,7 @@
           {
             "id": 4,
             "accessible": true,
+            "monster": 0,
             "style": "floor-default"
           },
           {
@@ -219,6 +220,7 @@
           {
             "id": 8,
             "accessible": true,
+            "monster": 1,
             "style": "floor-default"
           },
           {
@@ -386,7 +388,7 @@
           },
           {
             "id": 8,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           }
         ]
