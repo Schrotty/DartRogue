@@ -30,9 +30,10 @@ class RogueController {
             ..id = "tile-${tile.id}"
             ..append(new Element.div());
 
-          if (null != tile.monsterId) {
-            elm.children[0].classes.add("monster");
-          }
+//          if (null != tile.monsterId) {
+//            print(tile.monsterId);
+//            elm.children[0].classes.add("monster");
+//          }
 
           querySelector("#tiles").append(elm);
         });
@@ -53,8 +54,10 @@ class RogueController {
             querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
           }
 
+
           Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
           player.move(Level.clicked);
+
 
           clicked.children[0].classes.add("player");
           clicked.scrollIntoView(ScrollAlignment.CENTER);
@@ -69,12 +72,11 @@ class RogueController {
             }
           }*/
 
-          }
-          if (null != tmp.monsterId) {
-            _startFight();
-          }
-          //_moveCamera(64);
-
+        }
+        if (null != tmp.monsterId) {
+          _startFight(Level.clicked.monsterId);
+        }
+        //_moveCamera(64);
       });
 
       querySelector("#tiles").onTouchMove.listen((onData) {
@@ -204,14 +206,10 @@ class RogueController {
     });*/
   }
 
-  _startFight() {
+  _startFight(int monsterId) {
     if (player.isAlive) {
       if (monsters.isNotEmpty) {
-        var _rnd = new Random();
-        do {
-          attackerId = _rnd.nextInt(monsterCount_DEBUG);
-        } while (!monsters.containsKey(attackerId));
-        attacker = monsters[attackerId];
+        attacker = monsters[monsterId];
         view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
         view.monsterIcon.style.backgroundImage =
             "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
@@ -239,6 +237,10 @@ class RogueController {
   _updateEndScreen() {
     _switchMenu(view.fightingOptions, view.skills);
 
+    if (!attacker.isAlive) {
+      Level.clicked.monsterId = null;
+    }
+
     if (!attacker.isAlive || !player.isAlive) {
       String msg = !attacker.isAlive
           ? "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
@@ -250,10 +252,6 @@ class RogueController {
 
       view.fightEndMessage.text = msg;
       _switchMenu(view.fightEnd, view.fightingOptions);
-    }
-    if (!attacker.isAlive) {
-      querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("monster");
-      Level.clicked.monsterId(null);
     }
   }
 
@@ -305,7 +303,6 @@ class RogueController {
 
   _updateMoveablePositions() {
     //player.move(player.position);
-
   }
 
   _spawnPlayer() {

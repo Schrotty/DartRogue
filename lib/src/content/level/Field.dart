@@ -2,12 +2,13 @@ part of rogue;
 
 class Field {
   int _id;
+  int _y;
   bool _accessible;
   String _style;
   int _stageId;
   int _monsterId;
 
-  Field.create(bool accessible, String style, [String id, this._stageId, this._monsterId]) {
+  Field.create(bool accessible, String style, [String id, this._y, this._stageId, this._monsterId]) {
     _accessible = accessible;
     _style = style;
     _id = int.parse(id.substring(5));
@@ -23,7 +24,9 @@ class Field {
 
   get monsterId => _monsterId;
 
-  set monsterId(int id) => _monsterId;
+  set monsterId(int id) => _monsterId = id;
 
   get stageId => _stageId;
+
+  get index => _y;
 }
