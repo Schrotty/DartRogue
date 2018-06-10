@@ -52,7 +52,7 @@ class RogueController {
             player.move(Level.clicked);
             clicked.children[0].classes.add("player");
 
-            _centerPlayer(clicked);
+            _centerPlayer();
           }
         }
       });
@@ -267,15 +267,16 @@ class RogueController {
 
   _spawnPlayer() {
     Field spawn = levels[0].spawnPoint;
+    Level.clicked = spawn;
     player.move(spawn);
 
     DivElement e = querySelector("#tile-${levels[0].spawnPoint.id}");
     e.children[0].classes.add("player");
 
-    _centerPlayer(e);
+    _centerPlayer();
   }
 
-  _centerPlayer(DivElement playerPosition) {
+  _centerPlayer() {
     int mod = 32;
     view.dungeon.scrollTop = (Level.clicked.row * mod) - mod;
     view.dungeon.scrollLeft = (Level.clicked.col * mod) - mod;
