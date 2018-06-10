@@ -47,7 +47,7 @@
     "hp": 15,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 17
   },
   {
     "stage": 0,
@@ -67,7 +67,7 @@
     "hp": 50,
     "attack": 4,
     "speed": 10,
-    "grantedXP": 100,
+    "grantedXP": 80,
     "loot": {
       "chest": 0
     }
@@ -131,5 +131,18 @@
     "attack": 3,
     "speed": 10,
     "grantedXP": 21
+  },
+  {
+    "stage": 1,
+    "id": 99,
+    "lvl": 4,
+    "name": "Armed_Ogre",
+    "hp": 70,
+    "attack": 7,
+    "speed": 10,
+    "grantedXP": 90,
+    "loot": {
+      "boots": 1
+    }
   }
 ]
