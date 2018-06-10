@@ -21,12 +21,14 @@ class Level {
       data["rows"].forEach((value) {
         fields.add(new List<Field>());
 
+        int col = 0;
         data["rows"][index]["row"].forEach((tile) {
-          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}");
+          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index, col);
           if (tile.containsKey("spawn")) {
             spawnPoint = f;
           }
 
+          col++;
           fields[index].add(f);
         });
 
@@ -39,7 +41,7 @@ class Level {
 
       fields.forEach((List<Field> row) {
         for (int i = row.length; i < 32; i++) {
-          row.add(new Field.create(false, "none", "tile-${fieldID++}"));
+          row.add(new Field.create(false, "none", "tile-${fieldID++}", -1, -1));
         }
       });
     }

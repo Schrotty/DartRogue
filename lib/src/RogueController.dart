@@ -36,34 +36,24 @@ class RogueController {
         Field old = null;
         DivElement clicked = e.target;
 
-        var tmp = levels[0].getField(int.parse(clicked.id.substring(5)));
-        if (tmp.isAccessible) {
-          if (old == null) {
-            querySelector("#tile-${levels[0].spawnPoint.id}").children[0].classes.remove("player");
-          }
-
-          if (Level.clicked != null) {
-            old = Level.clicked;
-            querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
-          }
-
-          Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
-          player.move(Level.clicked);
-
-          clicked.children[0].classes.add("player");
-          clicked.scrollIntoView(ScrollAlignment.CENTER);
-
-          /*if (old != null) {
-            if (old.id < Level.clicked.id) {
-              view.dungeon.scrollLeft += 32;
+        if (!clicked.classes.contains("player")) {
+          var tmp = levels[0].getField(int.parse(clicked.id.substring(5)));
+          if (tmp.isAccessible) {
+            if (old == null) {
+              querySelector("#tile-${levels[0].spawnPoint.id}").children[0].classes.remove("player");
             }
 
-            if (old.id > Level.clicked.id) {
-              view.dungeon.scrollLeft -= 32;
+            if (Level.clicked != null) {
+              old = Level.clicked;
+              querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
             }
-          }*/
 
-          //_moveCamera(64);
+            Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
+            player.move(Level.clicked);
+            clicked.children[0].classes.add("player");
+
+            _centerPlayer(clicked);
+          }
         }
       });
 
@@ -72,6 +62,9 @@ class RogueController {
       });
 
       _spawnPlayer();
+      querySelector(".player").onClick.listen((e) {
+        _openHeroScreen();
+      });
     });
 
     view.highscoreButton.onClick.listen((e) {
@@ -156,8 +149,7 @@ class RogueController {
     });
 
     view.heroScreenButton.onClick.listen((e) {
-      _updatePlayerEquipment();
-      _toggleOverlay(view.heroScreen);
+      _openHeroScreen();
     });
 
     view.fightingScreenButton.onClick.listen((e) {
@@ -273,26 +265,26 @@ class RogueController {
     _updateFightScreen();
   }
 
-  _updateMoveablePositions() {
-    //player.move(player.position);
-
-  }
-
   _spawnPlayer() {
     Field spawn = levels[0].spawnPoint;
     player.move(spawn);
 
-    querySelector("#tile-${levels[0].spawnPoint.id}").children[0].classes.add("player");
+    DivElement e = querySelector("#tile-${levels[0].spawnPoint.id}");
+    e.children[0].classes.add("player");
+
+    _centerPlayer(e);
+  }
+
+  _centerPlayer(DivElement playerPosition) {
+    int mod = 32;
+    view.dungeon.scrollTop = (Level.clicked.row * mod) - mod;
+    view.dungeon.scrollLeft = (Level.clicked.col * mod) - mod;
   }
 
   _updatePlayerHealth() {
     view.playerHealth.text = "${player.currHealth}/${player.maxHealth}";
     view.playerHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
-  }
-
-  _moveCamera(int value) {
-    view.dungeon.scrollLeft += value;
   }
 
   _updatePlayerEquipment() {
@@ -520,5 +512,10 @@ class RogueController {
       String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
       view.previewItemMods.append(new LIElement()..text = text);
     });
+  }
+
+  _openHeroScreen() {
+    _updatePlayerEquipment();
+    _toggleOverlay(view.heroScreen);
   }
 }
