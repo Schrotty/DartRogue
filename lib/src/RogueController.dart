@@ -30,11 +30,6 @@ class RogueController {
             ..id = "tile-${tile.id}"
             ..append(new Element.div());
 
-//          if (null != tile.monsterId) {
-//            print(tile.monsterId);
-//            elm.children[0].classes.add("monster");
-//          }
-
           querySelector("#tiles").append(elm);
         });
       });
@@ -129,7 +124,7 @@ class RogueController {
       if (attacker.isAlive) {
         player.takeDamage(attacker.calcDamage());
       }
-      _updateEndScreen();
+      _updateFightEnd();
     });
 
     view.skillOneButton.onClick.listen((e) {
@@ -166,25 +161,25 @@ class RogueController {
     });
 
     view.fightingScreenButton.onClick.listen((e) {
-      if (monsters == null) {
-        monsters = monsterList[player.currentStage];
-      }
-      if (player.isAlive) {
-        if (monsters.isNotEmpty) {
-          var _rnd = new Random();
-          do {
-            attackerId = _rnd.nextInt(monsterCount_DEBUG);
-          } while (!monsters.containsKey(attackerId));
-          attacker = monsters[attackerId];
-          view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
-          view.monsterIcon.style.backgroundImage =
-              "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
-          _toggleOverlay(view.fightingScreen);
-        } else {
-          if (!view.fightingScreen.classes.contains("invisible"))
-            view.fightingScreen.classes.add("invisible");
-        }
-      }
+//      if (monsters == null) {
+//        monsters = monsterList[player.currentStage];
+//      }
+//      if (player.isAlive) {
+//        if (monsters.isNotEmpty) {
+//          var _rnd = new Random();
+//          do {
+//            attackerId = _rnd.nextInt(monsterCount_DEBUG);
+//          } while (!monsters.containsKey(attackerId));
+//          attacker = monsters[attackerId];
+//          view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
+//          view.monsterIcon.style.backgroundImage =
+//              "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+//          _toggleOverlay(view.fightingScreen);
+//        } else {
+//          if (!view.fightingScreen.classes.contains("invisible"))
+//            view.fightingScreen.classes.add("invisible");
+//        }
+//      }
     });
 
     _registerHeroScreenEvents();
@@ -231,15 +226,21 @@ class RogueController {
       if (attacker.isAlive) {
         player.takeDamage(attacker.calcDamage());
       }
-      _updateEndScreen();
+      _updateFightEnd();
     }
   }
 
-  _updateEndScreen() {
+  _updateFightEnd() {
     _switchMenu(view.fightingOptions, view.skills);
 
     if (!attacker.isAlive) {
       Level.clicked.monsterId = null;
+      querySelector("#tile-${Level.clicked.id}").classes.remove("floor-default-monster");
+      querySelector("#tile-${Level.clicked.id}").classes.remove("floor-default-boss");
+      querySelector("#tile-${Level.clicked.id}").classes.add("floor-default");
+      if (monsters.containsKey(attackerId)) {
+        monsters.remove(attackerId);
+      }
     }
 
     if (!attacker.isAlive || !player.isAlive) {
@@ -252,6 +253,7 @@ class RogueController {
           : "YOU DIED!";
 
       view.fightEndMessage.text = msg;
+      if (!attacker.isAlive) player.gainXP(attacker.grantedXP);
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
   }
@@ -396,14 +398,6 @@ class RogueController {
     view.playerFightHealth.text = player.currHealth;
     view.playerFightMaxHealth.text = player.maxHealth;
     view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
-
-    if (!attacker.isAlive) {
-      if (monsters.containsKey(attackerId)) {
-        monsters.remove(attackerId);
-        player.gainXP(attacker.grantedXP);
-        print(monsters.length);
-      }
-    }
   }
 
   _registerHeroScreenEvents() {

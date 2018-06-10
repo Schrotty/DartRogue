@@ -67,7 +67,7 @@ class Player extends Moveable {
     _currHealth = maxHealth;
     _lvl = 1;
     _baseXp = data['baseXp'];
-    _gainedXp = 35;
+    _gainedXp = 0;
     _neededXp = data['baseXp'];
     _currentStage = 0;
 

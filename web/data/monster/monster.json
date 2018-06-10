@@ -60,6 +60,19 @@
     "grantedXP": 21
   },
   {
+    "stage": 0,
+    "id": 99,
+    "lvl": 3,
+    "name": "Black_Troll",
+    "hp": 50,
+    "attack": 4,
+    "speed": 10,
+    "grantedXP": 100,
+    "loot": {
+      "chest": 0
+    }
+  },
+  {
     "stage": 1,
     "id": 0,
     "lvl": 2,

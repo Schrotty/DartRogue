@@ -888,12 +888,6 @@ h3 {
     background: url(../img/main/tiles.png) -128px -256px !important;
 }
 
-.monster {
-    width: 32px;
-    height: 32px;
-    background: url(../img/main/tiles.png) -96px -352px !important;
-}
-
 /* WALLS */
 .wall-top-1 {
     background: url(../img/main/tiles.png) 1px -24px;
@@ -931,6 +925,14 @@ h3 {
     background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
 }
 
+.wall-middle-1 {
+    background: url(../img/main/tiles.png) 1px -32px;
+}
+
+.wall-middle-2 {
+    background: url(../img/main/tiles.png) -2px -32px;
+}
+
 .wall-bottom {
     background: url(../img/main/tiles.png) -256px 0;
 }
@@ -956,26 +958,98 @@ h3 {
     background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
 }
 
-.stair-top-left {
-    background: url(../img/main/tiles.png) -160px 0;
+.floor-default-monster {
+    background: url(../img/main/tiles.png) -98px -352px, url(../img/main/tiles.png) -64px -96px;
 }
 
-.stair-middle-left {
+.floor-default-boss {
+    background: url(../img/main/tiles.png) -98px -320px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.stair-top-left {
     background: url(../img/main/tiles.png) -160px -30px;
 }
 
-.stair-bottom-left {
-    background: url(../img/main/tiles.png) -160px -60px;
+.stair-top-middle {
+    background: url(../img/main/tiles.png) -165px -30px;
 }
 
 .stair-top-right {
-    background: url(../img/main/tiles.png) -193px 0;
+    background: url(../img/main/tiles.png) -192px -30px;
+}
+
+.stair-middle-left {
+    background: url(../img/main/tiles.png) -160px -41px;
+}
+
+.stair-middle-middle {
+    background: url(../img/main/tiles.png) -165px -41px;
 }
 
 .stair-middle-right {
-    background: url(../img/main/tiles.png) -193px -30px;
+    background: url(../img/main/tiles.png) -192px -41px;
+}
+
+.stair-bottom-left {
+    background: url(../img/main/tiles.png) -160px -62px;
+}
+
+.stair-bottom-middle {
+    background: url(../img/main/tiles.png) -165px -62px;
 }
 
 .stair-bottom-right {
-    background: url(../img/main/tiles.png) -193px -60px;
+    background: url(../img/main/tiles.png) -192px -62px;
+}
+
+.space-top-left {
+    background: url(../img/main/tiles.png) 0 -192px;
+}
+
+.space-top-left-middle {
+    background: url(../img/main/tiles.png) -32px -192px;
+}
+
+.space-top-right-middle {
+    background: url(../img/main/tiles.png) -64px -192px;
+}
+
+.space-top-right {
+    background: url(../img/main/tiles.png) -96px -192px;
+}
+
+.space-middle-left {
+    background: url(../img/main/tiles.png) 0 -224px;
+}
+
+.space-middle-left-middle {
+    background: url(../img/main/tiles.png) -32px -224px;
+}
+
+.space-middle-right-middle {
+    background: url(../img/main/tiles.png) -64px -224px;
+}
+
+.space-middle-right {
+    background: url(../img/main/tiles.png) -96px -224px;
+}
+
+.space-bottom-left {
+    background: url(../img/main/tiles.png) 0 -256px;
+}
+
+.space-bottom-left-middle {
+    background: url(../img/main/tiles.png) -32px -256px;
+}
+
+.space-bottom-right-middle {
+    background: url(../img/main/tiles.png) -64px -256px;
+}
+
+.space-bottom-right {
+    background: url(../img/main/tiles.png) -96px -256px;
+}
+
+.exit-treasure {
+    background: url(../img/main/tiles.png) -480px -416px, url(../img/main/tiles.png) -64px -96px;
 }

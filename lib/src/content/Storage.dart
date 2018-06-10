@@ -9,7 +9,6 @@ Map<String, Map<int, List<Item>>> weapons = new Map();
 Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Skill> skills = new Map();
 Map<int, Item> potions = new Map();
-//List<Map<int, Monster>> monsterList = new List<Map<int, Monster>>();
 Map<int, Map<int, Monster>> monsterList = new Map<int, Map<int, Monster>>();
 Map<int, Monster> monstersLvl_0 = new Map();
 Map<int, Monster> monstersLvl_1 = new Map();
@@ -133,13 +132,6 @@ _buildPotions() async {
 _buildMonstersPerLvl(int lvl) async {
   _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
     Map<int, Monster> mnstr = new Map();
-//    JSON.decode(response).forEach((m) {
-//      if (lvl == m['stage']) {
-//        mnstr[m['id']] = createMonster(m);
-//      }
-//    });
-//    monsterList.add(mnstr);
-
     JSON.decode(response).forEach((m) {
       if (lvl == m['stage']) {
         mnstr[m['id']] = createMonster(m);
