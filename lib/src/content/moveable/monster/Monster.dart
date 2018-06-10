@@ -44,4 +44,8 @@ class Monster extends Moveable {
   get grantedXP => this._grantedXP;
 
   set grantedXP(int xp) => this._grantedXP = xp;
+
+  toString() {
+    return this.name;
+  }
 }

@@ -9,6 +9,7 @@ class Player extends Moveable {
   int _baseXp;
   int _gainedXp;
   int _neededXp;
+  int _currentStage;
 
   Item helmet;
   Item chest;
@@ -68,6 +69,7 @@ class Player extends Moveable {
     _baseXp = data['baseXp'];
     _gainedXp = 35;
     _neededXp = data['baseXp'];
+    _currentStage = 0;
 
     inventory.add(weapon);
     inventory.add(chest);
@@ -242,4 +244,8 @@ class Player extends Moveable {
   get gainedXp => _gainedXp;
 
   get neededXp => _neededXp;
+
+  get currentStage => _currentStage;
+
+  set currentStage(int stage) => _currentStage = stage;
 }

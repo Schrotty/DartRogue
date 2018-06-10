@@ -3,7 +3,7 @@ part of rogue;
 class RogueController {
   final RogueView view = new RogueView();
 
-  Map<int, Monster> monsters = monstersLvl_0;
+  Map<int, Monster> monsters;
 
   RogueController() {
     _init();
@@ -166,6 +166,9 @@ class RogueController {
     });
 
     view.fightingScreenButton.onClick.listen((e) {
+      if (monsters == null) {
+        monsters = monsterList[player.currentStage];
+      }
       if (player.isAlive) {
         if (monsters.isNotEmpty) {
           var _rnd = new Random();
@@ -204,6 +207,7 @@ class RogueController {
   }
 
   _startFight(int monsterId) {
+    monsters = monsterList[player.currentStage];
     if (player.isAlive) {
       if (monsters.isNotEmpty) {
         attacker = monsters[monsterId];

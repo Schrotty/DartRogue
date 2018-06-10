@@ -9,6 +9,8 @@ Map<String, Map<int, List<Item>>> weapons = new Map();
 Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Skill> skills = new Map();
 Map<int, Item> potions = new Map();
+//List<Map<int, Monster>> monsterList = new List<Map<int, Monster>>();
+Map<int, Map<int, Monster>> monsterList = new Map<int, Map<int, Monster>>();
 Map<int, Monster> monstersLvl_0 = new Map();
 Map<int, Monster> monstersLvl_1 = new Map();
 Map<int, Monster> bosses = new Map();
@@ -68,25 +70,28 @@ _buildArmors() async {
 
 _buildMonsters() async {
   _buildMonstersPerLvl(0);
-  _buildMonstersPerLvl(0);
+  _buildMonstersPerLvl(1);
+  _buildMonstersPerLvl(2);
+  _buildMonstersPerLvl(3);
+  _buildMonstersPerLvl(4);
+  _buildMonstersPerLvl(5);
+  _buildMonstersPerLvl(6);
 }
 
 _buildPlayer() async {
-  await _requestData(Settings.getDataPath() + 'player/player.json')
-      .then((response) {
+  await _requestData(Settings.getDataPath() + 'player/player.json').then((response) {
     player = new Player.fromMap(JSON.decode(response).asMap()[0]);
   });
 }
 
 _buildWeaponType(String type) async {
-  await _requestData(Settings.getDataPath() + 'item/weapons/$type.json')
-      .then((response) {
+  await _requestData(Settings.getDataPath() + 'item/weapons/$type.json').then((response) {
     Map w = JSON.decode(response).asMap()[0];
 
     weapons[type][w['id']] = new List();
     if (w.containsKey('multi')) {
-      Qualities.forEach((q) =>
-          weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q), type)));
+      Qualities
+          .forEach((q) => weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q), type)));
       return;
     }
 
@@ -95,14 +100,13 @@ _buildWeaponType(String type) async {
 }
 
 _buildArmorType(String type) async {
-  await _requestData(Settings.getDataPath() + 'item/armor/$type.json')
-      .then((response) {
+  await _requestData(Settings.getDataPath() + 'item/armor/$type.json').then((response) {
     Map a = JSON.decode(response).asMap()[0];
 
     armors[type][a['id']] = new List();
     if (a.containsKey('multi')) {
-      Qualities.forEach((q) =>
-          armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q), type)));
+      Qualities
+          .forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q), type)));
       return;
     }
 
@@ -111,8 +115,7 @@ _buildArmorType(String type) async {
 }
 
 _buildSkills() async {
-  await _requestData(Settings.getDataPath() + 'skill/skills.json')
-      .then((response) {
+  await _requestData(Settings.getDataPath() + 'skill/skills.json').then((response) {
     JSON.decode(response).forEach((s) {
       skills[s['id']] = createSkill(s);
     });
@@ -120,8 +123,7 @@ _buildSkills() async {
 }
 
 _buildPotions() async {
-  await _requestData(Settings.getDataPath() + 'item/potions.json')
-      .then((response) {
+  await _requestData(Settings.getDataPath() + 'item/potions.json').then((response) {
     Map p = JSON.decode(response).asMap();
 
     p.forEach((id, pot) => potions[id] = createPotion(pot));
@@ -129,25 +131,32 @@ _buildPotions() async {
 }
 
 _buildMonstersPerLvl(int lvl) async {
-  _requestData(Settings.getDataPath() + 'monster/monster.json')
-      .then((response) {
+  _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
+    Map<int, Monster> mnstr = new Map();
+//    JSON.decode(response).forEach((m) {
+//      if (lvl == m['stage']) {
+//        mnstr[m['id']] = createMonster(m);
+//      }
+//    });
+//    monsterList.add(mnstr);
+
     JSON.decode(response).forEach((m) {
-      switch(lvl) {
-        case 0: monstersLvl_0[m['id']] = createMonster(m); break;
-        case 1: monstersLvl_1[m['id']] = createMonster(m); break;
+      if (lvl == m['stage']) {
+        mnstr[m['id']] = createMonster(m);
       }
     });
+    monsterList[lvl] = mnstr;
   });
 }
 
 _buildBosses() async {
-  _requestData(Settings.getDataPath() + 'monster/bosses.json')
-      .then((response) {
+  _requestData(Settings.getDataPath() + 'monster/bosses.json').then((response) {
     JSON.decode(response).forEach((m) {
       bosses[m['id']] = createMonster(m);
     });
   });
 }
+
 _buildLevel() async {
   var response = await _requestData(Settings.getDataPath() + 'level/levels.json');
   JSON.decode(response).asMap().forEach((int key, Map value) {

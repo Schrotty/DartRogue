@@ -7,122 +7,116 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10,
-    "loot": {
-      "chest": 1
-    }
+    "grantedXP": 20
   },
   {
     "stage": 0,
     "id": 1,
     "lvl": 1,
     "name": "Red_Bat",
-    "hp": 8,
-    "attack": 1,
+    "hp": 18,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 18
   },
   {
     "stage": 0,
     "id": 2,
-    "lvl": 2,
+    "lvl": 1,
     "name": "Green_Scorpion",
-    "hp": 10,
+    "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 20
   },
   {
     "stage": 0,
     "id": 3,
-    "lvl": 3,
+    "lvl": 1,
     "name": "Dark_Pumpkin",
-    "hp": 12,
-    "attack": 4,
+    "hp": 19,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 19
   },
   {
     "stage": 0,
     "id": 4,
-    "lvl": 3,
+    "lvl": 1,
     "name": "Ogre",
-    "hp": 10,
+    "hp": 15,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 16
   },
   {
     "stage": 0,
     "id": 5,
-    "lvl": 4,
+    "lvl": 1,
     "name": "Red_Snake",
-    "hp": 14,
+    "hp": 22,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 21
   },
   {
     "stage": 1,
     "id": 0,
-    "lvl": 1,
-    "name": "Ghoul",
+    "lvl": 2,
+    "name": "Black_Troll",
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10,
-    "loot": {
-      "chest": 1
-    }
+    "grantedXP": 20
   },
   {
     "stage": 1,
-    "id": 1,
+    "id": 2,
     "lvl": 1,
-    "name": "Red_Bat",
-    "hp": 8,
-    "attack": 1,
+    "name": "Grey_Bat",
+    "hp": 18,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 18
   },
   {
     "stage": 1,
     "id": 2,
     "lvl": 2,
-    "name": "Green_Scorpion",
-    "hp": 10,
+    "name": "Green_Snake",
+    "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 20
   },
   {
     "stage": 1,
     "id": 3,
-    "lvl": 3,
-    "name": "Dark_Pumpkin",
-    "hp": 12,
-    "attack": 4,
+    "lvl": 2,
+    "name": "Pumpkin",
+    "hp": 19,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 19
   },
   {
     "stage": 1,
     "id": 4,
-    "lvl": 3,
-    "name": "Ogre",
-    "hp": 10,
+    "lvl": 2,
+    "name": "Kobold",
+    "hp": 15,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 16
   },
   {
     "stage": 1,
     "id": 5,
-    "lvl": 4,
-    "name": "Red_Snake",
-    "hp": 14,
+    "lvl": 2,
+    "name": "Red_Troll",
+    "hp": 22,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 21
   }
 ]
