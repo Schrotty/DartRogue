@@ -5,8 +5,6 @@ class Level {
 
   Field spawnPoint;
   List<List<Field>> fields;
-
-  //obsolete?
   List<SpawnPoint> restPlaces;
   List<SpawnPoint> monsterSpawnPoints;
 
@@ -18,17 +16,19 @@ class Level {
 
     int fieldID = 0;
     if (data.containsKey("rows")) {
+
       int index = 0;
       data["rows"].forEach((value) {
         fields.add(new List<Field>());
 
+        int col = 0;
         data["rows"][index]["row"].forEach((tile) {
-          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index,
-              data['id'], tile['monster']);
+          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index, col,data['id'], tile['monster']);
           if (tile.containsKey("spawn")) {
             spawnPoint = f;
           }
 
+          col++;
           fields[index].add(f);
         });
 
@@ -41,7 +41,7 @@ class Level {
 
       fields.forEach((List<Field> row) {
         for (int i = row.length; i < 32; i++) {
-          row.add(new Field.create(false, "none", "tile-${fieldID++}"));
+          row.add(new Field.create(false, "none", "tile-${fieldID++}", -1, -1));
         }
       });
     }
