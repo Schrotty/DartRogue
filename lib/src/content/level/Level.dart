@@ -23,7 +23,7 @@ class Level {
 
         int col = 0;
         data["rows"][index]["row"].forEach((tile) {
-          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index, col,data['id'], tile['monster']);
+          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index, col, data['id'], tile['monster']);
           if (tile.containsKey("spawn")) {
             spawnPoint = f;
           }

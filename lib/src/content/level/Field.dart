@@ -9,7 +9,7 @@ class Field {
   int _stageId;
   int _monsterId;
 
-  Field.create(bool accessible, String style, String id, int row, int col, this._stageId, this._monsterId) {
+  Field.create(bool accessible, String style, String id, int row, int col, [this._stageId, this._monsterId]) {
     _accessible = accessible;
     _style = style;
     _id = int.parse(id.substring(5));
@@ -30,8 +30,6 @@ class Field {
   set monsterId(int id) => _monsterId = id;
 
   get stageId => _stageId;
-
-  get index => _y;
 
   get row => _row;
 
