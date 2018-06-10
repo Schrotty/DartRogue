@@ -3,6 +3,7 @@ part of rogue;
 class Level {
   int _id;
 
+  Field spawnPoint;
   List<List<Field>> fields;
   List<SpawnPoint> restPlaces;
   List<SpawnPoint> monsterSpawnPoints;
@@ -21,7 +22,12 @@ class Level {
         fields.add(new List<Field>());
 
         data["rows"][index]["row"].forEach((tile) {
-          fields[index].add(new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}"));
+          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}");
+          if (tile.containsKey("spawn")) {
+            spawnPoint = f;
+          }
+
+          fields[index].add(f);
         });
 
         index++;

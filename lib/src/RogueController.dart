@@ -22,10 +22,13 @@ class RogueController {
 
       levels[0].fields.forEach((row) {
         row.forEach((tile) {
-          querySelector("#tiles").append(new Element.div()
+          DivElement elm = new Element.div()
             ..classes.add("tile")
             ..classes.add(tile.style)
-            ..id = "tile-${tile.id}");
+            ..id = "tile-${tile.id}"
+          ..append(new Element.div());
+
+          querySelector("#tiles").append(elm);
         });
       });
 
@@ -37,12 +40,14 @@ class RogueController {
         if (tmp.isAccessible) {
           if (Level.clicked != null) {
             old = Level.clicked;
-            querySelector("#tile-${Level.clicked.id}").classes.remove("clicked");
+            querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
           }
 
 
           Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
-          clicked.classes.add("clicked");
+          player.move(Level.clicked);
+
+          clicked.children[0].classes.add("player");
 
           if (old != null) {
             if (old.id < Level.clicked.id) {
@@ -260,6 +265,16 @@ class RogueController {
     _updatePlayerAttributes();
     _updatePlayerHealth();
     _updateFightScreen();
+  }
+
+  _updateMoveablePositions() {
+    //player.move(player.position);
+
+  }
+
+  _spawnPlayer() {
+    Field spawn = levels[0].spawnPoint;
+    player.move(spawn);
   }
 
   _updatePlayerHealth() {

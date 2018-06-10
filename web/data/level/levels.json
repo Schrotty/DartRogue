@@ -98,6 +98,7 @@
           },
           {
             "id": 1,
+            "spawn": true,
             "accessible": true,
             "style": "floor-wall-top"
           },

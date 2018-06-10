@@ -106,7 +106,7 @@ h3 {
     background-image: url(../img/icon/side-bar-frame.png);
 }
 
-#tiles {
+#tiles, #movables {
     zoom: 150%;
     display: grid;
     grid-template-columns: repeat(32, 32px);
@@ -885,6 +885,12 @@ h3 {
 /* ##### TILE STYLES ##### */
 .none {
     background-color: transparent;
+}
+
+.player {
+    width: 32px;
+    height: 32px;
+    background: url(../img/main/tiles.png) -128px -256px !important;
 }
 
 /* WALLS */

@@ -8,6 +8,7 @@ abstract class Moveable {
   int _speed;
   Map<String, int> _loot = new Map();
   bool _alive = true;
+  Field _position;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -25,8 +26,8 @@ abstract class Moveable {
 
   _die();
 
-  move(int x, int y) {
-    print("Not implemented yet!");
+  move(Field position) {
+    _position = position;
   }
 
   get name => this._name;
@@ -54,4 +55,6 @@ abstract class Moveable {
   set speed(int speed) => this._speed = speed;
 
   get isAlive => _alive;
+
+  get position => _position;
 }
