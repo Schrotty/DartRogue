@@ -1,7 +1,7 @@
 part of rogue;
 
 Player player;
-Monster attacker;
+Monster attacker = new Monster();
 int attackerId;
 int monsterCount_DEBUG = 8;
 
