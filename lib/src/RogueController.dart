@@ -11,9 +11,9 @@ class RogueController {
     _registerGameEvents();
   }
 
-  _registerMenuEvents() {
+  _registerMenuEvents() async {
     /* MAIN MENU EVENTS */
-    view.startButton.onClick.listen((e) {
+    view.startButton.onClick.listen((e) async {
       _switchMenu(view.game, view.home);
 
       /* GAME TIMER */
@@ -38,18 +38,22 @@ class RogueController {
 
         var tmp = levels[0].getField(int.parse(clicked.id.substring(5)));
         if (tmp.isAccessible) {
+          if (old == null) {
+            querySelector("#tile-${levels[0].spawnPoint.id}").children[0].classes.remove("player");
+          }
+
           if (Level.clicked != null) {
             old = Level.clicked;
             querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
           }
 
-
           Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
           player.move(Level.clicked);
 
           clicked.children[0].classes.add("player");
+          clicked.scrollIntoView(ScrollAlignment.CENTER);
 
-          if (old != null) {
+          /*if (old != null) {
             if (old.id < Level.clicked.id) {
               view.dungeon.scrollLeft += 32;
             }
@@ -57,7 +61,7 @@ class RogueController {
             if (old.id > Level.clicked.id) {
               view.dungeon.scrollLeft -= 32;
             }
-          }
+          }*/
 
           //_moveCamera(64);
         }
@@ -66,6 +70,8 @@ class RogueController {
       querySelector("#tiles").onTouchMove.listen((onData) {
         onData.preventDefault();
       });
+
+      _spawnPlayer();
     });
 
     view.highscoreButton.onClick.listen((e) {
@@ -275,6 +281,8 @@ class RogueController {
   _spawnPlayer() {
     Field spawn = levels[0].spawnPoint;
     player.move(spawn);
+
+    querySelector("#tile-${levels[0].spawnPoint.id}").children[0].classes.add("player");
   }
 
   _updatePlayerHealth() {
