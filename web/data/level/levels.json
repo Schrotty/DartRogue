@@ -98,7 +98,6 @@
           },
           {
             "id": 1,
-            "spawn": true,
             "accessible": true,
             "style": "floor-wall-top"
           },
@@ -451,6 +450,7 @@
         "row": [
           {
             "id": 0,
+            "spawn": true,
             "accessible": true,
             "style": "floor-wall-top"
           },
