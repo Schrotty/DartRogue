@@ -87,25 +87,25 @@ class RogueController {
         if (tmp.isAccessible) {
           if (old == null) {
             querySelector("#tile-${levels[stage].spawnPoint.id}")
-                .children[0]
+                .children.first
                 .classes
                 .remove("player");
           }
 
           if (Level.clicked != null) {
             old = Level.clicked;
-            querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
+            querySelector("#tile-${Level.clicked.id}").children.first.classes.remove("player");
           }
 
           Level.clicked = levels[stage].getField(int.parse(clicked.id.substring(5)));
           player.move(Level.clicked);
-          clicked.children[stage].classes.add("player");
+          clicked.children.first.classes.add("player");
 
           _centerPlayer();
         }
       }
 
-      if (old.id > Level.clicked.id) {
+      if (old != null && old.id > Level.clicked.id) {
         view.dungeon.scrollLeft -= 32;
       }
 
@@ -169,45 +169,7 @@ class RogueController {
       _openHeroScreen();
     });
 
-    view.fightingScreenButton.onClick.listen((e) {
-//      if (monsters == null) {
-//        monsters = monsterList[player.currentStage];
-//      }
-//      if (player.isAlive) {
-//        if (monsters.isNotEmpty) {
-//          var _rnd = new Random();
-//          do {
-//            attackerId = _rnd.nextInt(monsterCount_DEBUG);
-//          } while (!monsters.containsKey(attackerId));
-//          attacker = monsters[attackerId];
-//          view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
-//          view.monsterIcon.style.backgroundImage =
-//              "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
-//          _toggleOverlay(view.fightingScreen);
-//        } else {
-//          if (!view.fightingScreen.classes.contains("invisible"))
-//            view.fightingScreen.classes.add("invisible");
-//        }
-//      }
-    });
-
     _registerHeroScreenEvents();
-
-    /*view.potionsMenuButton.onClick.listen((e) {
-      _toggleOverlay(view.potionsMenu);
-    });
-
-    view.potionSmallButton.onClick.listen((e) {
-      player.usePotion(0);
-    });
-
-    view.potionMediumButton.onClick.listen((e) {
-      player.usePotion(1);
-    });
-
-    view.potionLargeButton.onClick.listen((e) {
-      player.usePotion(2);
-    });*/
   }
 
   _startFight(int monsterId) {
@@ -215,9 +177,12 @@ class RogueController {
     if (player.isAlive) {
       if (monsters.isNotEmpty) {
         attacker = monsters[monsterId];
+        _updateFightScreen();
+
         view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
         view.monsterIcon.style.backgroundImage =
             "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+
         _toggleOverlay(view.fightingScreen);
       } else {
         if (!view.fightingScreen.classes.contains("invisible"))
@@ -232,14 +197,17 @@ class RogueController {
         attacker.takeDamage(player.calcDamage(skills[skill].skillMod));
         skills[skill].use();
       }
+
       if (attacker.isAlive) {
         player.takeDamage(attacker.calcDamage());
       }
+
       _updateFightEnd();
     }
   }
 
   _updateFightEnd() {
+    _updateFightScreen();
     _switchMenu(view.fightingOptions, view.skills);
 
     if (!attacker.isAlive) {
@@ -272,6 +240,8 @@ class RogueController {
       }
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
+
+    _centerPlayer();
   }
 
   _registerDebugEvents() {
@@ -307,6 +277,8 @@ class RogueController {
   _toggleOverlay(Element overlay) {
     overlay.classes.toggle("invisible");
     overlay.classes.toggle("visible");
+
+    _centerPlayer();
   }
 
   _init() async {
@@ -317,7 +289,7 @@ class RogueController {
     _updatePlayerXp();
     _updatePlayerAttributes();
     _updatePlayerHealth();
-    _updateFightScreen();
+    //_updateFightScreen();
   }
 
   _spawnPlayer(int lvl) {
@@ -333,8 +305,8 @@ class RogueController {
 
   _centerPlayer() {
     int mod = 32;
-    view.dungeon.scrollTop = (Level.clicked.row * mod) - mod;
-    view.dungeon.scrollLeft = (Level.clicked.col * mod) - mod;
+    view.dungeon.scrollTop = (Level.clicked.row * mod);
+    view.dungeon.scrollLeft = (Level.clicked.col * mod);
   }
 
   _updatePlayerHealth() {
@@ -407,13 +379,13 @@ class RogueController {
   }
 
   _updateFightScreen() {
-    view.monsterFightHealth.text = attacker.currHealth;
-    view.monsterFightMaxHealth.text = attacker.maxHealth;
-    view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
+      view.monsterFightHealth.text = attacker.currHealth;
+      view.monsterFightMaxHealth.text = attacker.maxHealth;
+      view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
 
-    view.playerFightHealth.text = player.currHealth;
-    view.playerFightMaxHealth.text = player.maxHealth;
-    view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+      view.playerFightHealth.text = player.currHealth;
+      view.playerFightMaxHealth.text = player.maxHealth;
+      view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
   _registerHeroScreenEvents() {

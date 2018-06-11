@@ -738,6 +738,11 @@ h3 {
     border-bottom: 1px solid black;
 }
 
+#fight-top-bar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .top-right-bar {
     float: right;
     padding: 8px;
@@ -758,7 +763,6 @@ h3 {
     color: white;
     height: 32px;
     width: 44vw;
-    margin-top: 3px;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
 }
@@ -827,7 +831,7 @@ h3 {
 .health-bar-inner {
     width: 50%;
     height: 100%;
-    background: darkred;
+    background: indianred;
 }
 
 .xp-bar-inner {

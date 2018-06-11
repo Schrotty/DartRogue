@@ -165,8 +165,6 @@ class RogueView {
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton =
       querySelector("#hero-screen-button");
-  final ButtonInputElement fightingScreenButton =
-      querySelector("#fighting-screen-button");
   final ButtonInputElement potionsMenuButton = querySelector("#potions-button");
 
   /* POTIONS BUTTONS */
