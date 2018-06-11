@@ -5,11 +5,13 @@ class Item {
 
   String name;
 
+  String display;
+
   String quality;
 
   int value;
 
-  String type;
+  int type;
 
   String classification;
 
@@ -26,9 +28,10 @@ class Item {
   Item.fromJson(Map data, [int quality, String classification, String type]) {
     this._id = data['id'];
     this.name = data['name'];
-    this.type = type;
+    this.type = data['type'];
     this.classification = classification;
     this.icon = data['icon'];
+    this.display = data['display'];
 
     this._quality = quality;
     if (quality  == -1) {

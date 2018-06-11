@@ -2,9 +2,23 @@
   {
     "id": 0,
     "name":"Abgetragene Handschuhe",
-    "type":0,
+    "display": "Handschuhe",
+    "type": 3,
     "value": 1,
     "quality": 0,
+    "icon":"gloves.png"
+  },
+  {
+    "id": 1,
+    "name": "Orntein's Gauntlets",
+    "display": "Stulpen",
+    "type": 3,
+    "value": 4,
+    "quality": 4,
+    "mods": {
+      "strength": 3,
+      "damage": 10
+    },
     "icon":"gloves.png"
   }
 ]

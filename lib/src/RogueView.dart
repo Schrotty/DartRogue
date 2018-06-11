@@ -3,6 +3,7 @@ part of rogue;
 class RogueView {
   final Element home = querySelector("#home");
   final Element game = querySelector("#game");
+  final Element gameOver = querySelector("#game-over");
   final Element dungeon = querySelector("#dungeon");
   final Element tiles = querySelector("#tiles");
   final Element player = querySelector(".player");
@@ -11,6 +12,8 @@ class RogueView {
   final Element highscore = querySelector("#highscore");
   final Element howToPlay = querySelector("#how-to-play");
   final Element about = querySelector("#about");
+
+  //final Element backFromDead = querySelector("#back-menu");
 
   //Temporarily
   final Element fightingScreen = querySelector("#fighting-screen");
@@ -68,6 +71,8 @@ class RogueView {
   final Element previewItemValue = querySelector("#preview-item #preview-item-value");
   final Element previewItemKey = querySelector("#preview-item #preview-item-key");
   final Element previewItemMods = querySelector("#preview-item #preview-item-mods ul");
+
+  final Element equipItem = querySelector("#equip-item-button");
 
   /* ATTRIBUTES */
   final Element heroStrength = querySelector("#hero-strength");
@@ -165,8 +170,6 @@ class RogueView {
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton =
       querySelector("#hero-screen-button");
-  final ButtonInputElement fightingScreenButton =
-      querySelector("#fighting-screen-button");
   final ButtonInputElement potionsMenuButton = querySelector("#potions-button");
 
   /* POTIONS BUTTONS */

@@ -9,6 +9,7 @@ class Player extends Moveable {
   int _baseXp;
   int _gainedXp;
   int _neededXp;
+  int _currentStage;
 
   Item helmet;
   Item chest;
@@ -20,6 +21,7 @@ class Player extends Moveable {
 
   Map<int, int> pots = new Map();
   List<Item> inventory = new List();
+  Item currentInvtentoryItem;
 
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
@@ -66,13 +68,21 @@ class Player extends Moveable {
     _currHealth = maxHealth;
     _lvl = 1;
     _baseXp = data['baseXp'];
-    _gainedXp = 35;
+    _gainedXp = 0;
     _neededXp = data['baseXp'];
+    _currentStage = 0;
 
-    inventory.add(weapon);
-    inventory.add(chest);
-    inventory.add(helmet);
-    inventory.add(weapons['axes'][0][4]);
+    inventory.add(weapons['axes'][0][0]);
+    inventory.add(weapons['swords'][1][0]);
+
+    inventory.add(armors['chests'][2][0]);
+    inventory.add(armors['chests'][1][0]);
+    inventory.add(armors['boots'][1][0]);
+    inventory.add(armors['helmets'][1][0]);
+    inventory.add(armors['legs'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+
+    _sortInventory();
   }
 
   int calcDamage([int skillMod]) {
@@ -126,6 +136,50 @@ class Player extends Moveable {
       }
       pots[type]--;
     }
+  }
+
+  void equip(Item item) {
+    inventory.remove(item);
+
+    if (item.type == 0) {
+      inventory.add(player.weapon);
+      player.weapon = item;
+    }
+
+    if (item.type == 1) {
+      inventory.add(player.helmet);
+      player.helmet = item;
+    }
+
+    if (item.type == 2) {
+      inventory.add(player.chest);
+      player.chest = item;
+    }
+
+    if (item.type == 3) {
+      inventory.add(player.gloves);
+      player.gloves = item;
+    }
+
+    if (item.type == 4) {
+      inventory.add(player.legs);
+      player.legs = item;
+    }
+
+    if (item.type == 5) {
+      inventory.add(player.boots);
+      player.boots = item;
+    }
+
+    _sortInventory();
+  }
+
+  void drop(Item item) {
+    inventory.remove(item);
+  }
+
+  _sortInventory() {
+    inventory.sort((a, b) => a.quality.compareTo(b.quality));
   }
 
   get gainedXpByCurrentLvl {
@@ -242,4 +296,8 @@ class Player extends Moveable {
   get gainedXp => _gainedXp;
 
   get neededXp => _neededXp;
+
+  get currentStage => _currentStage;
+
+  set currentStage(int stage) => _currentStage = stage;
 }
