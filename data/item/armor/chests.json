@@ -1,19 +1,9 @@
 [
   {
     "id": 0,
-    "name": "Blutiger Kriegsmantel des Todes",
-    "type": 1,
-    "value": 4,
-    "quality": 3,
-    "mods": {
-      "health": -5
-    },
-    "icon": "chest.png"
-  },
-  {
-    "id": 1,
     "name":"Lederharnisch",
-    "type": 1,
+    "display": "Harnisch",
+    "type": 2,
     "multi": true,
     "value-range": [
       [1, 4],
@@ -25,16 +15,30 @@
     "icon": "chest.png"
   },
   {
-    "id": 2,
+    "id": 1,
     "name": "Stoffrobe des Leben",
-    "type": 1,
+    "display": "Robe",
+    "type": 2,
     "quality": 2,
     "value-range": [
-      [6, 11]
+      [2, 5]
     ],
     "mods": {
-      "health": -5
+      "health": 6
     },
     "icon":"chest.png"
+  },
+  {
+    "id": 2,
+    "name": "Blutiger Kriegsmantel des Todes",
+    "display": "Mantel",
+    "type": 2,
+    "value": 11,
+    "quality": 3,
+    "mods": {
+      "health": -3,
+      "armor": 4
+    },
+    "icon": "chest.png"
   }
 ]

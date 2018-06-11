@@ -54,16 +54,20 @@ h3 {
     height: 100%;
 }
 
-#home div {
+#home div, #game-over div {
     margin: auto;
 }
 
-#home ul input {
+#home ul input, #game-over ul input {
     width: 50vw;
     color: white;
 }
 
-#home li, #highscore li {
+#game-over ul input {
+    width: 100vw;
+}
+
+#home li, #highscore li, #game-over li {
     height: 48px;
     vertical-align: middle;
     line-height: 42px;
@@ -90,7 +94,7 @@ h3 {
 #dungeon {
     grid-area: play-field;
     overflow: scroll;
-    background: black;
+    background: #1c1117;
 }
 
 #side-bar {
@@ -106,7 +110,7 @@ h3 {
     background-image: url(../img/icon/side-bar-frame.png);
 }
 
-#tiles {
+#tiles, #movables {
     zoom: 150%;
     display: grid;
     grid-template-columns: repeat(32, 32px);
@@ -114,6 +118,11 @@ h3 {
     z-index: 5;
     max-width: 100%;
     text-align: center;
+}
+
+/* ########## END SCREEN ########## */
+#game-over {
+    padding-top: 15px;
 }
 
 /* ########## PLAYER HEALTH ########## */
@@ -198,10 +207,10 @@ h3 {
 /* ########## OVERLAYS ########## */
 .overlay {
     display: grid;
-    padding: 5px;
+    padding: 0;
     position: absolute;
-    width: calc(100% - 74px);
-    height: calc(100% - 74px);
+    width: calc(100% - 64px);
+    height: calc(100% - 64px);
 }
 
 #debug-screen,
@@ -209,7 +218,7 @@ h3 {
 #fighting-screen {
     right: 64px;
     grid-area: play-field;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 /* ########## DEBUG-SCREEN ########## */
@@ -249,12 +258,51 @@ h3 {
 
 #hero-screen #top-bar {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     justify-items: center;
     align-items: center;
     grid-area: top-bar;
     background: indianred;
     color: whitesmoke;
+}
+
+#hero-screen #hero-inventory-screen {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-column-gap: 5px;
+    grid-template-areas: "inv-grid preview";
+
+    padding: 5px;
+}
+
+#hero-screen #inventory-grid {
+    display: grid;
+    grid-area: inv-grid;
+    grid-template-columns: repeat(4, 64px);
+    grid-template-rows: repeat(3, 64px);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    place-self: center;
+    align-self: start;
+}
+
+.inventory-background {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 6;
+    grid-row-end: 4;
+    background: url(../img/items/inventory-frame.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+    padding: 5px;
+}
+
+.inventory-item {
+    background-size: 64px 64px;
+}
+
+#inventory-preview {
+
 }
 
 #hero-screen #top-bar .item-active {
@@ -265,7 +313,17 @@ h3 {
     display: grid;
     grid-area: screen;
     grid-template-columns: 32px 64px auto 64px 32px;
-    grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe";
+    grid-template-rows: 64px 64px 64px 32px;
+    grid-row-gap: 5px;
+    grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe" "inv-p inv-p inv-p inv-p inv-p";
+}
+
+#hero-screen #hero-inventory-switch {
+    display: grid;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    justify-content: center;
+    align-items: center;
 }
 
 #hero-screen .item-slot {
@@ -312,7 +370,8 @@ h3 {
     grid-area: legs-slot;
 }
 
-#hero-screen #selected-item-wrapper {
+#hero-screen #selected-item-wrapper,
+#preview-item-wrapper {
     display: grid;
     grid-column-start: 3;
     grid-row-start: 1;
@@ -320,7 +379,8 @@ h3 {
     justify-content: center;
 }
 
-#hero-screen #selected-item {
+#hero-screen #selected-item,
+#preview-item {
     display: grid;
     grid-template-columns: 64px 64px 64px;
     grid-template-rows: 48px 64px 64px;
@@ -335,7 +395,8 @@ h3 {
     padding: 8px;
 }
 
-#selected-item #item-name {
+#selected-item #item-name,
+#preview-item-name {
     display: flex;
     grid-area: item-name;
     justify-content: center;
@@ -344,49 +405,58 @@ h3 {
     padding: 10px;
 }
 
-#selected-item #item-icon {
+#selected-item #item-icon,
+#preview-item-icon {
     grid-area: item-icon;
 }
 
-#selected-item #item-mods {
+#selected-item #item-mods,
+#preview-item-mods {
     grid-area: item-mods;
     font-size: 8px;
 }
 
-#item-mods ul {
+#item-mods ul,
+#preview-item-mods ul {
     margin: 0;
 }
 
-#item-mods li {
+#item-mods li,
+#preview-item-mods li {
     margin: 5px 0
 }
 
-#selected-item #item-details {
+#selected-item #item-details,
+#preview-item-details {
     grid-area: item-details;
     display: grid;
     grid-template-areas: "item-quality item-type" "item-value item-value" "item-key item-key";
 }
 
-#item-details #item-quality {
+#item-details #item-quality,
+#preview-item-quality {
     grid-area: item-quality;
     font-size: 8px;
 }
 
-#item-details #item-type {
+#item-details #item-type,
+#preview-item-type {
     grid-area: item-type;
     text-align: right;
     color: grey;
     font-size: 8px;
 }
 
-#item-details #item-value {
+#item-details #item-value,
+#preview-item-value {
     grid-area: item-value;
     font-size: 24px;
     color: white;
     align-self: center;
 }
 
-#item-details #item-key {
+#item-details #item-key,
+#preview-item-key {
     grid-area: item-key;
     font-size: 6px;
     color: grey;
@@ -628,8 +698,7 @@ h3 {
     background: url("../img/main/cave.png");
     background-size: contain;
     position: absolute;
-    height: calc(100vh - 74px);
-    padding: 5px;
+    height: calc(100vh - 64px);
     max-width: 100%;
     max-height: 100vh;
 }
@@ -645,12 +714,13 @@ h3 {
 
 .tile {
     background: grey;
-    border: 1px solid black;
+    background-size: 16px 16px;
+    image-rendering: pixelated;
 }
 
 #fighting-options, #skills, #fight-end {
     width: 100%;
-    height: 30%;
+    height: 40%;
     border-top: 1px solid black;
     background: url("../img/main/background.png");
     z-index: 60;
@@ -677,26 +747,31 @@ h3 {
     border-bottom: 1px solid black;
 }
 
+#fight-top-bar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .top-right-bar {
     float: right;
-    padding: 20px;
+    padding: 8px;
 }
 
 .top-left-bar {
     float: left;
-    padding: 20px;
+    padding: 8px;
 }
 
 .button-list {
-    text-align: center;
+    padding-top: 3px;
+    /*text-align: center;*/
     /*width: 50vw;*/
 }
 
 .bar-button {
     color: white;
     height: 32px;
-    width: 45vw;
-    margin-top: 4px;
+    width: 44vw;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
 }
@@ -712,7 +787,8 @@ h3 {
 .text-window {
     height: 80px;
     background: url(../img/main/plainText2.png) no-repeat center;
-    margin: 2px 0 2px 0;
+    /*margin: 2px 0 2px 0;*/
+    /*padding: 0 5px 0 5px;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -731,6 +807,7 @@ h3 {
 
 .top-bar {
     text-align: center;
+    padding-top: 0;
     border-bottom: 1px solid black;
 }
 
@@ -763,7 +840,7 @@ h3 {
 .health-bar-inner {
     width: 50%;
     height: 100%;
-    background: darkred;
+    background: indianred;
 }
 
 .xp-bar-inner {
@@ -780,7 +857,7 @@ h3 {
     width: 96px;
     height: 96px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     display: block;
 }
@@ -810,5 +887,182 @@ h3 {
 
 .centered {
     text-align: center;
-    padding: 5px 0 5px 0;
+    /*padding: 5px 0 5px 0;*/
+}
+
+/* ##### TILE STYLES ##### */
+.none {
+    background-color: transparent;
+}
+
+.player {
+    width: 32px;
+    height: 32px;
+    background: url(../img/main/tiles.png) -128px -256px !important;
+}
+
+/* WALLS */
+.wall-top-1 {
+    background: url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-1-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 1px -24px;
+}
+
+.wall-top-2 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-2-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3 {
+    background: url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-left {
+    background: url(../img/main/tiles.png) -320px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-top-3-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -2px -24px;
+}
+
+.wall-middle-1 {
+    background: url(../img/main/tiles.png) 1px -32px;
+}
+
+.wall-middle-2 {
+    background: url(../img/main/tiles.png) -2px -32px;
+}
+
+.wall-bottom {
+    background: url(../img/main/tiles.png) -256px 0;
+}
+
+.wall-bottom-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -256px 0;
+}
+
+/* FLOORS */
+.floor-wall-top {
+    background: url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-wall-top-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) 0 -64px;
+}
+
+.floor-default {
+    background: url(../img/main/tiles.png) -64px -96px;
+}
+
+.floor-default-crack-right {
+    background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.floor-default-monster {
+    background: url(../img/main/tiles.png) -98px -352px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.floor-default-boss {
+    background: url(../img/main/tiles.png) -98px -320px, url(../img/main/tiles.png) -64px -96px;
+}
+
+.stair-top-left {
+    background: url(../img/main/tiles.png) -160px -30px;
+}
+
+.stair-top-middle {
+    background: url(../img/main/tiles.png) -165px -30px;
+}
+
+.stair-top-right {
+    background: url(../img/main/tiles.png) -192px -30px;
+}
+
+.stair-middle-left {
+    background: url(../img/main/tiles.png) -160px -41px;
+}
+
+.stair-middle-middle {
+    background: url(../img/main/tiles.png) -165px -41px;
+}
+
+.stair-middle-right {
+    background: url(../img/main/tiles.png) -192px -41px;
+}
+
+.stair-bottom-left {
+    background: url(../img/main/tiles.png) -160px -62px;
+}
+
+.stair-bottom-middle {
+    background: url(../img/main/tiles.png) -165px -62px;
+}
+
+.stair-bottom-right {
+    background: url(../img/main/tiles.png) -192px -62px;
+}
+
+.space-top-left {
+    background: url(../img/main/tiles.png) 0 -192px;
+}
+
+.space-top-left-middle {
+    background: url(../img/main/tiles.png) -32px -192px;
+}
+
+.space-top-right-middle {
+    background: url(../img/main/tiles.png) -64px -192px;
+}
+
+.space-top-right {
+    background: url(../img/main/tiles.png) -96px -192px;
+}
+
+.space-middle-left {
+    background: url(../img/main/tiles.png) 0 -224px;
+}
+
+.space-middle-left-middle {
+    background: url(../img/main/tiles.png) -32px -224px;
+}
+
+.space-middle-right-middle {
+    background: url(../img/main/tiles.png) -64px -224px;
+}
+
+.space-middle-right {
+    background: url(../img/main/tiles.png) -96px -224px;
+}
+
+.space-bottom-left {
+    background: url(../img/main/tiles.png) 0 -256px;
+}
+
+.space-bottom-left-middle {
+    background: url(../img/main/tiles.png) -32px -256px;
+}
+
+.space-bottom-right-middle {
+    background: url(../img/main/tiles.png) -64px -256px;
+}
+
+.space-bottom-right {
+    background: url(../img/main/tiles.png) -96px -256px;
+}
+
+.exit-treasure {
+    background: url(../img/main/tiles.png) -480px -416px, url(../img/main/tiles.png) -64px -96px;
 }

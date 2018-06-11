@@ -2,9 +2,24 @@
   {
     "id": 0,
     "name":"Abgenutzer Hammer",
-    "type": 6,
+    "display": "Hammer",
+    "type": 0,
     "quality": 0,
     "value": 4,
+    "multi": true,
+    "icon":"hammer.png"
+  },
+  {
+    "id": 1,
+    "name": "Smoughs Hammer",
+    "display": "Hammer",
+    "type": 0,
+    "quality": 0,
+    "value": 9,
+    "mods": {
+      "strength": 8
+    },
+    "multi": true,
     "icon":"hammer.png"
   }
 ]

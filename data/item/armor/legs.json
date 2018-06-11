@@ -2,9 +2,19 @@
   {
     "id": 0,
     "name":"Abgetragene Stoffhose",
-    "type": 3,
+    "display": "Hose",
+    "type": 4,
     "value": 3,
     "quality": 0,
+    "icon": "legs.png"
+  },
+  {
+    "id": 1,
+    "name":"Black Knight Leggings",
+    "display": "Hose",
+    "type": 4,
+    "value": 7,
+    "quality": 3,
     "icon": "legs.png"
   }
 ]
