@@ -2,9 +2,19 @@
   {
     "id": 0,
     "name":"Abgetragene Stiefel",
-    "type": 0,
+    "display": "Stiefel",
+    "type": 5,
     "value": 2,
     "quality": 0,
+    "icon": "boots.png"
+  },
+  {
+    "id": 1,
+    "name":"Verstärkte Stiefel",
+    "display": "Stiefel",
+    "type": 5,
+    "value": 4,
+    "quality": 2,
     "icon": "boots.png"
   }
 ]

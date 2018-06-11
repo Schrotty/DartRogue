@@ -2,9 +2,19 @@
   {
     "id": 0,
     "name": "Abgetragene Kapuze",
-    "type": 0,
+    "display": "Kapuze",
+    "type": 1,
     "value": 2,
     "quality": 1,
+    "icon":"helmet.png"
+  },
+  {
+    "id": 1,
+    "name": "Black Knight Helm",
+    "display": "Helm",
+    "type": 1,
+    "value": 5,
+    "quality": 3,
     "icon":"helmet.png"
   }
 ]

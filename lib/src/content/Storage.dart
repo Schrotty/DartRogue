@@ -85,31 +85,39 @@ _buildPlayer() async {
 
 _buildWeaponType(String type) async {
   await _requestData(Settings.getDataPath() + 'item/weapons/$type.json').then((response) {
-    Map w = JSON.decode(response).asMap()[0];
+    Map w = JSON.decode(response).asMap();
 
-    weapons[type][w['id']] = new List();
-    if (w.containsKey('multi')) {
-      Qualities
-          .forEach((q) => weapons[type][w['id']].add(createWeapon(w, Qualities.indexOf(q), type)));
-      return;
-    }
+    w.forEach((key, value) {
+      weapons[type][value['id']] = new List();
+      if (value.containsKey('multi')) {
+        Qualities.forEach((q) {
+          weapons[type][value['id']].add(createWeapon(w, Qualities.indexOf(q), type));
+        });
 
-    weapons[type][w['id']].add(createWeapon(w));
+        return;
+      }
+
+      weapons[type][value['id']].add(createWeapon(value));
+    });
   });
 }
 
 _buildArmorType(String type) async {
   await _requestData(Settings.getDataPath() + 'item/armor/$type.json').then((response) {
-    Map a = JSON.decode(response).asMap()[0];
+    Map a = JSON.decode(response).asMap();
 
-    armors[type][a['id']] = new List();
-    if (a.containsKey('multi')) {
-      Qualities
-          .forEach((q) => armors[type][a['id']].add(createArmor(a, Qualities.indexOf(q), type)));
-      return;
-    }
+    a.forEach((key, value) {
+      armors[type][value['id']] = new List();
+      if (value.containsKey('multi')) {
+        Qualities.forEach((q) {
+          armors[type][value['id']].add(createArmor(value, Qualities.indexOf(q), type));
+        });
 
-    armors[type][a['id']].add(createArmor(a));
+        return;
+      }
+
+      armors[type][value['id']].add(createArmor(value));
+    });
   });
 }
 

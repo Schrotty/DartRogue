@@ -1,15 +1,14 @@
 [
   {
     "id": 0,
-    "name":"Holzfälleraxt",
-    "type": 1,
-    "quality": 0,
-    "value": 7,
+    "name":"Gargoyle-Axt",
+    "display": "Axt",
+    "type": 0,
+    "quality": 3,
+    "value": 8,
     "mods": {
-      "health": 5,
-      "strength": 7
+      "strength": 2
     },
-    "multi": true,
     "icon":"axe.png"
   }
 ]

@@ -313,7 +313,7 @@ class RogueController {
     DivElement e = querySelector("#tile-${levels[lvl].spawnPoint.id}");
     e.children[0].classes.add("player");
 
-//    _centerPlayer();
+    _centerPlayer();
   }
 
   _centerPlayer() {
@@ -330,6 +330,7 @@ class RogueController {
   _updatePlayerEquipment() {
     /* SELECT WEAPON */
     _selectItem(player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
+    _previewItem(player.inventory.first);
 
     /* WEAPON */
     _updateItemIcon(view.weapon, 'weapon', player.weapon.icon);
@@ -406,21 +407,7 @@ class RogueController {
     view.heroInventoryButton.onClick.listen((e) {
       _switchHeroScreenMenu(view.heroInventoryScreen, view.heroInventoryButton);
 
-      int index = 0;
-      player.inventory.forEach((Item item) {
-        String imagePath = item.classification == "Weapon"
-            ? Settings.getWeaponImgPath()
-            : Settings.getArmorImgPath();
-        String type = item.type == 1 ? "weapon" : "armor";
-
-        Element element = querySelector("#slot-$index");
-        element.classes
-            .removeWhere((clss) => !clss.contains("item-slot") && !clss.contains("inventory-item"));
-        element.classes.add(item.quality);
-
-        element.children[0].style.backgroundImage = "url($imagePath/${item.icon})";
-        index++;
-      });
+      _updateInventory();
     });
 
     view.heroEquipmentButton.onClick.listen((e) {
@@ -463,8 +450,33 @@ class RogueController {
         DivElement clicked = e.target as DivElement;
         int id = int.parse(clicked.parent.id.substring(5));
 
-        if (id < player.inventory.length) _previewItem(player.inventory[id]);
+        if (id < player.inventory.length) {
+          _previewItem(player.inventory[id]);
+        }
       });
+    });
+
+    view.equipItem.onClick.listen((e) {
+      player.equip(player.currentInvtentoryItem);
+      _updatePlayerEquipment();
+      _updateInventory();
+    });
+  }
+
+  _updateInventory() {
+    int index = 0;
+    player.inventory.forEach((Item item) {
+      String imagePath = item.classification == "Weapon"
+          ? Settings.getWeaponImgPath()
+          : Settings.getArmorImgPath();
+
+      Element element = querySelector("#slot-$index");
+      element.classes
+          .removeWhere((clss) => !clss.contains("item-slot") && !clss.contains("inventory-item"));
+      element.classes.add(item.quality);
+
+      element.children[0].style.backgroundImage = "url($imagePath/${item.icon})";
+      index++;
     });
   }
 
@@ -503,7 +515,7 @@ class RogueController {
     view.selectedItemIcon.parent.classes.add(item.quality);
     view.selectedItemIcon.style.backgroundImage = "url($imagePath${item.icon})";
 
-    view.selectedItemType.text = type;
+    view.selectedItemType.text = item.display;
     view.selectedItemValue.text = item.value.toString();
     view.selectedItemKey.text = valueKey;
 
@@ -517,34 +529,37 @@ class RogueController {
   }
 
   _previewItem(Item item) {
-    String imagePath =
-        item.classification == "Weapon" ? Settings.getWeaponImgPath() : Settings.getArmorImgPath();
+    if (item != null) {
+      player.currentInvtentoryItem = item;
+      String imagePath =
+      item.classification == "Weapon" ? Settings.getWeaponImgPath() : Settings.getArmorImgPath();
 
-    view.previewItemName.classes.clear();
-    view.previewItemQuality.classes.clear();
-    view.previewItemIcon.parent.classes.removeWhere((clss) => !clss.contains("item-slot"));
-    view.previewItemMods.nodes.clear();
+      view.previewItemName.classes.clear();
+      view.previewItemQuality.classes.clear();
+      view.previewItemIcon.parent.classes.removeWhere((clss) => !clss.contains("item-slot"));
+      view.previewItemMods.nodes.clear();
 
-    view.previewItemName.text = item.name;
-    view.previewItemName.classes.add("${item.quality}-color");
+      view.previewItemName.text = item.name;
+      view.previewItemName.classes.add("${item.quality}-color");
 
-    view.previewItemQuality.text = item.quality;
-    view.previewItemQuality.classes.add("${item.quality}-color");
+      view.previewItemQuality.text = item.quality;
+      view.previewItemQuality.classes.add("${item.quality}-color");
 
-    view.previewItemIcon.parent.classes.add(item.quality);
-    view.previewItemIcon.style.backgroundImage = "url($imagePath${item.icon})";
+      view.previewItemIcon.parent.classes.add(item.quality);
+      view.previewItemIcon.style.backgroundImage = "url($imagePath${item.icon})";
 
-    view.previewItemType.text = item.type;
-    view.previewItemValue.text = item.value.toString();
-    view.previewItemKey.text = item.type;
+      view.previewItemType.text = item.display;
+      view.previewItemValue.text = item.value.toString();
+      view.previewItemKey.text = item.type == 0 ? "Damage" : "Armor";
 
-    item.modifier.forEach((String key, value) {
-      String prefix = "";
-      if (value > 0) prefix = "+";
+      item.modifier.forEach((String key, value) {
+        String prefix = "";
+        if (value > 0) prefix = "+";
 
-      String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
-      view.previewItemMods.append(new LIElement()..text = text);
-    });
+        String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
+        view.previewItemMods.append(new LIElement()..text = text);
+      });
+    }
   }
 
   _openHeroScreen() {

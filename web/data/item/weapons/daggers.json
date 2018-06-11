@@ -2,7 +2,8 @@
   {
     "id": 0,
     "name":"Einfacher Dolch",
-    "type": 1,
+    "display": "Dolch",
+    "type": 0,
     "quality": 0,
     "value": 3,
     "icon":"dagger.png"
