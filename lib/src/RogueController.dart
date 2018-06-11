@@ -22,58 +22,12 @@ class RogueController {
       const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
 
-      levels[0].fields.forEach((row) {
-        row.forEach((tile) {
-          DivElement elm = new Element.div()
-            ..classes.add("tile")
-            ..classes.add(tile.style)
-            ..id = "tile-${tile.id}"
-            ..append(new Element.div());
-
-          querySelector("#tiles").append(elm);
-        });
-      });
-
-      querySelectorAll(".tile").onClick.listen((MouseEvent e) {
-        Field old = null;
-        DivElement clicked = e.target;
-
-        if (!clicked.classes.contains("player")) {
-          var tmp = levels[0].getField(int.parse(clicked.id.substring(5)));
-          if (tmp.isAccessible) {
-            if (old == null) {
-              querySelector("#tile-${levels[0].spawnPoint.id}")
-                  .children[0]
-                  .classes
-                  .remove("player");
-            }
-
-            if (Level.clicked != null) {
-              old = Level.clicked;
-              querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
-            }
-
-            Level.clicked = levels[0].getField(int.parse(clicked.id.substring(5)));
-            player.move(Level.clicked);
-            clicked.children[0].classes.add("player");
-
-            _centerPlayer();
-          }
-        }
-        if (old.id > Level.clicked.id) {
-          view.dungeon.scrollLeft -= 32;
-        }
-
-        if (null != Level.clicked.monsterId) {
-          _startFight(Level.clicked.monsterId);
-        }
-      });
+      _renderLevel(player.currentStage);
 
       querySelector("#tiles").onTouchMove.listen((onData) {
         onData.preventDefault();
       });
 
-      _spawnPlayer();
       querySelector(".player").onClick.listen((e) {
         _openHeroScreen();
       });
@@ -104,6 +58,61 @@ class RogueController {
     /* ABOUT EVENTS */
     view.backAboutButton.onClick.listen((e) {
       _switchMenu(view.mainMenu, view.about);
+    });
+  }
+
+  _renderLevel(int stage) {
+    querySelector("#tiles").children.clear();
+
+    levels[stage].fields.forEach((row) {
+      row.forEach((tile) {
+        DivElement elm = new Element.div()
+          ..classes.add("tile")
+          ..classes.add(tile.style)
+          ..id = "tile-${tile.id}"
+          ..append(new Element.div());
+
+        querySelector("#tiles").append(elm);
+      });
+    });
+
+    _spawnPlayer(player.currentStage);
+
+    querySelectorAll(".tile").onClick.listen((MouseEvent e) {
+      Field old = null;
+      DivElement clicked = e.target;
+
+      if (!clicked.classes.contains("player")) {
+        var tmp = levels[stage].getField(int.parse(clicked.id.substring(5)));
+        if (tmp.isAccessible) {
+          if (old == null) {
+            querySelector("#tile-${levels[stage].spawnPoint.id}")
+                .children[0]
+                .classes
+                .remove("player");
+          }
+
+          if (Level.clicked != null) {
+            old = Level.clicked;
+            querySelector("#tile-${Level.clicked.id}").children[0].classes.remove("player");
+          }
+
+          Level.clicked = levels[stage].getField(int.parse(clicked.id.substring(5)));
+          player.move(Level.clicked);
+          clicked.children[stage].classes.add("player");
+
+          _centerPlayer();
+        }
+      }
+
+      if (old.id > Level.clicked.id) {
+        view.dungeon.scrollLeft -= 32;
+      }
+
+      if (null != Level.clicked.monsterId) {
+        _startFight(Level.clicked.monsterId);
+        view.dungeon.scrollTop = -32 * 100;
+      }
     });
   }
 
@@ -253,7 +262,14 @@ class RogueController {
           : "YOU DIED!";
 
       view.fightEndMessage.text = msg;
-      if (!attacker.isAlive) player.gainXP(attacker.grantedXP);
+      if (!attacker.isAlive) {
+        player.gainXP(attacker.grantedXP);
+        if (!monsters[99].isAlive) {
+          player.currentStage += 1;
+          _renderLevel(player.currentStage);
+          _spawnPlayer(player.currentStage);
+        }
+      }
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
   }
@@ -304,12 +320,12 @@ class RogueController {
     _updateFightScreen();
   }
 
-  _spawnPlayer() {
-    Field spawn = levels[0].spawnPoint;
+  _spawnPlayer(int lvl) {
+    Field spawn = levels[lvl].spawnPoint;
     Level.clicked = spawn;
     player.move(spawn);
 
-    DivElement e = querySelector("#tile-${levels[0].spawnPoint.id}");
+    DivElement e = querySelector("#tile-${levels[lvl].spawnPoint.id}");
     e.children[0].classes.add("player");
 
     _centerPlayer();
