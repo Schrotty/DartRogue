@@ -87,7 +87,8 @@ class RogueController {
         if (tmp.isAccessible) {
           if (old == null) {
             querySelector("#tile-${levels[stage].spawnPoint.id}")
-                .children.first
+                .children
+                .first
                 .classes
                 .remove("player");
           }
@@ -158,6 +159,7 @@ class RogueController {
 
     view.leaveFightButton.onClick.listen((e) {
       _toggleOverlay(view.fightingScreen);
+      _centerPlayer();
     });
 
     view.leaveFightEndButton.onClick.listen((e) {
@@ -175,6 +177,7 @@ class RogueController {
 
   _startFight(int monsterId) {
     monsters = monsterList[player.currentStage];
+    print("${monsters.length}");
     if (player.isAlive) {
       if (monsters.isNotEmpty) {
         attacker = monsters[monsterId];
@@ -208,7 +211,6 @@ class RogueController {
   }
 
   _updateFightEnd() {
-    _updateFightScreen();
     _switchMenu(view.fightingOptions, view.skills);
 
     if (!attacker.isAlive) {
@@ -231,6 +233,7 @@ class RogueController {
           : "YOU DIED!";
 
       view.fightEndMessage.text = msg;
+
       if (!attacker.isAlive) {
         player.gainXP(attacker.grantedXP);
         if (!monsters[99].isAlive) {
@@ -238,11 +241,10 @@ class RogueController {
           _renderLevel(player.currentStage);
           _spawnPlayer(player.currentStage);
         }
+//        _centerPlayer();
       }
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
-
-    _centerPlayer();
   }
 
   _registerDebugEvents() {
@@ -279,7 +281,7 @@ class RogueController {
     overlay.classes.toggle("invisible");
     overlay.classes.toggle("visible");
 
-    _centerPlayer();
+//    _centerPlayer();
   }
 
   _init() async {
@@ -290,7 +292,7 @@ class RogueController {
     _updatePlayerXp();
     _updatePlayerAttributes();
     _updatePlayerHealth();
-    //_updateFightScreen();
+    _updateFightScreen();
   }
 
   _spawnPlayer(int lvl) {
@@ -301,7 +303,7 @@ class RogueController {
     DivElement e = querySelector("#tile-${levels[lvl].spawnPoint.id}");
     e.children[0].classes.add("player");
 
-    _centerPlayer();
+//    _centerPlayer();
   }
 
   _centerPlayer() {
@@ -380,13 +382,13 @@ class RogueController {
   }
 
   _updateFightScreen() {
-      view.monsterFightHealth.text = attacker.currHealth;
-      view.monsterFightMaxHealth.text = attacker.maxHealth;
-      view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
+    view.monsterFightHealth.text = attacker.currHealth;
+    view.monsterFightMaxHealth.text = attacker.maxHealth;
+    view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
 
-      view.playerFightHealth.text = player.currHealth;
-      view.playerFightMaxHealth.text = player.maxHealth;
-      view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+    view.playerFightHealth.text = player.currHealth;
+    view.playerFightMaxHealth.text = player.maxHealth;
+    view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
   _registerHeroScreenEvents() {
