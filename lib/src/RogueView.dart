@@ -3,6 +3,7 @@ part of rogue;
 class RogueView {
   final Element home = querySelector("#home");
   final Element game = querySelector("#game");
+  final Element gameOver = querySelector("#game-over");
   final Element dungeon = querySelector("#dungeon");
   final Element tiles = querySelector("#tiles");
   final Element player = querySelector(".player");
@@ -11,6 +12,8 @@ class RogueView {
   final Element highscore = querySelector("#highscore");
   final Element howToPlay = querySelector("#how-to-play");
   final Element about = querySelector("#about");
+
+  //final Element backFromDead = querySelector("#back-menu");
 
   //Temporarily
   final Element fightingScreen = querySelector("#fighting-screen");

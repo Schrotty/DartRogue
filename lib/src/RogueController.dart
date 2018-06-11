@@ -59,6 +59,11 @@ class RogueController {
     view.backAboutButton.onClick.listen((e) {
       _switchMenu(view.mainMenu, view.about);
     });
+
+    /* GAME OVER EVENTS */
+    /*view.backFromDead.onClick.listen((e) {
+      _switchMenu(view.mainMenu, view.gameOver);
+    });*/
   }
 
   _renderLevel(int stage) {
@@ -243,6 +248,11 @@ class RogueController {
         }
 //        _centerPlayer();
       }
+
+      if (!player.isAlive) {
+        _switchMenu(view.gameOver, view.game);
+      }
+
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
   }
