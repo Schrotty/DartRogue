@@ -76,7 +76,7 @@ class RogueController {
       });
     });
 
-    _spawnPlayer(player.currentStage);
+    _spawnPlayer(stage);
 
     querySelectorAll(".tile").onClick.listen((MouseEvent e) {
       Field old = null;
@@ -163,6 +163,7 @@ class RogueController {
     view.leaveFightEndButton.onClick.listen((e) {
       _switchMenu(view.fightingOptions, view.fightEnd);
       _toggleOverlay(view.fightingScreen);
+      _centerPlayer();
     });
 
     view.heroScreenButton.onClick.listen((e) {
