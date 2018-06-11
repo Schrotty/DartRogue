@@ -88,6 +88,11 @@
                         <div id="ep-bar-inner"></div>
                     </div>
                 </div>
+
+                <div id="command-buttons">
+                    <input type="submit" id="hero-screen-button" class="bar-button" value="H">
+                    <input type="submit" id="debug-screen-button" class="bar-button" value="D">
+                </div>
             </div>
 
             <div id="dungeon">
@@ -171,7 +176,10 @@
                                     </div>
                                 </div>
 
-                                <input id="equip-item-button" type="button" value="Equip">
+                                <div id="equip-wrapper">
+                                    <input id="drop-item-button" type="button" value="Drop">
+                                    <input id="equip-item-button" type="button" value="Equip">
+                                </div>
                             </div>
                         </div>
 
@@ -329,8 +337,7 @@
             </div>
 
             <div id="side-bar">
-                <input type="submit" id="hero-screen-button" class="bar-button" value="H">
-                <input type="submit" id="debug-screen-button" class="bar-button" value="D">
+
             </div>
         </div>
 

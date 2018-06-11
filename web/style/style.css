@@ -79,15 +79,17 @@ h3 {
 #game {
     display: grid;
     height: 100%;
-    grid-template-areas: "upper-bar upper-bar" "play-field side-bar";
+    grid-template-areas: "upper-bar upper-bar buttons" "play-field play-field side-bar";
     grid-template-columns: auto 64px;
     grid-template-rows: 64px auto;
     padding: 0;
 }
 
 #upper-bar {
+    display: grid;
     grid-area: upper-bar;
-    justify-items: center;
+    grid-template-areas: "health buttons";
+    grid-template-columns: auto 128px;
     background-image: url(../img/main/topBarBack.png);
 }
 
@@ -108,6 +110,19 @@ h3 {
     width: 64px;
     height: 64px;
     background-image: url(../img/icon/side-bar-frame.png);
+}
+
+#command-buttons {
+    display: grid;
+    grid-area: buttons;
+    grid-template-areas: "hero debug";
+    text-align: right;
+}
+
+#command-buttons input {
+    width: 64px;
+    height: 64px;
+    background: transparent;
 }
 
 #tiles, #movables {
@@ -216,9 +231,7 @@ h3 {
 #debug-screen,
 #hero-screen,
 #fighting-screen {
-    right: 64px;
     grid-area: play-field;
-    /*overflow: scroll;*/
 }
 
 /* ########## DEBUG-SCREEN ########## */
@@ -228,8 +241,8 @@ h3 {
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 5px;
     grid-template-areas: "debug-title debug-title";
-
     background-color: plum;
+    width: 100%;
 }
 
 #debug-screen-title {
@@ -248,7 +261,7 @@ h3 {
 
     font-size: 12px;
     height: calc(100vh - 64px);
-    width: calc(100% - 64px);
+    width: 100%;
     max-height: 100%;
     padding: 0;
     grid-area: play-field;
@@ -271,7 +284,6 @@ h3 {
     grid-template-columns: 300px auto;
     grid-column-gap: 5px;
     grid-template-areas: "inv-grid preview";
-
     padding: 5px;
 }
 
@@ -303,6 +315,10 @@ h3 {
 
 #inventory-preview {
 
+}
+
+#equip-wrapper {
+    text-align: center;
 }
 
 #hero-screen #top-bar .item-active {
@@ -701,6 +717,7 @@ h3 {
     height: calc(100vh - 64px);
     max-width: 100%;
     max-height: 100vh;
+    width: 100%;
 }
 
 #potions-menu {
