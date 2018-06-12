@@ -9,6 +9,11 @@ class Field {
   int _stageId;
   int _monsterId;
 
+  Field top;
+  Field left;
+  Field right;
+  Field bottom;
+
   Field.create(bool accessible, String style, String id, int row, int col, [this._stageId, this._monsterId]) {
     _accessible = accessible;
     _style = style;
@@ -35,4 +40,13 @@ class Field {
 
   get col => _col;
 
+  String toString() {
+    String result = id;
+    if (top != null) result = top.id;
+    if (left != null) result = left.id;
+    if (right != null) result = right.id;
+    if (bottom != null) result = bottom.id;
+
+    return result;
+  }
 }

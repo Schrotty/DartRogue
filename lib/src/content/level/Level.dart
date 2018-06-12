@@ -5,6 +5,7 @@ class Level {
 
   Field spawnPoint;
   List<List<Field>> fields;
+  List<Field> _pathGrid = new List<Field>();
   List<SpawnPoint> restPlaces;
   List<SpawnPoint> monsterSpawnPoints;
 
@@ -28,8 +29,8 @@ class Level {
             spawnPoint = f;
           }
 
-          col++;
           fields[index].add(f);
+          col++;
         });
 
         index++;
@@ -45,6 +46,8 @@ class Level {
         }
       });
     }
+
+    _calcPathGrid();
   }
 
   Field getField(int id) {
@@ -60,5 +63,36 @@ class Level {
     });
 
     return result;
+  }
+  
+  _calcPathGrid() {
+    Field tmp = null;
+    fields.forEach((row) {
+      row.forEach((field) {
+        if (field.id >= 0 && field.row >= 0 && field.col >= 0 && field.isAccessible) {
+          if (field.row != 0) {
+            tmp = fields[field.row - 1][field.col];
+            if (tmp.isAccessible) field.top = tmp;
+          }
+
+          if (field.row != 31) {
+            tmp = fields[field.row + 1][field.col];
+            if (tmp.isAccessible) field.bottom = tmp;
+          }
+
+          if (field.col != 0) {
+            tmp = fields[field.row][field.col - 1];
+            if (tmp.isAccessible) field.left = tmp;
+          }
+
+          if (field.col != 31) {
+            tmp = fields[field.row][field.col + 1];
+            if (tmp.isAccessible) field.right = tmp;
+          }
+
+          _pathGrid.add(field);
+        }
+      });
+    });
   }
 }

@@ -9,6 +9,7 @@ abstract class Moveable {
   Map<String, int> _loot = new Map();
   bool _alive = true;
   Field _position;
+  List<Field> path;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -28,6 +29,10 @@ abstract class Moveable {
 
   move(Field position) {
     _position = position;
+  }
+
+  _calcPath(Field target) {
+
   }
 
   get name => this._name;
