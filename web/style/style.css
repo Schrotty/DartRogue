@@ -994,15 +994,15 @@ h3 {
 
 @keyframes tile-monster {
     100% {
-        background: url(../img/monsters/map/demon.png) -64px, url(../img/main/tiles.png) -64px -96px;
+        background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
     }
 
     50% {
-        background: url(../img/monsters/map/demon.png) -64px, url(../img/main/tiles.png) -64px -96px;
+        background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
     }
 
     0% {
-        background: url(../img/monsters/map/demon.png) 0, url(../img/main/tiles.png) -64px -96px;
+        background: url(../img/monsters/map/demon.png) 0 0, url(../img/main/tiles.png) -64px -96px;
     }
 }
 
