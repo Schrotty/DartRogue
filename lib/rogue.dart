@@ -2,9 +2,9 @@ library rogue;
 
 import 'dart:async';
 import 'dart:html';
-import 'dart:js';
 import 'dart:math';
 import 'dart:convert';
+import 'package:collection/collection.dart';
 
 part 'src/RogueController.dart';
 part 'src/RogueView.dart';
@@ -19,6 +19,9 @@ part 'src/content/moveable/monster/Monster.dart';
 part 'src/content/moveable/monster/MonsterGenerator.dart';
 part 'src/content/moveable/player/Player.dart';
 part 'src/content/moveable/Moveable.dart';
+part 'package:rogue/src/content/moveable/pathfinding/Pathfinding.dart';
+part 'package:rogue/src/content/moveable/pathfinding/Node.dart';
+part 'package:rogue/src/content/moveable/pathfinding/PriorityQueue.dart';
 part 'src/content/level/Field.dart';
 part 'src/content/level/Level.dart';
 part 'src/content/level/SpawnPoint.dart';

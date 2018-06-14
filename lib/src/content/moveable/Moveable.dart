@@ -9,7 +9,8 @@ abstract class Moveable {
   Map<String, int> _loot = new Map();
   bool _alive = true;
   Field _position;
-  List<Field> path;
+  Node start;
+  Field _target;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -27,12 +28,20 @@ abstract class Moveable {
 
   _die();
 
-  move(Field position) {
-    _position = position;
+  move() {
+    if (start != null && start.predecessor != null) {
+      _position = start.predecessor.field;
+      start = start.predecessor;
+
+      if (start.field.id == _target.id) {
+        start = null;
+      }
+    }
   }
 
-  _calcPath(Field target) {
-
+  calcPath(Field target) {
+    _target = target;
+    start = new Pathfinding().calcPath(_position, target);
   }
 
   get name => this._name;
@@ -62,4 +71,6 @@ abstract class Moveable {
   get isAlive => _alive;
 
   get position => _position;
+
+  set position(Field pos) => _position = pos;
 }

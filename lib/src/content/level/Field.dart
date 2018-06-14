@@ -14,12 +14,44 @@ class Field {
   Field right;
   Field bottom;
 
+  DivElement element;
+
   Field.create(bool accessible, String style, String id, int row, int col, [this._stageId, this._monsterId]) {
     _accessible = accessible;
     _style = style;
     _id = int.parse(id.substring(5));
     _row = row;
     _col = col;
+  }
+
+  Field.empty(int id) {
+    _accessible = false;
+    _style = "none";
+    _id = id;
+    _row = -1;
+    _col = -1;
+  }
+
+  bool isNeighbour(Field pot) {
+    if (pot != null) {
+      if (hasTop) {
+        if (top.id == pot.id) return true;
+      }
+
+      if (hasLeft) {
+        if (left.id == pot.id) return true;
+      }
+
+      if (hasRight) {
+        if (right.id == pot.id) return true;
+      }
+
+      if (hasBottom) {
+        if (bottom.id == pot.id) return true;
+      }
+    }
+
+    return false;
   }
 
   get id => _id;
@@ -39,6 +71,11 @@ class Field {
   get row => _row;
 
   get col => _col;
+
+  get hasTop => top != null;
+  get hasLeft => left != null;
+  get hasRight => right != null;
+  get hasBottom => bottom != null;
 
   String toString() {
     String result = id;
