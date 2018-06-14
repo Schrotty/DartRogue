@@ -128,8 +128,8 @@ h3 {
 #tiles, #movables {
     zoom: 150%;
     display: grid;
-    grid-template-columns: repeat(32, 32px);
-    grid-template-rows: repeat(32, 32px);
+    grid-template-columns: repeat(40, 32px);
+    grid-template-rows: repeat(40, 32px);
     z-index: 5;
     max-width: 100%;
     text-align: center;

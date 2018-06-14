@@ -22,6 +22,10 @@ class RogueController {
       const oneSec = const Duration(milliseconds: 16);
       new Timer.periodic(oneSec, (Timer t) => _update());
 
+      /* MOVEMENT TIMER */
+      const ti = const Duration(milliseconds: 500);
+      new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
+
       _renderLevel(player.currentStage);
 
       querySelector("#tiles").onTouchMove.listen((onData) {
@@ -77,6 +81,7 @@ class RogueController {
           ..id = "tile-${tile.id}"
           ..append(new Element.div());
 
+        tile.element = elm;
         querySelector("#tiles").append(elm);
       });
     });
@@ -104,8 +109,7 @@ class RogueController {
           }
 
           Level.clicked = levels[stage].getField(int.parse(clicked.id.substring(5)));
-          player.move(Level.clicked);
-          clicked.children.first.classes.add("player");
+          player.calcPath(Level.clicked);
 
           _centerPlayer();
         }
@@ -308,18 +312,18 @@ class RogueController {
   _spawnPlayer(int lvl) {
     Field spawn = levels[lvl].spawnPoint;
     Level.clicked = spawn;
-    player.move(spawn);
 
     DivElement e = querySelector("#tile-${levels[lvl].spawnPoint.id}");
     e.children[0].classes.add("player");
+    player.position = spawn;
 
     _centerPlayer();
   }
 
   _centerPlayer() {
     int mod = 32;
-    view.dungeon.scrollTop = (Level.clicked.row * mod);
-    view.dungeon.scrollLeft = (Level.clicked.col * mod);
+    view.dungeon.scrollTop = (player.position.row + 4 * mod);
+    view.dungeon.scrollLeft = (player.position.col * mod);
   }
 
   _updatePlayerHealth() {
@@ -393,13 +397,13 @@ class RogueController {
   }
 
   _updateFightScreen() {
-    view.monsterFightHealth.text = attacker.currHealth;
-    view.monsterFightMaxHealth.text = attacker.maxHealth;
-    view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
+      view.monsterFightHealth.text = attacker.currHealth;
+      view.monsterFightMaxHealth.text = attacker.maxHealth;
+      view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
 
-    view.playerFightHealth.text = player.currHealth;
-    view.playerFightMaxHealth.text = player.maxHealth;
-    view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+      view.playerFightHealth.text = player.currHealth;
+      view.playerFightMaxHealth.text = player.maxHealth;
+      view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
   _registerHeroScreenEvents() {
@@ -565,5 +569,17 @@ class RogueController {
   _openHeroScreen() {
     _updatePlayerEquipment();
     _toggleOverlay(view.heroScreen);
+  }
+
+  _updateMoveablePositions() {
+    player.position.element.children.first.classes.remove("player");
+    player.move();
+
+    Field elm = player.position;
+    if (elm != null) {
+      elm.element.children.first.classes.add("player");
+    }
+
+    _centerPlayer();
   }
 }

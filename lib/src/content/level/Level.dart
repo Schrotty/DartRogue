@@ -2,52 +2,79 @@ part of rogue;
 
 class Level {
   int _id;
+  int _tileCount = 0;
+  int _rowCount = 0;
 
   Field spawnPoint;
-  List<List<Field>> fields;
-  List<Field> _pathGrid = new List<Field>();
+  List<List<Field>> fields = new List();
   List<SpawnPoint> restPlaces;
   List<SpawnPoint> monsterSpawnPoints;
 
   static Field clicked;
+  List<Node> _pathGraph = new List<Node>();
 
   Level.build(int id, Map data) {
     _id = id;
-    fields = new List();
 
-    int fieldID = 0;
-    if (data.containsKey("rows")) {
-
-      int index = 0;
-      data["rows"].forEach((value) {
-        fields.add(new List<Field>());
-
-        int col = 0;
-        data["rows"][index]["row"].forEach((tile) {
-          Field f = new Field.create(tile["accessible"], tile["style"], "tile-${fieldID++}", index, col, data['id'], tile['monster']);
-          if (tile.containsKey("spawn")) {
-            spawnPoint = f;
-          }
-
-          fields[index].add(f);
-          col++;
-        });
-
-        index++;
+    if (data.containsKey('rows')) {
+      _createHorizonBorder();
+      data['rows'].forEach((Map row) {
+        _buildRow(row['row'], row['id'], data['id']);
       });
 
-      for (int i = fields.length; i < 32; i++) {
-        fields.add(new List<Field>());
-      }
-
-      fields.forEach((List<Field> row) {
-        for (int i = row.length; i < 32; i++) {
-          row.add(new Field.create(false, "none", "tile-${fieldID++}", -1, -1));
-        }
-      });
+      _createHorizonBorder();
     }
 
-    _calcPathGrid();
+    _calcPathGraph(fields);
+  }
+
+  _buildRow(row, id, int level) {
+    int cols = 0;
+    fields.add(new List<Field>());
+
+    _createVerticalBorder();
+    row.forEach((Map rw) {
+      _buildTile(id, rw, level);
+      cols++;
+    });
+
+    _fill(cols);
+
+    _createVerticalBorder();
+    _rowCount++;
+  }
+
+  _buildTile(int row, Map tile, int level) {
+    Field f = new Field.create(tile["accessible"], tile["style"], "tile-${_tileCount++}", row, tile['id'], level, tile['monster']);
+    if (tile.containsKey("spawn")) {
+      spawnPoint = f;
+    }
+
+    fields[_rowCount].add(f);
+  }
+
+  _fill(int cols) {
+    for (int i = cols; i < 32; i++) {
+      fields[_rowCount].addAll(_createBorderFields(1));
+    }
+  }
+
+  List<Field> _createBorderFields(int count) {
+    List<Field> f = new List<Field>();
+    for (int i = 0; i < count; i++) f.add(new Field.empty(_tileCount++));
+
+    return f;
+  }
+
+  _createHorizonBorder() {
+    for (int i = 0; i < 4; i++) {
+      fields.add(new List<Field>());
+      fields[_rowCount++].addAll(_createBorderFields(40));
+    }
+  }
+
+  _createVerticalBorder() {
+    fields[_rowCount].addAll(_createBorderFields(4));
   }
 
   Field getField(int id) {
@@ -64,35 +91,62 @@ class Level {
 
     return result;
   }
+
+  Node getNode(Field field) {
+    return _pathGraph.firstWhere((Node n) {
+      return field.id == n.field.id;
+    });
+  }
   
-  _calcPathGrid() {
+  _calcPathGraph(List<List<Field>> fields) {
     Field tmp = null;
     fields.forEach((row) {
       row.forEach((field) {
-        if (field.id >= 0 && field.row >= 0 && field.col >= 0 && field.isAccessible) {
-          if (field.row != 0) {
-            tmp = fields[field.row - 1][field.col];
+        if (field.isAccessible) {
+          int row = field.row + 4;
+          int col = field.col + 4;
+          if (field.row > 0) {
+            tmp = fields[row - 1][col];
             if (tmp.isAccessible) field.top = tmp;
           }
 
-          if (field.row != 31) {
-            tmp = fields[field.row + 1][field.col];
+          if (field.row >= 0) {
+            tmp = fields[row + 1][col];
             if (tmp.isAccessible) field.bottom = tmp;
           }
 
-          if (field.col != 0) {
-            tmp = fields[field.row][field.col - 1];
+          if (field.col > 0) {
+            tmp = fields[row][col - 1];
             if (tmp.isAccessible) field.left = tmp;
           }
 
-          if (field.col != 31) {
-            tmp = fields[field.row][field.col + 1];
+          if (field.col >= 0) {
+            tmp = fields[row][col + 1];
             if (tmp.isAccessible) field.right = tmp;
           }
 
-          _pathGrid.add(field);
+          _pathGraph.add(new Node.create(field));
         }
       });
     });
+
+    _pathGraph.forEach((Node n) {
+      n.successors.addAll(_pathGraph.where((Node nn) {
+        return n.field.isNeighbour(nn.field);
+      }));
+    });
+
+    /*print(_pathGraph.length);
+    _pathGraph.forEach((n) {
+
+      String str = n.field.id.toString() + ":";
+      n.successors.forEach((s) {
+        str += " " + s.field.id.toString();
+      });
+
+      print(str);
+    });
+
+    print("------");*/
   }
 }
