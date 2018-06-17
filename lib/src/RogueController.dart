@@ -264,6 +264,7 @@ class RogueController {
   _registerDebugEvents() {
     view.debugButton.onClick.listen((e) {
       _toggleOverlay(view.debugScreen);
+      print(levels);
     });
 
     view.debugAddEXPButton.onClick.listen((e) {
