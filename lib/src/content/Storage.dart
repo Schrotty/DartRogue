@@ -80,11 +80,11 @@ _buildMonsters() async {
 _buildLevels() async {
   _buildLevel(0);
   _buildLevel(1);
-//  _buildLevel(2);
-//  _buildLevel(3);
-//  _buildLevel(4);
-//  _buildLevel(5);
-//  _buildLevel(6);
+  _buildLevel(2);
+  _buildLevel(3);
+  _buildLevel(4);
+  _buildLevel(5);
+  _buildLevel(6);
 }
 
 _buildPlayer() async {

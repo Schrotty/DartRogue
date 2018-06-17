@@ -1,9 +1,6 @@
 [
   {
     "id": 1,
-    "height": 4,
-    "width": 4,
-    "monsterCount": 5,
     "rows": [
       {
         "id": 0,
@@ -1933,42 +1930,42 @@
           },
           {
             "id": 21,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
@@ -2098,42 +2095,42 @@
           },
           {
             "id": 21,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
+            "accessible": false,
             "style": "none"
           },
           {
