@@ -3,146 +3,670 @@
     "stage": 0,
     "id": 0,
     "lvl": 1,
-    "name": "Ghoul",
-    "hp": 20,
-    "attack": 3,
+    "name": "Green_Snake",
+    "hp": 15,
+    "attack": 1,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 10
   },
   {
     "stage": 0,
     "id": 1,
+    "lvl": 1,
+    "name": "Red_Snake",
+    "hp": 17,
+    "attack": 2,
+    "speed": 10,
+    "grantedXP": 14
+  },
+  {
+    "stage": 0,
+    "id": 2,
+    "lvl": 1,
+    "name": "Grey_Bat",
+    "hp": 16,
+    "attack": 1,
+    "speed": 10,
+    "grantedXP": 12
+  },
+  {
+    "stage": 0,
+    "id": 3,
     "lvl": 1,
     "name": "Red_Bat",
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 18
-  },
-  {
-    "stage": 0,
-    "id": 2,
-    "lvl": 1,
-    "name": "Green_Scorpion",
-    "hp": 20,
-    "attack": 3,
-    "speed": 10,
-    "grantedXP": 20
-  },
-  {
-    "stage": 0,
-    "id": 3,
-    "lvl": 1,
-    "name": "Dark_Pumpkin",
-    "hp": 19,
-    "attack": 2,
-    "speed": 10,
-    "grantedXP": 19
+    "grantedXP": 16
   },
   {
     "stage": 0,
     "id": 4,
     "lvl": 1,
-    "name": "Ogre",
-    "hp": 15,
-    "attack": 3,
+    "name": "Green_Scorpion",
+    "hp": 18,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 17
+    "grantedXP": 16
   },
   {
     "stage": 0,
     "id": 5,
     "lvl": 1,
-    "name": "Red_Snake",
-    "hp": 22,
+    "name": "Red_Scorpion",
+    "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 21
-  },
-  {
-    "stage": 0,
-    "id": 99,
-    "lvl": 3,
-    "name": "Black_Troll",
-    "hp": 50,
-    "attack": 4,
-    "speed": 10,
-    "grantedXP": 80,
-    "loot": {
-      "chest": 0
-    }
+    "grantedXP": 20
   },
   {
     "stage": 1,
     "id": 0,
     "lvl": 2,
-    "name": "Black_Troll",
-    "hp": 20,
-    "attack": 3,
+    "name": "Grey_Bat",
+    "hp": 16,
+    "attack": 1,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 12
   },
   {
     "stage": 1,
     "id": 1,
-    "lvl": 1,
-    "name": "Grey_Bat",
+    "lvl": 2,
+    "name": "Red_Bat",
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 18
+    "grantedXP": 16
   },
   {
     "stage": 1,
     "id": 2,
     "lvl": 2,
-    "name": "Green_Snake",
-    "hp": 20,
-    "attack": 3,
+    "name": "Green_Scorpion",
+    "hp": 18,
+    "attack": 2,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 16
   },
   {
     "stage": 1,
     "id": 3,
     "lvl": 2,
-    "name": "Pumpkin",
-    "hp": 19,
-    "attack": 2,
+    "name": "Red_Scorpion",
+    "hp": 20,
+    "attack": 3,
     "speed": 10,
-    "grantedXP": 19
+    "grantedXP": 20
   },
   {
     "stage": 1,
     "id": 4,
     "lvl": 2,
     "name": "Kobold",
-    "hp": 15,
+    "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 22
   },
   {
     "stage": 1,
     "id": 5,
     "lvl": 2,
-    "name": "Red_Troll",
-    "hp": 22,
+    "name": "Grey_Kobold",
+    "hp": 24,
+    "attack": 4,
+    "speed": 10,
+    "grantedXP": 26
+  },
+  {
+    "stage": 2,
+    "id": 0,
+    "lvl": 3,
+    "name": "Green_Scorpion",
+    "hp": 18,
+    "attack": 2,
+    "speed": 10,
+    "grantedXP": 16
+  },
+  {
+    "stage": 2,
+    "id": 1,
+    "lvl": 3,
+    "name": "Red_Scorpion",
+    "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 21
+    "grantedXP": 20
+  },
+  {
+    "stage": 2,
+    "id": 2,
+    "lvl": 3,
+    "name": "Kobold",
+    "hp": 20,
+    "attack": 3,
+    "speed": 10,
+    "grantedXP": 22
+  },
+  {
+    "stage": 2,
+    "id": 3,
+    "lvl": 3,
+    "name": "Grey_Kobold",
+    "hp": 24,
+    "attack": 4,
+    "speed": 10,
+    "grantedXP": 26
+  },
+  {
+    "stage": 2,
+    "id": 4,
+    "lvl": 3,
+    "name": "Pumpkin",
+    "hp": 22,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 28
+  },
+  {
+    "stage": 2,
+    "id": 5,
+    "lvl": 3,
+    "name": "Dark_Pumpkin",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 3,
+    "id": 0,
+    "lvl": 4,
+    "name": "Kobold",
+    "hp": 20,
+    "attack": 3,
+    "speed": 10,
+    "grantedXP": 22
+  },
+  {
+    "stage": 3,
+    "id": 1,
+    "lvl": 4,
+    "name": "Grey_Kobold",
+    "hp": 24,
+    "attack": 4,
+    "speed": 10,
+    "grantedXP": 26
+  },
+  {
+    "stage": 3,
+    "id": 2,
+    "lvl": 4,
+    "name": "Pumpkin",
+    "hp": 22,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 28
+  },
+  {
+    "stage": 3,
+    "id": 3,
+    "lvl": 4,
+    "name": "Dark_Pumpkin",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 3,
+    "id": 4,
+    "lvl": 4,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 3,
+    "id": 5,
+    "lvl": 4,
+    "name": "Crazy_Ghoul",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36
+  },
+  {
+    "stage": 4,
+    "id": 0,
+    "lvl": 5,
+    "name": "Pumpkin",
+    "hp": 22,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 28
+  },
+  {
+    "stage": 4,
+    "id": 1,
+    "lvl": 5,
+    "name": "Pumpkin",
+    "hp": 22,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 28
+  },
+  {
+    "stage": 4,
+    "id": 2,
+    "lvl": 5,
+    "name": "Dark_Pumpkin",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 4,
+    "id": 3,
+    "lvl": 5,
+    "name": "Dark_Pumpkin",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 4,
+    "id": 4,
+    "lvl": 5,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 4,
+    "id": 5,
+    "lvl": 5,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 4,
+    "id": 6,
+    "lvl": 5,
+    "name": "Crazy_Ghoul",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36
+  },
+  {
+    "stage": 4,
+    "id": 7,
+    "lvl": 5,
+    "name": "Crazy_Ghoul",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36
+  },
+  {
+    "stage": 4,
+    "id": 8,
+    "lvl": 5,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 4,
+    "id": 9,
+    "lvl": 5,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 4,
+    "id": 10,
+    "lvl": 5,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 4,
+    "id": 11,
+    "lvl": 5,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 5,
+    "id": 0,
+    "lvl": 6,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 5,
+    "id": 1,
+    "lvl": 6,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32
+  },
+  {
+    "stage": 5,
+    "id": 2,
+    "lvl": 6,
+    "name": "Crazy_Ghoul",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36
+  },
+  {
+    "stage": 5,
+    "id": 3,
+    "lvl": 6,
+    "name": "Crazy_Ghoul",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36
+  },
+  {
+    "stage": 5,
+    "id": 4,
+    "lvl": 6,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 5,
+    "id": 5,
+    "lvl": 6,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 5,
+    "id": 6,
+    "lvl": 6,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 5,
+    "id": 7,
+    "lvl": 6,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 5,
+    "id": 8,
+    "lvl": 6,
+    "name": "Red_Troll",
+    "hp": 32,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 42
+  },
+  {
+    "stage": 5,
+    "id": 9,
+    "lvl": 6,
+    "name": "Red_Troll",
+    "hp": 32,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 42
+  },
+  {
+    "stage": 5,
+    "id": 10,
+    "lvl": 6,
+    "name": "Black_Troll",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 44
+  },
+  {
+    "stage": 5,
+    "id": 11,
+    "lvl": 6,
+    "name": "Black_Troll",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 44
+  },
+  {
+    "stage": 6,
+    "id": 0,
+    "lvl": 7,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 6,
+    "id": 1,
+    "lvl": 7,
+    "name": "Zombie",
+    "hp": 28,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 34
+  },
+  {
+    "stage": 6,
+    "id": 2,
+    "lvl": 7,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 6,
+    "id": 3,
+    "lvl": 7,
+    "name": "Green_Zombie",
+    "hp": 30,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 38
+  },
+  {
+    "stage": 6,
+    "id": 4,
+    "lvl": 7,
+    "name": "Red_Troll",
+    "hp": 32,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 42
+  },
+  {
+    "stage": 6,
+    "id": 5,
+    "lvl": 7,
+    "name": "Red_Troll",
+    "hp": 32,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 42
+  },
+  {
+    "stage": 6,
+    "id": 6,
+    "lvl": 7,
+    "name": "Black_Troll",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 44
+  },
+  {
+    "stage": 6,
+    "id": 7,
+    "lvl": 7,
+    "name": "Black_Troll",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 44
+  },
+  {
+    "stage": 6,
+    "id": 8,
+    "lvl": 7,
+    "name": "Ogre",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 46
+  },
+  {
+    "stage": 6,
+    "id": 9,
+    "lvl": 7,
+    "name": "Ogre",
+    "hp": 36,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 46
+  },
+  {
+    "stage": 6,
+    "id": 10,
+    "lvl": 7,
+    "name": "Armed_Ogre",
+    "hp": 40,
+    "attack": 7,
+    "speed": 10,
+    "grantedXP": 50
+  },
+  {
+    "stage": 6,
+    "id": 11,
+    "lvl": 7,
+    "name": "Armed_Ogre",
+    "hp": 40,
+    "attack": 7,
+    "speed": 10,
+    "grantedXP": 50
+  },
+  {
+    "stage": 0,
+    "id": 99,
+    "lvl": 2,
+    "name": "Golem",
+    "hp": 38,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 52
   },
   {
     "stage": 1,
     "id": 99,
-    "lvl": 4,
-    "name": "Armed_Ogre",
-    "hp": 70,
-    "attack": 7,
+    "lvl": 3,
+    "name": "Golem",
+    "hp": 38,
+    "attack": 8,
     "speed": 10,
-    "grantedXP": 90,
-    "loot": {
-      "boots": 1
-    }
+    "grantedXP": 52
+  },
+  {
+    "stage": 2,
+    "id": 99,
+    "lvl": 4,
+    "name": "Golem",
+    "hp": 38,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 52
+  },
+  {
+    "stage": 3,
+    "id": 99,
+    "lvl": 5,
+    "name": "Golem",
+    "hp": 38,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 52
+  },
+  {
+    "stage": 4,
+    "id": 99,
+    "lvl": 7,
+    "name": "Dark_Golem",
+    "hp": 40,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 56
+  },
+  {
+    "stage": 5,
+    "id": 99,
+    "lvl": 8,
+    "name": "Dark_Golem",
+    "hp": 40,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 56
+  },
+  {
+    "stage": 6,
+    "id": 99,
+    "lvl": 9,
+    "name": "Dark_Golem",
+    "hp": 40,
+    "attack": 8,
+    "speed": 10,
+    "grantedXP": 56
   }
 ]
