@@ -273,7 +273,8 @@
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 5,
+            "style": "floor-default-monster"
           },
           {
             "id": 3,
@@ -308,7 +309,8 @@
           {
             "id": 9,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 2,
+            "style": "floor-default-monster"
           },
           {
             "id": 10,
@@ -433,7 +435,8 @@
           {
             "id": 0,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 99,
+            "style": "floor-default-boss"
           },
           {
             "id": 1,
@@ -538,7 +541,8 @@
           {
             "id": 4,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 4,
+            "style": "floor-default-monster"
           },
           {
             "id": 5,
@@ -738,7 +742,8 @@
           {
             "id": 10,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 3,
+            "style": "floor-default-monster"
           },
           {
             "id": 11,
@@ -948,7 +953,8 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 0,
+            "style": "floor-default-monster"
           },
           {
             "id": 2,
@@ -1248,7 +1254,8 @@
           {
             "id": 10,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 1,
+            "style": "floor-default-monster"
           },
           {
             "id": 11,

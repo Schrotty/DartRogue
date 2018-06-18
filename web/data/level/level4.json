@@ -1,6 +1,6 @@
 [
   {
-    "id": 4,
+    "id": 6,
     "rows": [
       {
         "id": 0,
@@ -58,12 +58,12 @@
           {
             "id": 10,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-3"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-3"
           },
           {
             "id": 12,
@@ -103,7 +103,7 @@
           {
             "id": 19,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-3"
           },
           {
             "id": 20,
@@ -223,12 +223,12 @@
           {
             "id": 10,
             "accessible": false,
-            "style": "none"
+            "style": "wall-middle-2"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "none"
+            "style": "wall-middle-2"
           },
           {
             "id": 12,
@@ -387,13 +387,13 @@
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
@@ -432,8 +432,8 @@
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 20,
@@ -548,17 +548,18 @@
           {
             "id": 9,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 8,
+            "style": "floor-default-monster"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 12,
@@ -597,8 +598,8 @@
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 20,
@@ -667,8 +668,8 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 1,
@@ -702,68 +703,68 @@
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "space-top-left"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "space-top-left-middle"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "space-top-right-middle"
+            "style": "space-top-left"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "space-top-right"
+            "style": "space-top-left-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-top-right-middle"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "space-top-right"
           },
           {
             "id": 20,
@@ -772,8 +773,8 @@
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 22,
@@ -832,8 +833,8 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
@@ -853,82 +854,82 @@
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 5,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "space-middle-left"
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "space-middle-left-middle"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "space-middle-right-middle"
+            "style": "space-middle-left"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "space-middle-right"
+            "style": "space-middle-left-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-middle-right-middle"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "space-middle-right"
           },
           {
             "id": 20,
@@ -937,8 +938,8 @@
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
@@ -953,27 +954,27 @@
           {
             "id": 24,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 25,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 29,
@@ -997,8 +998,8 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-1"
           },
           {
             "id": 1,
@@ -1008,92 +1009,92 @@
           {
             "id": 2,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 7,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-3"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "space-bottom-left"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "space-bottom-left-middle"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "space-bottom-right-middle"
+            "style": "space-bottom-left"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "space-bottom-right"
+            "style": "space-bottom-left-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-bottom-right-middle"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "space-bottom-right"
           },
           {
             "id": 20,
@@ -1102,8 +1103,8 @@
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
@@ -1117,28 +1118,28 @@
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
@@ -1162,8 +1163,9 @@
         "row": [
           {
             "id": 0,
+            "spawn": true,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 1,
@@ -1172,28 +1174,28 @@
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 4,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 6,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 7,
@@ -1203,37 +1205,37 @@
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
@@ -1243,22 +1245,22 @@
           {
             "id": 16,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-top-left"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-top-left-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-top-right-middle"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-top-right"
           },
           {
             "id": 20,
@@ -1267,8 +1269,8 @@
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
@@ -1282,28 +1284,28 @@
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
@@ -1327,23 +1329,23 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 4,
@@ -1378,27 +1380,27 @@
           {
             "id": 10,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 15,
@@ -1408,22 +1410,22 @@
           {
             "id": 16,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-middle-left"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-middle-left-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-middle-right-middle"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-default"
+            "style": "space-middle-right"
           },
           {
             "id": 20,
@@ -1432,8 +1434,8 @@
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
@@ -1447,28 +1449,28 @@
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
@@ -1478,7 +1480,8 @@
           {
             "id": 30,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 1,
+            "style": "floor-default-monster"
           },
           {
             "id": 31,
@@ -1492,13 +1495,13 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
@@ -1553,52 +1556,52 @@
           {
             "id": 12,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 14,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 16,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "space-bottom-left"
           },
           {
             "id": 17,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "space-bottom-left-middle"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "space-bottom-right-middle"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "space-bottom-right"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 22,
@@ -1612,43 +1615,43 @@
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 31,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           }
         ]
       },
@@ -1657,148 +1660,149 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 5,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 12,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 14,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 16,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 17,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 0,
+            "style": "floor-default-monster"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 23,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 29,
@@ -1822,148 +1826,148 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-left"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-middle"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-middle"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-middle"
           },
           {
             "id": 20,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "stair-top-right"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
@@ -1987,148 +1991,148 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-left"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-middle"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-middle"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-middle"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-middle"
           },
           {
             "id": 20,
             "accessible": true,
-            "style": "floor-default"
+            "style": "stair-middle-right"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
@@ -2152,163 +2156,163 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "stair-top-left"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "stair-top-right"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 5,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 12,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "stair-top-left"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "stair-top-middle"
+            "style": "stair-bottom-left"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "stair-top-middle"
+            "style": "stair-bottom-middle"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "stair-top-right"
+            "style": "stair-bottom-middle"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "stair-bottom-middle"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "stair-bottom-middle"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "stair-bottom-right"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 23,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 24,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 25,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
             "accessible": true,
-            "style": "stair-top-left"
+            "style": "floor-default"
           },
           {
             "id": 31,
             "accessible": true,
-            "style": "stair-top-right"
+            "style": "floor-default"
           }
         ]
       },
@@ -2318,162 +2322,162 @@
           {
             "id": 0,
             "accessible": true,
-            "style": "stair-middle-left"
+            "style": "floor-wall-top"
           },
           {
             "id": 1,
             "accessible": true,
-            "style": "stair-middle-right"
+            "style": "floor-wall-top"
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "stair-middle-left"
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "stair-middle-middle"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "stair-middle-middle"
+            "style": "floor-default"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "stair-middle-right"
+            "style": "floor-default"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 21,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 22,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 26,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 27,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 28,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
             "accessible": true,
-            "style": "stair-middle-left"
+            "style": "floor-default"
           },
           {
             "id": 31,
             "accessible": true,
-            "style": "stair-middle-right"
+            "style": "floor-default"
           }
         ]
       },
@@ -2483,162 +2487,164 @@
           {
             "id": 0,
             "accessible": true,
-            "style": "stair-bottom-left"
+            "style": "floor-default"
           },
           {
             "id": 1,
             "accessible": true,
-            "style": "stair-bottom-right"
+            "style": "floor-default"
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 2,
+            "style": "floor-default-monster"
           },
           {
             "id": 9,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "stair-bottom-left"
+            "style": "floor-default"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "stair-bottom-middle"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "stair-bottom-middle"
+            "style": "floor-default"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "stair-bottom-right"
+            "style": "floor-default"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 21,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 22,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 11,
+            "style": "floor-default-monster"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 27,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 28,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
             "accessible": true,
-            "style": "stair-bottom-left"
+            "style": "floor-default"
           },
           {
             "id": 31,
             "accessible": true,
-            "style": "stair-bottom-right"
+            "style": "floor-default"
           }
         ]
       },
@@ -2647,163 +2653,163 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 6,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 16,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 17,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 18,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 19,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 23,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 24,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 25,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 29,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 30,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 31,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           }
         ]
       },
@@ -2812,28 +2818,28 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
@@ -2847,83 +2853,83 @@
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 16,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 17,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 18,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 19,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 23,
@@ -2942,33 +2948,33 @@
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 29,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 30,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 31,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           }
         ]
       },
@@ -2978,162 +2984,162 @@
           {
             "id": 0,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 1,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 14,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 15,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 16,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 17,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 18,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 19,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 29,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 30,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 31,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           }
         ]
       },
@@ -3143,162 +3149,163 @@
           {
             "id": 0,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 1,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 7,
+            "style": "floor-default-monster"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 16,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 17,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 20,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 21,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 22,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 29,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 30,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 31,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           }
         ]
       },
@@ -3307,58 +3314,58 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -3372,33 +3379,34 @@
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 14,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "monster": 5,
+            "style": "floor-default-monster"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 16,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 17,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -3412,58 +3420,58 @@
           },
           {
             "id": 21,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 22,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 28,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 29,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 30,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 31,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           }
         ]
       },
@@ -3472,58 +3480,58 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 3,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -3532,38 +3540,38 @@
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 14,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 15,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 16,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 17,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -3572,63 +3580,63 @@
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 23,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 27,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 28,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 29,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 30,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 31,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           }
         ]
       },
@@ -3637,33 +3645,33 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
@@ -3687,8 +3695,8 @@
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -3697,8 +3705,8 @@
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
@@ -3727,8 +3735,8 @@
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -3737,8 +3745,8 @@
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
@@ -3757,13 +3765,13 @@
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 26,
@@ -3777,13 +3785,14 @@
           },
           {
             "id": 28,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "monster": 10,
+            "style": "floor-default-monster"
           },
           {
             "id": 30,
@@ -3802,18 +3811,18 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 3,
@@ -3822,13 +3831,13 @@
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
@@ -3852,8 +3861,8 @@
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -3862,8 +3871,8 @@
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
@@ -3892,8 +3901,8 @@
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -3902,8 +3911,8 @@
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
@@ -3923,32 +3932,32 @@
           {
             "id": 24,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 25,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -3968,17 +3977,17 @@
           {
             "id": 0,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
@@ -3987,13 +3996,13 @@
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
@@ -4017,8 +4026,8 @@
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -4027,8 +4036,8 @@
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 13,
@@ -4057,8 +4066,8 @@
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -4067,8 +4076,8 @@
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
@@ -4097,13 +4106,13 @@
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
@@ -4112,8 +4121,8 @@
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -4138,12 +4147,13 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "exit": true,
+            "style": "exit-treasure"
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
@@ -4152,38 +4162,38 @@
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -4192,8 +4202,8 @@
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 13,
@@ -4222,53 +4232,54 @@
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 9,
+            "style": "floor-default-monster"
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 23,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 24,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 25,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
@@ -4277,8 +4288,8 @@
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -4307,8 +4318,8 @@
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
@@ -4317,38 +4328,38 @@
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 11,
@@ -4358,7 +4369,7 @@
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
@@ -4388,7 +4399,7 @@
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 19,
@@ -4397,43 +4408,43 @@
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
@@ -4442,8 +4453,8 @@
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -4468,12 +4479,13 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 99,
+            "style": "floor-default-boss"
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
@@ -4482,123 +4494,123 @@
           },
           {
             "id": 4,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 7,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 8,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 16,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 17,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 18,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 19,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 20,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 21,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 22,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 23,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 24,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 25,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 26,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 27,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 28,
@@ -4607,8 +4619,8 @@
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -4637,148 +4649,149 @@
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 5,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 11,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 12,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 14,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 15,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 16,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 17,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 18,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 19,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 20,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 21,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 22,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 23,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 24,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 25,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 26,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 27,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 28,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 3,
+            "style": "floor-default-monster"
           },
           {
             "id": 31,
@@ -4802,143 +4815,143 @@
           },
           {
             "id": 2,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 10,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 16,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 17,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 18,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 19,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 20,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 21,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 22,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 23,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 24,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 25,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 26,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 27,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 28,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 29,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -4968,143 +4981,144 @@
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 3,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 4,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 6,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 7,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-wall-top"
+            "monster": 6,
+            "style": "floor-default-monster"
           },
           {
             "id": 9,
             "accessible": true,
-
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 10,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 11,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 13,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 16,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 17,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 18,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 19,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 20,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 21,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 22,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 23,
             "accessible": true,
-            "style": "floor-wall-top"
+            "monster": 4,
+            "style": "floor-default-monster"
           },
           {
             "id": 24,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 25,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 26,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 27,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 28,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 29,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -5114,7 +5128,6 @@
           {
             "id": 31,
             "accessible": true,
-            "spawn": true,
             "style": "floor-default"
           }
         ]
