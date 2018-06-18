@@ -73,7 +73,7 @@ class Player extends Moveable {
     _currentStage = 0;
 
     skins = new List<String>()
-      ..add("player-top")
+      ..add("player-up")
       ..add("player-right")
       ..add("player-left")
       ..add("player-down");
