@@ -18,6 +18,7 @@ class Player extends Moveable {
   Item boots;
 
   Item weapon;
+  bool _inFight;
 
   Map<int, int> pots = new Map();
   List<Item> inventory = new List();
@@ -71,6 +72,7 @@ class Player extends Moveable {
     _gainedXp = 0;
     _neededXp = data['baseXp'];
     _currentStage = 0;
+    _inFight = false;
 
     skins = new List<String>()
       ..add("player-up")
@@ -308,4 +310,8 @@ class Player extends Moveable {
   get currentStage => _currentStage;
 
   set currentStage(int stage) => _currentStage = stage;
+
+  bool get inFight => _inFight;
+
+  set fight(bool inFight) => _inFight = inFight;
 }

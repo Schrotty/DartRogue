@@ -8,7 +8,10 @@ class Level {
   Field spawnPoint;
   List<List<Field>> fields = new List();
   List<SpawnPoint> restPlaces;
-  List<SpawnPoint> monsterSpawnPoints;
+  List<Field> monsterSpawnPoints = new List();
+  List<Field> treasures = new List();
+  List<Moveable> monsters = new List();
+  Moveable boss = null;
 
   static Field clicked;
   List<Node> _pathGraph = new List<Node>();
@@ -48,6 +51,21 @@ class Level {
     Field f = new Field.create(tile["accessible"], tile["style"], "tile-${_tileCount++}", row, tile['id'], level, tile['monster']);
     if (tile.containsKey("spawn")) {
       spawnPoint = f;
+    }
+
+    if (tile.containsKey("monster")) {
+      f.monsterId = tile["monster"];
+      monsterSpawnPoints.add(f);
+
+      monsters.addAll(monsters.where((Monster move) {
+        return move.stage == level;
+      }));
+    }
+
+    if (tile.containsKey("treasure")) {
+      f.accessible = false;
+
+      treasures.add(f);
     }
 
     fields[_rowCount].add(f);
@@ -135,18 +153,9 @@ class Level {
         return n.field.isNeighbour(nn.field);
       }));
     });
+  }
 
-    /*print(_pathGraph.length);
-    _pathGraph.forEach((n) {
-
-      String str = n.field.id.toString() + ":";
-      n.successors.forEach((s) {
-        str += " " + s.field.id.toString();
-      });
-
-      print(str);
-    });
-
-    print("------");*/
+  calcPathGraph() {
+    _calcPathGraph(fields);
   }
 }

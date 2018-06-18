@@ -8,6 +8,7 @@ class Field {
   String _style;
   int _stageId;
   int _monsterId;
+  bool _treasure;
 
   Field top;
   Field left;
@@ -30,6 +31,7 @@ class Field {
     _id = id;
     _row = -1;
     _col = -1;
+    _monsterId = -1;
   }
 
   bool isNeighbour(Field pot) {
@@ -71,6 +73,10 @@ class Field {
   get row => _row;
 
   get col => _col;
+
+  get hasTreasure => _treasure;
+
+  set treasure(bool treasure) => _treasure = treasure;
 
   get hasTop => top != null;
   get hasLeft => left != null;

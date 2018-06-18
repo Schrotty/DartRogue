@@ -298,7 +298,7 @@
             "id": 6,
             "accessible": true,
             "monster": 2,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 7,
@@ -554,7 +554,7 @@
             "id": 6,
             "accessible": true,
             "monster": 1,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 7,
@@ -680,7 +680,7 @@
             "id": 14,
             "accessible": true,
             "monster": 5,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 15,
@@ -1041,7 +1041,8 @@
             "id": 1,
             "accessible": true,
             "exit": true,
-            "style": "exit-treasure"
+            "style": "floor-default",
+            "treasure": true
           },
           {
             "id": 2,
@@ -1127,7 +1128,7 @@
             "id": 1,
             "accessible": true,
             "monster": 99,
-            "style": "floor-default-boss"
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -1228,7 +1229,7 @@
             "id": 4,
             "accessible": true,
             "monster": 4,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 5,
@@ -1284,7 +1285,7 @@
             "id": 15,
             "accessible": true,
             "monster": 0,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           }
         ]
       },

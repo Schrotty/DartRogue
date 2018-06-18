@@ -1,6 +1,7 @@
 part of rogue;
 
 abstract class Moveable {
+  int _id;
   String _name;
   int _lvl;
   int _maxHealth;
@@ -14,6 +15,7 @@ abstract class Moveable {
   int direction;
   String skin;
   List<String> skins;
+  int stage;
 
   static final int UP = 0;
 
@@ -44,7 +46,9 @@ abstract class Moveable {
       int col = start.field.col;
       int row = start.field.row;
 
+      _position.accessible = true;
       _position = start.predecessor.field;
+      _position.accessible = false;
 
       start = start.predecessor;
       if (start.field.id == _target.id) {
@@ -61,8 +65,14 @@ abstract class Moveable {
 
   calcPath(Field target) {
     _target = target;
+
+    _position.accessible = true;
     start = new Pathfinding().calcPath(_position, target);
   }
+
+  int get id => _id;
+
+  set(int id) => _id = id;
 
   get name => this._name;
 

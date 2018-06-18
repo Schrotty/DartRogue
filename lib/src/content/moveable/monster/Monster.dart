@@ -15,6 +15,7 @@ class Monster extends Moveable {
     this.attackPoints = (data['attack'] * scale).ceil();
     this.speed = data['speed'];
     this.grantedXP = (data['grantedXP'] * scale).ceil();
+    this.stage = data['stage'];
 
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
@@ -24,6 +25,14 @@ class Monster extends Moveable {
       if (data['loot'].containsKey('boots')) _loot['boots'] = data['loot']['boots'];
       if (data['loot'].containsKey('weapon')) _loot['weapon'] = data['weapon']['weapon'];
     }
+
+    skins = new List<String>()
+      ..add("player-up")
+      ..add("player-right")
+      ..add("player-left")
+      ..add("player-down");
+
+    skin = "monster";
   }
 
   Monster() {}

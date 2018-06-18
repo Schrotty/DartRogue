@@ -1003,7 +1003,8 @@ h3 {
     background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
 }
 
-.floor-default-monster {
+.monster {
+    background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
     animation: tile-monster 0.5s steps(2) infinite;
 }
 
@@ -1109,6 +1110,6 @@ h3 {
     background: url(../img/main/tiles.png) -96px -256px;
 }
 
-.exit-treasure {
+.treasure {
     background: url(../img/main/tiles.png) -480px -416px, url(../img/main/tiles.png) -64px -96px;
 }
