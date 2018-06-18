@@ -11,6 +11,17 @@ abstract class Moveable {
   Field _position;
   Node start;
   Field _target;
+  int direction;
+  String skin;
+  List<String> skins;
+
+  static final int UP = 0;
+
+  static final int RIGHT = 1;
+
+  static final int LEFT = 2;
+
+  static final int DOWN = 3;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -30,12 +41,21 @@ abstract class Moveable {
 
   move() {
     if (start != null && start.predecessor != null) {
-      _position = start.predecessor.field;
-      start = start.predecessor;
+      int col = start.field.col;
+      int row = start.field.row;
 
+      _position = start.predecessor.field;
+
+      start = start.predecessor;
       if (start.field.id == _target.id) {
         start = null;
       }
+
+      if (col > _position.col) skin = skins[LEFT];
+      if (col < _position.col) skin = skins[RIGHT];
+
+      if (row > _position.row) skin = skins[UP];
+      if (row < _position.row) skin = skins[DOWN];
     }
   }
 

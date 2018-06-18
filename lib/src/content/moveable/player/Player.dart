@@ -72,6 +72,14 @@ class Player extends Moveable {
     _neededXp = data['baseXp'];
     _currentStage = 0;
 
+    skins = new List<String>()
+      ..add("player-up")
+      ..add("player-right")
+      ..add("player-left")
+      ..add("player-down");
+
+    skin = "player-left";
+
     inventory.add(weapons['axes'][0][0]);
     inventory.add(weapons['swords'][1][0]);
 

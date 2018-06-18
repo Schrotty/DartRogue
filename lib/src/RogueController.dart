@@ -323,7 +323,7 @@ class RogueController {
 
   _centerPlayer() {
     int mod = 32;
-    view.dungeon.scrollTop = (player.position.row + 4 * mod);
+    view.dungeon.scrollTop = ((player.position.row + 4) * (mod + 8));
     view.dungeon.scrollLeft = (player.position.col * mod);
   }
 
@@ -573,12 +573,13 @@ class RogueController {
   }
 
   _updateMoveablePositions() {
-    player.position.element.children.first.classes.remove("player");
+    player.position.element.children.first.classes.removeAll(player.skins);
+    player.position.element.children.first.classes.remove("entity");
     player.move();
 
     Field elm = player.position;
     if (elm != null) {
-      elm.element.children.first.classes.add("player");
+      elm.element.children.first.classes.addAll([player.skin, "entity"]);
     }
 
     _centerPlayer();
