@@ -323,7 +323,7 @@ class RogueController {
 
   _centerPlayer() {
     int mod = 32;
-    view.dungeon.scrollTop = (player.position.row + 4 * mod);
+    view.dungeon.scrollTop = ((player.position.row + 4) * (mod + 8));
     view.dungeon.scrollLeft = (player.position.col * mod);
   }
 
