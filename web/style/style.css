@@ -912,10 +912,25 @@ h3 {
     background-color: transparent;
 }
 
-.player {
+.entity {
     width: 32px;
     height: 32px;
-    background: url(../img/main/tiles.png) -128px -256px !important;
+}
+
+.player-right {
+    background: url(../img/player.png) 0 0 !important;
+}
+
+.player-left {
+    background: url(../img/player.png) 0 -32px !important;
+}
+
+.player-down {
+    background: url(../img/player.png) 0 -64px !important;
+}
+
+.player-up {
+    background: url(../img/player.png) 0 -96px !important;
 }
 
 /* WALLS */

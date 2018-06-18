@@ -573,12 +573,13 @@ class RogueController {
   }
 
   _updateMoveablePositions() {
-    player.position.element.children.first.classes.remove("player");
+    player.position.element.children.first.classes.removeAll(player.skins);
+    player.position.element.children.first.classes.remove("entity");
     player.move();
 
     Field elm = player.position;
     if (elm != null) {
-      elm.element.children.first.classes.add("player");
+      elm.element.children.first.classes.addAll([player.skin, "entity"]);
     }
 
     _centerPlayer();
