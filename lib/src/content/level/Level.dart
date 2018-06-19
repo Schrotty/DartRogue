@@ -12,6 +12,7 @@ class Level {
   List<Field> treasures = new List();
   List<Moveable> monsters = new List();
   Moveable boss = null;
+  Field bossSpawn = null;
 
   static Field clicked;
   List<Node> _pathGraph = new List<Node>();
@@ -54,18 +55,15 @@ class Level {
     }
 
     if (tile.containsKey("monster")) {
-      f.monsterId = tile["monster"];
       monsterSpawnPoints.add(f);
-
-      monsters.addAll(monsters.where((Monster move) {
-        return move.stage == level;
-      }));
     }
 
     if (tile.containsKey("treasure")) {
-      f.accessible = false;
+      treasures.add(f..accessible = false);
+    }
 
-      treasures.add(f);
+    if (tile.containsKey("boss")) {
+      bossSpawn = f;
     }
 
     fields[_rowCount].add(f);

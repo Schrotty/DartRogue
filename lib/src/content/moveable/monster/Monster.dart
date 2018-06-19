@@ -3,6 +3,7 @@ part of rogue;
 class Monster extends Moveable {
   int _attackPoints;
   int _grantedXP;
+  bool _boss;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -53,6 +54,10 @@ class Monster extends Moveable {
   get grantedXP => this._grantedXP;
 
   set grantedXP(int xp) => this._grantedXP = xp;
+
+  bool get isBoss => _boss;
+
+  set isBoss(bool isBoss) => _boss = isBoss;
 
   toString() {
     return this.name;

@@ -82,7 +82,12 @@ class RogueController {
       });
     });
 
+    //get monsters for level
     levels[stage].monsters = monsterList[stage].values.toList();
+
+    //get boss for level
+    levels[stage].boss = bosses[stage];
+
     _spawnPlayer(stage);
     _spawnMonster(stage);
     _spawnTreasure(stage);
@@ -326,6 +331,11 @@ class RogueController {
         _spawnEntity(monster);
       }
     });
+
+    levels[lvl].boss.position = levels[lvl].bossSpawn;
+    if (levels[lvl].boss.position != null) {
+      _spawnEntity(levels[lvl].boss);
+    }
   }
 
   _spawnTreasure(int lvl) {
@@ -628,6 +638,10 @@ class RogueController {
   }
 
   _checkFight() {
+    if (player.position.isNeighbour(levels[player.currentStage].boss.position)) {
+      _startFight(levels[player.currentStage].boss);
+    }
+
     levels[player.currentStage].monsters.forEach((monster) {
       if (player.position.isNeighbour(monster.position)) {
         _startFight(monster);

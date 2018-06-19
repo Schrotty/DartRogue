@@ -1,9 +1,8 @@
 [
   {
     "id": 0,
-    "height": 4,
-    "width": 4,
-    "monsterCount": 5,
+    "monster": [0, 1, 2, 3, 5],
+    "boss": 0,
     "rows": [
       {
         "id": 0,
@@ -297,7 +296,7 @@
           {
             "id": 6,
             "accessible": true,
-            "monster": 2,
+            "monster": true,
             "style": "floor-default"
           },
           {
@@ -553,7 +552,7 @@
           {
             "id": 6,
             "accessible": true,
-            "monster": 1,
+            "monster": true,
             "style": "floor-default"
           },
           {
@@ -679,7 +678,7 @@
           {
             "id": 14,
             "accessible": true,
-            "monster": 5,
+            "monster": true,
             "style": "floor-default"
           },
           {
@@ -955,6 +954,7 @@
           {
             "id": 1,
             "accessible": true,
+            "exit": true,
             "style": "floor-wall-top"
           },
           {
@@ -1040,7 +1040,6 @@
           {
             "id": 1,
             "accessible": true,
-            "exit": true,
             "style": "floor-default",
             "treasure": true
           },
@@ -1127,7 +1126,7 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 99,
+            "boss": true,
             "style": "floor-default"
           },
           {
@@ -1228,7 +1227,7 @@
           {
             "id": 4,
             "accessible": true,
-            "monster": 4,
+            "monster": true,
             "style": "floor-default"
           },
           {
@@ -1284,7 +1283,7 @@
           {
             "id": 15,
             "accessible": true,
-            "monster": 0,
+            "monster": true,
             "style": "floor-default"
           }
         ]
