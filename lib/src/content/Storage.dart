@@ -44,7 +44,7 @@ Future<bool> _initMaps() async {
   armors['legs'] = new Map<int, List<Item>>();
   armors['boots'] = new Map<int, List<Item>>();
 
-  levels = new List<Level>();
+  levels = new List<Level>(7);
 
   return true;
 }
@@ -167,7 +167,8 @@ _buildMonstersPerLvl(int lvl) async {
 _buildLevel(int lvl) async {
   var response = await _requestData(Settings.getDataPath() + 'level/level$lvl.json');
   JSON.decode(response).asMap().forEach((int key, Map value) {
-    levels.add(new Level.build(key, value));
+//    levels.add(new Level.build(key, value));
+    levels[lvl] = new Level.build(key, value);
   });
 }
 
