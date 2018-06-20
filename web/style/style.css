@@ -1,5 +1,6 @@
 @media (orientation: portrait) {
     #portrait-message {
+        display: block !important;
         background: red !important;
         position: absolute;
     }
@@ -52,6 +53,10 @@ h3 {
 /* HOME IDs */
 #title {
     content: url(../img/main/title.png);
+}
+
+#portrait-message {
+    display: none;
 }
 
 #wrapper {

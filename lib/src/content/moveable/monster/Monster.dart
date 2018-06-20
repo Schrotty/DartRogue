@@ -4,7 +4,9 @@ class Monster extends Moveable {
   int _attackPoints;
   int _grantedXP;
   bool _boss;
-  bool _idle;
+  Field _patrolPoint;
+  Field _spawn;
+  bool _patrols;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -18,7 +20,6 @@ class Monster extends Moveable {
     this.speed = data['speed'];
     this.grantedXP = (data['grantedXP'] * scale).ceil();
     this.stage = data['stage'];
-    this._idle = true;
 
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
@@ -52,34 +53,16 @@ class Monster extends Moveable {
   move() {
     super.move();
 
-    /*if (_target == null) {
-      calcPath(_getMovementArea(2).firstWhere((field) =>
-        field.isAccessible, orElse: () => null)
-      );
-    }*/
-  }
+    if (_patrolPoint == null && levels[player.currentStage].patrolPoints.isNotEmpty) {
+      _spawn = _position;
 
-  List<Field> _getMovementArea(int size) {
-    int maRow = position.row + size;
-    int miRow = position.row - size;
+      _patrolPoint = levels[player.currentStage].patrolPoints.removeLast();
+    }
 
-    int maCol = position.col + size;
-    int miCol = position.col - size;
-
-    List<Field> fields = new List<Field>();
-    levels[player.currentStage].fields.forEach((row) {
-      row.forEach((field) {
-        if (field.row != -1 && field.col != -1) {
-          if (field.row >= miRow && field.row <= maRow && field.isAccessible) {
-            if (field.col >= miCol && field.col <= maCol) {
-              fields.add(field);
-            }
-          }
-        }
-      });
-    });
-
-    return fields;
+    if (start == null) {
+      if (_patrolPoint == null) return;
+      calcPath(_position.id == _spawn.id ? _patrolPoint : _spawn);
+    }
   }
 
   get attackPoints => this._attackPoints;
@@ -93,6 +76,10 @@ class Monster extends Moveable {
   bool get isBoss => _boss;
 
   set isBoss(bool isBoss) => _boss = isBoss;
+
+  Field get patrolPoint => _patrolPoint;
+
+  set patrolPoint(Field patrolPoint) => _patrolPoint = patrolPoint;
 
   toString() {
     return this.name;

@@ -955,7 +955,8 @@
             "id": 1,
             "accessible": true,
             "exit": true,
-            "style": "floor-wall-top"
+            "style": "floor-wall-top",
+            "patrol": true
           },
           {
             "id": 2,
@@ -1132,7 +1133,8 @@
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-default",
+            "patrol": true
           },
           {
             "id": 3,
@@ -1227,13 +1229,13 @@
           {
             "id": 4,
             "accessible": true,
-            "monster": true,
             "style": "floor-default"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-default",
+            "monster": true
           },
           {
             "id": 6,

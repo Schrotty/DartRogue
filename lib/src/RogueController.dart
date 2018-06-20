@@ -119,13 +119,8 @@ class RogueController {
         }
       }
 
-      if (old != null && old.id > Level.clicked.id) {
-        view.dungeon.scrollLeft -= 32;
-      }
-
       if (null != Level.clicked.monsterId) {
         _startFight(Level.clicked.monsterId);
-        view.dungeon.scrollTop = -32 * 100;
       }
     });
   }
@@ -330,6 +325,7 @@ class RogueController {
   _spawnEntity(Moveable entity) {
     DivElement e = querySelector("#tile-${entity.position.id}");
     e.children[0].classes.addAll([entity.skin, "entity"]);
+
     (entity.position as Field).accessible = false;
   }
 
@@ -341,9 +337,11 @@ class RogueController {
   }
 
   _centerPlayer() {
-    int mod = 32;
-    view.dungeon.scrollTop = ((player.position.row + 4) * (mod + 8));
-    view.dungeon.scrollLeft = (player.position.col * mod);
+    if (!Settings.debugMode) {
+      int mod = 32;
+      view.dungeon.scrollTop = ((player.position.row + 4) * (mod + 8));
+      view.dungeon.scrollLeft = (player.position.col * mod);
+    }
   }
 
   _updatePlayerHealth() {
@@ -593,22 +591,20 @@ class RogueController {
 
   _updateMoveablePositions() {
     if (!player.inFight) {
-      player.position.element.children.first.classes.removeAll(player.skins);
-      player.position.element.children.first.classes.remove("entity");
+      _despawnEntity(player);
       player.move();
 
       if (player.position != null) {
-        player.position.element.children.first.classes.addAll([player.skin, "entity"]);
+        _spawnEntity(player);
       }
 
       levels[player.currentStage].monsters.forEach((monster) {
         if (monster.position != null) {
-          monster.position.element.children.first.classes.removeAll(monster.skins);
-          monster.position.element.children.first.classes.removeAll(["entity", "monster"]);
+          _despawnEntity(monster);
           monster.move();
 
           if (monster.position != null) {
-            monster.position.element.children.first.classes.addAll([monster.skin, "entity", "monster"]);
+            _spawnEntity(monster);
           }
         }
       });

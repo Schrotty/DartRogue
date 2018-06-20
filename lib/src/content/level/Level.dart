@@ -13,6 +13,7 @@ class Level {
   List<Moveable> monsters = new List();
   Moveable boss = null;
   Field bossSpawn = null;
+  List<Field> patrolPoints = new List();
 
   static Field clicked;
   List<Node> _pathGraph = new List<Node>();
@@ -64,6 +65,10 @@ class Level {
 
     if (tile.containsKey("boss")) {
       bossSpawn = f;
+    }
+
+    if (tile.containsKey("patrol")) {
+      patrolPoints.add(f);
     }
 
     fields[_rowCount].add(f);
