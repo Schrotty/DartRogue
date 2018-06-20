@@ -1,6 +1,8 @@
 [
   {
-    "id": 0,
+    "id": 3,
+    "monster": [0, 1, 2, 3, 5],
+    "boss": 3,
     "rows": [
       {
         "id": 0,
@@ -303,8 +305,8 @@
           {
             "id": 8,
             "accessible": true,
-            "monster": 2,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
@@ -439,8 +441,8 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 5,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -580,8 +582,8 @@
           {
             "id": 12,
             "accessible": true,
-            "monster": 4,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
@@ -812,8 +814,8 @@
           {
             "id": 7,
             "accessible": true,
-            "monster": 0,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
@@ -848,8 +850,8 @@
           {
             "id": 14,
             "accessible": true,
-            "monster": 99,
-            "style": "floor-default-boss"
+            "boss": true,
+            "style": "floor-default"
           },
           {
             "id": 15,
@@ -1225,8 +1227,8 @@
           {
             "id": 4,
             "accessible": true,
-            "monster": 3,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 5,
@@ -1261,8 +1263,8 @@
           {
             "id": 11,
             "accessible": true,
-            "monster": 1,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 12,
