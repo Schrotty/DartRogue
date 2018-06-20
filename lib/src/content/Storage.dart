@@ -10,6 +10,7 @@ Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Skill> skills = new Map();
 Map<int, Item> potions = new Map();
 Map<int, Map<int, Monster>> monsterList = new Map<int, Map<int, Monster>>();
+Map<int, Monster> bosses = new Map<int, Monster>();
 List<Level> levels;
 
 buildStorage() async {
@@ -24,7 +25,7 @@ _build() async {
   await _buildPotions();
   await _buildSkills();
   await _buildMonsters();
-//  await _buildBosses();
+  await _buildBosses();
   await _buildPlayer();
 
   await _buildLevels();
