@@ -22,7 +22,8 @@ html {
     height: 100vh;
     width: 100vw;
     background: url(../img/main/background.png);
-    image-rendering: pixelated
+    image-rendering: pixelated;
+    overflow: hidden;
 }
 
 body {
