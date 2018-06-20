@@ -10,9 +10,6 @@ Map<String, Map<int, List<Item>>> armors = new Map();
 Map<int, Skill> skills = new Map();
 Map<int, Item> potions = new Map();
 Map<int, Map<int, Monster>> monsterList = new Map<int, Map<int, Monster>>();
-//Map<int, Monster> monstersLvl_0 = new Map();
-//Map<int, Monster> monstersLvl_1 = new Map();
-Map<int, Monster> bosses = new Map();
 List<Level> levels;
 
 buildStorage() async {
@@ -27,7 +24,7 @@ _build() async {
   await _buildPotions();
   await _buildSkills();
   await _buildMonsters();
-  await _buildBosses();
+//  await _buildBosses();
   await _buildPlayer();
 
   await _buildLevels();
@@ -48,7 +45,7 @@ Future<bool> _initMaps() async {
   armors['legs'] = new Map<int, List<Item>>();
   armors['boots'] = new Map<int, List<Item>>();
 
-  levels = new List<Level>();
+  levels = new List<Level>(7);
 
   return true;
 }
@@ -81,11 +78,11 @@ _buildMonsters() async {
 _buildLevels() async {
   _buildLevel(0);
   _buildLevel(1);
-//  _buildLevel(2);
-//  _buildLevel(3);
-//  _buildLevel(4);
-//  _buildLevel(5);
-//  _buildLevel(6);
+  _buildLevel(2);
+  _buildLevel(3);
+  _buildLevel(4);
+  _buildLevel(5);
+  _buildLevel(6);
 }
 
 _buildPlayer() async {
@@ -171,7 +168,8 @@ _buildBosses() async {
 _buildLevel(int lvl) async {
   var response = await _requestData(Settings.getDataPath() + 'level/level$lvl.json');
   JSON.decode(response).asMap().forEach((int key, Map value) {
-    levels.add(new Level.build(key, value));
+//    levels.add(new Level.build(key, value));
+    levels[lvl] = new Level.build(key, value);
   });
 }
 

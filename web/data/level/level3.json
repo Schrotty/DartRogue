@@ -252,7 +252,6 @@
           },
           {
             "id": 15,
-            "spawn": true,
             "accessible": true,
             "style": "floor-wall-top"
           }
@@ -269,8 +268,7 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 2,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -305,7 +303,8 @@
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 2,
+            "style": "floor-default-monster"
           },
           {
             "id": 9,
@@ -335,8 +334,7 @@
           {
             "id": 14,
             "accessible": true,
-            "monster": 4,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 15,
@@ -360,38 +358,38 @@
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 5,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 6,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 7,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 8,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 9,
@@ -406,17 +404,17 @@
           {
             "id": 11,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 12,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 13,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "wall-top-2"
           },
           {
             "id": 14,
@@ -441,67 +439,68 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 5,
+            "style": "floor-default-monster"
           },
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 5,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 6,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
@@ -520,83 +519,84 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 7,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-wall-top"
+            "monster": 4,
+            "style": "floor-default-monster"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           }
         ]
       },
@@ -605,39 +605,38 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "none"
+            "style": "wall-top-2"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "monster": 1,
             "accessible": true,
-            "style": "floor-default-monster"
+            "style": "none"
           },
           {
             "id": 7,
@@ -651,13 +650,13 @@
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
@@ -667,23 +666,22 @@
           {
             "id": 12,
             "accessible": true,
-            "monster": 3,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           }
         ]
       },
@@ -693,83 +691,82 @@
           {
             "id": 0,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 1,
             "accessible": true,
-            "monster": 99,
-            "style": "floor-default-boss"
+            "style": "floor-wall-top"
           },
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 6,
+            "accessible": false,
+            "style": "wall-top-2"
+          },
+          {
+            "id": 7,
             "accessible": true,
             "style": "floor-default"
           },
           {
-            "id": 7,
-            "accessible": false,
-            "style": "wall-bottom"
-          },
-          {
             "id": 8,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-bottom"
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 14,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "wall-bottom"
+            "accessible": true,
+            "style": "floor-wall-top"
           }
         ]
       },
@@ -779,11 +776,11 @@
           {
             "id": 0,
             "accessible": true,
+            "spawn": true,
             "style": "floor-default"
           },
           {
             "id": 1,
-            "exit": true,
             "accessible": true,
             "style": "floor-default"
           },
@@ -794,68 +791,71 @@
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 6,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 0,
+            "style": "floor-default-monster"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 10,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 12,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 14,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "monster": 99,
+            "style": "floor-default-boss"
           },
           {
             "id": 15,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "exit": true,
+            "style": "floor-default"
           }
         ]
       },
@@ -879,68 +879,68 @@
           },
           {
             "id": 3,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 4,
-            "accessible": false,
-            "style": "none"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 7,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 12,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 13,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 14,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           }
         ]
       },
@@ -950,37 +950,37 @@
           {
             "id": 0,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "wall-bottom"
           },
           {
             "id": 1,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "wall-bottom"
           },
           {
             "id": 2,
             "accessible": false,
-            "style": "wall-top-2"
+            "style": "wall-bottom"
           },
           {
             "id": 3,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 4,
             "accessible": false,
-            "style": "none"
+            "style": "wall-bottom"
           },
           {
             "id": 5,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 6,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 7,
@@ -994,39 +994,38 @@
           },
           {
             "id": 9,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 10,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "none"
           },
           {
             "id": 11,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 12,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 13,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 14,
-            "accessible": true,
-            "monster": 5,
-            "style": "floor-default-monster"
+            "accessible": false,
+            "style": "wall-bottom"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-bottom"
           }
         ]
       },
@@ -1035,18 +1034,18 @@
         "row": [
           {
             "id": 0,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 1,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 2,
-            "accessible": true,
-            "style": "floor-wall-top"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 3,
@@ -1070,13 +1069,13 @@
           },
           {
             "id": 7,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
-            "accessible": false,
-            "style": "wall-top-2"
+            "accessible": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
@@ -1105,13 +1104,13 @@
           },
           {
             "id": 14,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           },
           {
             "id": 15,
-            "accessible": true,
-            "style": "floor-default"
+            "accessible": false,
+            "style": "wall-top-2"
           }
         ]
       },
@@ -1121,18 +1120,17 @@
           {
             "id": 0,
             "accessible": true,
-            "spawn": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 3,
@@ -1157,12 +1155,12 @@
           {
             "id": 7,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 8,
             "accessible": true,
-            "style": "floor-wall-top"
+            "style": "floor-default"
           },
           {
             "id": 9,
@@ -1192,12 +1190,12 @@
           {
             "id": 14,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           },
           {
             "id": 15,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-wall-top"
           }
         ]
       },
@@ -1227,7 +1225,8 @@
           {
             "id": 4,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 3,
+            "style": "floor-default-monster"
           },
           {
             "id": 5,
@@ -1242,8 +1241,7 @@
           {
             "id": 7,
             "accessible": true,
-            "monster": 0,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 8,
@@ -1263,7 +1261,8 @@
           {
             "id": 11,
             "accessible": true,
-            "style": "floor-default"
+            "monster": 1,
+            "style": "floor-default-monster"
           },
           {
             "id": 12,
