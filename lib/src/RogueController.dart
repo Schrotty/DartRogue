@@ -105,10 +105,15 @@ class RogueController {
 
           if (Level.clicked != null) {
             old = Level.clicked;
-            querySelector("#tile-${Level.clicked.id}").children.first.classes.remove("player");
+            querySelector("#tile-${Level.clicked.id}")
+                .children
+                .first
+                .classes
+                .remove("player");
           }
 
-          Level.clicked = levels[stage].getField(int.parse(clicked.id.substring(5)));
+          Level.clicked =
+              levels[stage].getField(int.parse(clicked.id.substring(5)));
           player.calcPath(Level.clicked);
 
           _centerPlayer();
@@ -129,17 +134,21 @@ class RogueController {
   _registerGameEvents() {
     view.attackButton.onClick.listen((e) {
       view.skillZeroButton.value = skills[0].name;
-      view.skillOneButton.value = "${skills[1].name} ${skills[1].useableCount}/${skills[1]
+      view.skillOneButton.value =
+          "${skills[1].name} ${skills[1].useableCount}/${skills[1]
           .useableCountMax}";
-      view.skillTwoButton.value = "${skills[2].name} ${skills[2].useableCount}/${skills[2]
+      view.skillTwoButton.value =
+          "${skills[2].name} ${skills[2].useableCount}/${skills[2]
           .useableCountMax}";
-      view.skillThreeButton.value = "${skills[3].name} ${skills[3].useableCount}/${skills[3]
+      view.skillThreeButton.value =
+          "${skills[3].name} ${skills[3].useableCount}/${skills[3]
           .useableCountMax}";
       _switchMenu(view.skills, view.fightingOptions);
     });
 
     view.skillZeroButton.onClick.listen((e) {
-      if (player.isAlive) attacker.takeDamage(player.calcDamage(skills[0].skillMod));
+      if (player.isAlive)
+        attacker.takeDamage(player.calcDamage(skills[0].skillMod));
       if (attacker.isAlive) {
         player.takeDamage(attacker.calcDamage());
       }
@@ -192,7 +201,8 @@ class RogueController {
         attacker = monsters[monsterId];
         _updateFightScreen();
 
-        view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
+        view.fightTopBar.text =
+            "${attacker.name.replaceAll("_", " ")} attacks!";
         view.monsterIcon.style.backgroundImage =
             "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
 
@@ -224,8 +234,12 @@ class RogueController {
 
     if (!attacker.isAlive) {
       Level.clicked.monsterId = null;
-      querySelector("#tile-${Level.clicked.id}").classes.remove("floor-default-monster");
-      querySelector("#tile-${Level.clicked.id}").classes.remove("floor-default-boss");
+      querySelector("#tile-${Level.clicked.id}")
+          .classes
+          .remove("floor-default-monster");
+      querySelector("#tile-${Level.clicked.id}")
+          .classes
+          .remove("floor-default-boss");
       querySelector("#tile-${Level.clicked.id}").classes.add("floor-default");
       if (monsters.containsKey(attackerId)) {
         monsters.remove(attackerId);
@@ -234,7 +248,8 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       String msg = !attacker.isAlive
-          ? "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
+          ? "You killed ${attacker.name.replaceAll(
+          "_", " ")}, you gained ${attacker
           .grantedXP} XP!" +
               (attacker.grantedXP >= player.leftXpUntilLvlUp
                   ? " You reached level ${player.level + 1}!"
@@ -323,13 +338,19 @@ class RogueController {
 
   _centerPlayer() {
     int mod = 32;
-    view.dungeon.scrollTop = ((player.position.row + 4) * (mod + 8));
-    view.dungeon.scrollLeft = (player.position.col * mod);
+    if (browser.isFirefox) {
+      view.dungeon.scrollTop = ((player.position.row) * mod);
+      view.dungeon.scrollLeft = ((player.position.col - 5) * mod);
+    } else {
+      view.dungeon.scrollTop = ((player.position.row + 1.5) * (mod + 16));
+      view.dungeon.scrollLeft = ((player.position.col - 2) * (mod + 16));
+    }
   }
 
   _updatePlayerHealth() {
     view.playerHealth.text = "${player.currHealth}/${player.maxHealth}";
-    view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+    view.playerHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
   }
 
   _updatePlayerEquipment() {
@@ -369,7 +390,8 @@ class RogueController {
   }
 
   _updateItemIcon(Element element, String itemType, String icon) {
-    element.style.backgroundImage = "url(${Settings.getImgPath()}items/$itemType/$icon)";
+    element.style.backgroundImage =
+        "url(${Settings.getImgPath()}items/$itemType/$icon)";
   }
 
   _updatePlayerAttributes() {
@@ -392,19 +414,22 @@ class RogueController {
   }
 
   _updatePlayerXp() {
-    view.playerEp.text = "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl}";
+    view.playerEp.text =
+        "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl}";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
     view.playerLevel.text = player.level;
   }
 
   _updateFightScreen() {
-      view.monsterFightHealth.text = attacker.currHealth;
-      view.monsterFightMaxHealth.text = attacker.maxHealth;
-      view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
+    view.monsterFightHealth.text = attacker.currHealth;
+    view.monsterFightMaxHealth.text = attacker.maxHealth;
+    view.monsterFightHealthBar.style
+        .setProperty("width", "${attacker.currHealthPercent}%");
 
-      view.playerFightHealth.text = player.currHealth;
-      view.playerFightMaxHealth.text = player.maxHealth;
-      view.playerFightHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
+    view.playerFightHealth.text = player.currHealth;
+    view.playerFightMaxHealth.text = player.maxHealth;
+    view.playerFightHealthBar.style
+        .setProperty("width", "${player.currHealthPercent}%");
   }
 
   _registerHeroScreenEvents() {
@@ -420,13 +445,15 @@ class RogueController {
     });
 
     view.heroAttributesButton.onClick.listen((e) {
-      _switchHeroScreenMenu(view.heroAttributesScreen, view.heroAttributesButton);
+      _switchHeroScreenMenu(
+          view.heroAttributesScreen, view.heroAttributesButton);
       _updatePlayerAttributes();
     });
 
     /* EQUIPMENT EVENTS */
     view.weapon.onClick.listen((e) {
-      _selectItem(player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
+      _selectItem(
+          player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
     });
 
     view.helmet.onClick.listen((e) {
@@ -476,18 +503,27 @@ class RogueController {
           : Settings.getArmorImgPath();
 
       Element element = querySelector("#slot-$index");
-      element.classes
-          .removeWhere((clss) => !clss.contains("item-slot") && !clss.contains("inventory-item"));
+      element.classes.removeWhere((clss) =>
+          !clss.contains("item-slot") && !clss.contains("inventory-item"));
       element.classes.add(item.quality);
 
-      element.children[0].style.backgroundImage = "url($imagePath/${item.icon})";
+      element.children[0].style.backgroundImage =
+          "url($imagePath/${item.icon})";
       index++;
     });
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
-    List menus = [view.heroEquipmentScreen, view.heroAttributesScreen, view.heroInventoryScreen];
-    List buttons = [view.heroEquipmentButton, view.heroAttributesButton, view.heroInventoryButton];
+    List menus = [
+      view.heroEquipmentScreen,
+      view.heroAttributesScreen,
+      view.heroInventoryScreen
+    ];
+    List buttons = [
+      view.heroEquipmentButton,
+      view.heroAttributesButton,
+      view.heroInventoryButton
+    ];
 
     caller.classes.add("item-active");
     target.classes.remove("invisible");
@@ -508,7 +544,8 @@ class RogueController {
   _selectItem(Item item, String type, String valueKey, String imagePath) {
     view.selectedItemName.classes.clear();
     view.selectedItemQuality.classes.clear();
-    view.selectedItemIcon.parent.classes.removeWhere((clss) => !clss.contains("item-slot"));
+    view.selectedItemIcon.parent.classes
+        .removeWhere((clss) => !clss.contains("item-slot"));
     view.selectedItemMods.nodes.clear();
 
     view.selectedItemName.text = item.name;
@@ -536,12 +573,14 @@ class RogueController {
   _previewItem(Item item) {
     if (item != null) {
       player.currentInvtentoryItem = item;
-      String imagePath =
-      item.classification == "Weapon" ? Settings.getWeaponImgPath() : Settings.getArmorImgPath();
+      String imagePath = item.classification == "Weapon"
+          ? Settings.getWeaponImgPath()
+          : Settings.getArmorImgPath();
 
       view.previewItemName.classes.clear();
       view.previewItemQuality.classes.clear();
-      view.previewItemIcon.parent.classes.removeWhere((clss) => !clss.contains("item-slot"));
+      view.previewItemIcon.parent.classes
+          .removeWhere((clss) => !clss.contains("item-slot"));
       view.previewItemMods.nodes.clear();
 
       view.previewItemName.text = item.name;
@@ -551,7 +590,8 @@ class RogueController {
       view.previewItemQuality.classes.add("${item.quality}-color");
 
       view.previewItemIcon.parent.classes.add(item.quality);
-      view.previewItemIcon.style.backgroundImage = "url($imagePath${item.icon})";
+      view.previewItemIcon.style.backgroundImage =
+          "url($imagePath${item.icon})";
 
       view.previewItemType.text = item.display;
       view.previewItemValue.text = item.value.toString();
@@ -561,7 +601,8 @@ class RogueController {
         String prefix = "";
         if (value > 0) prefix = "+";
 
-        String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(1)}";
+        String text = "$prefix$value ${key[0].toUpperCase()}${key.substring(
+            1)}";
         view.previewItemMods.append(new LIElement()..text = text);
       });
     }

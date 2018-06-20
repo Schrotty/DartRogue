@@ -5,6 +5,7 @@ import 'dart:html';
 import 'dart:math';
 import 'dart:convert';
 import 'package:collection/collection.dart';
+import 'package:browser_detect/browser_detect.dart';
 
 part 'src/RogueController.dart';
 part 'src/RogueView.dart';
