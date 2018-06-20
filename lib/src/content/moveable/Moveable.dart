@@ -44,6 +44,10 @@ abstract class Moveable {
   move() {
     if (start != null && start.predecessor != null) {
       if (start.predecessor.field.isAccessible) {
+        if (_detectLoop()) {
+          calcPath(_position.accessibleNeighbour);
+        }
+
         int col = start.field.col;
         int row = start.field.row;
 
@@ -52,6 +56,7 @@ abstract class Moveable {
         _position.accessible = false;
 
         start = start.predecessor;
+
         if (start.field.id == _target.id) {
           start = null;
         }
@@ -65,7 +70,6 @@ abstract class Moveable {
       }
 
       calcPath(_target);
-      print(start.predecessor.field.id);
     }
   }
 
@@ -74,6 +78,10 @@ abstract class Moveable {
 
     _position.accessible = true;
     start = new Pathfinding().calcPath(_position, target);
+  }
+
+  bool _detectLoop() {
+    return start.predecessor == start || start.predecessor.predecessor == start;
   }
 
   int get id => _id;

@@ -56,6 +56,16 @@ class Field {
     return false;
   }
 
+  List<Field> _neighbours() {
+    List<Field> fs = new List();
+    if (hasTop) fs.add(top);
+    if (hasLeft) fs.add(left);
+    if (hasRight) fs.add(right);
+    if (hasBottom) fs.add(bottom);
+
+    return fs;
+  }
+
   get id => _id;
 
   get isAccessible => _accessible;
@@ -82,6 +92,8 @@ class Field {
   get hasLeft => left != null;
   get hasRight => right != null;
   get hasBottom => bottom != null;
+
+  Field get accessibleNeighbour => _neighbours().firstWhere((f) => f.isAccessible, orElse: () => null);
 
   String toString() {
     String result = id;
