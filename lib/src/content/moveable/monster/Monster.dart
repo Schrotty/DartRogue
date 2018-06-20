@@ -49,21 +49,38 @@ class Monster extends Moveable {
     this._alive = false;
   }
 
-  /*move() {
+  move() {
     super.move();
 
     /*if (_target == null) {
-      if (_idle) {
-        List<Field> f = levels[player.currentStage].fields[6];
-        f.shuffle();
-
-        calcPath(f.firstWhere((field) => field.isAccessible, orElse: () => null));
-        return;
-      }
-
-      _target = player.position;
+      calcPath(_getMovementArea(2).firstWhere((field) =>
+        field.isAccessible, orElse: () => null)
+      );
     }*/
-  }*/
+  }
+
+  List<Field> _getMovementArea(int size) {
+    int maRow = position.row + size;
+    int miRow = position.row - size;
+
+    int maCol = position.col + size;
+    int miCol = position.col - size;
+
+    List<Field> fields = new List<Field>();
+    levels[player.currentStage].fields.forEach((row) {
+      row.forEach((field) {
+        if (field.row != -1 && field.col != -1) {
+          if (field.row >= miRow && field.row <= maRow && field.isAccessible) {
+            if (field.col >= miCol && field.col <= maCol) {
+              fields.add(field);
+            }
+          }
+        }
+      });
+    });
+
+    return fields;
+  }
 
   get attackPoints => this._attackPoints;
 
