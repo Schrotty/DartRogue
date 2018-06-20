@@ -6,7 +6,6 @@ class Monster extends Moveable {
   bool _boss;
   Field _patrolPoint;
   Field _spawn;
-  bool _patrols;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -20,6 +19,7 @@ class Monster extends Moveable {
     this.speed = data['speed'];
     this.grantedXP = (data['grantedXP'] * scale).ceil();
     this.stage = data['stage'];
+    this.skin = "demon";
 
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
@@ -30,13 +30,13 @@ class Monster extends Moveable {
       if (data['loot'].containsKey('weapon')) _loot['weapon'] = data['weapon']['weapon'];
     }
 
-    skins = new List<String>()
-      ..add("monster-up")
-      ..add("monster-right")
-      ..add("monster-left")
-      ..add("monster-down");
+    if (data.containsKey('skin')) skin = data['skin'];
 
-    skin = "monster";
+    skins = new List<String>()
+      ..add(skin + "-up")
+      ..add(skin + "-right")
+      ..add(skin + "-left")
+      ..add(skin + "-down");
   }
 
   Monster() {}
