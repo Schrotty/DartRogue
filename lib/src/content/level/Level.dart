@@ -8,7 +8,12 @@ class Level {
   Field spawnPoint;
   List<List<Field>> fields = new List();
   List<SpawnPoint> restPlaces;
-  List<SpawnPoint> monsterSpawnPoints;
+  List<Field> monsterSpawnPoints = new List();
+  List<Field> treasures = new List();
+  List<Moveable> monsters = new List();
+  Moveable boss = null;
+  Field bossSpawn = null;
+  List<Field> patrolPoints = new List();
 
   static Field clicked;
   List<Node> _pathGraph = new List<Node>();
@@ -48,6 +53,22 @@ class Level {
     Field f = new Field.create(tile["accessible"], tile["style"], "tile-${_tileCount++}", row, tile['id'], level, tile['monster']);
     if (tile.containsKey("spawn")) {
       spawnPoint = f;
+    }
+
+    if (tile.containsKey("monster")) {
+      monsterSpawnPoints.add(f);
+    }
+
+    if (tile.containsKey("treasure")) {
+      treasures.add(f..accessible = false);
+    }
+
+    if (tile.containsKey("boss")) {
+      bossSpawn = f;
+    }
+
+    if (tile.containsKey("patrol")) {
+      patrolPoints.add(f);
     }
 
     fields[_rowCount].add(f);
@@ -135,18 +156,9 @@ class Level {
         return n.field.isNeighbour(nn.field);
       }));
     });
+  }
 
-    /*print(_pathGraph.length);
-    _pathGraph.forEach((n) {
-
-      String str = n.field.id.toString() + ":";
-      n.successors.forEach((s) {
-        str += " " + s.field.id.toString();
-      });
-
-      print(str);
-    });
-
-    print("------");*/
+  calcPathGraph() {
+    _calcPathGraph(fields);
   }
 }

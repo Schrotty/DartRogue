@@ -8,6 +8,7 @@ class Field {
   String _style;
   int _stageId;
   int _monsterId;
+  bool _treasure;
 
   Field top;
   Field left;
@@ -30,6 +31,7 @@ class Field {
     _id = id;
     _row = -1;
     _col = -1;
+    _monsterId = -1;
   }
 
   bool isNeighbour(Field pot) {
@@ -54,6 +56,16 @@ class Field {
     return false;
   }
 
+  List<Field> _neighbours() {
+    List<Field> fs = new List();
+    if (hasTop) fs.add(top);
+    if (hasLeft) fs.add(left);
+    if (hasRight) fs.add(right);
+    if (hasBottom) fs.add(bottom);
+
+    return fs;
+  }
+
   get id => _id;
 
   get isAccessible => _accessible;
@@ -72,10 +84,16 @@ class Field {
 
   get col => _col;
 
+  get hasTreasure => _treasure;
+
+  set treasure(bool treasure) => _treasure = treasure;
+
   get hasTop => top != null;
   get hasLeft => left != null;
   get hasRight => right != null;
   get hasBottom => bottom != null;
+
+  Field get accessibleNeighbour => _neighbours().firstWhere((f) => f.isAccessible, orElse: () => null);
 
   String toString() {
     String result = id;

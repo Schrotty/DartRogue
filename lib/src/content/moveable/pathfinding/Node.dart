@@ -23,7 +23,7 @@ class Node implements Comparable {
 
   set priority(int priority) => _priority = priority;
 
-  get predecessor => _predecessor;
+  Node get predecessor => _predecessor;
 
   set predecessor(Node pre) => _predecessor = pre;
 

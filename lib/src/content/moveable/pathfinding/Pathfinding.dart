@@ -15,6 +15,7 @@ class Pathfinding {
     while (_openList.length > 0) {
       current = _openList.removeFirst();
 
+      if (!current.field.isAccessible) continue;
       if (current.isEqual(_target)) {
         return current;
       }
@@ -32,6 +33,7 @@ class Pathfinding {
     for (Node s in current.successors) {
       tentative_g = current.g + 1;
 
+      if (!s.field.isAccessible) continue;
       if (_closedList.contains(s)) continue;
       if (_openList.contains(s) && tentative_g >= s.g) continue;
 
@@ -45,16 +47,6 @@ class Pathfinding {
       }
 
       _openList.add(s);
-
-      /*print("Current: " + current.field.id.toString());
-      print("Target: " + _target.field.id.toString());
-
-      print("OpenList: ");
-      _openList.toList().forEach((n) {
-        print(n.field.id.toString() + ": " + n.f.toString() + " | " + n.predecessor.field.id.toString());
-      });
-
-      print("-------------");*/
     }
   }
 
