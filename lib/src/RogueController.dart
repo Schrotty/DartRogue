@@ -123,10 +123,6 @@ class RogueController {
           _centerPlayer();
         }
       }
-
-      if (null != Level.clicked.monsterId) {
-        _startFight(Level.clicked.monsterId);
-      }
     });
   }
 
