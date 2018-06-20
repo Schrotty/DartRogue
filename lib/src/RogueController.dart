@@ -157,6 +157,7 @@ class RogueController {
 
     view.leaveFightButton.onClick.listen((e) {
       _toggleOverlay(view.fightingScreen);
+      player.fight = false;
       _centerPlayer();
     });
 
@@ -173,6 +174,11 @@ class RogueController {
     });
 
     // ### POTIONS MENU ###
+    view.usePotionButtonGlobal.onClick.listen((e) {
+      player.usePotion(player.selectedPot);
+      _updatePotionMenu();
+    });
+
     view.potionsMenuButton.onClick.listen((e) {
       _openPotionsMenu();
     });

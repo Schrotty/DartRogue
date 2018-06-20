@@ -528,7 +528,7 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "exit-treasure"
+            "style": "treasure"
           },
           {
             "id": 2,

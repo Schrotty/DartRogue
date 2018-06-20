@@ -637,7 +637,7 @@
           },
           {
             "id": 6,
-            "monster": 1,
+            "accessible": true,
             "monster": true,
             "style": "floor-default"
           },

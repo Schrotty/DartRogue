@@ -109,7 +109,7 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 128px;
+    grid-template-columns: auto 270px;
     background-image: url(../img/main/topBarBack.png);
 }
 
@@ -135,12 +135,12 @@ h3 {
 #command-buttons {
     display: grid;
     grid-area: buttons;
-    grid-template-areas: "pots hero";
+    grid-template-areas: "usePots pots hero";
     text-align: right;
 }
 
 #command-buttons input {
-    width: 64px;
+    width: 90px;
     height: 64px;
     background: transparent;
 }
@@ -727,9 +727,10 @@ h3 {
     position: fixed;
     height: 42vw;
     width: 20vw;
-    right: 4vw;
+    right: 8vw;
     border: 10px solid black;
     background: indianred;
+    z-index: 100;
 }
 
 .tile {
@@ -795,6 +796,7 @@ h3 {
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
     margin: 2px;
+    white-space: pre-wrap;
 }
 
 .potion-button {

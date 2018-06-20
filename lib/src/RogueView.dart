@@ -170,6 +170,7 @@ class RogueView {
   final ButtonInputElement heroScreenButton =
       querySelector("#hero-screen-button");
   final ButtonInputElement potionsMenuButton = querySelector("#potion-screen-button");
+  final ButtonInputElement usePotionButtonGlobal = querySelector("#use-potion-global");
 
   /* POTIONS BUTTONS */
   final Element potionsMenu = querySelector("#potions-menu");
