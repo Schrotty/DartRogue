@@ -4,6 +4,7 @@ class Monster extends Moveable {
   int _attackPoints;
   int _grantedXP;
   bool _boss;
+  bool _idle;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -17,6 +18,7 @@ class Monster extends Moveable {
     this.speed = data['speed'];
     this.grantedXP = (data['grantedXP'] * scale).ceil();
     this.stage = data['stage'];
+    this._idle = true;
 
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
@@ -28,10 +30,10 @@ class Monster extends Moveable {
     }
 
     skins = new List<String>()
-      ..add("player-up")
-      ..add("player-right")
-      ..add("player-left")
-      ..add("player-down");
+      ..add("monster-up")
+      ..add("monster-right")
+      ..add("monster-left")
+      ..add("monster-down");
 
     skin = "monster";
   }
@@ -46,6 +48,22 @@ class Monster extends Moveable {
     print("${this.name} died!");
     this._alive = false;
   }
+
+  /*move() {
+    super.move();
+
+    /*if (_target == null) {
+      if (_idle) {
+        List<Field> f = levels[player.currentStage].fields[6];
+        f.shuffle();
+
+        calcPath(f.firstWhere((field) => field.isAccessible, orElse: () => null));
+        return;
+      }
+
+      _target = player.position;
+    }*/
+  }*/
 
   get attackPoints => this._attackPoints;
 

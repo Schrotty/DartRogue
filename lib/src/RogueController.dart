@@ -8,7 +8,6 @@ class RogueController {
   RogueController() {
     _init();
 
-    _registerDebugEvents();
     _registerMenuEvents();
     _registerGameEvents();
   }
@@ -179,6 +178,8 @@ class RogueController {
     view.leaveFightEndButton.onClick.listen((e) {
       _switchMenu(view.fightingOptions, view.fightEnd);
       _toggleOverlay(view.fightingScreen);
+
+      player.fight = false;
       _centerPlayer();
     });
 
@@ -261,25 +262,6 @@ class RogueController {
       player.fight = false;
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
-  }
-
-  _registerDebugEvents() {
-    view.debugButton.onClick.listen((e) {
-      _toggleOverlay(view.debugScreen);
-      print(levels);
-    });
-
-    view.debugAddEXPButton.onClick.listen((e) {
-      player.gainXP(50);
-    });
-
-    view.debugTakeDMGButton.onClick.listen((e) {
-      player.takeDamage(15);
-    });
-
-    view.debugEquipLegendaryButton.onClick.listen((e) {
-      player.weapon = weapons['axes'][0][4];
-    });
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -615,22 +597,23 @@ class RogueController {
       player.position.element.children.first.classes.remove("entity");
       player.move();
 
-      Field elm = player.position;
-      if (elm != null) {
-        elm.element.children.first.classes.addAll([player.skin, "entity"]);
+      if (player.position != null) {
+        player.position.element.children.first.classes.addAll([player.skin, "entity"]);
       }
 
       levels[player.currentStage].monsters.forEach((monster) {
-        monster.move();
+        if (monster.position != null) {
+          monster.position.element.children.first.classes.removeAll(monster.skins);
+          monster.position.element.children.first.classes.removeAll(["entity", "monster"]);
+          monster.move();
 
-        elm = monster.position;
-        if (elm != null) {
-          monster.position.element.children.first.classes.addAll([monster.skin, "entity"]);
+          if (monster.position != null) {
+            monster.position.element.children.first.classes.addAll([monster.skin, "entity", "monster"]);
+          }
         }
       });
 
       _centerPlayer();
-
       if (!player.inFight) {
         _checkFight();
       }

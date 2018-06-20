@@ -933,6 +933,41 @@ h3 {
     background: url(../img/player.png) 0 -96px !important;
 }
 
+.monster-right {
+    background: url(../img/monsters/map/demon.png) 0 0 !important;
+}
+
+.monster-left {
+    background: url(../img/monsters/map/demon.png) 0 -32px !important;
+}
+
+.monster-down {
+    background: url(../img/monsters/map/demon.png) 0 -64px !important;
+}
+
+.monster-up {
+    background: url(../img/monsters/map/demon.png) 0 -96px !important;
+}
+
+.monster {
+    background: url(../img/monsters/map/demon.png) -64px 0;
+    animation: tile-monster 0.5s steps(2) infinite;
+}
+
+@keyframes tile-monster {
+    100% {
+        background: url(../img/monsters/map/demon.png) -64px 0;
+    }
+
+    50% {
+        background: url(../img/monsters/map/demon.png) -64px 0;
+    }
+
+    0% {
+        background: url(../img/monsters/map/demon.png) 0 0;
+    }
+}
+
 /* WALLS */
 .wall-top-1 {
     background: url(../img/main/tiles.png) 1px -24px;
@@ -1001,25 +1036,6 @@ h3 {
 
 .floor-default-crack-right {
     background: url(../img/main/tiles.png) -398px -224px, url(../img/main/tiles.png) -64px -96px;
-}
-
-.monster {
-    background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
-    animation: tile-monster 0.5s steps(2) infinite;
-}
-
-@keyframes tile-monster {
-    100% {
-        background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
-    }
-
-    50% {
-        background: url(../img/monsters/map/demon.png) -64px 0, url(../img/main/tiles.png) -64px -96px;
-    }
-
-    0% {
-        background: url(../img/monsters/map/demon.png) 0 0, url(../img/main/tiles.png) -64px -96px;
-    }
 }
 
 .floor-default-boss {
