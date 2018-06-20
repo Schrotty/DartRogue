@@ -26,7 +26,6 @@ class RogueController {
       new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);
-
       querySelector("#tiles").onTouchMove.listen((onData) {
         onData.preventDefault();
       });
@@ -58,11 +57,6 @@ class RogueController {
     view.backAboutButton.onClick.listen((e) {
       _switchMenu(view.mainMenu, view.about);
     });
-
-    /* GAME OVER EVENTS */
-    /*view.backFromDead.onClick.listen((e) {
-      _switchMenu(view.mainMenu, view.gameOver);
-    });*/
   }
 
   _renderLevel(int stage) {
@@ -232,6 +226,8 @@ class RogueController {
       
       _despawnEntity(attacker);
       levels[player.currentStage].monsters.remove(attacker);
+
+      player.fight = false;
     }
 
     if (!attacker.isAlive || !player.isAlive) {
@@ -259,8 +255,8 @@ class RogueController {
         _switchMenu(view.gameOver, view.game);
       }
 
-      player.fight = false;
       _switchMenu(view.fightEnd, view.fightingOptions);
+      player.fight = false;
     }
   }
 

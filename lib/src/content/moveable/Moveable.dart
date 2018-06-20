@@ -44,7 +44,7 @@ abstract class Moveable {
   move() {
     if (start != null && start.predecessor != null) {
       if (start.predecessor.field.isAccessible) {
-        if (_detectLoop()) {
+        if (!(this is Player) && _detectLoop()) {
           calcPath(_position.accessibleNeighbour);
         }
 
