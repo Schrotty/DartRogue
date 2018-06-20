@@ -109,7 +109,7 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 64px;
+    grid-template-columns: auto 128px;
     background-image: url(../img/main/topBarBack.png);
 }
 
