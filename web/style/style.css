@@ -265,6 +265,20 @@ h3 {
     overflow: hidden;
 }
 
+#fighting-screen {
+    animation: enter-fight 2s;
+}
+
+@keyframes enter-fight {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
 /* ########## DEBUG-SCREEN ########## */
 #debug-screen {
     display: grid;
