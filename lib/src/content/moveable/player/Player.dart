@@ -20,6 +20,7 @@ class Player extends Moveable {
   Item weapon;
 
   Map<int, int> pots = new Map();
+  int _selectedPot = 0;
   List<Item> inventory = new List();
   Item currentInvtentoryItem;
 
@@ -308,4 +309,8 @@ class Player extends Moveable {
   get currentStage => _currentStage;
 
   set currentStage(int stage) => _currentStage = stage;
+
+  get selectedPot => _selectedPot;
+
+  set selectedPot(int pot) => _selectedPot = pot;
 }

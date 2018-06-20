@@ -3,7 +3,7 @@ part of rogue;
 class Item {
   int _id;
 
-  String name;
+  String _name;
 
   String display;
 
@@ -27,7 +27,7 @@ class Item {
 
   Item.fromJson(Map data, [int quality, String classification, String type]) {
     this._id = data['id'];
-    this.name = data['name'];
+    this._name = data['name'];
     this.type = data['type'];
     this.classification = classification;
     this.icon = data['icon'];
@@ -65,4 +65,6 @@ class Item {
   String toString() {
     return "Name: $name\r\nQuality: $quality\r\nValue: $value\r\n";
   }
+
+  get name => _name;
 }

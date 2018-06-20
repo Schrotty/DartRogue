@@ -142,7 +142,6 @@ class RogueView {
   /* HEALTH BAR */
   final Element playerHealth = querySelector("#player-health-text");
   final Element playerHealthBar = querySelector("#health-bar-inner");
-  final Element potionsMenu = querySelector("#potions-menu");
 
   /* EP BAR */
   final Element playerEp = querySelector("#player-ep-text");
@@ -170,9 +169,10 @@ class RogueView {
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton =
       querySelector("#hero-screen-button");
-  final ButtonInputElement potionsMenuButton = querySelector("#potions-button");
+  final ButtonInputElement potionsMenuButton = querySelector("#potion-screen-button");
 
   /* POTIONS BUTTONS */
+  final Element potionsMenu = querySelector("#potions-menu");
   final ButtonInputElement potionSmallButton = querySelector("#potion-s");
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");

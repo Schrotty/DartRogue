@@ -23,7 +23,7 @@ class RogueController {
       new Timer.periodic(oneSec, (Timer t) => _update());
 
       /* MOVEMENT TIMER */
-      const ti = const Duration(milliseconds: 500);
+      const ti = const Duration(milliseconds: 300);
       new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);
@@ -172,7 +172,7 @@ class RogueController {
     });
 
     view.usePotionButton.onClick.listen((e) {
-      player.usePotion(0);
+      player.usePotion(player.selectedPot);
     });
 
     view.leaveFightButton.onClick.listen((e) {
@@ -190,12 +190,33 @@ class RogueController {
       _openHeroScreen();
     });
 
+    // ### POTIONS MENU ###
+    view.potionsMenuButton.onClick.listen((e) {
+      _openPotionsMenu();
+    });
+
+    view.potionSmallButton.onClick.listen((e) {
+      player.selectedPot = 0;
+      _toggleOverlay(view.potionsMenu);
+    });
+
+    view.potionMediumButton.onClick.listen((e) {
+      player.selectedPot = 1;
+      _toggleOverlay(view.potionsMenu);
+    });
+
+    view.potionLargeButton.onClick.listen((e) {
+      player.selectedPot = 2;
+      _toggleOverlay(view.potionsMenu);
+    });
+
     _registerHeroScreenEvents();
   }
 
   _startFight(int monsterId) {
     monsters = monsterList[player.currentStage];
     print("${monsters.length}");
+
     if (player.isAlive) {
       if (monsters.isNotEmpty) {
         attacker = monsters[monsterId];
@@ -430,6 +451,8 @@ class RogueController {
     view.playerFightMaxHealth.text = player.maxHealth;
     view.playerFightHealthBar.style
         .setProperty("width", "${player.currHealthPercent}%");
+    view.usePotionButton.value =
+        "Use Potion (${player.pots[player.selectedPot]})";
   }
 
   _registerHeroScreenEvents() {
@@ -611,6 +634,17 @@ class RogueController {
   _openHeroScreen() {
     _updatePlayerEquipment();
     _toggleOverlay(view.heroScreen);
+  }
+
+  _openPotionsMenu() {
+    _toggleOverlay(view.potionsMenu);
+    _updatePotionMenu();
+  }
+
+  _updatePotionMenu() {
+    view.potionSmallButton.value = "(${player.pots[0]})";
+    view.potionMediumButton.value = "(${player.pots[1]})";
+    view.potionLargeButton.value = "(${player.pots[2]})";
   }
 
   _updateMoveablePositions() {
