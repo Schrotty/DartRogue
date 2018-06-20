@@ -247,6 +247,7 @@ class RogueController {
       _despawnEntity(attacker);
       levels[player.currentStage].monsters.remove(attacker);
 
+      _updateFightScreen();
       player.fight = false;
     }
 
