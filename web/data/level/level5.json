@@ -900,7 +900,7 @@
             "id": 13,
             "accessible": true,
             "monster": 99,
-            "style": "floor-default-monster"
+            "style": "floor-default-boss"
           },
           {
             "id": 14,
@@ -5046,6 +5046,7 @@
           {
             "id": 15,
             "accessible": true,
+            "spawn": true,
             "style": "floor-wall-top"
           },
           {
@@ -5127,7 +5128,6 @@
           {
             "id": 31,
             "accessible": true,
-            "spawn": true,
             "style": "floor-default"
           }
         ]
