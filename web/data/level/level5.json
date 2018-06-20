@@ -1,6 +1,8 @@
 [
   {
-    "id": 4,
+    "id": 5,
+    "monster": [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11],
+    "boss": 5,
     "rows": [
       {
         "id": 0,
@@ -608,8 +610,8 @@
           {
             "id": 21,
             "accessible": true,
-            "monster": 5,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 22,
@@ -899,8 +901,8 @@
           {
             "id": 13,
             "accessible": true,
-            "monster": 99,
-            "style": "floor-default-boss"
+            "boss": true,
+            "style": "floor-default"
           },
           {
             "id": 14,
@@ -1310,8 +1312,8 @@
           {
             "id": 29,
             "accessible": true,
-            "monster": 8,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 30,
@@ -1831,8 +1833,8 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 2,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -1947,8 +1949,8 @@
           {
             "id": 24,
             "accessible": true,
-            "monster": 11,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 25,
@@ -2073,8 +2075,8 @@
           {
             "id": 16,
             "accessible": true,
-            "monster": 6,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 17,
@@ -2729,8 +2731,8 @@
           {
             "id": 15,
             "accessible": true,
-            "monster": 3,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 16,
@@ -2805,8 +2807,8 @@
           {
             "id": 30,
             "accessible": true,
-            "monster": 9,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 31,
@@ -2846,8 +2848,8 @@
           {
             "id": 5,
             "accessible": true,
-            "monster": 10,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 6,
@@ -4367,8 +4369,8 @@
           {
             "id": 12,
             "accessible": true,
-            "monster": 7,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
@@ -4403,8 +4405,8 @@
           {
             "id": 19,
             "accessible": true,
-            "monster": 4,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 20,
@@ -4974,8 +4976,8 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 0,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -5122,8 +5124,8 @@
           {
             "id": 30,
             "accessible": true,
-            "monster": 1,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 31,
