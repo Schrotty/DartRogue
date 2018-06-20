@@ -7,7 +7,8 @@
     "hp": 15,
     "attack": 1,
     "speed": 10,
-    "grantedXP": 10
+    "grantedXP": 10,
+    "skin": "ghast"
   },
   {
     "stage": 0,
@@ -17,7 +18,8 @@
     "hp": 17,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 14
+    "grantedXP": 14,
+    "skin": "blob-purple"
   },
   {
     "stage": 0,
@@ -27,7 +29,8 @@
     "hp": 16,
     "attack": 1,
     "speed": 10,
-    "grantedXP": 12
+    "grantedXP": 12,
+    "skin": "blob-purple"
   },
   {
     "stage": 0,
@@ -37,7 +40,8 @@
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 16,
+    "skin": "blob-purple"
   },
   {
     "stage": 0,

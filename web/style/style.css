@@ -974,28 +974,29 @@ h3 {
     background: url(../img/player.png) 0 -96px !important;
 }
 
-.monster-right {
+/*demon skins*/
+.demon-right {
     background: url(../img/monsters/map/demon.png) 0 0 !important;
 }
 
-.monster-left {
+.demon-left {
     background: url(../img/monsters/map/demon.png) 0 -32px !important;
 }
 
-.monster-down {
+.demon-down {
     background: url(../img/monsters/map/demon.png) 0 -64px !important;
 }
 
-.monster-up {
+.demon-up {
     background: url(../img/monsters/map/demon.png) 0 -96px !important;
 }
 
-.monster {
+.demon {
     background: url(../img/monsters/map/demon.png) -64px 0;
-    animation: tile-monster 0.5s steps(2) infinite;
+    animation: demon-anim 0.5s steps(2) infinite;
 }
 
-@keyframes tile-monster {
+@keyframes demon-anim {
     100% {
         background: url(../img/monsters/map/demon.png) -64px 0;
     }
@@ -1008,6 +1009,64 @@ h3 {
         background: url(../img/monsters/map/demon.png) 0 0;
     }
 }
+
+/*ghast skins*/
+.ghast-right {
+    background: url(../img/monsters/map/ghast.png) 0 0 !important;
+}
+
+.ghast-left {
+    background: url(../img/monsters/map/ghast.png) 0 -32px !important;
+}
+
+.ghast-down {
+    background: url(../img/monsters/map/ghast.png) 0 -64px !important;
+}
+
+.ghast-up {
+    background: url(../img/monsters/map/ghast.png) 0 -96px !important;
+}
+
+.ghast {
+    background: url(../img/monsters/map/ghast.png) -64px 0;
+}
+
+/*blob-purple skins*/
+.blob-purple-right {
+    background: url(../img/monsters/map/blob_purple.png) 0 0 !important;
+}
+
+.blob-purple-left {
+    background: url(../img/monsters/map/blob_purple.png) 0 -32px !important;
+}
+
+.blob-purple-down {
+    background: url(../img/monsters/map/blob_purple.png) 0 -64px !important;
+}
+
+.blob-purple-up {
+    background: url(../img/monsters/map/blob_purple.png) 0 -96px !important;
+}
+
+.blob-purple {
+    background: url(../img/monsters/map/blob_purple.png) -64px 0;
+    animation: blob-purple-anim 0.5s steps(2) infinite;
+}
+
+@keyframes blob-purple-anim {
+    100% {
+        background: url(../img/monsters/map/blob_purple.png) -64px 0;
+    }
+
+    50% {
+        background: url(../img/monsters/map/blob_purple.png) -64px 0;
+    }
+
+    0% {
+        background: url(../img/monsters/map/blob_purple.png) 0 0;
+    }
+}
+
 
 /* WALLS */
 .wall-top-1 {
