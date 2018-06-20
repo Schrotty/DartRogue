@@ -1,6 +1,8 @@
 [
   {
     "id": 0,
+    "monster": [0, 1, 2, 3, 5],
+    "boss": 0,
     "rows": [
       {
         "id": 0,
@@ -294,8 +296,8 @@
           {
             "id": 6,
             "accessible": true,
-            "monster": 2,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
@@ -550,8 +552,8 @@
           {
             "id": 6,
             "accessible": true,
-            "monster": 1,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 7,
@@ -676,8 +678,8 @@
           {
             "id": 14,
             "accessible": true,
-            "monster": 5,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 15,
@@ -952,7 +954,9 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-wall-top"
+            "exit": true,
+            "style": "floor-wall-top",
+            "patrol": true
           },
           {
             "id": 2,
@@ -1037,8 +1041,8 @@
           {
             "id": 1,
             "accessible": true,
-            "exit": true,
-            "style": "exit-treasure"
+            "style": "floor-default",
+            "treasure": true
           },
           {
             "id": 2,
@@ -1123,13 +1127,14 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 99,
-            "style": "floor-default-boss"
+            "boss": true,
+            "style": "floor-default"
           },
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-default",
+            "patrol": true
           },
           {
             "id": 3,
@@ -1224,13 +1229,13 @@
           {
             "id": 4,
             "accessible": true,
-            "monster": 4,
-            "style": "floor-default-monster"
+            "style": "floor-default"
           },
           {
             "id": 5,
             "accessible": true,
-            "style": "floor-default"
+            "style": "floor-default",
+            "monster": true
           },
           {
             "id": 6,
@@ -1280,8 +1285,8 @@
           {
             "id": 15,
             "accessible": true,
-            "monster": 0,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           }
         ]
       },
