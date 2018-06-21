@@ -250,6 +250,7 @@ class RogueController {
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
         view.fightEndMessage.text = _fightEndMessage();
+//        _addLootToPlayerInventory();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           player.currentStage += 1;
@@ -280,7 +281,11 @@ class RogueController {
       String loot = "";
       int size = 0;
       attacker.loot.forEach((k, v) {
-        loot += "${armors[k][v][0].name}";
+        if (armors.containsKey(k)) {
+          loot += "${armors[k][v][0].name}";
+        } else {
+          loot += "${weapons[k][v][0].name}";
+        }
         size++;
         if (attacker.loot.length > size) {
           loot += ", ";
@@ -292,6 +297,8 @@ class RogueController {
 
     return msg;
   }
+
+  _addLootToPlayerInventory() {}
 
   _switchMenu(Element toShow, Element toHide) {
     if (toShow != null) {
