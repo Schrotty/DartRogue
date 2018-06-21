@@ -249,8 +249,8 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
-        view.fightEndMessage.text = _fightEndMessage();
         _addLootToPlayerInventory();
+        view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           player.currentStage += 1;
@@ -300,21 +300,17 @@ class RogueController {
 
   _addLootToPlayerInventory() {
     attacker.loot.forEach((k, v) {
-      if (armors.containsKey(k)) {
-        player.inventory.add(armors[k][v][0]);
+      if (!player.isInventoryFull) {
+        if (armors.containsKey(k)) {
+          player.inventory.add(armors[k][v][0]);
+        } else {
+          player.inventory.add(weapons[k][v][0]);
+        }
       } else {
-        player.inventory.add(weapons[k][v][0]);
+        // drop item to overworld
       }
     });
-
-//    player.inventory.add(weapons['swords'][1][0]);
-//
-//    player.inventory.add(armors['chests'][2][0]);
-//    player.inventory.add(armors['chests'][1][0]);
-//    player.inventory.add(armors['boots'][1][0]);
-//    player.inventory.add(armors['helmets'][1][0]);
-//    player.inventory.add(armors['legs'][1][0]);
-//    player.inventory.add(armors['gloves'][1][0]);
+    _updateInventory();
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -543,8 +539,21 @@ class RogueController {
     });
 
     view.equipItem.onClick.listen((e) {
-      player.equip(player.currentInvtentoryItem);
-      _updatePlayerEquipment();
+      if (null != player.currentInvtentoryItem) {
+        player.equip(player.currentInvtentoryItem);
+        _updatePlayerEquipment();
+        _updateInventory();
+      }
+    });
+
+    view.dropItem.onClick.listen((e) {
+      player.inventory.remove(player.currentInvtentoryItem);
+      if (player.inventory.isEmpty) {
+        player.currentInvtentoryItem = null;
+      } else {
+        player.currentInvtentoryItem = player.inventory.first;
+      }
+      _previewItem(player.currentInvtentoryItem);
       _updateInventory();
     });
   }
@@ -564,6 +573,13 @@ class RogueController {
       element.children[0].style.backgroundImage = "url($imagePath${item.icon})";
       index++;
     });
+
+    for (int i = index; i <= 12; i++) {
+      Element element = querySelector("#slot-$index");
+      element.classes.removeAll(Qualities);
+      element.classes.add("common");
+      element.children[0].style.backgroundImage = null;
+    }
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
@@ -647,6 +663,22 @@ class RogueController {
             1)}";
         view.previewItemMods.append(new LIElement()..text = text);
       });
+    } else {
+      view.previewItemName.classes.clear();
+      view.previewItemQuality.classes.clear();
+      view.previewItemMods.nodes.clear();
+
+      view.previewItemName.text = "";
+      view.previewItemName.classes.removeAll(Qualities);
+
+      view.previewItemQuality.text = "";
+
+      view.previewItemIcon.parent.classes.removeAll(Qualities);
+      view.previewItemIcon.style.backgroundImage = null;
+
+      view.previewItemType.text = "";
+      view.previewItemValue.text = "";
+      view.previewItemKey.text = "";
     }
   }
 

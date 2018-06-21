@@ -73,6 +73,7 @@ class RogueView {
   final Element previewItemMods = querySelector("#preview-item #preview-item-mods ul");
 
   final Element equipItem = querySelector("#equip-item-button");
+  final Element dropItem = querySelector("#drop-item-button");
 
   /* ATTRIBUTES */
   final Element heroStrength = querySelector("#hero-strength");
