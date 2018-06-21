@@ -435,7 +435,7 @@ class RogueController {
   _updatePlayerXp() {
     view.playerEp.text = "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl}";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
-    view.playerLevel.text = player.level;
+    //view.playerLevel.text = player.level;
   }
 
   _updateFightScreen() {
@@ -522,7 +522,7 @@ class RogueController {
           .removeWhere((clss) => !clss.contains("item-slot") && !clss.contains("inventory-item"));
       element.classes.add(item.quality);
 
-      element.children[0].style.backgroundImage = "url($imagePath/${item.icon})";
+      element.children[0].style.backgroundImage = "url($imagePath${item.icon})";
       index++;
     });
   }

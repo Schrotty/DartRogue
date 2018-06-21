@@ -146,7 +146,7 @@ class RogueView {
   /* EP BAR */
   final Element playerEp = querySelector("#player-ep-text");
   final Element playerEpBar = querySelector("#ep-bar-inner");
-  final Element playerLevel = querySelector("#level-value");
+  //final Element playerLevel = querySelector("#level-value");
 
   /* MAIN MENU BUTTONS */
   final ButtonInputElement startButton = querySelector("#start-game-button");

@@ -6,7 +6,7 @@
     "type": 0,
     "quality": 0,
     "value": 6,
-    "icon":"sword.png"
+    "icon":"swords/sword_iron_common.png"
   },
   {
     "id": 1,
@@ -15,6 +15,6 @@
     "type": 0,
     "quality": 4,
     "value": 12,
-    "icon":"dagger.png"
+    "icon":"swords/moonlight_sword.png"
   }
 ]

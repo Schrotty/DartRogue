@@ -118,8 +118,14 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 270px;
-    background-image: url(../img/main/topBarBack.png);
+    grid-template-columns: auto 192px;
+    background: #1c1117;
+    background: url(../img/main/marble.png) repeat-x;
+    background-size: contain;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
+    z-index: 10;
 }
 
 #dungeon {
@@ -149,9 +155,8 @@ h3 {
 }
 
 #command-buttons input {
-    width: 90px;
+    width: 64px;
     height: 64px;
-    background: transparent;
 }
 
 #tiles, #movables {
@@ -177,8 +182,8 @@ h3 {
     height: 64px;
     color: whitesmoke;
     grid-template-columns: 100px 50px 100px;
-    grid-template-rows: 15px 17px 20px;
-    grid-template-areas: "l-title l-value empty-space" "health-bar health-bar health-bar" "ep-bar ep-bar ep-bar";
+    grid-template-rows: 17px 20px;
+    grid-template-areas: "health-bar health-bar health-bar" "ep-bar ep-bar ep-bar";
 }
 
 #health-container #level-key {
@@ -279,20 +284,25 @@ h3 {
     }
 }
 
-/* ########## DEBUG-SCREEN ########## */
-#debug-screen {
-    display: grid;
-    grid-template-rows: repeat(4, 32px);
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 5px;
-    grid-template-areas: "debug-title debug-title";
-    background-color: plum;
-    width: 100%;
+#hero-screen-button {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/hero_button.png) no-repeat center !important;
+    background-size: 48px 48px !important;
 }
 
-#debug-screen-title {
-    grid-area: debug-title;
-    text-align: center;
+#potion-screen-button {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/potion_select.png) no-repeat center !important;
+    background-size: 48px 48px !important;
+}
+
+#use-potion-global {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/potion_select.png) no-repeat center !important;
+    background-size: 48px 48px !important;
 }
 
 /* ########## HERO-SCREEN ########## */
@@ -401,8 +411,8 @@ h3 {
 #hero-screen .item {
     width: 64px;
     height: 64px;
-    background-size: 64px 64px;
-    background-repeat: no-repeat;
+    background-size: 48px 48px;
+    background: no-repeat center;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
@@ -818,7 +828,7 @@ h3 {
     width: 49vw;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
-    margin: 2px;
+    margin: 0;
     white-space: pre-wrap;
 }
 
