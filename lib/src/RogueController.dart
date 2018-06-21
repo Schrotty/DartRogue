@@ -250,7 +250,7 @@ class RogueController {
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
         view.fightEndMessage.text = _fightEndMessage();
-//        _addLootToPlayerInventory();
+        _addLootToPlayerInventory();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           player.currentStage += 1;
@@ -298,7 +298,24 @@ class RogueController {
     return msg;
   }
 
-  _addLootToPlayerInventory() {}
+  _addLootToPlayerInventory() {
+    attacker.loot.forEach((k, v) {
+      if (armors.containsKey(k)) {
+        player.inventory.add(armors[k][v][0]);
+      } else {
+        player.inventory.add(weapons[k][v][0]);
+      }
+    });
+
+//    player.inventory.add(weapons['swords'][1][0]);
+//
+//    player.inventory.add(armors['chests'][2][0]);
+//    player.inventory.add(armors['chests'][1][0]);
+//    player.inventory.add(armors['boots'][1][0]);
+//    player.inventory.add(armors['helmets'][1][0]);
+//    player.inventory.add(armors['legs'][1][0]);
+//    player.inventory.add(armors['gloves'][1][0]);
+  }
 
   _switchMenu(Element toShow, Element toHide) {
     if (toShow != null) {
@@ -398,7 +415,7 @@ class RogueController {
   _updatePlayerEquipment() {
     /* SELECT WEAPON */
     _selectItem(player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
-    _previewItem(player.inventory.first);
+    if (player.inventory.isNotEmpty) _previewItem(player.inventory.first);
 
     /* WEAPON */
     _updateItemIcon(view.weapon, 'weapon', player.weapon.icon);
