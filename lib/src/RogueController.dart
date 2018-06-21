@@ -277,9 +277,9 @@ class RogueController {
       msg += " You reached level ${player.level + 1}!";
     }
 
-    String loot = "";
     // add items
-    if (0 < attacker.loot.length) {
+    if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
+      String loot = "";
       int size = 0;
       attacker.loot.forEach((k, v) {
         if (armors.containsKey(k)) {
@@ -292,26 +292,25 @@ class RogueController {
           loot += ", ";
         }
       });
-    }
 
-    // add potions
-    if (attacker.pots.isNotEmpty) {
+      // add potions
       if ("" != loot) {
         loot += ", ";
       }
 
-      int size = 0;
+      size = 0;
       for (int i = 0; i < 3; i++) {
         if (attacker.pots.containsKey(i)) {
           loot += "${potions[i].name} (${attacker.pots[i]})";
           size++;
         }
-        if(attacker.pots.length > size) {
+        if (attacker.pots.length > size) {
           loot += ", ";
         }
       }
+
+      msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
     }
-    msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
 
     return msg;
   }
