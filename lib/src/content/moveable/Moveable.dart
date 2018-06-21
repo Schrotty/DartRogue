@@ -16,6 +16,8 @@ abstract class Moveable {
   String skin;
   List<String> skins;
   int stage;
+  Map<int, int> pots = new Map();
+
 
   static final int UP = 0;
 

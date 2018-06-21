@@ -11,7 +11,8 @@
     "skin": "ghast",
     "loot": {
       "sword": 0,
-      "boots": 0
+      "boots": 0,
+      "potions": [1, 2, 3]
     }
   },
   {

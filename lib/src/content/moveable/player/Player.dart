@@ -20,7 +20,6 @@ class Player extends Moveable {
   Item weapon;
   bool _inFight;
 
-  Map<int, int> pots = new Map();
   int _selectedPot = 0;
   List<Item> inventory = new List();
   Item currentInvtentoryItem;

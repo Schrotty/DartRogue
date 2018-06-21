@@ -3,6 +3,9 @@
     "id": 0,
     "monster": [0, 1, 2, 3, 5],
     "boss": 0,
+    "treasure": {
+
+    },
     "rows": [
       {
         "id": 0,
@@ -180,6 +183,7 @@
           {
             "id": 0,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
