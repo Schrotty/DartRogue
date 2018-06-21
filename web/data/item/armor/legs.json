@@ -6,7 +6,7 @@
     "type": 4,
     "value": 3,
     "quality": 0,
-    "icon": "legs.png"
+    "icon": "legs/leg_leather.png"
   },
   {
     "id": 1,
@@ -15,6 +15,6 @@
     "type": 4,
     "value": 7,
     "quality": 3,
-    "icon": "legs.png"
+    "icon": "legs/leg_dark_reinforced.png"
   }
 ]

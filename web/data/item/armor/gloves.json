@@ -6,7 +6,7 @@
     "type": 3,
     "value": 1,
     "quality": 0,
-    "icon":"gloves.png"
+    "icon":"gloves/glove_leather.png"
   },
   {
     "id": 1,
@@ -19,6 +19,6 @@
       "strength": 3,
       "damage": 10
     },
-    "icon":"gloves.png"
+    "icon":"gloves/glove_gold.png"
   }
 ]

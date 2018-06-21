@@ -6,7 +6,7 @@
     "type": 1,
     "value": 2,
     "quality": 1,
-    "icon":"helmet.png"
+    "icon":"helmets/helmet_leather_hood.png"
   },
   {
     "id": 1,
@@ -15,6 +15,6 @@
     "type": 1,
     "value": 5,
     "quality": 3,
-    "icon":"helmet.png"
+    "icon":"helmets/helmet_dark_skull.png"
   }
 ]

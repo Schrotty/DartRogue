@@ -6,7 +6,7 @@
     "type": 5,
     "value": 2,
     "quality": 0,
-    "icon": "boots.png"
+    "icon": "boots/boots_dark_small.png"
   },
   {
     "id": 1,
@@ -15,6 +15,6 @@
     "type": 5,
     "value": 4,
     "quality": 2,
-    "icon": "boots.png"
+    "icon": "boots/boots_black_big.png"
   }
 ]
