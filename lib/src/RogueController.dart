@@ -248,18 +248,8 @@ class RogueController {
     }
 
     if (!attacker.isAlive || !player.isAlive) {
-      String msg = !attacker.isAlive
-          ? "You killed ${attacker.name.replaceAll(
-          "_", " ")}, you gained ${attacker
-          .grantedXP} XP!" +
-              (attacker.grantedXP >= player.leftXpUntilLvlUp
-                  ? " You reached level ${player.level + 1}!"
-                  : "")
-          : "YOU DIED!";
-
-      view.fightEndMessage.text = msg;
-
       if (!attacker.isAlive) {
+        view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           player.currentStage += 1;
@@ -276,6 +266,31 @@ class RogueController {
       player.fight = false;
     }
     _updateFightScreen();
+  }
+
+  String _fightEndMessage() {
+    String msg = "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
+        .grantedXP} XP!";
+
+    if (attacker.grantedXP >= player.leftXpUntilLvlUp) {
+      msg += " You reached level ${player.level + 1}!";
+    }
+
+    if (0 < attacker.loot.length) {
+      String loot = "";
+      int size = 0;
+      attacker.loot.forEach((k, v) {
+        loot += "${armors[k][v][0].name}";
+        size++;
+        if (attacker.loot.length > size) {
+          loot += ", ";
+        }
+      });
+
+      msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
+    }
+
+    return msg;
   }
 
   _switchMenu(Element toShow, Element toHide) {

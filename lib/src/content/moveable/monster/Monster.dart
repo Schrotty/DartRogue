@@ -22,11 +22,11 @@ class Monster extends Moveable {
     this.skin = "demon";
 
     if (data.containsKey('loot')) {
-      if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
-      if (data['loot'].containsKey('chest')) _loot['chest'] = data['loot']['chest'];
-      if (data['loot'].containsKey('gloves')) _loot['gloves'] = data['loot']['gloves'];
-      if (data['loot'].containsKey('legs')) _loot['legs'] = data['loot']['legs'];
-      if (data['loot'].containsKey('boots')) _loot['boots'] = data['loot']['boots'];
+      if (data['loot'].containsKey('helmet')) _loot['helmets'] = data['loot']['helmet'];
+      if (data['loot'].containsKey('chest')) _loot['chests'] = data['loot']['chest'];
+      if (data['loot'].containsKey('glove')) _loot['gloves'] = data['loot']['glove'];
+      if (data['loot'].containsKey('leg')) _loot['legs'] = data['loot']['leg'];
+      if (data['loot'].containsKey('boot')) _loot['boots'] = data['loot']['boot'];
       if (data['loot'].containsKey('weapon')) _loot['weapon'] = data['weapon']['weapon'];
     }
 
