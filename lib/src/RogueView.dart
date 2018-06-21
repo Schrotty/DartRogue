@@ -178,4 +178,8 @@ class RogueView {
   final ButtonInputElement potionSmallButton = querySelector("#potion-s");
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
+
+  /* GLOBAL EVENT */
+  final Element globalEvent = querySelector("#global-event");
+  final Element eventText = querySelector("#event-text");
 }

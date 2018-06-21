@@ -10,6 +10,7 @@ class Level {
   List<SpawnPoint> restPlaces;
   List<Field> monsterSpawnPoints = new List();
   List<Field> treasures = new List();
+  Map<String, int> treasureLoot = new Map();
   List<Moveable> monsters = new List();
   Moveable boss = null;
   Field bossSpawn = null;
@@ -20,6 +21,10 @@ class Level {
 
   Level.build(int id, Map data) {
     _id = id;
+
+    if(data.containsKey('treasure')) {
+
+    }
 
     if (data.containsKey('rows')) {
       _createHorizonBorder();

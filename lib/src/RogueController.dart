@@ -244,7 +244,7 @@ class RogueController {
       _despawnEntity(attacker);
       levels[player.currentStage].monsters.remove(attacker);
 
-      player.fight = false;
+//      player.fight = false;
     }
 
     if (!attacker.isAlive || !player.isAlive) {
@@ -264,7 +264,7 @@ class RogueController {
       }
 
       _switchMenu(view.fightEnd, view.fightingOptions);
-      player.fight = false;
+//      player.fight = false;
     }
     _updateFightScreen();
   }
@@ -277,7 +277,8 @@ class RogueController {
       msg += " You reached level ${player.level + 1}!";
     }
 
-    if (0 < attacker.loot.length) {
+    // add items
+    if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
       String loot = "";
       int size = 0;
       attacker.loot.forEach((k, v) {
@@ -292,6 +293,22 @@ class RogueController {
         }
       });
 
+      // add potions
+      if ("" != loot) {
+        loot += ", ";
+      }
+
+      size = 0;
+      for (int i = 0; i < 3; i++) {
+        if (attacker.pots.containsKey(i)) {
+          loot += "${potions[i].name} (${attacker.pots[i]})";
+          size++;
+        }
+        if (attacker.pots.length > size) {
+          loot += ", ";
+        }
+      }
+
       msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
     }
 
@@ -299,13 +316,18 @@ class RogueController {
   }
 
   _addLootToPlayerInventory() {
+    if (attacker.pots.isNotEmpty) {
+      player.pots[0] += attacker.pots[0];
+      player.pots[1] += attacker.pots[1];
+      player.pots[2] += attacker.pots[2];
+    }
     attacker.loot.forEach((k, v) {
       if (!player.isInventoryFull) {
         if (armors.containsKey(k)) {
           player.inventory.add(armors[k][v][0]);
-        } else {
+        } else if (weapons.containsKey(k)) {
           player.inventory.add(weapons[k][v][0]);
-        }
+        } else {}
       } else {
         // drop item to overworld
       }
@@ -374,7 +396,7 @@ class RogueController {
   _spawnTreasure(int lvl) {
     levels[lvl].treasures.forEach((treasure) {
       DivElement e = querySelector("#tile-${treasure.id}");
-      e.children[0].classes.addAll(["treasure", "entity"]);
+      e.children[0].classes.addAll(["treasure-closed", "entity"]);
     });
   }
 
