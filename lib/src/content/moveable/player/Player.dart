@@ -77,15 +77,17 @@ class Player extends Moveable {
 
     skin = "player-left";
 
-    inventory.add(weapons['axes'][0][0]);
     inventory.add(weapons['swords'][1][0]);
-
     inventory.add(armors['chests'][2][0]);
     inventory.add(armors['chests'][1][0]);
-    inventory.add(armors['boots'][1][0]);
-    inventory.add(armors['helmets'][1][0]);
-    inventory.add(armors['legs'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
+//    inventory.add(armors['boots'][1][0]);
+//    inventory.add(armors['helmets'][1][0]);
+//    inventory.add(armors['legs'][1][0]);
+//    inventory.add(armors['gloves'][1][0]);
+//    inventory.add(armors['gloves'][1][0]);
+//    inventory.add(armors['gloves'][1][0]);
+//    inventory.add(armors['gloves'][1][0]);
+//    inventory.add(armors['gloves'][1][0]);
 
     _sortInventory();
   }
@@ -183,7 +185,7 @@ class Player extends Moveable {
   }
 
   _sortInventory() {
-    inventory.sort((a, b) => a.quality.compareTo(b.quality));
+    if (inventory.isNotEmpty) inventory.sort((a, b) => a.quality.compareTo(b.quality));
   }
 
   get gainedXpByCurrentLvl {
@@ -311,4 +313,6 @@ class Player extends Moveable {
   set selectedPot(int pot) => _selectedPot = pot;
 
   bool get hasFullHealth => (maxHealth - currHealth) == 0;
+
+  get isInventoryFull => inventory.length >= 12;
 }

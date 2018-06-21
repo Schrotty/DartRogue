@@ -248,18 +248,9 @@ class RogueController {
     }
 
     if (!attacker.isAlive || !player.isAlive) {
-      String msg = !attacker.isAlive
-          ? "You killed ${attacker.name.replaceAll(
-          "_", " ")}, you gained ${attacker
-          .grantedXP} XP!" +
-              (attacker.grantedXP >= player.leftXpUntilLvlUp
-                  ? " You reached level ${player.level + 1}!"
-                  : "")
-          : "YOU DIED!";
-
-      view.fightEndMessage.text = msg;
-
       if (!attacker.isAlive) {
+        _addLootToPlayerInventory();
+        view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           player.currentStage += 1;
@@ -276,6 +267,50 @@ class RogueController {
       player.fight = false;
     }
     _updateFightScreen();
+  }
+
+  String _fightEndMessage() {
+    String msg = "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
+        .grantedXP} XP!";
+
+    if (attacker.grantedXP >= player.leftXpUntilLvlUp) {
+      msg += " You reached level ${player.level + 1}!";
+    }
+
+    if (0 < attacker.loot.length) {
+      String loot = "";
+      int size = 0;
+      attacker.loot.forEach((k, v) {
+        if (armors.containsKey(k)) {
+          loot += "${armors[k][v][0].name}";
+        } else {
+          loot += "${weapons[k][v][0].name}";
+        }
+        size++;
+        if (attacker.loot.length > size) {
+          loot += ", ";
+        }
+      });
+
+      msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
+    }
+
+    return msg;
+  }
+
+  _addLootToPlayerInventory() {
+    attacker.loot.forEach((k, v) {
+      if (!player.isInventoryFull) {
+        if (armors.containsKey(k)) {
+          player.inventory.add(armors[k][v][0]);
+        } else {
+          player.inventory.add(weapons[k][v][0]);
+        }
+      } else {
+        // drop item to overworld
+      }
+    });
+    _updateInventory();
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -376,7 +411,7 @@ class RogueController {
   _updatePlayerEquipment() {
     /* SELECT WEAPON */
     _selectItem(player.weapon, "Weapon", "Damage", Settings.getWeaponImgPath());
-    _previewItem(player.inventory.first);
+    if (player.inventory.isNotEmpty) _previewItem(player.inventory.first);
 
     /* WEAPON */
     _updateItemIcon(view.weapon, 'weapon', player.weapon.icon);
@@ -504,8 +539,21 @@ class RogueController {
     });
 
     view.equipItem.onClick.listen((e) {
-      player.equip(player.currentInvtentoryItem);
-      _updatePlayerEquipment();
+      if (null != player.currentInvtentoryItem) {
+        player.equip(player.currentInvtentoryItem);
+        _updatePlayerEquipment();
+        _updateInventory();
+      }
+    });
+
+    view.dropItem.onClick.listen((e) {
+      player.inventory.remove(player.currentInvtentoryItem);
+      if (player.inventory.isEmpty) {
+        player.currentInvtentoryItem = null;
+      } else {
+        player.currentInvtentoryItem = player.inventory.first;
+      }
+      _previewItem(player.currentInvtentoryItem);
       _updateInventory();
     });
   }
@@ -525,6 +573,13 @@ class RogueController {
       element.children[0].style.backgroundImage = "url($imagePath${item.icon})";
       index++;
     });
+
+    for (int i = index; i <= 12; i++) {
+      Element element = querySelector("#slot-$index");
+      element.classes.removeAll(Qualities);
+      element.classes.add("common");
+      element.children[0].style.backgroundImage = null;
+    }
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
@@ -608,6 +663,22 @@ class RogueController {
             1)}";
         view.previewItemMods.append(new LIElement()..text = text);
       });
+    } else {
+      view.previewItemName.classes.clear();
+      view.previewItemQuality.classes.clear();
+      view.previewItemMods.nodes.clear();
+
+      view.previewItemName.text = "";
+      view.previewItemName.classes.removeAll(Qualities);
+
+      view.previewItemQuality.text = "";
+
+      view.previewItemIcon.parent.classes.removeAll(Qualities);
+      view.previewItemIcon.style.backgroundImage = null;
+
+      view.previewItemType.text = "";
+      view.previewItemValue.text = "";
+      view.previewItemKey.text = "";
     }
   }
 

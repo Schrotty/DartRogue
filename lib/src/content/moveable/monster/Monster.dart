@@ -22,12 +22,16 @@ class Monster extends Moveable {
     this.skin = "demon";
 
     if (data.containsKey('loot')) {
-      if (data['loot'].containsKey('helmet')) _loot['helmet'] = data['loot']['helmet'];
-      if (data['loot'].containsKey('chest')) _loot['chest'] = data['loot']['chest'];
+      if (data['loot'].containsKey('helmet')) _loot['helmets'] = data['loot']['helmet'];
+      if (data['loot'].containsKey('chest')) _loot['chests'] = data['loot']['chest'];
       if (data['loot'].containsKey('gloves')) _loot['gloves'] = data['loot']['gloves'];
       if (data['loot'].containsKey('legs')) _loot['legs'] = data['loot']['legs'];
       if (data['loot'].containsKey('boots')) _loot['boots'] = data['loot']['boots'];
-      if (data['loot'].containsKey('weapon')) _loot['weapon'] = data['weapon']['weapon'];
+
+      if (data['loot'].containsKey('sword')) _loot['swords'] = data['loot']['sword'];
+      if (data['loot'].containsKey('axe')) _loot['axes'] = data['loot']['axe'];
+      if (data['loot'].containsKey('dagger')) _loot['daggers'] = data['loot']['dagger'];
+      if (data['loot'].containsKey('hammer')) _loot['hammers'] = data['loot']['hammer'];
     }
 
     if (data.containsKey('skin')) skin = data['skin'];
