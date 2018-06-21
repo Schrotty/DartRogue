@@ -22,7 +22,7 @@ class RogueController {
       new Timer.periodic(oneSec, (Timer t) => _update());
 
       /* MOVEMENT TIMER */
-      const ti = const Duration(milliseconds: 500);
+      const ti = const Duration(milliseconds: 250);
       new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);
@@ -89,7 +89,17 @@ class RogueController {
       Field old = null;
       DivElement clicked = e.target;
 
-      if (clicked.id.length < 5) return;
+      if (clicked.id.length < 5) {
+        Field tmp = levels[stage].getField(int.parse(clicked.parent.id.substring(5)));
+
+        if (tmp.hasTreasure && player.position.isNeighbour(tmp)) {
+          DivElement el = querySelector("#tile-${tmp.id}");
+          el.children[0].classes.clear();
+          el.children[0].classes.addAll(["treasure-opened", "entity"]);
+          _addLootToPlayerInventoryFromTreasure(tmp);
+        }
+        return;
+      }
       if (!clicked.classes.contains("player")) {
         var tmp = levels[stage].getField(int.parse(clicked.id.substring(5)));
         if (tmp.isAccessible) {
@@ -171,6 +181,7 @@ class RogueController {
 
     view.heroScreenButton.onClick.listen((e) {
       _openHeroScreen();
+      _updateInventory();
     });
 
     // ### POTIONS MENU ###
@@ -249,7 +260,7 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
-        _addLootToPlayerInventory();
+        _addLootToPlayerInventoryFromMonster();
         view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
@@ -277,8 +288,8 @@ class RogueController {
       msg += " You reached level ${player.level + 1}!";
     }
 
-    // add items
     if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
+      // add items
       String loot = "";
       int size = 0;
       attacker.loot.forEach((k, v) {
@@ -315,7 +326,7 @@ class RogueController {
     return msg;
   }
 
-  _addLootToPlayerInventory() {
+  _addLootToPlayerInventoryFromMonster() {
     if (attacker.pots.isNotEmpty) {
       player.pots[0] += attacker.pots[0];
       player.pots[1] += attacker.pots[1];
@@ -325,14 +336,41 @@ class RogueController {
       if (!player.isInventoryFull) {
         if (armors.containsKey(k)) {
           player.inventory.add(armors[k][v][0]);
-        } else if (weapons.containsKey(k)) {
+        } else {
           player.inventory.add(weapons[k][v][0]);
-        } else {}
+        }
       } else {
         // drop item to overworld
       }
     });
     _updateInventory();
+  }
+
+  _addLootToPlayerInventoryFromTreasure(Field tmp) {
+    Treasure t = levels[player.currentStage].treasures.first;
+    if (t.treasurePotions.isNotEmpty) {
+      player.pots[0] += t.treasurePotions[0];
+//      t.treasurePotions.remove(0);
+      player.pots[1] += t.treasurePotions[1];
+//      t.treasurePotions.remove(1);
+      player.pots[2] += t.treasurePotions[2];
+//      t.treasurePotions.remove(2);
+    }
+
+    t.treasureLoot.forEach((k, v) {
+      if (!player.isInventoryFull) {
+        if (armors.containsKey(k)) {
+          player.inventory.add(armors[k][v][0]);
+//          t.treasureLoot.remove(k);
+        } else if (weapons.containsKey(k)) {
+          player.inventory.add(weapons[k][v][0]);
+//          t.treasureLoot.remove(k);
+        }
+      }
+    });
+
+    levels[player.currentStage].treasures.remove(t);
+    tmp.treasure = false;
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -394,7 +432,7 @@ class RogueController {
   }
 
   _spawnTreasure(int lvl) {
-    levels[lvl].treasures.forEach((treasure) {
+    levels[lvl].treasureFields.forEach((treasure) {
       DivElement e = querySelector("#tile-${treasure.id}");
       e.children[0].classes.addAll(["treasure-closed", "entity"]);
     });

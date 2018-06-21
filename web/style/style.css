@@ -1166,10 +1166,10 @@ h3 {
     background: url(../img/main/tiles.png) -96px -256px;
 }
 
-.treasure-open {
-    background: url(../img/main/tiles.png) -480px -417px;
+.treasure-opened {
+    background: url(../img/main/tiles.png) -480px -417px !important;
 }
 
 .treasure-closed {
-    background: url(../img/main/tiles.png) -480px -353px;
+    background: url(../img/main/tiles.png) -480px -353px !important;
 }
