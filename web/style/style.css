@@ -412,7 +412,8 @@ h3 {
     width: 64px;
     height: 64px;
     background-size: 48px 48px;
-    background: no-repeat center;
+    background-repeat: no-repeat;
+    background-position: center;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
@@ -985,100 +986,6 @@ h3 {
 .player-up {
     background: url(../img/player.png) 0 -96px !important;
 }
-
-/*demon skins*/
-.demon-right {
-    background: url(../img/monsters/map/demon.png) 0 0 !important;
-}
-
-.demon-left {
-    background: url(../img/monsters/map/demon.png) 0 -32px !important;
-}
-
-.demon-down {
-    background: url(../img/monsters/map/demon.png) 0 -64px !important;
-}
-
-.demon-up {
-    background: url(../img/monsters/map/demon.png) 0 -96px !important;
-}
-
-.demon {
-    background: url(../img/monsters/map/demon.png) -64px 0;
-    animation: demon-anim 0.5s steps(2) infinite;
-}
-
-@keyframes demon-anim {
-    100% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
-    }
-
-    50% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
-    }
-
-    0% {
-        background: url(../img/monsters/map/demon.png) 0 0;
-    }
-}
-
-/*ghast skins*/
-.ghast-right {
-    background: url(../img/monsters/map/ghast.png) 0 0 !important;
-}
-
-.ghast-left {
-    background: url(../img/monsters/map/ghast.png) 0 -32px !important;
-}
-
-.ghast-down {
-    background: url(../img/monsters/map/ghast.png) 0 -64px !important;
-}
-
-.ghast-up {
-    background: url(../img/monsters/map/ghast.png) 0 -96px !important;
-}
-
-.ghast {
-    background: url(../img/monsters/map/ghast.png) -64px 0;
-}
-
-/*blob-purple skins*/
-.blob-purple-right {
-    background: url(../img/monsters/map/blob_purple.png) 0 0 !important;
-}
-
-.blob-purple-left {
-    background: url(../img/monsters/map/blob_purple.png) 0 -32px !important;
-}
-
-.blob-purple-down {
-    background: url(../img/monsters/map/blob_purple.png) 0 -64px !important;
-}
-
-.blob-purple-up {
-    background: url(../img/monsters/map/blob_purple.png) 0 -96px !important;
-}
-
-.blob-purple {
-    background: url(../img/monsters/map/blob_purple.png) -64px 0;
-    animation: blob-purple-anim 0.5s steps(2) infinite;
-}
-
-@keyframes blob-purple-anim {
-    100% {
-        background: url(../img/monsters/map/blob_purple.png) -64px 0;
-    }
-
-    50% {
-        background: url(../img/monsters/map/blob_purple.png) -64px 0;
-    }
-
-    0% {
-        background: url(../img/monsters/map/blob_purple.png) 0 0;
-    }
-}
-
 
 /* WALLS */
 .wall-top-1 {
