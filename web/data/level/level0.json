@@ -7,11 +7,11 @@
       {
         "id": 0,
         "chest": 0,
-        "potions": [0, 1, 0]
+        "potions": [0, 2, 0]
       },
       {
         "id": 1,
-        "potions": [0, 1, 0]
+        "potions": [1, 1, 1]
       }
     ],
     "rows": [

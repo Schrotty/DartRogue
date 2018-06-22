@@ -25,4 +25,6 @@ class Treasure {
       treasurePotions[2] = data['potions'][2];
     }
   }
+
+  get isEmpty => treasureLoot.isEmpty && treasurePotions.isEmpty;
 }

@@ -79,14 +79,15 @@ class Player extends Moveable {
     inventory.add(weapons['swords'][1][0]);
     inventory.add(armors['chests'][2][0]);
     inventory.add(armors['chests'][1][0]);
-//    inventory.add(armors['boots'][1][0]);
-//    inventory.add(armors['helmets'][1][0]);
-//    inventory.add(armors['legs'][1][0]);
-//    inventory.add(armors['gloves'][1][0]);
-//    inventory.add(armors['gloves'][1][0]);
-//    inventory.add(armors['gloves'][1][0]);
-//    inventory.add(armors['gloves'][1][0]);
-//    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['boots'][1][0]);
+    inventory.add(armors['helmets'][1][0]);
+    inventory.add(armors['legs'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['gloves'][1][0]);
 
     _sortInventory();
   }
