@@ -119,6 +119,7 @@ class RogueView {
   final Element monsterFightHealthBar =
       querySelector("#monster-fight-health-inner");
   final Element monsterIcon = querySelector("#sprite-monster");
+  final Element mimicIcon = querySelector("#sprite-mimic");
 
   /* OPTIONS */
   final Element fightingOptions = querySelector("#fighting-options");

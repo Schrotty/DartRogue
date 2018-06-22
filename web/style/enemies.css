@@ -16,21 +16,21 @@
 }
 
 .demon {
-    background: url(../img/monsters/map/demon.png) -64px 0;
+    background: url(../img/monsters/map/demon.png) -64px -64px;
     animation: demon-anim 0.5s steps(2) infinite;
 }
 
 @keyframes demon-anim {
     100% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
+        background: url(../img/monsters/map/demon.png) -64px -64px;
     }
 
     50% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
+        background: url(../img/monsters/map/demon.png) -64px -64px;
     }
 
     0% {
-        background: url(../img/monsters/map/demon.png) 0 0;
+        background: url(../img/monsters/map/demon.png) 0 -64px;
     }
 }
 
@@ -52,7 +52,21 @@
 }
 
 .ghast {
-    background: url(../img/monsters/map/ghast.png) -64px 0;
+    animation: ghast-anim 2s steps(2) infinite;
+}
+
+@keyframes ghast-anim {
+    100% {
+        background: url(../img/monsters/map/ghast.png) 0 0;
+    }
+
+    50% {
+        background: url(../img/monsters/map/ghast.png) 0 -64px;
+    }
+
+    0% {
+        background: url(../img/monsters/map/ghast.png) 0 0;
+    }
 }
 
 /*blob-purple skins*/
@@ -73,17 +87,16 @@
 }
 
 .blob-purple {
-    background: url(../img/monsters/map/blob_purple.png) -64px 0;
-    animation: blob-purple-anim 0.5s steps(2) infinite;
+    animation: blob-purple-anim 1.5s steps(2) infinite;
 }
 
 @keyframes blob-purple-anim {
     100% {
-        background: url(../img/monsters/map/blob_purple.png) -64px 0;
+        background: url(../img/monsters/map/blob_purple.png) 0 0;
     }
 
     50% {
-        background: url(../img/monsters/map/blob_purple.png) -64px 0;
+        background: url(../img/monsters/map/blob_purple.png) 0 -64px;
     }
 
     0% {
@@ -109,17 +122,17 @@
 }
 
 .bat {
-    background: url(../img/monsters/map/bat.png) -64px 0;
-    animation: bat-anim 0.5s steps(2) infinite;
+    /*background: url(../img/monsters/map/bat.png) -64px 0;*/
+    animation: bat-anim 1.5s steps(2) infinite;
 }
 
 @keyframes bat-anim {
     100% {
-        background: url(../img/monsters/map/bat.png) -64px 0;
+        background: url(../img/monsters/map/bat.png) 0 0;
     }
 
     50% {
-        background: url(../img/monsters/map/bat.png) -64px 0;
+        background: url(../img/monsters/map/bat.png) 0 -64px;
     }
 
     0% {
@@ -145,17 +158,16 @@
 }
 
 .fire-blob {
-    background: url(../img/monsters/map/blob_fire.png) -64px 0;
-    animation: fire-blob-anim 0.5s steps(2) infinite;
+    animation: fire-blob-anim 2s steps(2) infinite;
 }
 
 @keyframes fire-blob-anim {
     100% {
-        background: url(../img/monsters/map/blob_fire.png) -64px 0;
+        background: url(../img/monsters/map/blob_fire.png) 0 0;
     }
 
     50% {
-        background: url(../img/monsters/map/blob_fire.png) -64px 0;
+        background: url(../img/monsters/map/blob_fire.png) 0 -64px;
     }
 
     0% {
@@ -180,18 +192,17 @@
     background: url(../img/monsters/map/orc.png) 0 -96px !important;
 }
 
-.orc-blob {
-    background: url(../img/monsters/map/orc.png) -64px 0;
-    animation: orc-anim 0.5s steps(2) infinite;
+.orc {
+    animation: orc-anim 2s steps(2) infinite;
 }
 
 @keyframes orc-anim {
     100% {
-        background: url(../img/monsters/map/orc.png) -64px 0;
+        background: url(../img/monsters/map/orc.png) 0 0;
     }
 
     50% {
-        background: url(../img/monsters/map/orc.png) -64px 0;
+        background: url(../img/monsters/map/orc.png) 0 -64px;
     }
 
     0% {
@@ -216,21 +227,36 @@
     background: url(../img/monsters/map/skull.png) 0 -96px !important;
 }
 
-.skull-blob {
-    background: url(../img/monsters/map/skull.png) -64px 0;
-    animation: skull-anim 0.5s steps(2) infinite;
+.skull {
+    animation: skull-anim 2.5s steps(2) infinite;
 }
 
 @keyframes skull-anim {
     100% {
-        background: url(../img/monsters/map/skull.png) -64px 0;
+        background: url(../img/monsters/map/skull.png) 0 0;
     }
 
     50% {
-        background: url(../img/monsters/map/skull.png) -64px 0;
+        background: url(../img/monsters/map/skull.png) 0 -64px;
     }
 
     0% {
         background: url(../img/monsters/map/skull.png) 0 0;
+    }
+}
+
+/* mimic skins*/
+.mimic {
+    animation: mimic-anim 10s steps(2) infinite;
+}
+
+@keyframes mimic-anim {
+    100% {
+        background: url(../img/monsters/map/mimic.png) 0 -64px;
+    }
+
+
+    0% {
+        background: url(../img/monsters/map/mimic.png) 0 0;
     }
 }

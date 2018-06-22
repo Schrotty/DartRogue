@@ -970,6 +970,17 @@ h3 {
     }
 }
 
+#sprite-mimic {
+    animation: sprite-mimic 6s steps(54) infinite;
+    left: 80%
+}
+
+@keyframes sprite-mimic {
+    100% {
+        background-position: -5184px;
+    }
+}
+
 .centered {
     text-align: center;
     width: 97%;

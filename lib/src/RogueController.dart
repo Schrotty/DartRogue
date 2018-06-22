@@ -234,8 +234,14 @@ class RogueController {
       _updateFightScreen();
 
       view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
-      view.monsterIcon.style.backgroundImage =
-          "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+      if ("Mimic" != monster.name) {
+        view.monsterIcon.style.backgroundImage =
+            "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+        _switchMenu(view.monsterIcon, view.mimicIcon);
+      } else {
+        view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/Mimic.png)";
+        _switchMenu(view.mimicIcon, view.monsterIcon);
+      }
 
       _toggleOverlay(view.fightingScreen);
     } else {
@@ -316,7 +322,9 @@ class RogueController {
       // add potions
       for (int i = 0; i < 3; i++) {
         if (attacker.pots.containsKey(i) && 0 < attacker.pots[i]) {
-          loot += ", ";
+          if ("" != loot) {
+            loot += ", ";
+          }
           loot += "${potions[i].name} (${attacker.pots[i]})";
         }
       }
@@ -435,7 +443,9 @@ class RogueController {
       // add potions
       for (int i = 0; i < 3; i++) {
         if (t.treasurePotions.containsKey(i) && 0 < t.treasurePotions[i]) {
-          loot += ", ";
+          if ("" != loot) {
+            loot += ", ";
+          }
           loot += "${potions[i].name} (${t.treasurePotions[i]})";
         }
       }

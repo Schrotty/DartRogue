@@ -539,6 +539,7 @@
           {
             "id": 1,
             "accessible": true,
+            "boss": true,
             "style": "floor-default"
           },
           {
@@ -625,6 +626,7 @@
           {
             "id": 1,
             "accessible": true,
+            "exit": true,
             "style": "floor-default"
           },
           {
@@ -650,7 +652,7 @@
           {
             "id": 6,
             "accessible": true,
-            "treausure": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
@@ -691,13 +693,11 @@
           {
             "id": 14,
             "accessible": true,
-            "boss": true,
             "style": "floor-default"
           },
           {
             "id": 15,
             "accessible": true,
-            "exit": true,
             "style": "floor-default"
           }
         ]

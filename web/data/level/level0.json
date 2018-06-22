@@ -6,7 +6,6 @@
     "treasures": [
       {
         "id": 0,
-        "chest": 0,
         "potions": [5, 0, 0]
       },
       {
