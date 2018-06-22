@@ -10,6 +10,7 @@ class Field {
   int _monsterId;
   bool _treasure;
   bool _monsterDrop;
+  bool _exit;
 
   Field top;
   Field left;
@@ -92,6 +93,10 @@ class Field {
   get isMonsterDrop => _monsterDrop;
 
   set monsterDrop(bool isDrop) => _monsterDrop = isDrop;
+
+  get isExit => _exit;
+
+  set exit(bool isExit) => _exit = isExit;
 
   get hasTop => top != null;
   get hasLeft => left != null;

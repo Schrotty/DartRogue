@@ -4150,7 +4150,7 @@
             "id": 1,
             "accessible": true,
             "exit": true,
-            "style": "exit-treasure"
+            "style": "default"
           },
           {
             "id": 2,

@@ -437,12 +437,12 @@
           {
             "id": 0,
             "accessible": true,
-            "boss": true,
             "style": "floor-default"
           },
           {
             "id": 1,
             "accessible": true,
+            "boss": true,
             "style": "floor-default"
           },
           {
@@ -528,7 +528,7 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "treasure"
+            "style": "floor-default"
           },
           {
             "id": 2,

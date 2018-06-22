@@ -6,8 +6,8 @@ class Level {
   int _rowCount = 0;
 
   Field spawnPoint;
+  Field exit;
   List<List<Field>> fields = new List();
-  List<SpawnPoint> restPlaces;
   List<Field> monsterSpawnPoints = new List();
   List<Field> treasureFields = new List();
   Map<int, Treasure> monsterDrops = new Map();
@@ -61,6 +61,11 @@ class Level {
     Field f = new Field.create(tile["accessible"], tile["style"], "tile-${_tileCount++}", row, tile['id'], level, tile['monster']);
     if (tile.containsKey("spawn")) {
       spawnPoint = f;
+    }
+
+    if(tile.containsKey("exit")) {
+      f.exit = true;
+      exit = f;
     }
 
     if (tile.containsKey("monster")) {

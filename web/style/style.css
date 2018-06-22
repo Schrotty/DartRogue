@@ -1166,3 +1166,11 @@ h3 {
 .treasure-closed {
     background: url(../img/main/tiles.png) -480px -353px !important;
 }
+
+.exit-closed {
+    background: url(../img/main/exits.png) 0 -32px !important;
+}
+
+.exit-opened {
+    background: url(../img/main/exits.png) -32px -32px !important;
+}
