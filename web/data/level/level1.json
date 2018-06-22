@@ -3,6 +3,12 @@
     "id": 1,
     "monster": [0, 1, 2, 3, 5],
     "boss": 1,
+    "treasures": [
+      {
+        "id": 0,
+        "potions": [1, 0, 0]
+      }
+    ],
     "rows": [
       {
         "id": 0,
@@ -942,6 +948,7 @@
           {
             "id": 15,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           }
         ]

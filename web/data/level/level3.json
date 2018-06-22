@@ -1,8 +1,20 @@
 [
   {
     "id": 3,
-    "monster": [0, 1, 2, 3, 5],
+    "monster": [0, 1, 2, 3, 5, 6],
     "boss": 3,
+    "treasures": [
+      {
+        "id": 0,
+        "chest": 0,
+        "potions": [0, 1, 0]
+      },
+
+      {
+        "id": 1,
+        "legs": 1
+      }
+    ],
     "rows": [
       {
         "id": 0,
@@ -255,6 +267,7 @@
           {
             "id": 15,
             "accessible": true,
+            "monster": true,
             "style": "floor-wall-top"
           }
         ]
@@ -1122,6 +1135,7 @@
           {
             "id": 0,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
@@ -1197,6 +1211,7 @@
           {
             "id": 15,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           }
         ]
@@ -1207,6 +1222,7 @@
           {
             "id": 0,
             "accessible": true,
+
             "style": "floor-default"
           },
           {
