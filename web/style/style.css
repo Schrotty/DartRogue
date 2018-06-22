@@ -122,9 +122,9 @@ h3 {
     background: #1c1117;
     background: url(../img/main/marble.png) repeat-x;
     background-size: contain;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
-    -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,1);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
     z-index: 10;
 }
 
@@ -144,7 +144,7 @@ h3 {
 #side-bar input {
     width: 64px;
     height: 64px;
-    background-image: url(../img/icon/side-bar-frame.png);
+    /*background-image: url(../img/icon/side-bar-frame.png);*/
 }
 
 #command-buttons {
@@ -168,6 +168,7 @@ h3 {
     max-width: 100%;
     text-align: center;
 }
+
 
 /* ########## END SCREEN ########## */
 #game-over {
@@ -774,6 +775,7 @@ h3 {
 }
 
 #fighting-options, #skills, #fight-end {
+    color: white;
     width: 100%;
     height: 40%;
     border-top: 1px solid black;
@@ -782,6 +784,16 @@ h3 {
     position: absolute;
     bottom: 0;
 }
+#event-window {
+     color: white;
+     width: 100%;
+     height: 35%;
+     border-top: 1px solid black;
+     background: url("../img/main/background.png");
+     z-index: 60;
+     position: absolute;
+     bottom: 0;
+ }
 
 /* CLASSES */
 .full-screen {
@@ -959,6 +971,7 @@ h3 {
 
 .centered {
     text-align: center;
+    width: 97%;
 }
 
 /* ##### TILE STYLES ##### */
@@ -1145,6 +1158,10 @@ h3 {
     background: url(../img/main/tiles.png) -96px -256px;
 }
 
-.treasure {
-    background: url(../img/main/tiles.png) -480px -416px, url(../img/main/tiles.png) -64px -96px;
+.treasure-opened {
+    background: url(../img/main/tiles.png) -480px -417px !important;
+}
+
+.treasure-closed {
+    background: url(../img/main/tiles.png) -480px -353px !important;
 }

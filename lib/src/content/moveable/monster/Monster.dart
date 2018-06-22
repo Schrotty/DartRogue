@@ -32,6 +32,12 @@ class Monster extends Moveable {
       if (data['loot'].containsKey('axe')) _loot['axes'] = data['loot']['axe'];
       if (data['loot'].containsKey('dagger')) _loot['daggers'] = data['loot']['dagger'];
       if (data['loot'].containsKey('hammer')) _loot['hammers'] = data['loot']['hammer'];
+
+      if (data['loot'].containsKey('potions')) {
+        pots[0] = data['loot']['potions'][0];
+        pots[1] = data['loot']['potions'][1];
+        pots[2] = data['loot']['potions'][2];
+      }
     }
 
     if (data.containsKey('skin')) skin = data['skin'];
