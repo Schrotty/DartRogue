@@ -26,5 +26,7 @@ class Treasure {
     }
   }
 
+  Treasure() {}
+
   get isEmpty => treasureLoot.isEmpty && treasurePotions.isEmpty;
 }

@@ -9,6 +9,7 @@ class Field {
   int _stageId;
   int _monsterId;
   bool _treasure;
+  bool _monsterDrop;
 
   Field top;
   Field left;
@@ -87,6 +88,10 @@ class Field {
   get hasTreasure => _treasure;
 
   set treasure(bool treasure) => _treasure = treasure;
+
+  get isMonsterDrop => _monsterDrop;
+
+  set monsterDrop(bool isDrop) => _monsterDrop = isDrop;
 
   get hasTop => top != null;
   get hasLeft => left != null;

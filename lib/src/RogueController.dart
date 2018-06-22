@@ -328,6 +328,9 @@ class RogueController {
       player.pots[1] += attacker.pots[1];
       player.pots[2] += attacker.pots[2];
     }
+
+    List<String> toRemove = new List();
+
     attacker.loot.forEach((k, v) {
       if (!player.isInventoryFull) {
         if (armors.containsKey(k)) {
@@ -335,23 +338,37 @@ class RogueController {
         } else {
           player.inventory.add(weapons[k][v][0]);
         }
-      } else {
-//        player.position._neighbours().first.id;
-//        Field tmp = levels[stage].getField(int.parse(clicked.parent.id.substring(5)));
-//
-//        if (tmp.hasTreasure && player.position.isNeighbour(tmp)) {
-//          DivElement el = querySelector("#tile-${tmp.id}");
-//          el.children[0].classes.clear();
-//          el.children[0].classes.addAll(["treasure-opened", "entity"]);
-//          _addLootToPlayerInventoryFromTreasure(tmp);
-//        }
+        toRemove.add(k);
       }
     });
+
+    toRemove.forEach((i) => attacker.loot.remove(i));
+
+    if (attacker.loot.isNotEmpty) {
+      Field tmp = attacker.position;
+      tmp.treasure = true;
+      tmp.accessible = false;
+      tmp.monsterDrop = true;
+
+      Treasure t = new Treasure();
+      t.treasureLoot = attacker.loot;
+      levels[player.currentStage].monsterDrops[attacker.position.id] = t;
+
+      DivElement el = querySelector("#tile-${tmp.id}");
+      el.children[0].classes.addAll(["treasure-opened", "entity"]);
+    }
+
     _updateInventory();
   }
 
   _addLootToPlayerInventoryFromTreasure(Field tmp) {
-    Treasure t = levels[player.currentStage].treasures.first;
+    Treasure t;
+    if (!tmp.isMonsterDrop) {
+      t = levels[player.currentStage].treasures.first;
+    } else {
+      t = levels[player.currentStage].monsterDrops[tmp.id];
+    }
+
     _toggleOverlay(view.eventWindow);
     view.eventText.text = _treasureMessage(t);
 
@@ -379,9 +396,15 @@ class RogueController {
 
     toRemove.forEach((i) => t.treasureLoot.remove(i));
 
-    if (t.isEmpty) {
+    if (t.isEmpty && !tmp.isMonsterDrop) {
       levels[player.currentStage].treasures.remove(t);
       tmp.treasure = false;
+    }
+
+    if (tmp.isMonsterDrop && t.isEmpty) {
+      DivElement el = querySelector("#tile-${tmp.id}");
+      el.children[0].classes.clear();
+      levels[player.currentStage].monsterDrops.remove(tmp.id);
     }
   }
 

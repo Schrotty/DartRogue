@@ -10,6 +10,7 @@ class Level {
   List<SpawnPoint> restPlaces;
   List<Field> monsterSpawnPoints = new List();
   List<Field> treasureFields = new List();
+  Map<int, Treasure> monsterDrops = new Map();
   List<Treasure> treasures = new List();
   List<Moveable> monsters = new List();
   Moveable boss = null;
