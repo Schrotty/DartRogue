@@ -530,7 +530,7 @@ class RogueController {
   }
 
   _updatePlayerHealth() {
-    view.playerHealth.text = "${player.currHealth}/${player.maxHealth}";
+    view.playerHealth.text = "${player.currHealth}/${player.maxHealth} hp";
     view.playerHealthBar.style.setProperty("width", "${player.currHealthPercent}%");
   }
 
@@ -589,14 +589,14 @@ class RogueController {
     view.heroMaxLife.text = player.maxHealth;
 
     /* ADVENTURE */
+    view.heroLevel.text = player.level;
     view.heroLuck.text = player.luck;
     view.heroSpeed.text = player.speed;
   }
 
   _updatePlayerXp() {
-    view.playerEp.text = "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl}";
+    view.playerEp.text = "${player.gainedXpByCurrentLvl}/${player.neededXpByCurrentLvl} exp";
     view.playerEpBar.style.setProperty("width", "${player.currXpPercent}%");
-    //view.playerLevel.text = player.level;
   }
 
   _updateFightScreen() {
