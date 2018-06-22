@@ -19,10 +19,19 @@
                 <img src="img/main/title.png">
 
                 <ul>
-                    <li><input type="button" id="start-game-button" value="Start New Game"></li>
+                    <li><input type="button" id="start-game-button" value="New Game"></li>
                     <li><input type="button" id="highscore-button" value="Highscore"></li>
                     <li><input type="button" id="howToPlay-button" value="How To Play"></li>
                     <li><input type="button" id="about-button" value="About"></li>
+                </ul>
+            </div>
+
+            <div id="name-input-menu" class="invisible">
+                <img src="img/main/highscore.png">
+                <ul>
+                    <li><input type="text" id="name-input" class="text-input" value="Enter your name here"></li>
+                    <li><input type="button" id="name-submit"  value="Start game!"></li>
+                    <li><input type="button" id="name-input-back" value="Back"></li>
                 </ul>
             </div>
 
@@ -31,9 +40,9 @@
 
                 <div id="highscore-board">
                     <ul>
-                        <li>Schrottler - 5000</li>
-                        <li>Dieter - 4000</li>
-                        <li>Herman - 3000</li>
+                        <li id="highscore-first"></li>
+                        <li id="highscore-second"></li>
+                        <li id="highscore-third"></li>
                     </ul>
                 </div>
 
@@ -70,6 +79,13 @@
                 <ul>
                     <li><input type="button" id="back-about-button" class="back-button" value="Back"></li>
                 </ul>
+            </div>
+
+            <div id="game-over" class="invisible">
+                <div id="end-screen">
+                    <h1>YOU DIED</h1>
+                    <input type="button" id="back-game-over" value="Back to main menu">
+                </div>
             </div>
         </div>
 
@@ -337,12 +353,6 @@
                 </div>
 
                 <div id="tiles"></div>
-            </div>
-        </div>
-
-        <div id="game-over" class="invisible">
-            <div id="end-screen">
-                <h1>YOU DIED</h1>
             </div>
         </div>
 

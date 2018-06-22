@@ -2,6 +2,7 @@ part of rogue;
 
 class RogueView {
   final Element home = querySelector("#home");
+  final Element nameInput = querySelector("#name-input-menu");
   final Element game = querySelector("#game");
   final Element gameOver = querySelector("#game-over");
   final Element dungeon = querySelector("#dungeon");
@@ -56,12 +57,12 @@ class RogueView {
   final Element selectedItemName = querySelector("#selected-item #item-name");
   final Element selectedItemIcon = querySelector("#selected-item #item-icon");
   final Element selectedItemQuality =
-      querySelector("#selected-item #item-quality");
+  querySelector("#selected-item #item-quality");
   final Element selectedItemType = querySelector("#selected-item #item-type");
   final Element selectedItemValue = querySelector("#selected-item #item-value");
   final Element selectedItemKey = querySelector("#selected-item #item-key");
   final Element selectedItemMods =
-      querySelector("#selected-item #item-mods ul");
+  querySelector("#selected-item #item-mods ul");
 
   /* PREVIEW ITEM */
   final Element previewItemName = querySelector("#preview-item #preview-item-name");
@@ -103,21 +104,21 @@ class RogueView {
 
   /* PLAYER */
   final Element playerFightHealthContainer =
-      querySelector("#player-fight-health-container");
+  querySelector("#player-fight-health-container");
   final Element playerFightHealth = querySelector("#player-fight-health");
   final Element playerFightMaxHealth =
-      querySelector("#player-fight-max-health");
+  querySelector("#player-fight-max-health");
   final Element playerFightHealthBar =
-      querySelector("#player-fight-health-inner");
+  querySelector("#player-fight-health-inner");
 
   /* MONSTER */
   final Element monsterFightHealthContainer =
-      querySelector("#monster-fight-health-container");
+  querySelector("#monster-fight-health-container");
   final Element monsterFightHealth = querySelector("#monster-fight-health");
   final Element monsterFightMaxHealth =
-      querySelector("#monster-fight-max-health");
+  querySelector("#monster-fight-max-health");
   final Element monsterFightHealthBar =
-      querySelector("#monster-fight-health-inner");
+  querySelector("#monster-fight-health-inner");
   final Element monsterIcon = querySelector("#sprite-monster");
   final Element mimicIcon = querySelector("#sprite-mimic");
 
@@ -149,6 +150,7 @@ class RogueView {
   /* EP BAR */
   final Element playerEp = querySelector("#player-ep-text");
   final Element playerEpBar = querySelector("#ep-bar-inner");
+
   //final Element playerLevel = querySelector("#level-value");
 
   /* MAIN MENU BUTTONS */
@@ -157,21 +159,30 @@ class RogueView {
   final ButtonInputElement howToPlayButton = querySelector("#howToPlay-button");
   final ButtonInputElement aboutButton = querySelector("#about-button");
 
+  /* NAME INPUT */
+  final InputElement nameInputField = querySelector("#name-input");
+  final ButtonInputElement submitNameButton = querySelector("#name-submit");
+  final ButtonInputElement backNameInputButton = querySelector("#name-input-back");
+
   /* HIGHSCORE BUTTONS */
   final ButtonInputElement backHighscoreButton =
-      querySelector("#back-highscore-button");
+  querySelector("#back-highscore-button");
+
+  final Element highscoreFirst = querySelector("#highscore-first");
+  final Element highscoreSecond = querySelector("#highscore-second");
+  final Element highscoreThird = querySelector("#highscore-third");
 
   /* HOW TO PLAY BUTTONS */
   final ButtonInputElement backHowToPlayButton =
-      querySelector("#back-howToPlay-button");
+  querySelector("#back-howToPlay-button");
 
   /* ABOUT BUTTONS */
   final ButtonInputElement backAboutButton =
-      querySelector("#back-about-button");
+  querySelector("#back-about-button");
 
   /* GAME BUTTONS */
   final ButtonInputElement heroScreenButton =
-      querySelector("#hero-screen-button");
+  querySelector("#hero-screen-button");
   final ButtonInputElement potionsMenuButton = querySelector("#potion-screen-button");
   final ButtonInputElement usePotionButtonGlobal = querySelector("#use-potion-global");
 
@@ -182,7 +193,9 @@ class RogueView {
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
 
   /* GLOBAL EVENT */
-  final Element eventWindow= querySelector("#event-window");
+  final Element eventWindow = querySelector("#event-window");
   final Element eventText = querySelector("#event-text");
   final ButtonInputElement hideEventButton = querySelector("#hide-event-button");
+
+  final ButtonInputElement backGameOverButton = querySelector("#back-game-over");
 }
