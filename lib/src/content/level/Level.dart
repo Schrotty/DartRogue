@@ -9,8 +9,9 @@ class Level {
   List<List<Field>> fields = new List();
   List<SpawnPoint> restPlaces;
   List<Field> monsterSpawnPoints = new List();
-  List<Field> treasures = new List();
-  Map<String, int> treasureLoot = new Map();
+  List<Field> treasureFields = new List();
+  Map<int, Treasure> monsterDrops = new Map();
+  List<Treasure> treasures = new List();
   List<Moveable> monsters = new List();
   Moveable boss = null;
   Field bossSpawn = null;
@@ -22,8 +23,10 @@ class Level {
   Level.build(int id, Map data) {
     _id = id;
 
-    if(data.containsKey('treasure')) {
-
+    if(data.containsKey('treasures')) {
+      data['treasures'].forEach((Map treasure){
+        treasures.add(new Treasure.build(treasure));
+      });
     }
 
     if (data.containsKey('rows')) {
@@ -65,7 +68,8 @@ class Level {
     }
 
     if (tile.containsKey("treasure")) {
-      treasures.add(f..accessible = false);
+      f.treasure = true;
+      treasureFields.add(f..accessible = false);
     }
 
     if (tile.containsKey("boss")) {
@@ -133,22 +137,22 @@ class Level {
           int col = field.col + 4;
           if (field.row > 0) {
             tmp = fields[row - 1][col];
-            if (tmp.isAccessible) field.top = tmp;
+            if (tmp.isAccessible || tmp.hasTreasure) field.top = tmp;
           }
 
           if (field.row >= 0) {
             tmp = fields[row + 1][col];
-            if (tmp.isAccessible) field.bottom = tmp;
+            if (tmp.isAccessible || tmp.hasTreasure) field.bottom = tmp;
           }
 
           if (field.col > 0) {
             tmp = fields[row][col - 1];
-            if (tmp.isAccessible) field.left = tmp;
+            if (tmp.isAccessible || tmp.hasTreasure) field.left = tmp;
           }
 
           if (field.col >= 0) {
             tmp = fields[row][col + 1];
-            if (tmp.isAccessible) field.right = tmp;
+            if (tmp.isAccessible || tmp.hasTreasure) field.right = tmp;
           }
 
           _pathGraph.add(new Node.create(field));

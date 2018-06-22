@@ -22,7 +22,7 @@ class RogueController {
       new Timer.periodic(oneSec, (Timer t) => _update());
 
       /* MOVEMENT TIMER */
-      const ti = const Duration(milliseconds: 500);
+      const ti = const Duration(milliseconds: 250);
       new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);
@@ -89,7 +89,17 @@ class RogueController {
       Field old = null;
       DivElement clicked = e.target;
 
-      if (clicked.id.length < 5) return;
+      if (clicked.id.length < 5) {
+        Field tmp = levels[stage].getField(int.parse(clicked.parent.id.substring(5)));
+
+        if (tmp.hasTreasure && player.position.isNeighbour(tmp)) {
+          DivElement el = querySelector("#tile-${tmp.id}");
+          el.children[0].classes.clear();
+          el.children[0].classes.addAll(["treasure-opened", "entity"]);
+          _addLootToPlayerInventoryFromTreasure(tmp);
+        }
+        return;
+      }
       if (!clicked.classes.contains("player")) {
         var tmp = levels[stage].getField(int.parse(clicked.id.substring(5)));
         if (tmp.isAccessible) {
@@ -171,6 +181,7 @@ class RogueController {
 
     view.heroScreenButton.onClick.listen((e) {
       _openHeroScreen();
+      _updateInventory();
     });
 
     // ### POTIONS MENU ###
@@ -196,6 +207,10 @@ class RogueController {
     view.potionLargeButton.onClick.listen((e) {
       player.selectedPot = 2;
       _toggleOverlay(view.potionsMenu);
+    });
+
+    view.hideEventButton.onClick.listen((e) {
+      _toggleOverlay(view.eventWindow);
     });
 
     _registerHeroScreenEvents();
@@ -249,7 +264,7 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
-        _addLootToPlayerInventory();
+        _addLootToPlayerInventoryFromMonster();
         view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
@@ -277,8 +292,8 @@ class RogueController {
       msg += " You reached level ${player.level + 1}!";
     }
 
-    // add items
     if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
+      // add items
       String loot = "";
       int size = 0;
       attacker.loot.forEach((k, v) {
@@ -294,18 +309,10 @@ class RogueController {
       });
 
       // add potions
-      if ("" != loot) {
-        loot += ", ";
-      }
-
-      size = 0;
       for (int i = 0; i < 3; i++) {
-        if (attacker.pots.containsKey(i)) {
-          loot += "${potions[i].name} (${attacker.pots[i]})";
-          size++;
-        }
-        if (attacker.pots.length > size) {
+        if (attacker.pots.containsKey(i) && 0 < attacker.pots[i]) {
           loot += ", ";
+          loot += "${potions[i].name} (${attacker.pots[i]})";
         }
       }
 
@@ -315,24 +322,121 @@ class RogueController {
     return msg;
   }
 
-  _addLootToPlayerInventory() {
+  _addLootToPlayerInventoryFromMonster() {
     if (attacker.pots.isNotEmpty) {
       player.pots[0] += attacker.pots[0];
       player.pots[1] += attacker.pots[1];
       player.pots[2] += attacker.pots[2];
     }
+
+    List<String> toRemove = new List();
+
     attacker.loot.forEach((k, v) {
+      if (!player.isInventoryFull) {
+        if (armors.containsKey(k)) {
+          player.inventory.add(armors[k][v][0]);
+        } else {
+          player.inventory.add(weapons[k][v][0]);
+        }
+        toRemove.add(k);
+      }
+    });
+
+    toRemove.forEach((i) => attacker.loot.remove(i));
+
+    if (attacker.loot.isNotEmpty) {
+      Field tmp = attacker.position;
+      tmp.treasure = true;
+      tmp.accessible = false;
+      tmp.monsterDrop = true;
+
+      Treasure t = new Treasure();
+      t.treasureLoot = attacker.loot;
+      levels[player.currentStage].monsterDrops[attacker.position.id] = t;
+
+      DivElement el = querySelector("#tile-${tmp.id}");
+      el.children[0].classes.addAll(["treasure-opened", "entity"]);
+    }
+
+    _updateInventory();
+  }
+
+  _addLootToPlayerInventoryFromTreasure(Field tmp) {
+    Treasure t;
+    if (!tmp.isMonsterDrop) {
+      t = levels[player.currentStage].treasures.first;
+    } else {
+      t = levels[player.currentStage].monsterDrops[tmp.id];
+    }
+
+    _toggleOverlay(view.eventWindow);
+    view.eventText.text = _treasureMessage(t);
+
+    if (t.treasurePotions.isNotEmpty) {
+      player.pots[0] += t.treasurePotions[0];
+      t.treasurePotions.remove(0);
+      player.pots[1] += t.treasurePotions[1];
+      t.treasurePotions.remove(1);
+      player.pots[2] += t.treasurePotions[2];
+      t.treasurePotions.remove(2);
+    }
+
+    List<String> toRemove = new List();
+
+    t.treasureLoot.forEach((k, v) {
       if (!player.isInventoryFull) {
         if (armors.containsKey(k)) {
           player.inventory.add(armors[k][v][0]);
         } else if (weapons.containsKey(k)) {
           player.inventory.add(weapons[k][v][0]);
-        } else {}
-      } else {
-        // drop item to overworld
+        }
+        toRemove.add(k);
       }
     });
-    _updateInventory();
+
+    toRemove.forEach((i) => t.treasureLoot.remove(i));
+
+    if (t.isEmpty && !tmp.isMonsterDrop) {
+      levels[player.currentStage].treasures.remove(t);
+      tmp.treasure = false;
+    }
+
+    if (tmp.isMonsterDrop && t.isEmpty) {
+      DivElement el = querySelector("#tile-${tmp.id}");
+      el.children[0].classes.clear();
+      levels[player.currentStage].monsterDrops.remove(tmp.id);
+    }
+  }
+
+  _treasureMessage(Treasure t) {
+    String msg = "You found: ";
+    if (0 < t.treasureLoot.length || t.treasurePotions.isNotEmpty) {
+      // add items
+      String loot = "";
+      int size = 0;
+      t.treasureLoot.forEach((k, v) {
+        if (armors.containsKey(k)) {
+          loot += "${armors[k][v][0].name}";
+        } else {
+          loot += "${weapons[k][v][0].name}";
+        }
+        size++;
+        if (t.treasureLoot.length > size) {
+          loot += ", ";
+        }
+      });
+
+      // add potions
+      for (int i = 0; i < 3; i++) {
+        if (t.treasurePotions.containsKey(i) && 0 < t.treasurePotions[i]) {
+          loot += ", ";
+          loot += "${potions[i].name} (${t.treasurePotions[i]})";
+        }
+      }
+      msg += loot;
+    }
+
+    return msg;
   }
 
   _switchMenu(Element toShow, Element toHide) {
@@ -394,7 +498,7 @@ class RogueController {
   }
 
   _spawnTreasure(int lvl) {
-    levels[lvl].treasures.forEach((treasure) {
+    levels[lvl].treasureFields.forEach((treasure) {
       DivElement e = querySelector("#tile-${treasure.id}");
       e.children[0].classes.addAll(["treasure-closed", "entity"]);
     });
@@ -596,7 +700,7 @@ class RogueController {
       index++;
     });
 
-    for (int i = index; i <= 12; i++) {
+    for (int i = index; i < 12; i++) {
       Element element = querySelector("#slot-$index");
       element.classes.removeAll(Qualities);
       element.classes.add("common");

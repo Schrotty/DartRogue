@@ -26,3 +26,4 @@ part 'package:rogue/src/content/moveable/pathfinding/PriorityQueue.dart';
 part 'src/content/level/Field.dart';
 part 'src/content/level/Level.dart';
 part 'src/content/level/SpawnPoint.dart';
+part 'src/content/level/Treasure.dart';
