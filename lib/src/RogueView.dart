@@ -86,6 +86,7 @@ class RogueView {
   final Element heroConst = querySelector("#hero-const");
   final Element heroMaxLife = querySelector("#hero-max-life");
 
+  final Element heroLevel = querySelector("#hero-level");
   final Element heroLuck = querySelector("#hero-luck");
   final Element heroSpeed = querySelector("#hero-speed");
 

@@ -763,9 +763,10 @@ h3 {
     height: 42vw;
     width: 20vw;
     right: 8vw;
-    border: 10px solid black;
+    border: 5px solid black;
     background: indianred;
     z-index: 100;
+    padding: 3px;
 }
 
 .tile {
