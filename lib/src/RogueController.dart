@@ -277,9 +277,6 @@ class RogueController {
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           _activateExit(player.currentStage);
           levels[player.currentStage].boss = null;
-//          player.currentStage += 1;
-//          _renderLevel(player.currentStage);
-//          _spawnPlayer(player.currentStage);
         }
       }
 
@@ -413,6 +410,7 @@ class RogueController {
       DivElement el = querySelector("#tile-${tmp.id}");
       el.children[0].classes.clear();
       levels[player.currentStage].monsterDrops.remove(tmp.id);
+      tmp.accessible = true;
     }
   }
 
