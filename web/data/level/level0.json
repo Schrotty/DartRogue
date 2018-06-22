@@ -966,7 +966,6 @@
           {
             "id": 1,
             "accessible": true,
-            "exit": true,
             "style": "floor-wall-top",
             "patrol": true
           },
@@ -1054,7 +1053,7 @@
             "id": 1,
             "accessible": true,
             "style": "floor-default",
-            "treasure": true
+            "exit": true
           },
           {
             "id": 2,

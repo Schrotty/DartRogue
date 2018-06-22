@@ -84,6 +84,7 @@ class RogueController {
     _spawnPlayer(stage);
     _spawnMonster(stage);
     _spawnTreasure(stage);
+    _spawnExit(stage);
 
     querySelectorAll(".tile").onClick.listen((MouseEvent e) {
       Field old = null;
@@ -92,11 +93,19 @@ class RogueController {
       if (clicked.id.length < 5) {
         Field tmp = levels[stage].getField(int.parse(clicked.parent.id.substring(5)));
 
+        // check for treasure
         if (tmp.hasTreasure && player.position.isNeighbour(tmp)) {
           DivElement el = querySelector("#tile-${tmp.id}");
           el.children[0].classes.clear();
           el.children[0].classes.addAll(["treasure-opened", "entity"]);
           _addLootToPlayerInventoryFromTreasure(tmp);
+        }
+
+        // check for exit
+        if (tmp.isExit && player.position.isNeighbour(tmp)) {
+          player.currentStage += 1;
+          _renderLevel(player.currentStage);
+          _spawnPlayer(player.currentStage);
         }
         return;
       }
@@ -258,8 +267,6 @@ class RogueController {
 
       _despawnEntity(attacker);
       levels[player.currentStage].monsters.remove(attacker);
-
-//      player.fight = false;
     }
 
     if (!attacker.isAlive || !player.isAlive) {
@@ -268,9 +275,11 @@ class RogueController {
         view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
-          player.currentStage += 1;
-          _renderLevel(player.currentStage);
-          _spawnPlayer(player.currentStage);
+          _activateExit(player.currentStage);
+          levels[player.currentStage].boss = null;
+//          player.currentStage += 1;
+//          _renderLevel(player.currentStage);
+//          _spawnPlayer(player.currentStage);
         }
       }
 
@@ -279,7 +288,6 @@ class RogueController {
       }
 
       _switchMenu(view.fightEnd, view.fightingOptions);
-//      player.fight = false;
     }
     _updateFightScreen();
   }
@@ -502,6 +510,16 @@ class RogueController {
       DivElement e = querySelector("#tile-${treasure.id}");
       e.children[0].classes.addAll(["treasure-closed", "entity"]);
     });
+  }
+
+  _spawnExit(int lvl) {
+    DivElement e = querySelector("#tile-${levels[lvl].exit.id}");
+    e.children[0].classes.addAll(["exit-closed", "entity"]);
+  }
+
+  _activateExit(int lvl) {
+    DivElement e = querySelector("#tile-${levels[lvl].exit.id}");
+    e.children[0].classes.addAll(["exit-opened", "entity"]);
   }
 
   _spawnEntity(Moveable entity) {
@@ -852,7 +870,8 @@ class RogueController {
   }
 
   _checkFight() {
-    if (player.position.isNeighbour(levels[player.currentStage].boss.position)) {
+    if (null != levels[player.currentStage].boss &&
+        player.position.isNeighbour(levels[player.currentStage].boss.position)) {
       _startFight(levels[player.currentStage].boss);
     }
 
