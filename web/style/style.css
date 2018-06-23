@@ -895,7 +895,7 @@ h3 {
     width: 49vw;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
-    margin: 0;
+    margin: 2px;
     white-space: pre-wrap;
 }
 
