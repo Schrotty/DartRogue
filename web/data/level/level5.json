@@ -1035,7 +1035,7 @@
           {
             "id": 4,
             "accessible": true,
-            "treasure": true
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
