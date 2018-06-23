@@ -79,18 +79,12 @@ class Player extends Moveable {
 
     skin = "player-left";
 
-    inventory.add(weapons['swords'][1][0]);
+
+    inventory.add(armors['chests'][0][0]);
     inventory.add(armors['chests'][1][0]);
-    inventory.add(armors['chests'][1][0]);
-    inventory.add(armors['boots'][1][0]);
-    inventory.add(armors['helmets'][1][0]);
-    inventory.add(armors['legs'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
-    inventory.add(armors['gloves'][1][0]);
+    inventory.add(armors['chests'][2][0]);
+    inventory.add(armors['chests'][3][0]);
+    inventory.add(armors['chests'][4][0]);
 
     _sortInventory();
   }
@@ -188,7 +182,7 @@ class Player extends Moveable {
   }
 
   _sortInventory() {
-    if (inventory.isNotEmpty) inventory.sort((a, b) => a.quality.compareTo(b.quality));
+    if (inventory.isNotEmpty) inventory.sort((a, b) => a._quality.compareTo(b._quality));
   }
 
   get gainedXpByCurrentLvl {
