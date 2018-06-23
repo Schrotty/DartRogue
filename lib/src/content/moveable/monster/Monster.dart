@@ -21,6 +21,10 @@ class Monster extends Moveable {
     this.stage = data['stage'];
     this.skin = "demon";
 
+    if (data.containsKey('static')) {
+      this._static = data['static'];
+    }
+
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet')) _loot['helmets'] = data['loot']['helmet'];
       if (data['loot'].containsKey('chest')) _loot['chests'] = data['loot']['chest'];

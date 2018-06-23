@@ -235,6 +235,7 @@
     "speed": 10,
     "grantedXP": 36,
     "skin": "mimic",
+    "static": true,
     "loot": {
       "axes": 2,
       "potions": [0, 0, 0]

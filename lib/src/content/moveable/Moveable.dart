@@ -17,7 +17,7 @@ abstract class Moveable {
   List<String> skins;
   int stage;
   Map<int, int> pots = new Map();
-
+  bool _static = false;
 
   static final int UP = 0;
 
@@ -44,7 +44,7 @@ abstract class Moveable {
   _die();
 
   move() {
-    if (start != null && start.predecessor != null) {
+    if (start != null && start.predecessor != null && !_static) {
       if (start.predecessor.field.isAccessible) {
         if (!(this is Player) && _detectLoop()) {
           calcPath(_position.accessibleNeighbour);
@@ -119,4 +119,8 @@ abstract class Moveable {
   Field get position => _position;
 
   set position(Field pos) => _position = pos;
+
+  bool get isStatic => _static;
+
+  set isStatic(bool isStatic) => _static = isStatic;
 }
