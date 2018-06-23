@@ -324,6 +324,7 @@ h3 {
 
 #fighting-screen {
     animation: enter-fight 2s;
+    z-index: 70;
 }
 
 @keyframes enter-fight {

@@ -232,11 +232,11 @@ class RogueController {
       player.usePotion(player.selectedPot);
     });
 
-    view.leaveFightButton.onClick.listen((e) {
-      _toggleOverlay(view.fightingScreen);
-      player.fight = false;
-      _centerPlayer();
-    });
+//    view.leaveFightButton.onClick.listen((e) {
+//      _toggleOverlay(view.fightingScreen);
+//      player.fight = false;
+//      _centerPlayer();
+//    });
 
     view.leaveFightEndButton.onClick.listen((e) {
       _switchMenu(view.fightingOptions, view.fightEnd);

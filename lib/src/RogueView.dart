@@ -127,7 +127,7 @@ class RogueView {
   final Element fightingOptions = querySelector("#fighting-options");
   final ButtonInputElement attackButton = querySelector("#attack");
   final ButtonInputElement usePotionButton = querySelector("#use-potion");
-  final ButtonInputElement leaveFightButton = querySelector("#leave-fight");
+//  final ButtonInputElement leaveFightButton = querySelector("#leave-fight");
 
   /* SKILLS */
   final Element skills = querySelector("#skills");
