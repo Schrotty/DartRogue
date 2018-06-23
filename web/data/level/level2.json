@@ -7,12 +7,12 @@
       {
         "id": 0,
         "helmet": 1,
-        "potions": [1, 1, 0]
+        "potions": [2, 0, 0]
       },
       {
         "id": 1,
         "dagger": 1,
-        "potions": [2, 1, 0]
+        "potions": [2, 0, 0]
       }
     ],
     "rows": [

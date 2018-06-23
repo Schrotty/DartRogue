@@ -61,7 +61,7 @@ class Monster extends Moveable {
   Monster() {}
 
   int calcDamage() {
-    int dmg = _attackPoints - player.armor / 5;
+    int dmg = _attackPoints - player.armor / 3;
     return dmg > 1 ? dmg.ceil() : 1;
   }
 

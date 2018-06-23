@@ -2,7 +2,7 @@
   {
     "stage": 0,
     "id": 0,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Green_Snake",
     "hp": 15,
     "attack": 1,
@@ -13,7 +13,7 @@
   {
     "stage": 0,
     "id": 1,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Red_Snake",
     "hp": 17,
     "attack": 2,
@@ -21,13 +21,13 @@
     "grantedXP": 14,
     "skin": "blob-purple",
     "loot": {
-      "potions": [2, 1, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
     "stage": 0,
     "id": 2,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Grey_Bat",
     "hp": 16,
     "attack": 1,
@@ -38,7 +38,7 @@
   {
     "stage": 0,
     "id": 3,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Red_Bat",
     "hp": 18,
     "attack": 2,
@@ -52,7 +52,7 @@
   {
     "stage": 0,
     "id": 4,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Green_Scorpion",
     "hp": 18,
     "attack": 2,
@@ -67,7 +67,7 @@
   {
     "stage": 0,
     "id": 5,
-    "lvl": 1,
+    "lvl": 2,
     "name": "Red_Scorpion",
     "hp": 20,
     "attack": 3,
@@ -82,7 +82,7 @@
   {
     "stage": 1,
     "id": 0,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Grey_Bat",
     "hp": 16,
     "attack": 1,
@@ -93,7 +93,7 @@
   {
     "stage": 1,
     "id": 1,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Red_Bat",
     "hp": 18,
     "attack": 2,
@@ -104,7 +104,7 @@
   {
     "stage": 1,
     "id": 2,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Green_Scorpion",
     "hp": 18,
     "attack": 2,
@@ -112,13 +112,13 @@
     "grantedXP": 16,
     "skin": "skull",
     "loot": {
-      "potions": [2, 1, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
     "stage": 1,
     "id": 3,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Red_Scorpion",
     "hp": 20,
     "attack": 3,
@@ -129,7 +129,7 @@
   {
     "stage": 1,
     "id": 4,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Kobold",
     "hp": 20,
     "attack": 3,
@@ -140,7 +140,7 @@
   {
     "stage": 1,
     "id": 5,
-    "lvl": 2,
+    "lvl": 3,
     "name": "Grey_Kobold",
     "hp": 24,
     "attack": 4,
@@ -155,7 +155,7 @@
   {
     "stage": 2,
     "id": 0,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Green_Scorpion",
     "hp": 18,
     "attack": 2,
@@ -166,7 +166,7 @@
   {
     "stage": 2,
     "id": 1,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Red_Scorpion",
     "hp": 20,
     "attack": 3,
@@ -177,7 +177,7 @@
   {
     "stage": 2,
     "id": 2,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Kobold",
     "hp": 20,
     "attack": 3,
@@ -192,7 +192,7 @@
   {
     "stage": 2,
     "id": 3,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Grey_Kobold",
     "hp": 24,
     "attack": 4,
@@ -203,7 +203,7 @@
   {
     "stage": 2,
     "id": 4,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Pumpkin",
     "hp": 22,
     "attack": 5,
@@ -217,7 +217,7 @@
   {
     "stage": 2,
     "id": 5,
-    "lvl": 3,
+    "lvl": 4,
     "name": "Dark_Pumpkin",
     "hp": 26,
     "attack": 5,
@@ -228,7 +228,7 @@
   {
     "stage": 3,
     "id": 0,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Mimic",
     "hp": 28,
     "attack": 6,
@@ -244,7 +244,7 @@
   {
     "stage": 3,
     "id": 1,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Kobold",
     "hp": 20,
     "attack": 3,
@@ -255,7 +255,7 @@
   {
     "stage": 3,
     "id": 2,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Grey_Kobold",
     "hp": 24,
     "attack": 4,
@@ -269,7 +269,7 @@
   {
     "stage": 3,
     "id": 3,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Pumpkin",
     "hp": 22,
     "attack": 5,
@@ -280,7 +280,7 @@
   {
     "stage": 3,
     "id": 4,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Dark_Pumpkin",
     "hp": 26,
     "attack": 5,
@@ -295,7 +295,7 @@
   {
     "stage": 3,
     "id": 5,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Ghoul",
     "hp": 26,
     "attack": 5,
@@ -306,7 +306,7 @@
   {
     "stage": 3,
     "id": 6,
-    "lvl": 4,
+    "lvl": 5,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
@@ -331,7 +331,7 @@
   {
     "stage": 4,
     "id": 1,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Pumpkin",
     "hp": 22,
     "attack": 5,
@@ -346,7 +346,7 @@
   {
     "stage": 4,
     "id": 2,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Dark_Pumpkin",
     "hp": 26,
     "attack": 5,
@@ -357,7 +357,7 @@
   {
     "stage": 4,
     "id": 3,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Dark_Pumpkin",
     "hp": 26,
     "attack": 5,
@@ -371,7 +371,7 @@
   {
     "stage": 4,
     "id": 4,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Ghoul",
     "hp": 26,
     "attack": 5,
@@ -382,7 +382,7 @@
   {
     "stage": 4,
     "id": 5,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Ghoul",
     "hp": 26,
     "attack": 5,
@@ -393,7 +393,7 @@
   {
     "stage": 4,
     "id": 6,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
@@ -404,7 +404,7 @@
   {
     "stage": 4,
     "id": 7,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
@@ -415,7 +415,7 @@
   {
     "stage": 4,
     "id": 8,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -423,13 +423,13 @@
     "grantedXP": 34,
     "skin": "ghast",
     "loot": {
-      "potions": [1, 1, 0]
+      "potions": [0, 2, 0]
     }
   },
   {
     "stage": 4,
     "id": 9,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -440,7 +440,7 @@
   {
     "stage": 4,
     "id": 10,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -448,13 +448,13 @@
     "grantedXP": 38,
     "skin": "ghast",
     "loot": {
-      "potions": [2, 1, 0]
+      "potions": [2, 0, 0]
     }
   },
   {
     "stage": 4,
     "id": 11,
-    "lvl": 5,
+    "lvl": 6,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -465,7 +465,7 @@
   {
     "stage": 5,
     "id": 0,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Ghoul",
     "hp": 26,
     "attack": 5,
@@ -476,7 +476,7 @@
   {
     "stage": 5,
     "id": 1,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Ghoul",
     "hp": 26,
     "attack": 5,
@@ -490,7 +490,7 @@
   {
     "stage": 5,
     "id": 2,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
@@ -501,7 +501,7 @@
   {
     "stage": 5,
     "id": 3,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
@@ -512,7 +512,7 @@
   {
     "stage": 5,
     "id": 4,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -526,7 +526,7 @@
   {
     "stage": 5,
     "id": 5,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -537,7 +537,7 @@
   {
     "stage": 5,
     "id": 6,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -548,7 +548,7 @@
   {
     "stage": 5,
     "id": 7,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -563,7 +563,7 @@
   {
     "stage": 5,
     "id": 8,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Red_Troll",
     "hp": 32,
     "attack": 6,
@@ -574,7 +574,7 @@
   {
     "stage": 5,
     "id": 9,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Red_Troll",
     "hp": 32,
     "attack": 6,
@@ -585,7 +585,7 @@
   {
     "stage": 5,
     "id": 10,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Black_Troll",
     "hp": 36,
     "attack": 6,
@@ -593,14 +593,13 @@
     "grantedXP": 44,
     "skin": "orc",
     "loot": {
-      "chest": 4,
-      "potions": [0, 0, 0]
+      "potions": [2, 0, 0]
     }
   },
   {
     "stage": 5,
     "id": 11,
-    "lvl": 6,
+    "lvl": 7,
     "name": "Black_Troll",
     "hp": 36,
     "attack": 6,
@@ -615,7 +614,7 @@
   {
     "stage": 6,
     "id": 0,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -626,7 +625,7 @@
   {
     "stage": 6,
     "id": 1,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Zombie",
     "hp": 28,
     "attack": 5,
@@ -637,7 +636,7 @@
   {
     "stage": 6,
     "id": 2,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -648,7 +647,7 @@
   {
     "stage": 6,
     "id": 3,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Green_Zombie",
     "hp": 30,
     "attack": 6,
@@ -659,7 +658,7 @@
   {
     "stage": 6,
     "id": 4,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Red_Troll",
     "hp": 32,
     "attack": 6,
@@ -673,7 +672,7 @@
   {
     "stage": 6,
     "id": 5,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Red_Troll",
     "hp": 32,
     "attack": 6,
@@ -687,7 +686,7 @@
   {
     "stage": 6,
     "id": 6,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Black_Troll",
     "hp": 36,
     "attack": 6,
@@ -698,7 +697,7 @@
   {
     "stage": 6,
     "id": 7,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Black_Troll",
     "hp": 36,
     "attack": 6,
@@ -709,7 +708,7 @@
   {
     "stage": 6,
     "id": 8,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Ogre",
     "hp": 36,
     "attack": 6,
@@ -724,7 +723,7 @@
   {
     "stage": 6,
     "id": 9,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Ogre",
     "hp": 36,
     "attack": 6,
@@ -738,7 +737,7 @@
   {
     "stage": 6,
     "id": 10,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Armed_Ogre",
     "hp": 40,
     "attack": 7,
@@ -749,7 +748,7 @@
   {
     "stage": 6,
     "id": 11,
-    "lvl": 7,
+    "lvl": 8,
     "name": "Armed_Ogre",
     "hp": 40,
     "attack": 7,

@@ -80,15 +80,6 @@ class Player extends Moveable {
 
     skin = "player-left";
 
-
-//    inventory.add(weapons['swords'][2][0]);
-//    inventory.add(armors['helmets'][4][0]);
-//    inventory.add(armors['chests'][4][0]);
-//    inventory.add(armors['gloves'][4][0]);
-//    inventory.add(armors['legs'][4][0]);
-//    inventory.add(armors['boots'][4][0]);
-
-
     _sortInventory();
   }
 
@@ -123,7 +114,7 @@ class Player extends Moveable {
     this._luck = (this._luck * scale).ceil();
     // Balancing: maybe use different scaling for crit? we'll see...
     this._critChance = (this._critChance * scale).ceil();
-    this._critDamage = (this._critDamage * scale);
+    this._critDamage = (this._critDamage * (scale + 9) / 10);
 
     this._maxHealth = (this._maxHealth * scale).ceil();
     this._currHealth = maxHealth; // restore to full health;

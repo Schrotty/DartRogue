@@ -11,7 +11,7 @@ class Settings {
   static int _constMod = 3;
   static int _luckMod = 2;
 
-  static double _monsterScaling = 1.35;
+  static double _monsterScaling = 1.3;
   static double _playerStatScaling = 1.15;
   static double _playerXpScaling = 1.3;
 
