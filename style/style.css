@@ -164,7 +164,7 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 192px;
+    grid-template-columns: auto 128px;
     background: #1c1117;
     background: url(../img/main/marble.png) repeat-x;
     background-size: contain;
@@ -324,6 +324,7 @@ h3 {
 
 #fighting-screen {
     animation: enter-fight 2s;
+    z-index: 70;
 }
 
 @keyframes enter-fight {
@@ -344,13 +345,6 @@ h3 {
 }
 
 #potion-screen-button {
-    width: 64px;
-    height: 64px;
-    background: url(../img/main/potion_select.png) no-repeat center !important;
-    background-size: 48px 48px !important;
-}
-
-#use-potion-global {
     width: 64px;
     height: 64px;
     background: url(../img/main/potion_select.png) no-repeat center !important;
@@ -894,7 +888,7 @@ h3 {
     width: 49vw;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
-    margin: 0;
+    margin: 2px;
     white-space: pre-wrap;
 }
 
@@ -1000,14 +994,27 @@ h3 {
 }
 
 #sprite-player {
-    animation: sprite-player 1s steps(2) infinite;
-    background-image: url("../img/icon/Player.png");
-    left: 20%
+    animation: sprite-player 1s steps(1) infinite;
+    left: 20%;
+    width: 134px;
+    height: 134px;
 }
 
 @keyframes sprite-player {
     100% {
-        background-position: -192px;
+        background: url(../img/icon/player.png) 0 0;
+    }
+
+    66% {
+        background: url(../img/icon/player.png) -134px 0;
+    }
+
+    33% {
+        background: url(../img/icon/player.png) -268px 0;
+    }
+
+    0% {
+        background: url(../img/icon/player.png) -402px 0;
     }
 }
 
