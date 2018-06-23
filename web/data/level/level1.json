@@ -4,11 +4,12 @@
     "monster": [0, 1, 2, 3, 5],
     "boss": 1,
     "treasures": [
-      {
-        "id": 0,
-        "potions": [1, 0, 0]
-      }
-    ],
+    {
+      "id": 0,
+      "axes": 1,
+      "potions": [1, 0, 0]
+    }
+  ],
     "rows": [
       {
         "id": 0,

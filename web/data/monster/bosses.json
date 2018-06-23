@@ -9,7 +9,7 @@
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "chest": 0
+      "chest": 2
     }
   },
   {
@@ -22,7 +22,7 @@
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "boots": 1
+      "boots": 2
     }
   },
   {
@@ -35,7 +35,7 @@
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "boots": 1
+      "legs": 3
     }
   },
   {
@@ -48,7 +48,7 @@
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "legs": 3
+      "sword": 1
     }
   },
   {
@@ -61,7 +61,7 @@
     "grantedXP": 56,
     "skin": "fire-blob",
     "loot": {
-      "boots": 4
+      "gloves": 4
     }
   },
   {
@@ -74,7 +74,7 @@
     "grantedXP": 56,
     "skin": "fire-blob",
     "loot": {
-      "gloves": 5
+      "helmets": 3
     }
   },
   {
@@ -85,9 +85,6 @@
     "attack": 8,
     "speed": 10,
     "grantedXP": 56,
-    "skin": "fire-blob",
-    "loot": {
-      "helmet": 5
-    }
+    "skin": "fire-blob"
   }
 ]
