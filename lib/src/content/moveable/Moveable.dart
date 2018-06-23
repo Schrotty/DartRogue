@@ -116,7 +116,7 @@ abstract class Moveable {
 
   get isAlive => _alive;
 
-  get position => _position;
+  Field get position => _position;
 
   set position(Field pos) => _position = pos;
 }

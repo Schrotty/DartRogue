@@ -64,6 +64,10 @@ class Monster extends Moveable {
   move() {
     super.move();
 
+    if (_detectPlayer()) {
+      calcPath(player.position.accessibleNeighbour);
+    }
+
     if (_patrolPoint == null && levels[player.currentStage].patrolPoints.isNotEmpty) {
       _spawn = _position;
 
@@ -74,6 +78,19 @@ class Monster extends Moveable {
       if (_patrolPoint == null) return;
       calcPath(_position.id == _spawn.id ? _patrolPoint : _spawn);
     }
+  }
+
+  bool _detectPlayer() {
+    List<Field> area = position._neighbours();
+    for (Field f in area) {
+      for (Field n in f._neighbours()) {
+        if (n.isNeighbour(player.position)) {
+          return true;
+        }
+      }
+    }
+
+    return false;
   }
 
   get attackPoints => this._attackPoints;

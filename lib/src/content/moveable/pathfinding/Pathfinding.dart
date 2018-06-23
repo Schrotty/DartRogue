@@ -4,7 +4,6 @@ class Pathfinding {
 
   PrioQueue<Node> _openList = new PrioQueue<Node>();
   PrioQueue<Node> _closedList = new PrioQueue<Node>();
-  //Set<Node> _closedList = new Set<Node>();
 
   Node _target;
   Node calcPath(Field start, Field target) {
@@ -24,7 +23,7 @@ class Pathfinding {
       _expandNode(current);
     }
 
-    return _target;
+    return null;
   }
 
   _expandNode(Node current) {
