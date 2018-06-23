@@ -87,6 +87,10 @@ h3 {
     text-shadow: 2px 2px black !important;
 }
 
+#name-input-menu {
+    width: 100vw;
+}
+
 #home div, #game-over div {
     margin: auto;
 }
