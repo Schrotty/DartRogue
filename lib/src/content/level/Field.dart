@@ -65,7 +65,7 @@ class Field {
     if (hasRight) fs.add(right);
     if (hasBottom) fs.add(bottom);
 
-    return fs;
+    return fs..shuffle();
   }
 
   get id => _id;

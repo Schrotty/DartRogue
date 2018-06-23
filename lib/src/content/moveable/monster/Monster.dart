@@ -80,9 +80,16 @@ class Monster extends Moveable {
   }
 
   bool _detectPlayer() {
-    return position._neighbours().any((f) =>
-        f._neighbours().any((n) =>
-          n.id == player.position.id));
+    List<Field> area = position._neighbours();
+    for (Field f in area) {
+      for (Field n in f._neighbours()) {
+        if (n.isNeighbour(player.position)) {
+          return true;
+        }
+      }
+    }
+
+    return false;
   }
 
   get attackPoints => this._attackPoints;
