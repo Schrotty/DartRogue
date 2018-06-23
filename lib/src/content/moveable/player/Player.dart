@@ -10,6 +10,8 @@ class Player extends Moveable {
   int _gainedXp;
   int _neededXp;
   int _currentStage;
+  int _highscorePoints;
+  String _highscoreName;
 
   Item helmet;
   Item chest;
@@ -67,6 +69,7 @@ class Player extends Moveable {
     _neededXp = data['baseXp'];
     _currentStage = 0;
     _inFight = false;
+    _highscorePoints = 0;
 
     skins = new List<String>()
       ..add("player-up")
@@ -77,7 +80,7 @@ class Player extends Moveable {
     skin = "player-left";
 
     inventory.add(weapons['swords'][1][0]);
-    inventory.add(armors['chests'][2][0]);
+    inventory.add(armors['chests'][1][0]);
     inventory.add(armors['chests'][1][0]);
     inventory.add(armors['boots'][1][0]);
     inventory.add(armors['helmets'][1][0]);
@@ -315,4 +318,12 @@ class Player extends Moveable {
   bool get hasFullHealth => (maxHealth - currHealth) == 0;
 
   get isInventoryFull => inventory.length >= 12;
+
+  get highscorePoints => _highscorePoints;
+
+  set highscorePoints(int p) => _highscorePoints = p;
+
+  get highscoreName => _highscoreName;
+
+  set highscoreName(String name) => _highscoreName = name;
 }

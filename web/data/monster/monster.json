@@ -8,11 +8,11 @@
     "attack": 1,
     "speed": 10,
     "grantedXP": 10,
-    "skin": "ghast",
+    "skin": "blob-purple",
     "loot": {
       "sword": 0,
       "boots": 0,
-      "potions": [2, 0, 2]
+      "potions": [2, 0, 0]
     }
   },
   {
@@ -35,7 +35,7 @@
     "attack": 1,
     "speed": 10,
     "grantedXP": 12,
-    "skin": "blob-purple"
+    "skin": "bat"
   },
   {
     "stage": 0,
@@ -46,7 +46,7 @@
     "attack": 2,
     "speed": 10,
     "grantedXP": 16,
-    "skin": "blob-purple"
+    "skin": "bat"
   },
   {
     "stage": 0,
@@ -56,7 +56,8 @@
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 16,
+    "skin": "skull"
   },
   {
     "stage": 0,
@@ -66,7 +67,8 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 20,
+    "skin": "skull"
   },
   {
     "stage": 1,
@@ -76,7 +78,8 @@
     "hp": 16,
     "attack": 1,
     "speed": 10,
-    "grantedXP": 12
+    "grantedXP": 12,
+    "skin": "bat"
   },
   {
     "stage": 1,
@@ -86,7 +89,8 @@
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 16,
+    "skin": "bat"
   },
   {
     "stage": 1,
@@ -96,7 +100,8 @@
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 16,
+    "skin": "skull"
   },
   {
     "stage": 1,
@@ -106,7 +111,8 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 20,
+    "skin": "skull"
   },
   {
     "stage": 1,
@@ -116,7 +122,8 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 22
+    "grantedXP": 22,
+    "skin": "orc"
   },
   {
     "stage": 1,
@@ -126,7 +133,8 @@
     "hp": 24,
     "attack": 4,
     "speed": 10,
-    "grantedXP": 26
+    "grantedXP": 26,
+    "skin": "orc"
   },
   {
     "stage": 2,
@@ -136,7 +144,8 @@
     "hp": 18,
     "attack": 2,
     "speed": 10,
-    "grantedXP": 16
+    "grantedXP": 16,
+    "skin": "skull"
   },
   {
     "stage": 2,
@@ -146,7 +155,8 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 20
+    "grantedXP": 20,
+    "skin": "skull"
   },
   {
     "stage": 2,
@@ -156,7 +166,8 @@
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 22
+    "grantedXP": 22,
+    "skin": "orc"
   },
   {
     "stage": 2,
@@ -166,7 +177,8 @@
     "hp": 24,
     "attack": 4,
     "speed": 10,
-    "grantedXP": 26
+    "grantedXP": 26,
+    "skin": "orc"
   },
   {
     "stage": 2,
@@ -176,7 +188,8 @@
     "hp": 22,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 28
+    "grantedXP": 28,
+    "skin": "demon"
   },
   {
     "stage": 2,
@@ -186,67 +199,85 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 3,
     "id": 0,
+    "lvl": 4,
+    "name": "Mimic",
+    "hp": 28,
+    "attack": 6,
+    "speed": 10,
+    "grantedXP": 36,
+    "skin": "mimic"
+  },
+  {
+    "stage": 3,
+    "id": 1,
     "lvl": 4,
     "name": "Kobold",
     "hp": 20,
     "attack": 3,
     "speed": 10,
-    "grantedXP": 22
+    "grantedXP": 22,
+    "skin": "orc"
   },
   {
     "stage": 3,
-    "id": 1,
+    "id": 2,
     "lvl": 4,
     "name": "Grey_Kobold",
     "hp": 24,
     "attack": 4,
     "speed": 10,
-    "grantedXP": 26
-  },
-  {
-    "stage": 3,
-    "id": 2,
-    "lvl": 4,
-    "name": "Pumpkin",
-    "hp": 22,
-    "attack": 5,
-    "speed": 10,
-    "grantedXP": 28
+    "grantedXP": 26,
+    "skin": "orc"
   },
   {
     "stage": 3,
     "id": 3,
     "lvl": 4,
-    "name": "Dark_Pumpkin",
-    "hp": 26,
+    "name": "Pumpkin",
+    "hp": 22,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 28,
+    "skin": "demon"
   },
   {
     "stage": 3,
     "id": 4,
     "lvl": 4,
-    "name": "Ghoul",
+    "name": "Dark_Pumpkin",
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 3,
     "id": 5,
     "lvl": 4,
+    "name": "Ghoul",
+    "hp": 26,
+    "attack": 5,
+    "speed": 10,
+    "grantedXP": 32,
+    "skin": "demon"
+  },
+  {
+    "stage": 3,
+    "id": 6,
+    "lvl": 4,
     "name": "Crazy_Ghoul",
     "hp": 28,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 36
+    "grantedXP": 36,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -256,7 +287,8 @@
     "hp": 22,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 28
+    "grantedXP": 28,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -266,7 +298,8 @@
     "hp": 22,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 28
+    "grantedXP": 28,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -276,7 +309,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -286,7 +320,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -296,7 +331,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -306,7 +342,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -316,7 +353,8 @@
     "hp": 28,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 36
+    "grantedXP": 36,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -326,7 +364,8 @@
     "hp": 28,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 36
+    "grantedXP": 36,
+    "skin": "demon"
   },
   {
     "stage": 4,
@@ -336,7 +375,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 4,
@@ -346,7 +386,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 4,
@@ -356,7 +397,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 4,
@@ -366,7 +408,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 5,
@@ -376,7 +419,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 5,
@@ -386,7 +430,8 @@
     "hp": 26,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 32
+    "grantedXP": 32,
+    "skin": "demon"
   },
   {
     "stage": 5,
@@ -396,7 +441,8 @@
     "hp": 28,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 36
+    "grantedXP": 36,
+    "skin": "demon"
   },
   {
     "stage": 5,
@@ -406,7 +452,8 @@
     "hp": 28,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 36
+    "grantedXP": 36,
+    "skin": "demon"
   },
   {
     "stage": 5,
@@ -416,7 +463,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 5,
@@ -426,7 +474,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 5,
@@ -436,7 +485,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 5,
@@ -446,7 +496,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 5,
@@ -456,7 +507,8 @@
     "hp": 32,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 42
+    "grantedXP": 42,
+    "skin": "orc"
   },
   {
     "stage": 5,
@@ -466,7 +518,8 @@
     "hp": 32,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 42
+    "grantedXP": 42,
+    "skin": "orc"
   },
   {
     "stage": 5,
@@ -476,7 +529,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 44
+    "grantedXP": 44,
+    "skin": "orc"
   },
   {
     "stage": 5,
@@ -486,7 +540,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 44
+    "grantedXP": 44,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -496,7 +551,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 6,
@@ -506,7 +562,8 @@
     "hp": 28,
     "attack": 5,
     "speed": 10,
-    "grantedXP": 34
+    "grantedXP": 34,
+    "skin": "ghast"
   },
   {
     "stage": 6,
@@ -516,7 +573,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 6,
@@ -526,7 +584,8 @@
     "hp": 30,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 38
+    "grantedXP": 38,
+    "skin": "ghast"
   },
   {
     "stage": 6,
@@ -536,7 +595,8 @@
     "hp": 32,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 42
+    "grantedXP": 42,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -546,7 +606,8 @@
     "hp": 32,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 42
+    "grantedXP": 42,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -556,7 +617,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 44
+    "grantedXP": 44,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -566,7 +628,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 44
+    "grantedXP": 44,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -576,7 +639,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 46
+    "grantedXP": 46,
+    "skin": "orc"
   },
   {
     "stage": 6,
@@ -586,7 +650,8 @@
     "hp": 36,
     "attack": 6,
     "speed": 10,
-    "grantedXP": 46
+    "grantedXP": 46,
+    "skin": "demon"
   },
   {
     "stage": 6,
@@ -596,7 +661,8 @@
     "hp": 40,
     "attack": 7,
     "speed": 10,
-    "grantedXP": 50
+    "grantedXP": 50,
+    "skin": "demon"
   },
   {
     "stage": 6,
@@ -606,6 +672,7 @@
     "hp": 40,
     "attack": 7,
     "speed": 10,
-    "grantedXP": 50
+    "grantedXP": 50,
+    "skin": "demon"
   }
 ]

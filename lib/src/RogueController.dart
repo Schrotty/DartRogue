@@ -3,6 +3,9 @@ part of rogue;
 class RogueController {
   final RogueView view = new RogueView();
 
+  Timer gameTimer;
+  Timer movementTimer;
+
   Map<int, Monster> monsters;
 
   RogueController() {
@@ -14,16 +17,26 @@ class RogueController {
 
   _registerMenuEvents() async {
     /* MAIN MENU EVENTS */
-    view.startButton.onClick.listen((e) async {
+    view.startButton.onClick.listen((e) {
+      _switchMenu(view.nameInput, view.mainMenu);
+    });
+
+    view.submitNameButton.onClick.listen((e) async {
       _switchMenu(view.game, view.home);
+
+      if ("" != view.nameInputField.value) {
+        player.highscoreName = view.nameInputField.value;
+      } else {
+        player.highscoreName = "Player";
+      }
 
       /* GAME TIMER */
       const oneSec = const Duration(milliseconds: 16);
-      new Timer.periodic(oneSec, (Timer t) => _update());
+      gameTimer = new Timer.periodic(oneSec, (Timer t) => _update());
 
       /* MOVEMENT TIMER */
       const ti = const Duration(milliseconds: 250);
-      new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
+      movementTimer = new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);
       querySelector("#tiles").onTouchMove.listen((onData) {
@@ -31,7 +44,21 @@ class RogueController {
       });
     });
 
+    view.backNameInputButton.onClick.listen((e) {
+      _switchMenu(view.mainMenu, view.nameInput);
+    });
+
     view.highscoreButton.onClick.listen((e) {
+      String first = "${window.localStorage['1'].split("-")[0]} - ${window.localStorage['1'].split(
+          "-")[1]}";
+      view.highscoreFirst.text = first;
+      String second = "${window.localStorage['2'].split("-")[0]} - ${window.localStorage['2'].split(
+          "-")[1]}";
+      view.highscoreSecond.text = second;
+      String third = "${window.localStorage['3'].split("-")[0]} - ${window.localStorage['3'].split(
+          "-")[1]}";
+      view.highscoreThird.text = third;
+
       _switchMenu(view.highscore, view.mainMenu);
     });
 
@@ -56,6 +83,16 @@ class RogueController {
     /* ABOUT EVENTS */
     view.backAboutButton.onClick.listen((e) {
       _switchMenu(view.mainMenu, view.about);
+    });
+
+    /* CREATE NEW GAMEDATA */
+    view.backGameOverButton.onClick.listen((e) {
+      _switchMenu(view.mainMenu, view.gameOver);
+      _switchMenu(view.fightingOptions, view.fightEnd);
+      _toggleOverlay(view.fightingScreen);
+      gameTimer.cancel();
+      movementTimer.cancel();
+      buildStorage();
     });
   }
 
@@ -234,8 +271,14 @@ class RogueController {
       _updateFightScreen();
 
       view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
-      view.monsterIcon.style.backgroundImage =
-          "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+      if ("Mimic" != monster.name) {
+        view.monsterIcon.style.backgroundImage =
+            "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+        _switchMenu(view.monsterIcon, view.mimicIcon);
+      } else {
+        view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/Mimic.png)";
+        _switchMenu(view.mimicIcon, view.monsterIcon);
+      }
 
       _toggleOverlay(view.fightingScreen);
     } else {
@@ -272,6 +315,7 @@ class RogueController {
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
         _addLootToPlayerInventoryFromMonster();
+        _addHighScorePoints();
         view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
@@ -281,7 +325,9 @@ class RogueController {
       }
 
       if (!player.isAlive) {
-        _switchMenu(view.gameOver, view.game);
+        _switchMenu(view.home, view.game);
+        _switchMenu(view.gameOver, view.nameInput);
+        _calcAndUpdateHighscore();
       }
 
       _switchMenu(view.fightEnd, view.fightingOptions);
@@ -316,7 +362,9 @@ class RogueController {
       // add potions
       for (int i = 0; i < 3; i++) {
         if (attacker.pots.containsKey(i) && 0 < attacker.pots[i]) {
-          loot += ", ";
+          if ("" != loot) {
+            loot += ", ";
+          }
           loot += "${potions[i].name} (${attacker.pots[i]})";
         }
       }
@@ -325,6 +373,40 @@ class RogueController {
     }
 
     return msg;
+  }
+
+  _addHighScorePoints() {
+    player.highscorePoints += attacker.level * (attacker.isBoss ? 30 : 10);
+    print(player.highscorePoints);
+  }
+
+  _calcAndUpdateHighscore() {
+    Map<int, String> highscores = new Map();
+    List<int> test = new List();
+
+    window.localStorage.forEach((k, v) {
+      String name = v.split("-")[0];
+      int score = int.parse(v.split("-")[1]);
+      highscores[score] = name;
+      test.add(score);
+    });
+
+    test.add(player.highscorePoints);
+
+    test.sort((b, a) => a.compareTo(b));
+
+    for (int i = 0; i < 3; i++) {
+      int value = test[i];
+      if (highscores.containsKey(value)) {
+        window.localStorage['${i + 1}'] = "${highscores[value]}-$value";
+      } else {
+        window.localStorage['${i + 1}'] = "${player.highscoreName}-$value";
+      }
+    }
+
+    window.localStorage.forEach((k, v) {
+      print(v);
+    });
   }
 
   _addLootToPlayerInventoryFromMonster() {
@@ -435,7 +517,9 @@ class RogueController {
       // add potions
       for (int i = 0; i < 3; i++) {
         if (t.treasurePotions.containsKey(i) && 0 < t.treasurePotions[i]) {
-          loot += ", ";
+          if ("" != loot) {
+            loot += ", ";
+          }
           loot += "${potions[i].name} (${t.treasurePotions[i]})";
         }
       }
@@ -464,6 +548,20 @@ class RogueController {
 
   _init() async {
     await buildStorage();
+    _buildHighscoreList();
+  }
+
+  _buildHighscoreList() {
+//    window.localStorage.clear();
+    if (window.localStorage.isEmpty) {
+      window.localStorage['1'] = "Player1-300";
+      window.localStorage['2'] = "Player2-200";
+      window.localStorage['3'] = "Player3-0";
+    }
+
+    window.localStorage.forEach((k, v) {
+      print(v);
+    });
   }
 
   _update() {
