@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "name":"Abgetragene Stiefel",
-    "display": "Stiefel",
+    "name": "Shabby Boots",
+    "display": "Boots",
     "type": 5,
     "value": 2,
     "quality": 0,
@@ -10,11 +10,38 @@
   },
   {
     "id": 1,
-    "name":"Verstärkte Stiefel",
-    "display": "Stiefel",
+    "name": "Sabatons",
+    "display": "Boots",
     "type": 5,
-    "value": 4,
-    "quality": 2,
+    "value": 3,
+    "quality": 1,
+    "icon": "boots/boots_dark_big.png"
+  },
+  {
+    "id": 2,
+    "name": "Heavy Sabatons",
+    "display": "Boots",
+    "type": 5,
+    "value": 3,
+    "quality": 1,
     "icon": "boots/boots_black_big.png"
+  },
+  {
+    "id": 3,
+    "name": "Heavy Sabatons",
+    "display": "Boots",
+    "type": 5,
+    "value": 3,
+    "quality": 1,
+    "icon": "boots/boots_dark_big.png"
+  },
+  {
+    "id": 4,
+    "name": "Magic Walkers of Death",
+    "display": "Boots",
+    "type": 5,
+    "value": 3,
+    "quality": 1,
+    "icon": "boots/boots_gold_big.png"
   }
 ]

@@ -36,7 +36,7 @@
     "value": 11,
     "quality": 3,
     "mods": {
-      "health": -3,
+      "health": -4,
       "armor": 4
     },
     "icon": "chests/chest_dark_hunter.png"
