@@ -84,7 +84,14 @@
             <div id="game-over" class="invisible">
                 <div id="end-screen">
                     <h1>YOU DIED</h1>
-                    <input type="button" id="back-game-over" value="Back to main menu">
+                    <p>
+                        You achieved <span id="loose-highscore"></span> points!
+                    </p>
+                    <ul>
+                        <li>
+                            <input type="button" id="back-game-over" value="Back to main menu">
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -92,7 +99,7 @@
                 <div id="win-screen">
                     <h1>You beat the final boss!</h1>
                     <p>
-                        You achieved <span id="win-highscore">100</span> points!
+                        You achieved <span id="win-highscore"></span> points!
                     </p>
                     <ul>
                         <li>

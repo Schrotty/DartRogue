@@ -195,6 +195,8 @@ class RogueView {
 
   /* GAME WON */
   final Element backGameWin = querySelector("#back-game-win");
+  final Element winScore = querySelector("#win-highscore");
+  final Element lostScore = querySelector("#loose-highscore");
 
   /* GLOBAL EVENT */
   final Element eventWindow = querySelector("#event-window");

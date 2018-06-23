@@ -395,6 +395,9 @@ class RogueController {
     window.localStorage.forEach((k, v) {
       print(v);
     });
+
+    view.winScore.text = player.highscorePoints.toString();
+    view.lostScore.text = player.highscorePoints.toString();
   }
 
   _addLootToPlayerInventoryFromMonster() {
