@@ -2,6 +2,7 @@ part of rogue;
 
 class Level {
   int _id;
+  String _name;
   int _tileCount = 0;
   int _rowCount = 0;
 
@@ -22,6 +23,11 @@ class Level {
 
   Level.build(int id, Map data) {
     _id = id;
+
+    _name = "Level - " + _id.toString();
+    if (data.containsKey('name')) {
+      _name = data['name'];
+    }
 
     if(data.containsKey('treasures')) {
       data['treasures'].forEach((Map treasure){
@@ -175,4 +181,6 @@ class Level {
   calcPathGraph() {
     _calcPathGraph(fields);
   }
+
+  String get name => _name;
 }

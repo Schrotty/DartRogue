@@ -86,9 +86,6 @@
     "speed": 10,
     "grantedXP": 56,
     "skin": "fire-blob",
-    "endboss": true,
-    "loot": {
-      "helmet": 5
-    }
+    "endboss": true
   }
 ]

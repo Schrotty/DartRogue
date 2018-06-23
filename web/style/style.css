@@ -71,6 +71,36 @@ h3 {
     width: 100vw;
 }
 
+#level-name-overlay {
+    padding: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#level-name {
+    font-size: 3vw;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.level-name-fadeout {
+    animation: level-name-fadeout 2s;
+}
+
+@keyframes level-name-fadeout {
+    0% {
+        z-index: 500;
+        opacity: 100;
+    }
+
+    100% {
+        z-index: 1;
+        opacity: 0;
+    }
+}
+
 #wrapper {
     min-width: 568px;
     min-height: 320px;
@@ -280,7 +310,7 @@ h3 {
     display: grid;
     padding: 0;
     position: absolute;
-    width: calc(100% - 64px);
+    width: 100vw;
     height: calc(100% - 64px);
 }
 
