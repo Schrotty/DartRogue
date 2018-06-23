@@ -1,7 +1,10 @@
 @media (orientation: portrait) {
+    html {
+        overflow: hidden;
+    }
+
     #portrait-message {
         display: block !important;
-        background: red !important;
         position: absolute;
     }
 
@@ -19,7 +22,8 @@ html {
     height: 100vh;
     width: 100vw;
     background: url(../img/main/background.png);
-    image-rendering: pixelated
+    image-rendering: pixelated;
+    overflow-x: hidden;
 }
 
 body {
@@ -42,8 +46,9 @@ ul {
 
 h1 {
     width: 100%;
-    font-size: 64px;
+    font-size: 7vw;
     text-align: center;
+    color: whitesmoke;
 }
 
 h3 {
@@ -57,6 +62,43 @@ h3 {
 
 #portrait-message {
     display: none;
+    height: 100vh;
+    text-align: center;
+    color: floralwhite;
+    font-size: xx-large;
+    background-color: #1c1117;
+    left: 0;
+    width: 100vw;
+}
+
+#level-name-overlay {
+    padding: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#level-name {
+    font-size: 3vw;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.level-name-fadeout {
+    animation: level-name-fadeout 2s;
+}
+
+@keyframes level-name-fadeout {
+    0% {
+        z-index: 500;
+        opacity: 100;
+    }
+
+    100% {
+        z-index: 1;
+        opacity: 0;
+    }
 }
 
 #wrapper {
@@ -72,6 +114,11 @@ h3 {
     text-align: center;
     color: white;
     height: 100%;
+    text-shadow: 2px 2px black !important;
+}
+
+#name-input-menu {
+    width: 100vw;
 }
 
 #home div, #game-over div {
@@ -87,7 +134,15 @@ h3 {
     width: 100vw;
 }
 
-#home li, #highscore li, #game-over li {
+#home li, #highscore li, #game-over li, #name-input-menu li {
+    height: 48px;
+    vertical-align: middle;
+    line-height: 42px;
+    margin: 5px 0 5px 0;
+    background: url(../img/main/button.png) no-repeat center;
+}
+
+.blabla {
     height: 48px;
     vertical-align: middle;
     line-height: 42px;
@@ -109,8 +164,14 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 64px;
-    background-image: url(../img/main/topBarBack.png);
+    grid-template-columns: auto 192px;
+    background: #1c1117;
+    background: url(../img/main/marble.png) repeat-x;
+    background-size: contain;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    z-index: 10;
 }
 
 #dungeon {
@@ -129,20 +190,19 @@ h3 {
 #side-bar input {
     width: 64px;
     height: 64px;
-    background-image: url(../img/icon/side-bar-frame.png);
+    /*background-image: url(../img/icon/side-bar-frame.png);*/
 }
 
 #command-buttons {
     display: grid;
     grid-area: buttons;
-    grid-template-areas: "hero";
+    grid-template-areas: "usePots pots hero";
     text-align: right;
 }
 
 #command-buttons input {
     width: 64px;
     height: 64px;
-    background: transparent;
 }
 
 #tiles, #movables {
@@ -168,8 +228,8 @@ h3 {
     height: 64px;
     color: whitesmoke;
     grid-template-columns: 100px 50px 100px;
-    grid-template-rows: 15px 17px 20px;
-    grid-template-areas: "l-title l-value empty-space" "health-bar health-bar health-bar" "ep-bar ep-bar ep-bar";
+    grid-template-rows: 17px 20px;
+    grid-template-areas: "health-bar health-bar health-bar" "ep-bar ep-bar ep-bar";
 }
 
 #health-container #level-key {
@@ -239,12 +299,18 @@ h3 {
     background: black;
 }
 
+.text-input {
+    text-align: center;
+    /*border-bottom: 5px solid black;*/
+    color: grey !important;
+}
+
 /* ########## OVERLAYS ########## */
 .overlay {
     display: grid;
     padding: 0;
     position: absolute;
-    width: calc(100% - 64px);
+    width: 100vw;
     height: calc(100% - 64px);
 }
 
@@ -256,20 +322,39 @@ h3 {
     overflow: hidden;
 }
 
-/* ########## DEBUG-SCREEN ########## */
-#debug-screen {
-    display: grid;
-    grid-template-rows: repeat(4, 32px);
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 5px;
-    grid-template-areas: "debug-title debug-title";
-    background-color: plum;
-    width: 100%;
+#fighting-screen {
+    animation: enter-fight 2s;
 }
 
-#debug-screen-title {
-    grid-area: debug-title;
-    text-align: center;
+@keyframes enter-fight {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+#hero-screen-button {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/hero_button.png) no-repeat center !important;
+    background-size: 48px 48px !important;
+}
+
+#potion-screen-button {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/potion_select.png) no-repeat center !important;
+    background-size: 48px 48px !important;
+}
+
+#use-potion-global {
+    width: 64px;
+    height: 64px;
+    background: url(../img/main/potion_select.png) no-repeat center !important;
+    background-size: 48px 48px !important;
 }
 
 /* ########## HERO-SCREEN ########## */
@@ -297,7 +382,7 @@ h3 {
     justify-items: center;
     align-items: center;
     grid-area: top-bar;
-    background: indianred;
+    background: #1c1117;
     color: whitesmoke;
 }
 
@@ -378,8 +463,9 @@ h3 {
 #hero-screen .item {
     width: 64px;
     height: 64px;
-    background-size: 64px 64px;
+    background-size: 48px 48px;
     background-repeat: no-repeat;
+    background-position: center;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
@@ -715,7 +801,7 @@ h3 {
 /* ########## HERO/ FIGHT-SCREEN ########## */
 #fighting-screen {
     color: white;
-    background: url("../img/main/cave.png");
+    background: url(../img/main/fight_background.png);
     background-size: contain;
     position: absolute;
     height: calc(100vh - 64px);
@@ -724,12 +810,14 @@ h3 {
 }
 
 #potions-menu {
-    background-color: greenyellow;
     position: fixed;
-    right: 10%;
-    height: 15%;
-    width: 30%;
-    border: 1px solid black;
+    height: 42vw;
+    width: 20vw;
+    right: 8vw;
+    border: 5px solid black;
+    background: indianred;
+    z-index: 100;
+    padding: 3px;
 }
 
 .tile {
@@ -739,8 +827,20 @@ h3 {
 }
 
 #fighting-options, #skills, #fight-end {
+    color: white;
     width: 100%;
     height: 40%;
+    border-top: 1px solid black;
+    background: url("../img/main/background.png");
+    z-index: 60;
+    position: absolute;
+    bottom: 0;
+}
+
+#event-window {
+    color: white;
+    width: 100%;
+    height: 35%;
     border-top: 1px solid black;
     background: url("../img/main/background.png");
     z-index: 60;
@@ -791,24 +891,41 @@ h3 {
 .bar-button {
     color: white;
     height: 32px;
-    width: 44vw;
+    width: 49vw;
     background: url(../img/main/button.png) no-repeat center;
     background-size: contain;
+    margin: 0;
+    white-space: pre-wrap;
 }
 
 .potion-button {
-    height: 100%;
-    width: 33%;
-    float: left;
-    text-align: center;
-    horiz-align: center;
+    color: black;
+    font-weight: bold;
+    height: 14vw;
+    width: 20vw;
+    text-align: right;
+}
+
+.potion-button-1 {
+    background: url(../img/items/potions/potion_s.png) no-repeat;
+    background-size: contain;
+}
+
+.potion-button-2 {
+    background: url(../img/items/potions/potion_m.png) no-repeat;
+    background-size: contain;
+}
+
+.potion-button-3 {
+    background: url(../img/items/potions/potion_l.png) no-repeat;
+    background-size: contain;
 }
 
 .text-window {
     height: 80px;
     background: url(../img/main/plainText2.png) no-repeat center;
-    /*margin: 2px 0 2px 0;*/
-    /*padding: 0 5px 0 5px;*/
+    background-size: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -905,9 +1022,20 @@ h3 {
     }
 }
 
+#sprite-mimic {
+    animation: sprite-mimic 6s steps(54) infinite;
+    left: 80%
+}
+
+@keyframes sprite-mimic {
+    100% {
+        background-position: -5184px;
+    }
+}
+
 .centered {
     text-align: center;
-    /*padding: 5px 0 5px 0;*/
+    width: 97%;
 }
 
 /* ##### TILE STYLES ##### */
@@ -934,41 +1062,6 @@ h3 {
 
 .player-up {
     background: url(../img/player.png) 0 -96px !important;
-}
-
-.monster-right {
-    background: url(../img/monsters/map/demon.png) 0 0 !important;
-}
-
-.monster-left {
-    background: url(../img/monsters/map/demon.png) 0 -32px !important;
-}
-
-.monster-down {
-    background: url(../img/monsters/map/demon.png) 0 -64px !important;
-}
-
-.monster-up {
-    background: url(../img/monsters/map/demon.png) 0 -96px !important;
-}
-
-.monster {
-    background: url(../img/monsters/map/demon.png) -64px 0;
-    animation: tile-monster 0.5s steps(2) infinite;
-}
-
-@keyframes tile-monster {
-    100% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
-    }
-
-    50% {
-        background: url(../img/monsters/map/demon.png) -64px 0;
-    }
-
-    0% {
-        background: url(../img/monsters/map/demon.png) 0 0;
-    }
 }
 
 /* WALLS */
@@ -1129,6 +1222,18 @@ h3 {
     background: url(../img/main/tiles.png) -96px -256px;
 }
 
-.treasure {
-    background: url(../img/main/tiles.png) -480px -416px, url(../img/main/tiles.png) -64px -96px;
+.treasure-opened {
+    background: url(../img/main/tiles.png) -480px -417px !important;
+}
+
+.treasure-closed {
+    background: url(../img/main/tiles.png) -480px -353px !important;
+}
+
+.exit-closed {
+    background: url(../img/main/exits.png) 0 -32px !important;
+}
+
+.exit-opened {
+    background: url(../img/main/exits.png) -32px -32px !important;
 }

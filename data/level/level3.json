@@ -1,6 +1,21 @@
 [
   {
-    "id": 0,
+    "id": 3,
+    "monster": [0, 1, 2, 3, 5, 6],
+    "boss": 3,
+    "treasures": [
+      {
+        "id": 0,
+        "hammer": 1,
+        "potions": [0, 1, 0]
+      },
+
+      {
+        "id": 1,
+        "legs": 2,
+        "potions": [0, 1, 0]
+      }
+    ],
     "rows": [
       {
         "id": 0,
@@ -253,6 +268,7 @@
           {
             "id": 15,
             "accessible": true,
+            "monster": true,
             "style": "floor-wall-top"
           }
         ]
@@ -303,8 +319,8 @@
           {
             "id": 8,
             "accessible": true,
-            "monster": 2,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 9,
@@ -439,8 +455,8 @@
           {
             "id": 1,
             "accessible": true,
-            "monster": 5,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 2,
@@ -580,8 +596,8 @@
           {
             "id": 12,
             "accessible": true,
-            "monster": 4,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 13,
@@ -812,8 +828,8 @@
           {
             "id": 7,
             "accessible": true,
-            "monster": 0,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 8,
@@ -848,8 +864,8 @@
           {
             "id": 14,
             "accessible": true,
-            "monster": 99,
-            "style": "floor-default-boss"
+            "boss": true,
+            "style": "floor-default"
           },
           {
             "id": 15,
@@ -1120,6 +1136,7 @@
           {
             "id": 0,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
@@ -1195,6 +1212,7 @@
           {
             "id": 15,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           }
         ]
@@ -1205,6 +1223,7 @@
           {
             "id": 0,
             "accessible": true,
+
             "style": "floor-default"
           },
           {
@@ -1225,8 +1244,8 @@
           {
             "id": 4,
             "accessible": true,
-            "monster": 3,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 5,
@@ -1261,8 +1280,8 @@
           {
             "id": 11,
             "accessible": true,
-            "monster": 1,
-            "style": "floor-default-monster"
+            "monster": true,
+            "style": "floor-default"
           },
           {
             "id": 12,

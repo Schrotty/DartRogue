@@ -10,8 +10,8 @@
       "luck": 5
     },
     "talents": {
-      "crit-chance": 5,
-      "crit-damage-mod": 1.5
+      "crit-chance": 3,
+      "crit-damage-mod": 1.30
     },
     "armor": {
       "helmet": 0,
@@ -23,6 +23,6 @@
     "weapon": [
       "daggers", 0
     ],
-    "potions": [5, 1, 1]
+    "potions": [2, 0, 0]
   }
 ]
