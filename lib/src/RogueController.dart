@@ -252,11 +252,6 @@ class RogueController {
     });
 
     // ### POTIONS MENU ###
-    view.usePotionButtonGlobal.onClick.listen((e) {
-      player.usePotion(player.selectedPot);
-      _updatePotionMenu();
-    });
-
     view.potionsMenuButton.onClick.listen((e) {
       _openPotionsMenu();
     });
@@ -654,14 +649,14 @@ class RogueController {
     DivElement e = querySelector("#tile-${entity.position.id}");
     e.children[0].classes.addAll([entity.skin, "entity"]);
 
-    (entity.position as Field).accessible = false;
+    entity.position.accessible = false;
   }
 
   _despawnEntity(Moveable entity) {
     DivElement e = querySelector("#tile-${entity.position.id}");
     e.children[0].classes.removeAll([entity.skin, "entity"]);
 
-    (entity.position as Field).accessible = true;
+    entity.position.accessible = true;
   }
 
   _centerPlayer() {

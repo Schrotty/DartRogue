@@ -164,7 +164,7 @@ h3 {
     display: grid;
     grid-area: upper-bar;
     grid-template-areas: "health buttons";
-    grid-template-columns: auto 192px;
+    grid-template-columns: auto 128px;
     background: #1c1117;
     background: url(../img/main/marble.png) repeat-x;
     background-size: contain;
@@ -345,13 +345,6 @@ h3 {
 }
 
 #potion-screen-button {
-    width: 64px;
-    height: 64px;
-    background: url(../img/main/potion_select.png) no-repeat center !important;
-    background-size: 48px 48px !important;
-}
-
-#use-potion-global {
     width: 64px;
     height: 64px;
     background: url(../img/main/potion_select.png) no-repeat center !important;
