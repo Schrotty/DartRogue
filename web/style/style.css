@@ -1000,14 +1000,27 @@ h3 {
 }
 
 #sprite-player {
-    animation: sprite-player 1s steps(2) infinite;
-    background-image: url("../img/icon/Player.png");
-    left: 20%
+    animation: sprite-player 1s steps(1) infinite;
+    left: 20%;
+    width: 134px;
+    height: 134px;
 }
 
 @keyframes sprite-player {
     100% {
-        background-position: -192px;
+        background: url(../img/icon/player.png) 0 0;
+    }
+
+    66% {
+        background: url(../img/icon/player.png) -134px 0;
+    }
+
+    33% {
+        background: url(../img/icon/player.png) -268px 0;
+    }
+
+    0% {
+        background: url(../img/icon/player.png) -402px 0;
     }
 }
 
