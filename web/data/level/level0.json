@@ -6,12 +6,12 @@
     "treasures": [
       {
         "id": 0,
-        "axes": 0,
+        "axe": 0,
         "potions": [5, 0, 0]
       },
       {
         "id": 1,
-        "hammers": 0,
+        "hammer": 0,
         "gloves": 1,
         "potions": [0, 0, 0]
       }

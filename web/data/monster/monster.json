@@ -8,7 +8,11 @@
     "attack": 1,
     "speed": 10,
     "grantedXP": 10,
-    "skin": "blob-purple"
+    "skin": "blob-purple",
+    "loot": {
+      "hammer": 2,
+      "potions": [0, 0, 0]
+    }
   },
   {
     "stage": 0,
@@ -148,7 +152,7 @@
     "grantedXP": 26,
     "skin": "orc",
     "loot": {
-      "daggers": 1,
+      "dagger": 1,
       "potions": [0, 0, 0]
     }
   },
@@ -185,7 +189,7 @@
     "grantedXP": 22,
     "skin": "orc",
     "loot": {
-      "swords": 0,
+      "sword": 0,
       "potions": [0, 0, 0]
     }
   },
@@ -237,7 +241,7 @@
     "skin": "mimic",
     "static": true,
     "loot": {
-      "axes": 2,
+      "axe": 2,
       "potions": [0, 0, 0]
     }
   },
@@ -339,7 +343,7 @@
     "grantedXP": 28,
     "skin": "demon",
     "loot": {
-      "daggers": 2,
+      "dagger": 2,
       "potions": [0, 0, 0]
     }
   },
@@ -556,7 +560,7 @@
     "grantedXP": 38,
     "skin": "ghast",
     "loot": {
-      "helmets": 4,
+      "helmet": 4,
       "potions": [0, 0, 0]
     }
   },
@@ -593,7 +597,7 @@
     "grantedXP": 44,
     "skin": "orc",
     "loot": {
-      "chests": 4,
+      "chest": 4,
       "potions": [0, 0, 0]
     }
   },
@@ -608,7 +612,7 @@
     "grantedXP": 44,
     "skin": "orc",
     "loot": {
-      "swords": 2,
+      "sword": 2,
       "potions": [0, 0, 0]
     }
   },
@@ -667,8 +671,7 @@
     "grantedXP": 42,
     "skin": "orc",
     "loot": {
-      "hammers": 2,
-      "potions": [0, 0, 0]
+      "potions": [2, 0, 0]
     }
   },
   {

@@ -6,7 +6,7 @@
     "treasures": [
       {
         "id": 0,
-        "chests": 1,
+        "chest": 1,
         "potions": [1, 0, 0]
       },
       {
@@ -4780,7 +4780,6 @@
           {
             "id": 25,
             "accessible": false,
-            "treasure": true,
             "style": "wall-top-2"
           },
           {
@@ -4922,6 +4921,7 @@
           {
             "id": 20,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {

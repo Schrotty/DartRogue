@@ -6,12 +6,12 @@
     "treasures": [
       {
         "id": 0,
-        "helmets": 2,
+        "helmet": 2,
         "potions": [0, 0, 1]
       },
       {
         "id": 1,
-        "hammers": 2,
+        "hammer": 2,
         "potions": [3, 0, 0]
       }
     ],
@@ -282,7 +282,7 @@
           {
             "id": 19,
             "accessible": false,
-            "style": "wall-middle-2"
+            "style": "none"
           },
           {
             "id": 20,
