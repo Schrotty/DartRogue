@@ -211,7 +211,8 @@
     "attack": 6,
     "speed": 10,
     "grantedXP": 36,
-    "skin": "mimic"
+    "skin": "mimic",
+    "static": true
   },
   {
     "stage": 3,

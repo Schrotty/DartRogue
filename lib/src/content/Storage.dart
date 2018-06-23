@@ -161,7 +161,7 @@ _buildMonstersPerLvl(int lvl) async {
 _buildBosses() async {
   _requestData(Settings.getDataPath() + 'monster/bosses.json').then((response) {
     JSON.decode(response).forEach((m) {
-      bosses[m['id']] = createMonster(m)..isBoss = true;
+      bosses[m['id']] = createMonster(m)..isBoss = true..isStatic = true;
     });
   });
 }
