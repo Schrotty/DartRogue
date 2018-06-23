@@ -6,6 +6,7 @@ class Monster extends Moveable {
   bool _boss;
   Field _patrolPoint;
   Field _spawn;
+  bool _endBoss = false;
 
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
@@ -23,6 +24,10 @@ class Monster extends Moveable {
 
     if (data.containsKey('static')) {
       this._static = data['static'];
+    }
+
+    if (data.containsKey('endboss')) {
+      this._endBoss = data['endboss'];
     }
 
     if (data.containsKey('loot')) {
@@ -112,6 +117,10 @@ class Monster extends Moveable {
   Field get patrolPoint => _patrolPoint;
 
   set patrolPoint(Field patrolPoint) => _patrolPoint = patrolPoint;
+
+  bool get isEndboss => _endBoss;
+
+  set isEndboss(bool isEndboss) => _endBoss = isEndboss;
 
   toString() {
     return this.name;

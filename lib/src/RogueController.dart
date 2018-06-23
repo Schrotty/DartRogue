@@ -21,6 +21,8 @@ class RogueController {
       _switchMenu(view.nameInput, view.mainMenu);
     });
 
+    view.nameInputField.onClick.listen((e) => view.nameInputField.value = "");
+
     view.submitNameButton.onClick.listen((e) async {
       _switchMenu(view.game, view.home);
 
@@ -90,6 +92,16 @@ class RogueController {
       _switchMenu(view.mainMenu, view.gameOver);
       _switchMenu(view.fightingOptions, view.fightEnd);
       _toggleOverlay(view.fightingScreen);
+
+      gameTimer.cancel();
+      movementTimer.cancel();
+      buildStorage();
+    });
+
+    /* GAME WON EVENTS */
+    view.backGameWin.onClick.listen((e) {
+      _switchMenu(view.mainMenu, view.gameWin);
+
       gameTimer.cancel();
       movementTimer.cancel();
       buildStorage();
@@ -140,12 +152,21 @@ class RogueController {
 
         // check for exit
         if (tmp.isExit && player.position.isNeighbour(tmp)) {
+          if (player.killedEndboss) {
+            _switchMenu(view.home, view.game);
+            _switchMenu(view.gameWin, view.nameInput);
+            _calcAndUpdateHighscore();
+            return;
+          }
+
           player.currentStage += 1;
           _renderLevel(player.currentStage);
           _spawnPlayer(player.currentStage);
         }
+
         return;
       }
+
       if (!clicked.classes.contains("player")) {
         var tmp = levels[stage].getField(int.parse(clicked.id.substring(5)));
         if (tmp.isAccessible) {
@@ -320,6 +341,11 @@ class RogueController {
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           _activateExit(player.currentStage);
+
+          if ((levels[player.currentStage].boss as Monster).isEndboss) {
+            player.killedEnboss = true;
+          }
+
           levels[player.currentStage].boss = null;
         }
       }
@@ -332,6 +358,7 @@ class RogueController {
 
       _switchMenu(view.fightEnd, view.fightingOptions);
     }
+
     _updateFightScreen();
   }
 

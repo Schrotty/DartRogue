@@ -16,7 +16,7 @@
     <div id="wrapper">
         <div id="home">
             <div id="start-menu" class="visible">
-                <img src="img/main/title.png">
+                <h1>DartRogue</h1>
 
                 <ul>
                     <li><input type="button" id="start-game-button" value="New Game"></li>
@@ -27,7 +27,7 @@
             </div>
 
             <div id="name-input-menu" class="invisible">
-                <img src="img/main/highscore.png">
+                <h1>New Game</h1>
                 <ul>
                     <li><input type="text" id="name-input" class="text-input" value="Enter your name here"></li>
                     <li><input type="button" id="name-submit"  value="Start game!"></li>
@@ -36,7 +36,7 @@
             </div>
 
             <div id="highscore" class="invisible">
-                <img src="img/main/highscore.png">
+                <h1>Highscore</h1>
 
                 <div id="highscore-board">
                     <ul>
@@ -52,7 +52,7 @@
             </div>
 
             <div id="how-to-play" class="invisible">
-                <img src="img/main/howToPlay.png">
+                <h1>How To Play</h1>
 
                 <div class="plain">
                     <p>
@@ -67,7 +67,7 @@
             </div>
 
             <div id="about" class="invisible">
-                <img src="img/main/about.png">
+                <h1>About</h1>
 
                 <div class="plain">
                     <p>
@@ -85,6 +85,20 @@
                 <div id="end-screen">
                     <h1>YOU DIED</h1>
                     <input type="button" id="back-game-over" value="Back to main menu">
+                </div>
+            </div>
+
+            <div id="game-win" class="invisible">
+                <div id="win-screen">
+                    <h1>You beat the final boss!</h1>
+                    <p>
+                        You achieved <span id="win-highscore">100</span> points!
+                    </p>
+                    <ul>
+                        <li>
+                            <input type="button" id="back-game-win" value="Back to main menu">
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

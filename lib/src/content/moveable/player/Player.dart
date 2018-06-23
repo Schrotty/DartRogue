@@ -12,6 +12,7 @@ class Player extends Moveable {
   int _currentStage;
   int _highscorePoints;
   String _highscoreName;
+  bool _killedEndboss;
 
   Item helmet;
   Item chest;
@@ -326,4 +327,8 @@ class Player extends Moveable {
   get highscoreName => _highscoreName;
 
   set highscoreName(String name) => _highscoreName = name;
+
+  bool get killedEndboss => _killedEndboss;
+
+  set killedEnboss(bool killedEndboss) => _killedEndboss = killedEndboss;
 }

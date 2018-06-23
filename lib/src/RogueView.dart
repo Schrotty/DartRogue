@@ -5,6 +5,7 @@ class RogueView {
   final Element nameInput = querySelector("#name-input-menu");
   final Element game = querySelector("#game");
   final Element gameOver = querySelector("#game-over");
+  final Element gameWin = querySelector("#game-win");
   final Element dungeon = querySelector("#dungeon");
   final Element tiles = querySelector("#tiles");
   final Element player = querySelector(".player");
@@ -191,6 +192,9 @@ class RogueView {
   final ButtonInputElement potionSmallButton = querySelector("#potion-s");
   final ButtonInputElement potionMediumButton = querySelector("#potion-m");
   final ButtonInputElement potionLargeButton = querySelector("#potion-l");
+
+  /* GAME WON */
+  final Element backGameWin = querySelector("#back-game-win");
 
   /* GLOBAL EVENT */
   final Element eventWindow = querySelector("#event-window");
