@@ -4,12 +4,12 @@
     "lvl": 2,
     "name": "Golem",
     "hp": 38,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "chest": 0
+      "chest": 2
     }
   },
   {
@@ -17,12 +17,12 @@
     "lvl": 3,
     "name": "Golem",
     "hp": 38,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 52,
     "skin": "fire-blob",
     "loot": {
-      "boots": 1
+      "boots": 2
     }
   },
   {
@@ -30,20 +30,7 @@
     "lvl": 5,
     "name": "Golem",
     "hp": 38,
-    "attack": 8,
-    "speed": 10,
-    "grantedXP": 52,
-    "skin": "fire-blob",
-    "loot": {
-      "boots": 1
-    }
-  },
-  {
-    "id": 3,
-    "lvl": 6,
-    "name": "Golem",
-    "hp": 38,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 52,
     "skin": "fire-blob",
@@ -52,16 +39,29 @@
     }
   },
   {
+    "id": 3,
+    "lvl": 6,
+    "name": "Golem",
+    "hp": 38,
+    "attack": 7,
+    "speed": 10,
+    "grantedXP": 52,
+    "skin": "fire-blob",
+    "loot": {
+      "sword": 1
+    }
+  },
+  {
     "id": 4,
     "lvl": 7,
     "name": "Dark_Golem",
     "hp": 40,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 56,
     "skin": "fire-blob",
     "loot": {
-      "boots": 4
+      "gloves": 4
     }
   },
   {
@@ -69,12 +69,12 @@
     "lvl": 8,
     "name": "Dark_Golem",
     "hp": 40,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 56,
     "skin": "fire-blob",
     "loot": {
-      "gloves": 5
+      "helmet": 3
     }
   },
   {
@@ -82,7 +82,7 @@
     "lvl": 9,
     "name": "Dark_Golem",
     "hp": 40,
-    "attack": 8,
+    "attack": 7,
     "speed": 10,
     "grantedXP": 56,
     "skin": "fire-blob",

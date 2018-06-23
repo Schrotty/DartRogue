@@ -335,9 +335,9 @@ class RogueController {
 
     if (!attacker.isAlive || !player.isAlive) {
       if (!attacker.isAlive) {
+        view.fightEndMessage.text = _fightEndMessage();
         _addLootToPlayerInventoryFromMonster();
         _addHighScorePoints();
-        view.fightEndMessage.text = _fightEndMessage();
         player.gainXP(attacker.grantedXP);
         if (levels[player.currentStage].boss != null && !levels[player.currentStage].boss.isAlive) {
           _activateExit(player.currentStage);
@@ -362,45 +362,6 @@ class RogueController {
     _updateFightScreen();
   }
 
-  String _fightEndMessage() {
-    String msg = "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
-        .grantedXP} XP!";
-
-    if (attacker.grantedXP >= player.leftXpUntilLvlUp) {
-      msg += " You reached level ${player.level + 1}!";
-    }
-
-    if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
-      // add items
-      String loot = "";
-      int size = 0;
-      attacker.loot.forEach((k, v) {
-        if (armors.containsKey(k)) {
-          loot += "${armors[k][v][0].name}";
-        } else {
-          loot += "${weapons[k][v][0].name}";
-        }
-        size++;
-        if (attacker.loot.length > size) {
-          loot += ", ";
-        }
-      });
-
-      // add potions
-      for (int i = 0; i < 3; i++) {
-        if (attacker.pots.containsKey(i) && 0 < attacker.pots[i]) {
-          if ("" != loot) {
-            loot += ", ";
-          }
-          loot += "${potions[i].name} (${attacker.pots[i]})";
-        }
-      }
-
-      msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
-    }
-
-    return msg;
-  }
 
   _addHighScorePoints() {
     player.highscorePoints += attacker.level * (attacker.isBoss ? 30 : 10);
@@ -521,6 +482,47 @@ class RogueController {
       levels[player.currentStage].monsterDrops.remove(tmp.id);
       tmp.accessible = true;
     }
+  }
+
+  String _fightEndMessage() {
+    String msg = "You killed ${attacker.name.replaceAll("_", " ")}, you gained ${attacker
+        .grantedXP} XP!";
+
+    if (attacker.grantedXP >= player.leftXpUntilLvlUp) {
+      msg += " You reached level ${player.level + 1}!";
+    }
+
+    if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
+      // add items
+      String loot = "";
+      int size = 0;
+
+      attacker.loot.forEach((k, v) {
+        if (armors.containsKey(k)) {
+          loot += "${armors[k][v][0].name}";
+        } else {
+          loot += "${weapons[k][v][0].name}";
+        }
+        size++;
+        if (attacker.loot.length > size) {
+          loot += ", ";
+        }
+      });
+
+      // add potions
+      for (int i = 0; i < 3; i++) {
+        if (attacker.pots.containsKey(i) && 0 < attacker.pots[i]) {
+          if ("" != loot) {
+            loot += ", ";
+          }
+          loot += "${potions[i].name} (${attacker.pots[i]})";
+        }
+      }
+
+      msg += " ${attacker.name.replaceAll("_", " ")} dropped: $loot";
+    }
+
+    return msg;
   }
 
   _treasureMessage(Treasure t) {

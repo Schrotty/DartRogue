@@ -3,6 +3,18 @@
     "id": 5,
     "monster": [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11],
     "boss": 5,
+    "treasures": [
+      {
+        "id": 0,
+        "helmet": 2,
+        "potions": [0, 0, 1]
+      },
+      {
+        "id": 1,
+        "hammer": 2,
+        "potions": [3, 0, 0]
+      }
+    ],
     "rows": [
       {
         "id": 0,
@@ -270,7 +282,7 @@
           {
             "id": 19,
             "accessible": false,
-            "style": "wall-middle-2"
+            "style": "none"
           },
           {
             "id": 20,
@@ -746,6 +758,7 @@
           {
             "id": 15,
             "accessible": true,
+            "exit": true,
             "style": "space-top-left-middle"
           },
           {
@@ -901,7 +914,6 @@
           {
             "id": 13,
             "accessible": true,
-            "boss": true,
             "style": "floor-default"
           },
           {
@@ -912,6 +924,7 @@
           {
             "id": 15,
             "accessible": true,
+            "boss": true,
             "style": "space-middle-left-middle"
           },
           {
@@ -1022,6 +1035,7 @@
           {
             "id": 4,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {
@@ -1122,6 +1136,7 @@
           {
             "id": 24,
             "accessible": true,
+            "treasure": true,
             "style": "floor-wall-top"
           },
           {

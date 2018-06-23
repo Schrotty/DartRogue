@@ -80,18 +80,14 @@ class Player extends Moveable {
 
     skin = "player-left";
 
-    inventory.add(weapons['daggers'][0][0]);
-    inventory.add(weapons['daggers'][1][0]);
-    inventory.add(weapons['daggers'][2][0]);
-    inventory.add(weapons['swords'][0][0]);
-    inventory.add(weapons['swords'][1][0]);
-    inventory.add(weapons['swords'][2][0]);
-    inventory.add(weapons['hammers'][0][0]);
-    inventory.add(weapons['hammers'][1][0]);
-    inventory.add(weapons['hammers'][2][0]);
-    inventory.add(weapons['axes'][0][0]);
-    inventory.add(weapons['axes'][1][0]);
-    inventory.add(weapons['axes'][2][0]);
+
+//    inventory.add(weapons['swords'][2][0]);
+//    inventory.add(armors['helmets'][4][0]);
+//    inventory.add(armors['chests'][4][0]);
+//    inventory.add(armors['gloves'][4][0]);
+//    inventory.add(armors['legs'][4][0]);
+//    inventory.add(armors['boots'][4][0]);
+
 
     _sortInventory();
   }

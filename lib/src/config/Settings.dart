@@ -11,8 +11,8 @@ class Settings {
   static int _constMod = 3;
   static int _luckMod = 2;
 
-  static double _monsterScaling = 1.2;
-  static double _playerStatScaling = 1.1;
+  static double _monsterScaling = 1.35;
+  static double _playerStatScaling = 1.15;
   static double _playerXpScaling = 1.3;
 
   static const _refreshRate = 1/60; // 60Hz => 16,67ms
