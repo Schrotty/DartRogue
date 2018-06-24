@@ -370,7 +370,6 @@ class RogueController {
     test.add(player.highscorePoints);
     test.sort((b, a) => a.compareTo(b));
 
-
     for (int i = 0; i < 3; i++) {
       int value = test[i];
       if (highscores.containsKey(value)) {
