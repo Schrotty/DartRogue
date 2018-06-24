@@ -925,6 +925,11 @@ h3 {
     background: url(../img/main/plainText.png) no-repeat center;
 }
 
+.plainHowTo{
+    height: 500px;
+    background: url(../img/main/plainText3.png) no-repeat center;
+}
+
 .plain p {
     padding: 15px;
 }
