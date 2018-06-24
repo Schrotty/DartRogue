@@ -968,8 +968,7 @@
           {
             "id": 1,
             "accessible": true,
-            "style": "floor-wall-top",
-            "patrol": true
+            "style": "floor-wall-top"
           },
           {
             "id": 2,
@@ -1146,8 +1145,7 @@
           {
             "id": 2,
             "accessible": true,
-            "style": "floor-default",
-            "patrol": true
+            "style": "floor-default"
           },
           {
             "id": 3,
