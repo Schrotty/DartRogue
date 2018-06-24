@@ -36,6 +36,7 @@ input {
     height: 30px;
     background: transparent;
     border-style: none;
+    color: whitesmoke;
 }
 
 ul {
@@ -360,7 +361,8 @@ h3 {
     padding: 0;
     grid-area: play-field;
     overflow: scroll;
-    background: lightgray;
+    color: whitesmoke;
+    background: url(../img/main/background.png);
 }
 
 #hero-screen #top-bar {
@@ -413,6 +415,7 @@ h3 {
 
 #equip-wrapper {
     text-align: center;
+    color: whitesmoke;
 }
 
 #hero-screen #top-bar .item-active {
@@ -436,7 +439,7 @@ h3 {
     align-items: center;
 }
 
-#hero-screen .item-slot {
+#hero-screen .item-slot, #hero-screen .item-slot-framed {
     width: 64px;
     height: 64px;
     text-align: center;
@@ -445,6 +448,10 @@ h3 {
     background-size: 64px 64px;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated
+}
+
+#hero-screen .item-slot-framed {
+    background-image: url("../img/items/frame.png");
 }
 
 #hero-screen .item {
