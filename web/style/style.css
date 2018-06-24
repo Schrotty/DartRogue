@@ -1066,19 +1066,95 @@ h3 {
 }
 
 .player-right {
-    background: url(../img/player.png) 0 0 !important;
+    background: url(../img/icon/player_idle.png) 0 0 !important;
+    animation: player-right-idle 0.5s steps(1) infinite;
+}
+
+@keyframes player-right-idle {
+    100% {
+        background: url(../img/icon/player_idle.png) -96px 0;
+    }
+
+    75% {
+        background: url(../img/icon/player_idle.png) -64px 0;
+    }
+
+    25% {
+        background: url(../img/icon/player_idle.png) -32px 0;
+    }
+
+    0% {
+        background: url(../img/icon/player_idle.png) 0 0;
+    }
 }
 
 .player-left {
-    background: url(../img/player.png) 0 -32px !important;
+    background: url(../img/icon/player_idle.png) 0 -34px !important;
+    animation: player-left-idle 0.5s steps(1) infinite;
+}
+
+@keyframes player-left-idle {
+    100% {
+        background: url(../img/icon/player_idle.png) -96px -34px;
+    }
+
+    75% {
+        background: url(../img/icon/player_idle.png) -64px -34px;
+    }
+
+    25% {
+        background: url(../img/icon/player_idle.png) -32px -34px;
+    }
+
+    0% {
+        background: url(../img/icon/player_idle.png) 0 -34px;
+    }
 }
 
 .player-down {
-    background: url(../img/player.png) 0 -64px !important;
+    background: url(../img/icon/player_idle.png) 0 -68px !important;
+    animation: player-bottom-idle 0.5s steps(1) infinite;
+}
+
+@keyframes player-bottom-idle {
+    100% {
+        background: url(../img/icon/player_idle.png) -96px -68px;
+    }
+
+    75% {
+        background: url(../img/icon/player_idle.png) -64px -68px;
+    }
+
+    25% {
+        background: url(../img/icon/player_idle.png) -32px -68px;
+    }
+
+    0% {
+        background: url(../img/icon/player_idle.png) 0 -68px;
+    }
 }
 
 .player-up {
-    background: url(../img/player.png) 0 -96px !important;
+    background: url(../img/icon/player_idle.png) 0 -102px !important;
+    animation: player-up-idle 0.5s steps(1) infinite;
+}
+
+@keyframes player-up-idle {
+    100% {
+        background: url(../img/icon/player_idle.png) -96px -102px;
+    }
+
+    75% {
+        background: url(../img/icon/player_idle.png) -64px -102px;
+    }
+
+    25% {
+        background: url(../img/icon/player_idle.png) -32px -102px;
+    }
+
+    0% {
+        background: url(../img/icon/player_idle.png) 0 -102px;
+    }
 }
 
 /* WALLS */
