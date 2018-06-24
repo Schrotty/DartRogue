@@ -56,6 +56,10 @@ h3 {
 }
 
 /* HOME IDs */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e6d368c0d6b65d8fbad04b81b860638e7d57406
 #portrait-message {
     display: none;
     height: 100vh;
@@ -927,11 +931,13 @@ h3 {
 }
 
 .plainHowTo{
+    margin: auto;
     height: 500px;
+    width: 500px;
 }
 
 .plain p {
-    padding: 15px;
+    padding-top: 3px;
 }
 
 .top-bar {
@@ -983,7 +989,7 @@ h3 {
 }
 
 .sprite-container {
-    width: 96px;
+    width: 64px;
     height: 96px;
     position: absolute;
     top: 40%;
@@ -1017,24 +1023,25 @@ h3 {
 }
 
 #sprite-monster {
-    animation: sprite-monster 1s steps(3) infinite;
+    animation: sprite-monster 1s steps(4) infinite;
     left: 80%;
 }
 
 @keyframes sprite-monster {
     100% {
-        background-position: -288px;
+        background-position: -256px;
     }
 }
 
 #sprite-mimic {
-    animation: sprite-mimic 6s steps(54) infinite;
+    width: 96px;
+    animation: sprite-mimic 1s steps(6) infinite;
     left: 80%
 }
 
 @keyframes sprite-mimic {
     100% {
-        background-position: -5184px;
+        background-position: -576px;
     }
 }
 
