@@ -232,12 +232,6 @@ class RogueController {
       player.usePotion(player.selectedPot);
     });
 
-//    view.leaveFightButton.onClick.listen((e) {
-//      _toggleOverlay(view.fightingScreen);
-//      player.fight = false;
-//      _centerPlayer();
-//    });
-
     view.leaveFightEndButton.onClick.listen((e) {
       _switchMenu(view.fightingOptions, view.fightEnd);
       _toggleOverlay(view.fightingScreen);
@@ -348,6 +342,8 @@ class RogueController {
       if (!player.isAlive) {
         _switchMenu(view.home, view.game);
         _switchMenu(view.gameOver, view.nameInput);
+
+
         _calcAndUpdateHighscore();
       }
 

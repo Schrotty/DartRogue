@@ -24,7 +24,7 @@ class Player extends Moveable {
   bool _inFight;
 
   int _selectedPot = 0;
-  List<Item> inventory = new List();
+  List<Item> inventory;
   Item currentInvtentoryItem;
 
   Player.fromMap(Map data) {
@@ -71,6 +71,8 @@ class Player extends Moveable {
     _currentStage = 0;
     _inFight = false;
     _highscorePoints = 0;
+    inventory = new List();
+    currentInvtentoryItem = null;
 
     skins = new List<String>()
       ..add("player-up")
@@ -79,8 +81,6 @@ class Player extends Moveable {
       ..add("player-down");
 
     skin = "player-left";
-
-    _sortInventory();
   }
 
   int calcDamage([int skillMod]) {
