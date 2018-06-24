@@ -2,7 +2,7 @@
   {
     "id": 0,
     "lvl": 2,
-    "name": "Golem",
+    "name": "Eye_Patcher",
     "hp": 40,
     "attack": 7,
     "speed": 10,
@@ -15,7 +15,7 @@
   {
     "id": 1,
     "lvl": 3,
-    "name": "Golem",
+    "name": "Eye_Patcher",
     "hp": 40,
     "attack": 7,
     "speed": 10,
@@ -28,7 +28,7 @@
   {
     "id": 2,
     "lvl": 5,
-    "name": "Golem",
+    "name": "Eye_Patcher",
     "hp": 40,
     "attack": 7,
     "speed": 10,
@@ -41,7 +41,7 @@
   {
     "id": 3,
     "lvl": 6,
-    "name": "Golem",
+    "name": "Eye_Patcher",
     "hp": 40,
     "attack": 7,
     "speed": 10,
@@ -54,7 +54,7 @@
   {
     "id": 4,
     "lvl": 7,
-    "name": "Dark_Golem",
+    "name": "Red_Eye_Patcher",
     "hp": 42,
     "attack": 7,
     "speed": 10,
@@ -67,7 +67,7 @@
   {
     "id": 5,
     "lvl": 8,
-    "name": "Dark_Golem",
+    "name": "Red_Eye_Patcher",
     "hp": 42,
     "attack": 7,
     "speed": 10,
@@ -80,7 +80,7 @@
   {
     "id": 6,
     "lvl": 9,
-    "name": "Dark_Golem",
+    "name": "Red_Eye_Patcher",
     "hp": 42,
     "attack": 7,
     "speed": 10,

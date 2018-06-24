@@ -283,7 +283,7 @@ class RogueController {
       view.fightTopBar.text = "${attacker.name.replaceAll("_", " ")} attacks!";
       if ("Mimic" != monster.name) {
         view.monsterIcon.style.backgroundImage =
-            "url(${Settings.getImgPath()}monsters/${attacker.name}.png)";
+            "url(${Settings.getImgPath()}monsters/fight/${attacker.name}.png)";
         _switchMenu(view.monsterIcon, view.mimicIcon);
       } else {
         view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/Mimic.png)";

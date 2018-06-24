@@ -925,7 +925,7 @@ h3 {
     background: url(../img/main/plainText.png) no-repeat center;
 }
 
-.plainHowTo{
+.plainHowTo {
     height: 500px;
     background: url(../img/main/plainText3.png) no-repeat center;
 }
@@ -983,8 +983,8 @@ h3 {
 }
 
 .sprite-container {
-    width: 96px;
-    height: 96px;
+    width: 16px;
+    height: 24px;
     position: absolute;
     top: 40%;
     transform: translate(-50%, -50%);
@@ -1017,13 +1017,25 @@ h3 {
 }
 
 #sprite-monster {
-    animation: sprite-monster 1s steps(3) infinite;
+    animation: sprite-monster 1s steps(1) infinite;
     left: 80%;
 }
 
 @keyframes sprite-monster {
     100% {
-        background-position: -288px;
+        background-position: -48px -24px;
+    }
+
+    66% {
+        background-position: -64px -24px;
+    }
+
+    33% {
+        background-position: -80px -24px;
+    }
+
+    0% {
+        background-position: -96px -24px;
     }
 }
 
