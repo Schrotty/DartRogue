@@ -113,7 +113,7 @@ h3 {
 
 #home div, #game-over div {
     margin: auto;
-    width: 100vw;
+    width: 80vw;
 }
 
 #home ul input, #game-over ul input {
