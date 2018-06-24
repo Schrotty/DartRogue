@@ -568,10 +568,9 @@ class RogueController {
   }
 
   _buildHighscoreList() {
-    window.localStorage.clear();
     if (window.localStorage.isEmpty) {
-      window.localStorage['1'] = "Player1-400";
-      window.localStorage['2'] = "Player2-300";
+      window.localStorage['1'] = "Player1-300";
+      window.localStorage['2'] = "Player2-200";
       window.localStorage['3'] = "Player3-100";
     }
 
