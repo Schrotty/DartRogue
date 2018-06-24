@@ -117,6 +117,7 @@ h3 {
 
 #home div, #game-over div {
     margin: auto;
+    width: 100vw;
 }
 
 #home ul input, #game-over ul input {
@@ -149,7 +150,7 @@ h3 {
     display: grid;
     height: 100%;
     grid-template-areas: "upper-bar upper-bar buttons" "play-field play-field side-bar";
-    grid-template-columns: auto 64px;
+    grid-template-columns: 100vw;
     grid-template-rows: 64px auto;
     padding: 0;
 }
@@ -311,7 +312,6 @@ h3 {
 #hero-screen,
 #fighting-screen {
     grid-area: play-field;
-    max-width: 823px;
     overflow: hidden;
 }
 
