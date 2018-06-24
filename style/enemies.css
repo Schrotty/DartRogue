@@ -132,7 +132,7 @@
     }
 
     50% {
-        background: url(../img/monsters/map/bat.png) 0 -64px;
+        background: url(../img/monsters/map/bat.png) -64px -64px;
     }
 
     0% {
