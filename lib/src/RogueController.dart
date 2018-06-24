@@ -355,7 +355,6 @@ class RogueController {
     _updateFightScreen();
   }
 
-
   _addHighScorePoints() {
     player.highscorePoints += attacker.level * (attacker.isBoss ? 30 : 10);
     print(player.highscorePoints);
@@ -731,6 +730,7 @@ class RogueController {
     view.heroLevel.text = player.level;
     view.heroLuck.text = player.luck;
     view.heroSpeed.text = player.speed;
+    view.heroScore.text = player.highscorePoints.toString();
   }
 
   _updatePlayerXp() {

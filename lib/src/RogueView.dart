@@ -91,6 +91,7 @@ class RogueView {
   final Element heroLevel = querySelector("#hero-level");
   final Element heroLuck = querySelector("#hero-luck");
   final Element heroSpeed = querySelector("#hero-speed");
+  final Element heroScore = querySelector("#hero-score");
 
   /*XP-BAR*/
   final Element xpContainer = querySelector("#xp-container");
