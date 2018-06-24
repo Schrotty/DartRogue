@@ -3,7 +3,14 @@
     <title>DartRogue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/enemies.css">
@@ -54,13 +61,13 @@
             <div id="how-to-play" class="invisible">
                 <h1>How To Play</h1>
 
-                <div class="plain plainHowTo">
-                    <p>
+                <div class="plain">
+                    <p >
                         You are a furious and fearless warrior living in a cruel world populated by dangerous monsters.
                         Dive into the adventure and try to save the world.
                         As the chosen one you need to kill all the seven dungeon bosses to achieve your aim.
                     </p>
-                    <p style="text-align: left">
+                    <p>
                         - move your warrior by clicking where you want to go<br>
                         - the fighting system is turn-based and each skill is different<br>
                         - enemies differ in strength and stamina<br>
@@ -81,9 +88,22 @@
 
                 <div class="plain">
                     <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                        labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    <h4>Coded by:</h4>
+                        Ruben Maurer<br>
+                        Jannik Schwardt
                     </p>
+                    <p>
+                        <h4>Supporters:</h4>
+                        Nane Kratzke<br>
+                        Mum & Dad
+                    </p>
+                    <p>
+                        <h4>Assets designed by:</h4>
+                        twitter.com/DerNaderer<br>
+                        lionheart963.itch.io/<br>
+                        x72.itch.io/
+                    </p><br>
+                    <h4>Web Technology Project 2018</h4>
                 </div>
 
                 <ul>
@@ -230,28 +250,28 @@
 
                         <div id="hero-equipment-screen">
                             <!-- LEFT BAR -->
-                            <div id="helmet-slot" class="item-slot">
+                            <div id="helmet-slot" class="item-slot-framed">
                                 <div id="helmet" class="item"></div>
                             </div>
 
-                            <div id="chest-slot" class="item-slot">
+                            <div id="chest-slot" class="item-slot-framed">
                                 <div id="chest" class="item"></div>
                             </div>
 
-                            <div id="boots-slot" class="item-slot">
+                            <div id="boots-slot" class="item-slot-framed">
                                 <div id="boots" class="item"></div>
                             </div>
 
                             <!-- RIGHT BAR -->
-                            <div id="weapon-slot" class="item-slot">
+                            <div id="weapon-slot" class="item-slot-framed">
                                 <div id="weapon" class="item"></div>
                             </div>
 
-                            <div id="gloves-slot" class="item-slot">
+                            <div id="gloves-slot" class="item-slot-framed">
                                 <div id="gloves" class="item"></div>
                             </div>
 
-                            <div id="legs-slot" class="item-slot">
+                            <div id="legs-slot" class="item-slot-framed">
                                 <div id="legs" class="item"></div>
                             </div>
 
@@ -308,6 +328,7 @@
                                     <li><span>Hero-Level: </span> <span id="hero-level"></span></li>
                                     <li><span>Speed: </span><span id="hero-speed"></span></li>
                                     <li><span>Luck: </span><span id="hero-luck"></span></li>
+                                    <li><span>Score: </span><span id="hero-score"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -351,7 +372,6 @@
                             <ul class="button-list">
                                 <li><input type="button" id="attack" value="Attack" class="bar-button"></li>
                                 <li><input type="button" id="use-potion" value="Use Potion" class="bar-button"></li>
-                                <!--<li><input type="button" id="leave-fight" value="Leave Fight" class="bar-button"></li>-->
                             </ul>
                         </div>
                         <div id="skills" class="invisible centered">
