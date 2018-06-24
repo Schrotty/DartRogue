@@ -286,7 +286,7 @@ class RogueController {
             "url(${Settings.getImgPath()}monsters/fight/${attacker.name}.png)";
         _switchMenu(view.monsterIcon, view.mimicIcon);
       } else {
-        view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/Mimic.png)";
+        view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/fight/Mimic.png)";
         _switchMenu(view.mimicIcon, view.monsterIcon);
       }
 
