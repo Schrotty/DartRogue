@@ -26,7 +26,7 @@ class RogueController {
     view.submitNameButton.onClick.listen((e) async {
       _switchMenu(view.game, view.home);
 
-      if ("" != view.nameInputField.value) {
+      if ("" != view.nameInputField.value && "Enter your name here" != view.nameInputField.value) {
         player.highscoreName = view.nameInputField.value;
       } else {
         player.highscoreName = "Player";
@@ -51,15 +51,15 @@ class RogueController {
     });
 
     view.highscoreButton.onClick.listen((e) {
-      String first = "${window.localStorage['1'].split("-")[0]} - ${window.localStorage['1'].split(
-          "-")[1]}";
-      view.highscoreFirst.text = first;
-      String second = "${window.localStorage['2'].split("-")[0]} - ${window.localStorage['2'].split(
-          "-")[1]}";
-      view.highscoreSecond.text = second;
-      String third = "${window.localStorage['3'].split("-")[0]} - ${window.localStorage['3'].split(
-          "-")[1]}";
-      view.highscoreThird.text = third;
+      List<String> highscores = new List();
+
+      window.localStorage.forEach((score, name) {
+        highscores.add("$name - $score");
+      });
+
+      view.highscoreFirst.text = highscores[2];
+      view.highscoreSecond.text = highscores[1];
+      view.highscoreThird.text = highscores[0];
 
       _switchMenu(view.highscore, view.mainMenu);
     });
@@ -364,27 +364,29 @@ class RogueController {
   }
 
   _calcAndUpdateHighscore() {
-    Map<int, String> highscores = new Map();
-    List<int> test = new List();
+    List<int> scores = new List();
+    Map<String, String> highscores = new Map();
 
     window.localStorage.forEach((k, v) {
-      String name = v.split("-")[0];
-      int score = int.parse(v.split("-")[1]);
-      highscores[score] = name;
-      test.add(score);
+      scores.add(int.parse(k));
+      highscores[k] = v;
     });
 
-    test.add(player.highscorePoints);
+    window.localStorage.clear();
 
-    test.sort((b, a) => a.compareTo(b));
+    scores.add(player.highscorePoints);
+    scores.sort((b, a) => a.compareTo(b));
+
+    scores.forEach((i) => print(i));
 
     for (int i = 0; i < 3; i++) {
-      int value = test[i];
-      if (highscores.containsKey(value)) {
-        window.localStorage['${i + 1}'] = "${highscores[value]}-$value";
+      scores.first;
+      if(highscores.containsKey("${scores.first}")) {
+        window.localStorage["${scores.first}"] = highscores["${scores.first}"];
       } else {
-        window.localStorage['${i + 1}'] = "${player.highscoreName}-$value";
+        window.localStorage["${scores.first}"] = player.highscoreName;
       }
+      scores.removeAt(0);
     }
 
     window.localStorage.forEach((k, v) {
@@ -579,11 +581,10 @@ class RogueController {
   }
 
   _buildHighscoreList() {
-//    window.localStorage.clear();
     if (window.localStorage.isEmpty) {
-      window.localStorage['1'] = "Player1-300";
-      window.localStorage['2'] = "Player2-200";
-      window.localStorage['3'] = "Player3-0";
+      window.localStorage['300'] = "Player1";
+      window.localStorage['200'] = "Player2";
+      window.localStorage['100'] = "Player3";
     }
 
     window.localStorage.forEach((k, v) {
