@@ -53,13 +53,15 @@ class RogueController {
     view.highscoreButton.onClick.listen((e) {
       List<String> highscores = new List();
 
-      window.localStorage.forEach((score, name) {
-        highscores.add("$name - $score");
-      });
+      if (window.localStorage.isNotEmpty) {
+        window.localStorage.forEach((score, name) {
+          highscores.add("$name - $score");
+        });
 
-      view.highscoreFirst.text = highscores[2];
-      view.highscoreSecond.text = highscores[1];
-      view.highscoreThird.text = highscores[0];
+        view.highscoreFirst.text = highscores[2];
+        view.highscoreSecond.text = highscores[1];
+        view.highscoreThird.text = highscores[0];
+      }
 
       _switchMenu(view.highscore, view.mainMenu);
     });
@@ -376,7 +378,6 @@ class RogueController {
     scores.forEach((i) => print(i));
 
     for (int i = 0; i < 3; i++) {
-      scores.first;
       if(highscores.containsKey("${scores.first}")) {
         window.localStorage["${scores.first}"] = highscores["${scores.first}"];
       } else {
@@ -386,7 +387,7 @@ class RogueController {
     }
 
     window.localStorage.forEach((k, v) {
-      print(v);
+      print(k);
     });
 
     view.winScore.text = player.highscorePoints.toString();

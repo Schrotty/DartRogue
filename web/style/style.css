@@ -121,10 +121,6 @@ h3 {
     color: white;
 }
 
-#game-over ul input {
-    width: 100vw;
-}
-
 #home li, #highscore li, #game-over li, #name-input-menu li {
     height: 48px;
     vertical-align: middle;
