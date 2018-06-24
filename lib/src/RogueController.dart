@@ -51,17 +51,13 @@ class RogueController {
     });
 
     view.highscoreButton.onClick.listen((e) {
-      List<String> highscores = new List();
 
-      if (window.localStorage.isNotEmpty) {
-        window.localStorage.forEach((score, name) {
-          highscores.add("$name - $score");
-        });
-
-        view.highscoreFirst.text = highscores[2];
-        view.highscoreSecond.text = highscores[1];
-        view.highscoreThird.text = highscores[0];
-      }
+      String first = "${window.localStorage['1'].split("-")[0]} - ${window.localStorage['1'].split("-")[1]}";
+      view.highscoreFirst.text = first;
+      String second = "${window.localStorage['2'].split("-")[0]} - ${window.localStorage['2'].split("-")[1]}";
+      view.highscoreSecond.text = second;
+      String third = "${window.localStorage['3'].split("-")[0]} - ${window.localStorage['3'].split("-")[1]}";
+      view.highscoreThird.text = third;
 
       _switchMenu(view.highscore, view.mainMenu);
     });
@@ -288,7 +284,8 @@ class RogueController {
             "url(${Settings.getImgPath()}monsters/fight/${attacker.name}.png)";
         _switchMenu(view.monsterIcon, view.mimicIcon);
       } else {
-        view.mimicIcon.style.backgroundImage = "url(${Settings.getImgPath()}monsters/fight/Mimic.png)";
+        view.mimicIcon.style.backgroundImage =
+            "url(${Settings.getImgPath()}monsters/fight/Mimic.png)";
         _switchMenu(view.mimicIcon, view.monsterIcon);
       }
 
@@ -345,7 +342,6 @@ class RogueController {
         _switchMenu(view.home, view.game);
         _switchMenu(view.gameOver, view.nameInput);
 
-
         _calcAndUpdateHighscore();
       }
 
@@ -361,33 +357,28 @@ class RogueController {
   }
 
   _calcAndUpdateHighscore() {
-    List<int> scores = new List();
-    Map<String, String> highscores = new Map();
+    Map<int, String> highscores = new Map();
+    List<int> test = new List();
 
     window.localStorage.forEach((k, v) {
-      scores.add(int.parse(k));
-      highscores[k] = v;
+      String name = v.split("-")[0];
+      int score = int.parse(v.split("-")[1]);
+      highscores[score] = name;
+      test.add(score);
     });
 
-    window.localStorage.clear();
+    test.add(player.highscorePoints);
+    test.sort((b, a) => a.compareTo(b));
 
-    scores.add(player.highscorePoints);
-    scores.sort((b, a) => a.compareTo(b));
-
-    scores.forEach((i) => print(i));
 
     for (int i = 0; i < 3; i++) {
-      if(highscores.containsKey("${scores.first}")) {
-        window.localStorage["${scores.first}"] = highscores["${scores.first}"];
+      int value = test[i];
+      if (highscores.containsKey(value)) {
+        window.localStorage['${i + 1}'] = "${highscores[value]}-$value";
       } else {
-        window.localStorage["${scores.first}"] = player.highscoreName;
+        window.localStorage['${i + 1}'] = "${player.highscoreName}-$value";
       }
-      scores.removeAt(0);
     }
-
-    window.localStorage.forEach((k, v) {
-      print(k);
-    });
 
     view.winScore.text = player.highscorePoints.toString();
     view.lostScore.text = player.highscorePoints.toString();
@@ -578,9 +569,9 @@ class RogueController {
 
   _buildHighscoreList() {
     if (window.localStorage.isEmpty) {
-      window.localStorage['300'] = "Player1";
-      window.localStorage['200'] = "Player2";
-      window.localStorage['100'] = "Player3";
+      window.localStorage['1'] = "Player1-300";
+      window.localStorage['2'] = "Player2-200";
+      window.localStorage['3'] = "Player3-100";
     }
 
     window.localStorage.forEach((k, v) {
