@@ -56,9 +56,6 @@ h3 {
 }
 
 /* HOME IDs */
-#title {
-    content: url(../img/main/title.png);
-}
 
 #portrait-message {
     display: none;
@@ -919,10 +916,10 @@ h3 {
 }
 
 .plain {
+    height: 500px;
     width: 500px;
     margin: auto;
     background: url(../img/main/plainText3.png) no-repeat center;
-    height: 500px;
 }
 
 .plain p {
