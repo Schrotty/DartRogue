@@ -919,19 +919,14 @@ h3 {
 }
 
 .plain {
-    height: 241px;
     width: 500px;
     margin: auto;
-    background: url(../img/main/plainText.png) no-repeat center;
-}
-
-.plainHowTo {
-    height: 500px;
     background: url(../img/main/plainText3.png) no-repeat center;
+    height: 500px;
 }
 
 .plain p {
-    padding: 15px;
+    padding-top: 3px;
 }
 
 .top-bar {
