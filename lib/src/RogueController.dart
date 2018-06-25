@@ -843,6 +843,7 @@ class RogueController {
       element.classes.add("common");
       element.children[0].style.backgroundImage = null;
     }
+    _previewItem(null);
   }
 
   _switchHeroScreenMenu(Element target, Element caller) {
