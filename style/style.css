@@ -804,9 +804,9 @@ h3 {
 
 #potions-menu {
     position: fixed;
-    height: 42vw;
-    width: 20vw;
-    right: 8vw;
+    height: 33vw;
+    width: 17vw;
+    right: 5vw;
     border: 5px solid black;
     background: indianred;
     z-index: 100;
@@ -894,8 +894,8 @@ h3 {
 .potion-button {
     color: black;
     font-weight: bold;
-    height: 14vw;
-    width: 20vw;
+    height: 11vw;
+    width: 17vw;
     text-align: right;
 }
 

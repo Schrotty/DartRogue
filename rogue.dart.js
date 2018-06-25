@@ -5423,22 +5423,24 @@ j1:{"^":"a:0;a",
 $1:function(a){J.ax(this.a.a.ct,"")
 return""}},
 j2:{"^":"a:24;a",
-$1:function(a){var z=0,y=P.S(),x=this,w,v,u,t,s
+$1:function(a){var z=0,y=P.S(),x=this,w,v,u,t,s,r
 var $async$$1=P.W(function(b,c){if(b===1)return P.T(c,y)
 while(true)switch(z){case 0:w=x.a
 v=w.a
-w.E(v.c,v.a)
+u=v.a
+w.E(v.c,u)
 v=v.ct
-u=J.l(v)
-t=""!==u.gI(v)&&"Enter your name here"!==u.gI(v)
-s=$.d
-if(t)s.r2=u.gI(v)
-else s.r2="Player"
+t=J.l(v)
+s=""!==t.gI(v)&&"Enter your name here"!==t.gI(v)
+r=$.d
+if(s)r.r2=t.gI(v)
+else r.r2="Player"
 w.b=P.ek(C.r,new Z.iY(w))
 w.c=P.ek(C.t,new Z.iZ(w))
 w.dm($.d.k4)
 w=J.fo(document.querySelector("#tiles"))
 W.t(w.a,w.b,new Z.j_(),!1,H.m(w,0))
+u.scrollTop=0
 return P.U(null,y)}})
 return P.V($async$$1,y)}},
 iY:{"^":"a:12;a",
