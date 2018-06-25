@@ -44,6 +44,8 @@ class RogueController {
       querySelector("#tiles").onTouchMove.listen((onData) {
         onData.preventDefault();
       });
+
+      view.home.scrollTop = 0;
     });
 
     view.backNameInputButton.onClick.listen((e) {
