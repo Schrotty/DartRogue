@@ -4,7 +4,6 @@ class PrioQueue<E> extends HeapPriorityQueue<E> {
   void replace(E s) {
     List l = super.toList();
     bool b = super.remove(l[l.indexOf(s)]);
-    if (b) print("Hello there!");
 
     super.add(s);
   }

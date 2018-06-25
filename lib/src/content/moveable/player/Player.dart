@@ -111,10 +111,8 @@ class Player extends Moveable {
     this._constitution = (this._constitution * scale).ceil();
     this._strength = (this._strength * scale).ceil();
     this._luck = (this._luck * scale).ceil();
-    // Balancing: maybe use different scaling for crit? we'll see...
-    this._critChance = (this._critChance * scale).ceil();
+    this._critChance = (this._critChance * scale - 0.07).ceil();
     this._critDamage = (this._critDamage * (scale + 9) / 10);
-
     this._maxHealth = (this._maxHealth * scale).ceil();
     this._currHealth = maxHealth; // restore to full health;
     skills.forEach(

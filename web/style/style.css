@@ -317,7 +317,7 @@ h3 {
 }
 
 #fighting-screen {
-    animation: enter-fight 2s;
+    animation: enter-fight 1.3s;
     z-index: 70;
 }
 
