@@ -1,6 +1,7 @@
 [
   {
     "id": 2,
+    "name": "Crypt of Knight Artorias the Abysswalker",
     "monster": [0, 1, 2, 3, 5],
     "boss": 2,
     "treasures": [

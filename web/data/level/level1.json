@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "name": "Fallen Warriors Crypt",
     "monster": [0, 1, 2, 3, 5],
     "boss": 1,
     "treasures": [

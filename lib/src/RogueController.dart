@@ -108,21 +108,12 @@ class RogueController {
       buildStorage();
       _clearInventory();
     });
-
-    /* STAGE NAME EVENTS */
-    view.stageName.onTransitionEnd.listen((e) {
-      _toggleOverlay(view.stageName);
-
-      //view.stageName.classes.remove("fade");
-    });
   }
 
   _renderLevel(int stage) {
-    view.stageName.classes.add("fade");
-    _toggleOverlay(view.stageName);
-
     querySelector("#tiles").children.clear();
 
+    view.stageName.text = levels[stage].name;
     levels[stage].fields.forEach((row) {
       row.forEach((tile) {
         DivElement elm = new Element.div()

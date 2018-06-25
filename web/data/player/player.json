@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "health": 10,
-    "speed": 10,
+    "health": 20,
+    "speed": 1,
     "baseXp": 100,
     "attributes": {
       "strength": 5,

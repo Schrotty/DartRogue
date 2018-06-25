@@ -8,7 +8,7 @@ class Settings {
   static bool _debugMode = false;
 
   static int _strengthMod = 1;
-  static int _constMod = 3;
+  static double _constMod = 1.5;
   static int _luckMod = 2;
 
   static double _monsterScaling = 1.3;
@@ -37,7 +37,7 @@ class Settings {
     return _strengthMod;
   }
 
-  static int getConstMod() {
+  static double getConstMod() {
     return _constMod;
   }
 

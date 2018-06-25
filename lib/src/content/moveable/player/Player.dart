@@ -209,7 +209,7 @@ class Player extends Moveable {
   }
 
   get constitutionMod {
-    return _getMod('const');
+    return _getMod('constitution');
   }
 
   get luckMod {
