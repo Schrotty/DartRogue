@@ -855,6 +855,18 @@ h3 {
     bottom: 0;
 }
 
+#stage-name {
+    color: whitesmoke;
+    text-align: center;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+    opacity: 100;
+}
+
+#stage-name.fade {
+    opacity: 0 !important;
+}
+
 /* CLASSES */
 .full-screen {
     padding: 15px;

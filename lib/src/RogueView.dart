@@ -9,6 +9,7 @@ class RogueView {
   final Element dungeon = querySelector("#dungeon");
   final Element tiles = querySelector("#tiles");
   final Element player = querySelector(".player");
+  final Element stageName = querySelector("#stage-name");
 
   final Element mainMenu = querySelector("#start-menu");
   final Element highscore = querySelector("#highscore");
