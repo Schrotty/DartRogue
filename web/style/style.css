@@ -388,8 +388,8 @@ h3 {
     grid-area: inv-grid;
     grid-template-columns: repeat(4, 64px);
     grid-template-rows: repeat(3, 64px);
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
+    grid-row-gap: 3px;
+    grid-column-gap: 3px;
     place-self: center;
     align-self: start;
 }
@@ -402,7 +402,7 @@ h3 {
     background: url(../img/items/inventory-frame.png) no-repeat;
     background-size: 100% 100%;
     z-index: 10;
-    padding: 5px;
+    padding: 3px;
 }
 
 .inventory-item {
@@ -410,12 +410,26 @@ h3 {
 }
 
 #inventory-preview {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "preview buttons";
+    grid-column-gap: 5px;
+}
 
+#preview-item-wrapper {
+    grid-column-start: 1 !important;
+    grid-area: preview;
 }
 
 #equip-wrapper {
-    text-align: center;
+    text-align: left;
     color: whitesmoke;
+    grid-area: buttons;
+}
+
+#equip-wrapper input {
+    width: 100%;
+    height: 100px;
 }
 
 #hero-screen #top-bar .item-active {
@@ -426,7 +440,7 @@ h3 {
     display: grid;
     grid-area: screen;
     grid-template-columns: 32px 64px auto 64px 32px;
-    grid-template-rows: 64px 64px 64px 32px;
+    grid-template-rows: 64px 64px 64px;
     grid-row-gap: 5px;
     grid-template-areas: "lte helmet-slot content-top weapon-slot rte" "lme chest-slot content-middle gloves-slot rme" "lbe boots-slot content-bottom legs-slot rbe" "inv-p inv-p inv-p inv-p inv-p";
 }
