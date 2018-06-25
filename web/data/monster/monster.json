@@ -340,7 +340,7 @@
     "skin": "demon",
     "loot": {
       "dagger": 2,
-      "potions": [0, 0, 0]
+      "potions": [1, 0, 0]
     }
   },
   {
@@ -365,7 +365,7 @@
     "grantedXP": 32,
     "skin": "demon",
     "loot": {
-      "potions": [1, 0, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
@@ -448,7 +448,7 @@
     "grantedXP": 38,
     "skin": "ghast",
     "loot": {
-      "potions": [2, 0, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
@@ -520,7 +520,7 @@
     "grantedXP": 34,
     "skin": "ghast",
     "loot": {
-      "potions": [0, 1, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
@@ -557,7 +557,7 @@
     "skin": "ghast",
     "loot": {
       "helmet": 4,
-      "potions": [0, 0, 0]
+      "potions": [2, 0, 0]
     }
   },
   {
@@ -608,7 +608,7 @@
     "skin": "orc",
     "loot": {
       "sword": 2,
-      "potions": [0, 0, 0]
+      "potions": [1, 0, 0]
     }
   },
   {
@@ -666,7 +666,7 @@
     "grantedXP": 42,
     "skin": "orc",
     "loot": {
-      "potions": [2, 0, 0]
+      "potions": [3, 0, 0]
     }
   },
   {
@@ -717,7 +717,7 @@
     "skin": "orc",
     "loot": {
       "legs": 4,
-      "potions": [0, 0, 0]
+      "potions": [2, 0, 0]
     }
   },
   {
@@ -731,7 +731,7 @@
     "grantedXP": 46,
     "skin": "demon",
     "loot": {
-      "potions": [0, 1, 0]
+      "potions": [0, 2, 0]
     }
   },
   {
