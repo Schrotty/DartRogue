@@ -829,7 +829,7 @@ class RogueController {
     });
 
     for (int i = index; i < 12; i++) {
-      Element element = querySelector("#slot-$index");
+      Element element = querySelector("#slot-$i");
       element.classes.removeAll(Qualities);
       element.classes.add("common");
       element.children[0].style.backgroundImage = null;
@@ -837,12 +837,7 @@ class RogueController {
   }
 
   _clearInventory() {
-    for (int i = 0; i < 12; i++) {
-      Element element = querySelector("#slot-$i");
-      element.classes.removeAll(Qualities);
-      element.classes.add("common");
-      element.children[0].style.backgroundImage = null;
-    }
+    _updateInventory();
     _previewItem(null);
   }
 
