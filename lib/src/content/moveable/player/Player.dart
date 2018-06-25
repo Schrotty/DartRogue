@@ -94,7 +94,6 @@ class Player extends Moveable {
 
   _die() {
     this._alive = false;
-    print("$name died!");
   }
 
   // TODO monsters must give xp less than two full lvl!

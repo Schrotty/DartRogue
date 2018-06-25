@@ -96,6 +96,7 @@ class RogueController {
       gameTimer.cancel();
       movementTimer.cancel();
       buildStorage();
+      _clearInventory();
     });
 
     /* GAME WON EVENTS */
@@ -105,6 +106,7 @@ class RogueController {
       gameTimer.cancel();
       movementTimer.cancel();
       buildStorage();
+      _clearInventory();
     });
   }
 
@@ -354,8 +356,7 @@ class RogueController {
   }
 
   _addHighScorePoints() {
-    player.highscorePoints += attacker.level * (attacker.isBoss ? 30 : 10);
-    print(player.highscorePoints);
+    player.highscorePoints += attacker.level * (attacker.isBoss ? 50 : 10);
   }
 
   _calcAndUpdateHighscore() {
@@ -574,10 +575,6 @@ class RogueController {
       window.localStorage['2'] = "Player2-200";
       window.localStorage['3'] = "Player3-100";
     }
-
-    window.localStorage.forEach((k, v) {
-      print(v);
-    });
   }
 
   _update() {
@@ -833,6 +830,15 @@ class RogueController {
 
     for (int i = index; i < 12; i++) {
       Element element = querySelector("#slot-$index");
+      element.classes.removeAll(Qualities);
+      element.classes.add("common");
+      element.children[0].style.backgroundImage = null;
+    }
+  }
+
+  _clearInventory() {
+    for (int i = 0; i < 12; i++) {
+      Element element = querySelector("#slot-$i");
       element.classes.removeAll(Qualities);
       element.classes.add("common");
       element.children[0].style.backgroundImage = null;

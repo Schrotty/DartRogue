@@ -66,7 +66,6 @@ class Monster extends Moveable {
   }
 
   _die() {
-    print("${this.name} died!");
     this._alive = false;
   }
 
