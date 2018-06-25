@@ -4,7 +4,7 @@ class Player extends Moveable {
   int _strength;
   int _constitution;
   int _luck;
-  int _critChance;
+  double _critChance;
   double _critDamage;
   int _baseXp;
   int _gainedXp;
@@ -29,14 +29,17 @@ class Player extends Moveable {
 
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
-      if (data['attributes'].containsKey('strength')) _strength = data['attributes']['strength'];
+      if (data['attributes'].containsKey('strength'))
+        _strength = data['attributes']['strength'];
       if (data['attributes'].containsKey('constitution'))
         _constitution = data['attributes']['constitution'];
-      if (data['attributes'].containsKey('luck')) _luck = data['attributes']['luck'];
+      if (data['attributes'].containsKey('luck'))
+        _luck = data['attributes']['luck'];
     }
 
     if (data.containsKey('talents')) {
-      if (data['talents'].containsKey('crit-chance')) _critChance = data['talents']['crit-chance'];
+      if (data['talents'].containsKey('crit-chance'))
+        _critChance = data['talents']['crit-chance'];
       if (data['talents'].containsKey('crit-damage-mod'))
         _critDamage = data['talents']['crit-damage-mod'];
     }
@@ -44,11 +47,14 @@ class Player extends Moveable {
     if (data.containsKey('armor')) {
       if (data['armor'].containsKey('helmet'))
         helmet = armors['helmets'][data['armor']['helmet']][0];
-      if (data['armor'].containsKey('chest')) chest = armors['chests'][data['armor']['chest']][0];
+      if (data['armor'].containsKey('chest'))
+        chest = armors['chests'][data['armor']['chest']][0];
       if (data['armor'].containsKey('gloves'))
         gloves = armors['gloves'][data['armor']['gloves']][0];
-      if (data['armor'].containsKey('legs')) legs = armors['legs'][data['armor']['legs']][0];
-      if (data['armor'].containsKey('boots')) boots = armors['boots'][data['armor']['boots']][0];
+      if (data['armor'].containsKey('legs'))
+        legs = armors['legs'][data['armor']['legs']][0];
+      if (data['armor'].containsKey('boots'))
+        boots = armors['boots'][data['armor']['boots']][0];
     }
 
     if (data.containsKey('weapon')) {
@@ -107,21 +113,23 @@ class Player extends Moveable {
   _levelUp() {
     this._lvl = ++this._lvl;
     double scale = Settings.playerStatScaling;
-    this._neededXp += (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+    this._neededXp +=
+        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
     this._constitution = (this._constitution * scale).ceil();
     this._strength = (this._strength * scale).ceil();
     this._luck = (this._luck * scale).ceil();
-    this._critChance = (this._critChance * scale - 0.07).ceil();
+    this._critChance = (this._critChance * (scale - 0.08));
     this._critDamage = (this._critDamage * (scale + 9) / 10);
     this._maxHealth = (this._maxHealth * scale).ceil();
     this._currHealth = maxHealth; // restore to full health;
-    skills.forEach(
-        (k, v) => v._useableCount = v.useableCountMax); // every skill is restored to max usability
+    skills.forEach((k, v) => v._useableCount =
+        v.useableCountMax); // every skill is restored to max usability
   }
 
   void usePotion(int type) {
     if (!hasFullHealth && pots[type] >= 1) {
-      var potionHealth = (maxHealth * (potions[type].value / 100)).round().floor();
+      var potionHealth =
+          (maxHealth * (potions[type].value / 100)).round().floor();
 
       if ((currHealth + potionHealth) > maxHealth) {
         currHealth = maxHealth;
@@ -173,7 +181,8 @@ class Player extends Moveable {
   }
 
   _sortInventory() {
-    if (inventory.isNotEmpty) inventory.sort((a, b) => a._quality.compareTo(b._quality));
+    if (inventory.isNotEmpty)
+      inventory.sort((a, b) => a._quality.compareTo(b._quality));
   }
 
   get gainedXpByCurrentLvl {
@@ -185,7 +194,8 @@ class Player extends Moveable {
   }
 
   int _currentLvlXp() {
-    return neededXp - (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+    return neededXp -
+        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
   }
 
   get leftXpUntilLvlUp {
@@ -238,7 +248,9 @@ class Player extends Moveable {
 
   /* === ATTRIBUTES === */
   get maxHealth {
-    return healthMod + (_maxHealth + ((_constitution + constitutionMod) * Settings.getConstMod()));
+    return healthMod +
+        (_maxHealth +
+            ((_constitution + constitutionMod) * Settings.getConstMod()));
   }
 
   get currHealth {
@@ -257,11 +269,14 @@ class Player extends Moveable {
   }
 
   get armor {
-    return armorMod + (helmet.value + chest.value + gloves.value + legs.value + boots.value);
+    return armorMod +
+        (helmet.value + chest.value + gloves.value + legs.value + boots.value);
   }
 
   get damage {
-    return damageMod + (weapon.value + ((_strength + strengthMod) * Settings.getStrengthMod()));
+    return damageMod +
+        (weapon.value +
+            ((_strength + strengthMod) * Settings.getStrengthMod()));
   }
 
   get critChance {
@@ -276,7 +291,8 @@ class Player extends Moveable {
     return (critMulti * damage).round();
   }
 
-  get currXpPercent => (this.gainedXpByCurrentLvl / this.neededXpByCurrentLvl) * 100;
+  get currXpPercent =>
+      (this.gainedXpByCurrentLvl / this.neededXpByCurrentLvl) * 100;
 
   get luck => _luck + luckMod;
 

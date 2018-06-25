@@ -706,7 +706,7 @@ class RogueController {
     /* OFFENSE */
     view.heroStrength.text = player.strength;
     view.heroDamage.text = player.damage;
-    view.heroCritChance.text = "${player.critChance}%";
+    view.heroCritChance.text = "${(player.critChance * 100).ceil()/100}%";
     view.heroCritDamage.text = "${(player.critMulti * 100).ceil()}%";
 
     /* DEFENSE */
