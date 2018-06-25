@@ -113,13 +113,13 @@ class RogueController {
     view.stageName.onTransitionEnd.listen((e) {
       _toggleOverlay(view.stageName);
 
-      view.stageName.classes.remove("fade");
+      //view.stageName.classes.remove("fade");
     });
   }
 
   _renderLevel(int stage) {
-    _toggleOverlay(view.stageName);
     view.stageName.classes.add("fade");
+    _toggleOverlay(view.stageName);
 
     querySelector("#tiles").children.clear();
 

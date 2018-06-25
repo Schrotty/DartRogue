@@ -860,7 +860,8 @@ h3 {
     text-align: center;
     -webkit-transition: opacity 1s; /* Safari */
     transition: opacity 1s;
-    opacity: 100;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
 }
 
 #stage-name.fade {
