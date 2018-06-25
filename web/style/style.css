@@ -187,6 +187,15 @@ h3 {
     background: #1c1117;
 }
 
+.plain span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.plain h4 {
+    text-decoration: underline;
+}
+
 #side-bar {
     grid-area: side-bar;
     display: grid;
