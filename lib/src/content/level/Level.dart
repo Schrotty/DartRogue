@@ -1,32 +1,41 @@
 part of rogue;
 
+/// Class representing a single [Level].
 class Level {
-  int _id;
-  String _name;
+  int id;
   int _tileCount = 0;
   int _rowCount = 0;
 
+  String name;
+
+  Moveable boss = null;
+
+  Field bossSpawn = null;
   Field spawnPoint;
   Field exit;
+
   List<List<Field>> fields = new List();
+
   List<Field> monsterSpawnPoints = new List();
   List<Field> treasureFields = new List();
-  Map<int, Treasure> monsterDrops = new Map();
-  List<Treasure> treasures = new List();
-  List<Moveable> monsters = new List();
-  Moveable boss = null;
-  Field bossSpawn = null;
   List<Field> patrolPoints = new List();
 
-  static Field clicked;
   List<Node> _pathGraph = new List<Node>();
 
-  Level.build(int id, Map data) {
-    _id = id;
+  List<Treasure> treasures = new List();
+  List<Moveable> monsters = new List();
 
-    _name = "Level - " + _id.toString();
+  Map<int, Treasure> monsterDrops = new Map();
+
+  static Field clicked;
+
+  /// Create a new [Level] from [data].
+  Level.build(int id, Map data) {
+    id = id;
+
+    name = "Level - " + id.toString();
     if (data.containsKey('name')) {
-      _name = data['name'];
+      name = data['name'];
     }
 
     if(data.containsKey('treasures')) {
@@ -44,9 +53,10 @@ class Level {
       _createHorizonBorder();
     }
 
-    _calcPathGraph(fields);
+    calcPathGraph(fields);
   }
 
+  /// Build a single level row.
   _buildRow(row, id, int level) {
     int cols = 0;
     fields.add(new List<Field>());
@@ -63,6 +73,7 @@ class Level {
     _rowCount++;
   }
 
+  /// Build a single [Field].
   _buildTile(int row, Map tile, int level) {
     Field f = new Field.create(tile["accessible"], tile["style"], "tile-${_tileCount++}", row, tile['id'], level, tile['monster']);
     if (tile.containsKey("spawn")) {
@@ -70,7 +81,7 @@ class Level {
     }
 
     if(tile.containsKey("exit")) {
-      f.exit = true;
+      f.isExit = true;
       exit = f;
     }
 
@@ -79,8 +90,8 @@ class Level {
     }
 
     if (tile.containsKey("treasure")) {
-      f.treasure = true;
-      treasureFields.add(f..accessible = false);
+      f.hasTreasure = true;
+      treasureFields.add(f..isAccessible = false);
     }
 
     if (tile.containsKey("boss")) {
@@ -94,12 +105,14 @@ class Level {
     fields[_rowCount].add(f);
   }
 
+  /// Fill [cols] [Field]s in.
   _fill(int cols) {
     for (int i = cols; i < 32; i++) {
       fields[_rowCount].addAll(_createBorderFields(1));
     }
   }
 
+  /// Create a list of non-accessible [Field]s.
   List<Field> _createBorderFields(int count) {
     List<Field> f = new List<Field>();
     for (int i = 0; i < count; i++) f.add(new Field.empty(_tileCount++));
@@ -107,6 +120,7 @@ class Level {
     return f;
   }
 
+  /// Create a horizontal border of [Field]s.
   _createHorizonBorder() {
     for (int i = 0; i < 4; i++) {
       fields.add(new List<Field>());
@@ -114,10 +128,12 @@ class Level {
     }
   }
 
+  /// Create a vertical border of [Field]s.
   _createVerticalBorder() {
     fields[_rowCount].addAll(_createBorderFields(4));
   }
 
+  /// Return the [Field] with id [id] within this [Level].
   Field getField(int id) {
     Field result = null;
 
@@ -133,13 +149,15 @@ class Level {
     return result;
   }
 
+  /// Return the [Node] with the id [id].
   Node getNode(Field field) {
     return _pathGraph.firstWhere((Node n) {
       return field.id == n.field.id;
     });
   }
-  
-  _calcPathGraph(List<List<Field>> fields) {
+
+  /// Calculates the pathfinding graph for this [Level] using a list of [Field]s.
+  calcPathGraph(List<List<Field>> fields) {
     Field tmp = null;
     fields.forEach((row) {
       row.forEach((field) {
@@ -177,10 +195,4 @@ class Level {
       }));
     });
   }
-
-  calcPathGraph() {
-    _calcPathGraph(fields);
-  }
-
-  String get name => _name;
 }

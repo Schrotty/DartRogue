@@ -4,28 +4,30 @@ class Player extends Moveable {
   int _strength;
   int _constitution;
   int _luck;
-  double _critChance;
-  double _critDamage;
   int _baseXp;
   int _gainedXp;
   int _neededXp;
   int _currentStage;
   int _highscorePoints;
+  int _selectedPot = 0;
+
+  double _critChance;
+  double _critDamage;
+
   String _highscoreName;
-  bool _killedEndboss;
 
   Item helmet;
   Item chest;
   Item gloves;
   Item legs;
   Item boots;
-
   Item weapon;
-  bool _inFight;
-
-  int _selectedPot = 0;
-  List<Item> inventory;
   Item currentInvtentoryItem;
+
+  bool _inFight;
+  bool _killedEndboss;
+
+  List<Item> inventory;
 
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
@@ -67,10 +69,10 @@ class Player extends Moveable {
       pots[2] = data['potions'][2];
     }
 
-    _maxHealth = data['health'];
-    _speed = data['speed'];
+    maxHealth = data['health'];
+    speed = data['speed'];
     _currHealth = maxHealth;
-    _lvl = 1;
+    lvl = 1;
     _baseXp = data['baseXp'];
     _gainedXp = 0;
     _neededXp = data['baseXp'];
@@ -98,11 +100,6 @@ class Player extends Moveable {
     return (skillMod * damage).round();
   }
 
-  _die() {
-    this._alive = false;
-  }
-
-  // TODO monsters must give xp less than two full lvl!
   gainXP(int xp) {
     this._gainedXp += xp;
     if (_gainedXp >= _neededXp) {
@@ -111,16 +108,16 @@ class Player extends Moveable {
   }
 
   _levelUp() {
-    this._lvl = ++this._lvl;
+    this.lvl = ++this.lvl;
     double scale = Settings.playerStatScaling;
     this._neededXp +=
-        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+        (_baseXp * pow(Settings.playerXpScaling, lvl - 1)).ceil();
     this._constitution = (this._constitution * scale).ceil();
     this._strength = (this._strength * scale).ceil();
     this._luck = (this._luck * scale).ceil();
     this._critChance = (this._critChance * (scale - 0.08));
     this._critDamage = (this._critDamage * (scale + 9) / 10);
-    this._maxHealth = (this._maxHealth * scale).ceil();
+    this.maxHealth = (this.maxHealth * scale).ceil();
     this._currHealth = maxHealth; // restore to full health;
     skills.forEach((k, v) => v._useableCount =
         v.useableCountMax); // every skill is restored to max usability
@@ -182,20 +179,20 @@ class Player extends Moveable {
 
   _sortInventory() {
     if (inventory.isNotEmpty)
-      inventory.sort((a, b) => a._quality.compareTo(b._quality));
+      inventory.sort((a, b) => a.quality.compareTo(b.quality));
   }
 
   get gainedXpByCurrentLvl {
-    return _lvl == 1 ? gainedXp : gainedXp - _currentLvlXp();
+    return lvl == 1 ? gainedXp : gainedXp - _currentLvlXp();
   }
 
   get neededXpByCurrentLvl {
-    return _lvl == 1 ? neededXp : neededXp - _currentLvlXp();
+    return lvl == 1 ? neededXp : neededXp - _currentLvlXp();
   }
 
   int _currentLvlXp() {
     return neededXp -
-        (_baseXp * pow(Settings.playerXpScaling, _lvl - 1)).ceil();
+        (_baseXp * pow(Settings.playerXpScaling, lvl - 1)).ceil();
   }
 
   get leftXpUntilLvlUp {
@@ -249,7 +246,7 @@ class Player extends Moveable {
   /* === ATTRIBUTES === */
   get maxHealth {
     return healthMod +
-        (_maxHealth +
+        (super.maxHealth +
             ((_constitution + constitutionMod) * Settings.getConstMod()));
   }
 

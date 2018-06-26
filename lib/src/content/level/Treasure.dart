@@ -1,12 +1,21 @@
 part of rogue;
 
+/// Class representing a treasure chest filled with [Item]s.
 class Treasure {
-  int _id;
+  int id;
   Map<String, int> treasureLoot = new Map();
   Map<int, int> treasurePotions = new Map();
 
+  get isEmpty => treasureLoot.isEmpty && treasurePotions.isEmpty;
+
+  /// Create a new [Treasure] chest.
+  Treasure() {
+    //empty
+  }
+
+  /// Create a new [Treasure] chest filled with [Item]s based on [data].
   Treasure.build(Map data) {
-    _id = data['id'];
+    id = data['id'];
 
     if (data.containsKey('helmet')) treasureLoot['helmets'] = data['helmet'];
     if (data.containsKey('chest')) treasureLoot['chests'] = data['chest'];
@@ -25,8 +34,4 @@ class Treasure {
       treasurePotions[2] = data['potions'][2];
     }
   }
-
-  Treasure() {}
-
-  get isEmpty => treasureLoot.isEmpty && treasurePotions.isEmpty;
 }

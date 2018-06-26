@@ -1,9 +1,10 @@
 part of rogue;
 
+/// Class representing a single item.
 class Item {
-  int _id;
+  int id;
 
-  String _name;
+  String name;
 
   String display;
 
@@ -19,25 +20,26 @@ class Item {
 
   String icon;
 
-  int _quality;
+  int qualityValue;
 
-  int _min;
+  int min;
 
-  int _max;
+  int max;
 
+  /// Create item from [data].
   Item.fromJson(Map data, [int quality, String classification, String type]) {
-    this._id = data['id'];
-    this._name = data['name'];
+    this.id = data['id'];
+    this.name = data['name'];
     this.type = data['type'];
     this.classification = classification;
     this.icon = data['icon'];
     this.display = data['display'];
 
-    this._quality = quality;
-    if (quality  == -1) {
-      this._quality = new Random().nextInt(5);
+    this.qualityValue = quality;
+    if (quality == -1) {
+      this.qualityValue = new Random().nextInt(5);
       if (data.containsKey('quality')) {
-        this._quality = data['quality'];
+        this.qualityValue = data['quality'];
       }
     }
 
@@ -45,10 +47,10 @@ class Item {
     this.modifier = data.containsKey('mods') ? data['mods'] : new Map();
 
     if (data.containsKey('value-range')) {
-      int index = quality != -1 ? this._quality : 0;
+      int index = quality != -1 ? this.qualityValue : 0;
 
-      this._min = data['value-range'][index][0];
-      this._max = data['value-range'][index][1];
+      this.min = data['value-range'][index][0];
+      this.max = data['value-range'][index][1];
       this.value = _getValue();
       return;
     }
@@ -56,15 +58,9 @@ class Item {
     this.value = data['value'];
   }
 
-  int get id => _id;
+  /// Returns a value for this [Item].
+  int _getValue() => min + new Random().nextInt(max - min);
 
-  int _getValue() => _min + new Random().nextInt(_max - _min);
-
-  String _getQuality() => Qualities[_quality];
-
-  String toString() {
-    return "Name: $name\r\nQuality: $quality\r\nValue: $value\r\n";
-  }
-
-  get name => _name;
+  /// Returns the quality text for this [Item].
+  String _getQuality() => Qualities[qualityValue];
 }

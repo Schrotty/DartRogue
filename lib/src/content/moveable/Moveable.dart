@@ -1,23 +1,29 @@
 part of rogue;
 
 abstract class Moveable {
-  int _id;
-  String _name;
-  int _lvl;
-  int _maxHealth;
+  int id;
+  int lvl;
+  int maxHealth;
   int _currHealth;
-  int _speed;
-  Map<String, int> _loot = new Map();
-  bool _alive = true;
-  Field _position;
-  Node start;
-  Field _target;
+  int speed;
   int direction;
-  String skin;
-  List<String> skins;
   int stage;
+
+  String name;
+  String skin;
+
+  Field position;
+  Field target;
+
+  bool isAlive = true;
+  bool isStatic = false;
+
+  Node start;
+
+  Map<String, int> loot = new Map();
   Map<int, int> pots = new Map();
-  bool _static = false;
+
+  List<String> skins;
 
   static final int UP = 0;
 
@@ -26,6 +32,11 @@ abstract class Moveable {
   static final int LEFT = 2;
 
   static final int DOWN = 3;
+
+  get currHealth => _currHealth;
+  void set currHealth(int health) => _currHealth = health;
+
+  double get currHealthPercent => (_currHealth / maxHealth) * 100;
 
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
@@ -41,86 +52,50 @@ abstract class Moveable {
 
   int calcDamage();
 
-  _die();
+  _die() {
+    this.isAlive = false;
+  }
 
   move() {
-    if (start != null && start.predecessor != null && !_static) {
+    if (start != null && start.predecessor != null && !isStatic) {
       if (start.predecessor.field.isAccessible) {
         if (!(this is Player) && _detectLoop()) {
-          calcPath(_position.accessibleNeighbour);
+          calcPath(position.accessibleNeighbour);
         }
 
         int col = start.field.col;
         int row = start.field.row;
 
-        _position.accessible = true;
-        _position = start.predecessor.field;
-        _position.accessible = false;
+        position.isAccessible = true;
+        position = start.predecessor.field;
+        position.isAccessible = false;
 
         start = start.predecessor;
 
-        if (start.field.id == _target.id) {
+        if (start.field.id == target.id) {
           start = null;
         }
 
-        if (col > _position.col) skin = skins[LEFT];
-        if (col < _position.col) skin = skins[RIGHT];
+        if (col > position.col) skin = skins[LEFT];
+        if (col < position.col) skin = skins[RIGHT];
 
-        if (row > _position.row) skin = skins[UP];
-        if (row < _position.row) skin = skins[DOWN];
+        if (row > position.row) skin = skins[UP];
+        if (row < position.row) skin = skins[DOWN];
         return;
       }
 
-      calcPath(_target);
+      calcPath(target);
     }
   }
 
   calcPath(Field target) {
-    _target = target;
+    this.target = target;
 
-    _position.accessible = true;
-    start = new Pathfinding().calcPath(_position, target);
+    position.isAccessible = true;
+    start = new Pathfinding().calcPath(position, target);
   }
 
   bool _detectLoop() {
     return start.predecessor == start || start.predecessor.predecessor == start;
   }
-
-  int get id => _id;
-
-  set(int id) => _id = id;
-
-  get name => this._name;
-
-  set name(String name) => this._name = name;
-
-  get level => this._lvl;
-
-  set level(int lvl) => this._lvl = lvl;
-
-  get maxHealth => this._maxHealth;
-
-  set maxHealth(int health) => this._maxHealth = health;
-
-  get currHealth => this._currHealth;
-
-  set currHealth(int health) => this._currHealth = health;
-
-  get currHealthPercent => (this._currHealth / this.maxHealth) * 100;
-
-  get loot => _loot;
-
-  get speed => this._speed;
-
-  set speed(int speed) => this._speed = speed;
-
-  get isAlive => _alive;
-
-  Field get position => _position;
-
-  set position(Field pos) => _position = pos;
-
-  bool get isStatic => _static;
-
-  set isStatic(bool isStatic) => _static = isStatic;
 }

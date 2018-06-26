@@ -1,17 +1,26 @@
 part of rogue;
 
+/// Class representing a [Monster].
 class Monster extends Moveable {
-  int _attackPoints;
-  int _grantedXP;
-  bool _boss;
-  Field _patrolPoint;
-  Field _spawn;
-  bool _endBoss = false;
+  int attackPoints;
+  int grantedXP;
 
+  bool isBoss;
+  bool isEndboss = false;
+
+  Field patrolPoint;
+  Field spawn;
+
+  /// Create an empty [Monster].
+  Monster() {
+    // empty
+  }
+
+  /// Create a new [Monster] based on [data].
   Monster.fromMap(Map data) {
     // monster just have basic stats, some are stronger, some weaker => getting stronger by scaling with their level
-    this.level = data['lvl'];
-    double scale = pow(Settings.monsterScaling, this._lvl - 1);
+    this.lvl = data['lvl'];
+    double scale = pow(Settings.monsterScaling, this.lvl - 1);
 
     this.name = data['name'];
     this.currHealth = ((data['hp'] + 2) * scale).ceil();
@@ -23,32 +32,32 @@ class Monster extends Moveable {
     this.skin = "demon";
 
     if (data.containsKey('static')) {
-      this._static = data['static'];
+      this.isStatic = data['static'];
     }
 
     if (data.containsKey('endboss')) {
-      this._endBoss = data['endboss'];
+      this.isEndboss = data['endboss'];
     }
 
     if (data.containsKey('loot')) {
       if (data['loot'].containsKey('helmet'))
-        _loot['helmets'] = data['loot']['helmet'];
+        loot['helmets'] = data['loot']['helmet'];
       if (data['loot'].containsKey('chest'))
-        _loot['chests'] = data['loot']['chest'];
+        loot['chests'] = data['loot']['chest'];
       if (data['loot'].containsKey('gloves'))
-        _loot['gloves'] = data['loot']['gloves'];
+        loot['gloves'] = data['loot']['gloves'];
       if (data['loot'].containsKey('legs'))
-        _loot['legs'] = data['loot']['legs'];
+        loot['legs'] = data['loot']['legs'];
       if (data['loot'].containsKey('boots'))
-        _loot['boots'] = data['loot']['boots'];
+        loot['boots'] = data['loot']['boots'];
 
       if (data['loot'].containsKey('sword'))
-        _loot['swords'] = data['loot']['sword'];
-      if (data['loot'].containsKey('axe')) _loot['axes'] = data['loot']['axe'];
+        loot['swords'] = data['loot']['sword'];
+      if (data['loot'].containsKey('axe')) loot['axes'] = data['loot']['axe'];
       if (data['loot'].containsKey('dagger'))
-        _loot['daggers'] = data['loot']['dagger'];
+        loot['daggers'] = data['loot']['dagger'];
       if (data['loot'].containsKey('hammer'))
-        _loot['hammers'] = data['loot']['hammer'];
+        loot['hammers'] = data['loot']['hammer'];
 
       if (data['loot'].containsKey('potions')) {
         pots[0] = data['loot']['potions'][0];
@@ -66,17 +75,16 @@ class Monster extends Moveable {
       ..add(skin + "-down");
   }
 
-  Monster() {}
-
+  /// Calculates the damage the player will take from an attack.
   int calcDamage() {
-    int dmg = _attackPoints - player.armor / 3;
+    int dmg = attackPoints - player.armor / 3;
     return dmg > 1 ? dmg.ceil() : 1;
   }
 
-  _die() {
-    this._alive = false;
-  }
-
+  /// Moves the [Monster].
+  ///
+  /// Also checks each turn if the [Player] was detected. In this case
+  /// the [Monster] will calculate a path to attack the [Player].
   move() {
     super.move();
 
@@ -84,19 +92,20 @@ class Monster extends Moveable {
       calcPath(player.position.accessibleNeighbour);
     }
 
-    if (_patrolPoint == null &&
+    if (patrolPoint == null &&
         levels[player.currentStage].patrolPoints.isNotEmpty) {
-      _spawn = _position;
+      spawn = position;
 
-      _patrolPoint = levels[player.currentStage].patrolPoints.removeLast();
+      patrolPoint = levels[player.currentStage].patrolPoints.removeLast();
     }
 
     if (start == null) {
-      if (_patrolPoint == null) return;
-      calcPath(_position.id == _spawn.id ? _patrolPoint : _spawn);
+      if (patrolPoint == null) return;
+      calcPath(position.id == spawn.id ? patrolPoint : spawn);
     }
   }
 
+  /// Is [Player] in detection range?
   bool _detectPlayer() {
     List<Field> area = position._neighbours();
     for (Field f in area) {
@@ -108,29 +117,5 @@ class Monster extends Moveable {
     }
 
     return false;
-  }
-
-  get attackPoints => this._attackPoints;
-
-  set attackPoints(int attack) => this._attackPoints = attack;
-
-  get grantedXP => this._grantedXP;
-
-  set grantedXP(int xp) => this._grantedXP = xp;
-
-  bool get isBoss => _boss;
-
-  set isBoss(bool isBoss) => _boss = isBoss;
-
-  Field get patrolPoint => _patrolPoint;
-
-  set patrolPoint(Field patrolPoint) => _patrolPoint = patrolPoint;
-
-  bool get isEndboss => _endBoss;
-
-  set isEndboss(bool isEndboss) => _endBoss = isEndboss;
-
-  toString() {
-    return this.name;
   }
 }

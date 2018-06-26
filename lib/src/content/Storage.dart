@@ -169,7 +169,6 @@ _buildBosses() async {
 _buildLevel(int lvl) async {
   var response = await _requestData(Settings.getDataPath() + 'level/level$lvl.json');
   JSON.decode(response).asMap().forEach((int key, Map value) {
-//    levels.add(new Level.build(key, value));
     levels[lvl] = new Level.build(key, value);
   });
 }

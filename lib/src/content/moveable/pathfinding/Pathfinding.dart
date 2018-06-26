@@ -1,11 +1,13 @@
 part of rogue;
 
+/// Class for calculating a path through a [Level].
 class Pathfinding {
+  Node _target;
 
   PrioQueue<Node> _openList = new PrioQueue<Node>();
   PrioQueue<Node> _closedList = new PrioQueue<Node>();
 
-  Node _target;
+  /// Calculate a path from [start] to [target].
   Node calcPath(Field start, Field target) {
     _target = levels[player.currentStage].getNode(start);
     _openList.add(levels[player.currentStage].getNode(target));
@@ -26,6 +28,7 @@ class Pathfinding {
     return null;
   }
 
+  /// Expands [current] successors.
   _expandNode(Node current) {
     int tentative_g = 0;
 
@@ -49,6 +52,7 @@ class Pathfinding {
     }
   }
 
+  /// Calculate the estimated cost from [current] to [_target].
   double _h(Node current) {
     int x = _target.X - current.X;
     int y = _target.Y - current.Y;

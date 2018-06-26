@@ -6,6 +6,15 @@ class Skill {
   int _useableCount;
   int _useableCountMax;
 
+  get isUseable => useableCount > 0;
+
+  get name => _name;
+
+  get skillMod => _skillMod;
+
+  get useableCount => _useableCount;
+  get useableCountMax => _useableCountMax;
+
   Skill.fromJson(Map data) {
     this._name = data['name'];
     this._skillMod = data['mod'];
@@ -19,14 +28,4 @@ class Skill {
   use() {
     _useableCount -= 1;
   }
-
-  get isUseable => useableCount > 0;
-
-  get name => _name;
-
-  get skillMod => _skillMod;
-
-  get useableCount => _useableCount;
-
-  get useableCountMax => _useableCountMax;
 }
