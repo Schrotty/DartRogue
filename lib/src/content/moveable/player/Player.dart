@@ -1,5 +1,6 @@
 part of rogue;
 
+/// Class representing the player character.
 class Player extends Moveable {
   int _strength;
   int _constitution;
@@ -29,6 +30,7 @@ class Player extends Moveable {
 
   List<Item> inventory;
 
+  /// Create a new [Player] based on [data].
   Player.fromMap(Map data) {
     if (data.containsKey('attributes')) {
       if (data['attributes'].containsKey('strength'))
@@ -91,6 +93,7 @@ class Player extends Moveable {
     skin = "player-left";
   }
 
+  /// Calculates the damage an enemy will take.
   int calcDamage([int skillMod]) {
     var rand = new Random().nextInt(101);
     if (rand <= critChance) {
@@ -100,6 +103,7 @@ class Player extends Moveable {
     return (skillMod * damage).round();
   }
 
+  /// Gain [xp] experience points.
   gainXP(int xp) {
     this._gainedXp += xp;
     if (_gainedXp >= _neededXp) {
@@ -107,6 +111,7 @@ class Player extends Moveable {
     }
   }
 
+  /// Increase [Player] level.
   _levelUp() {
     this.lvl = ++this.lvl;
     double scale = Settings.playerStatScaling;
@@ -123,6 +128,7 @@ class Player extends Moveable {
         v.useableCountMax); // every skill is restored to max usability
   }
 
+  /// Use a potion to heal the [Player].
   void usePotion(int type) {
     if (!hasFullHealth && pots[type] >= 1) {
       var potionHealth =
@@ -133,10 +139,12 @@ class Player extends Moveable {
       } else {
         currHealth += potionHealth;
       }
+
       pots[type]--;
     }
   }
 
+  /// Equip [item].
   void equip(Item item) {
     inventory.remove(item);
 
@@ -173,10 +181,12 @@ class Player extends Moveable {
     _sortInventory();
   }
 
+  /// Drop [item].
   void drop(Item item) {
     inventory.remove(item);
   }
 
+  /// Sort the players inventory.
   _sortInventory() {
     if (inventory.isNotEmpty)
       inventory.sort((a, b) => a.quality.compareTo(b.quality));
@@ -190,6 +200,7 @@ class Player extends Moveable {
     return lvl == 1 ? neededXp : neededXp - _currentLvlXp();
   }
 
+  /// Return the current experience points.
   int _currentLvlXp() {
     return neededXp -
         (_baseXp * pow(Settings.playerXpScaling, lvl - 1)).ceil();
@@ -199,6 +210,7 @@ class Player extends Moveable {
     return neededXp - gainedXp;
   }
 
+  /// Return the modifier value of [type].
   int _getMod(String type) {
     int value = 0;
     var items = [helmet, chest, gloves, legs, boots, weapon];

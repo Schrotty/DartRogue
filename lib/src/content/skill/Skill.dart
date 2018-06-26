@@ -1,5 +1,6 @@
 part of rogue;
 
+/// Class representing a [Skill].
 class Skill {
   String _name;
   double _skillMod;
@@ -15,6 +16,7 @@ class Skill {
   get useableCount => _useableCount;
   get useableCountMax => _useableCountMax;
 
+  /// Create a new skill based on [data].
   Skill.fromJson(Map data) {
     this._name = data['name'];
     this._skillMod = data['mod'];
@@ -25,6 +27,7 @@ class Skill {
     }
   }
 
+  /// Use a [Skill].
   use() {
     _useableCount -= 1;
   }

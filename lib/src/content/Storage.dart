@@ -13,12 +13,14 @@ Map<int, Map<int, Monster>> monsterList = new Map<int, Map<int, Monster>>();
 Map<int, Monster> bosses = new Map<int, Monster>();
 List<Level> levels;
 
+/// Build complete [Storage].
 buildStorage() async {
   _initMaps().then((b) {
     _build();
   });
 }
 
+/// Build [Item]s/ [Skill]s/ [Monster]s/ [Level]s and the [Player].
 _build() async {
   await _buildWeapons();
   await _buildArmors();
@@ -31,6 +33,7 @@ _build() async {
   await _buildLevels();
 }
 
+/// Create all needed maps.
 Future<bool> _initMaps() async {
   weapons = new Map<String, Map<int, List<Item>>>();
   weapons['daggers'] = new Map<int, List<Item>>();
@@ -51,6 +54,7 @@ Future<bool> _initMaps() async {
   return true;
 }
 
+/// Create all types of weapons.
 _buildWeapons() async {
   await _buildWeaponType("daggers");
   await _buildWeaponType("swords");
@@ -58,6 +62,7 @@ _buildWeapons() async {
   await _buildWeaponType("hammers");
 }
 
+/// Create all types of armors.
 _buildArmors() async {
   await _buildArmorType("helmets");
   await _buildArmorType("chests");
@@ -66,6 +71,7 @@ _buildArmors() async {
   await _buildArmorType("boots");
 }
 
+/// Create monsters.
 _buildMonsters() async {
   _buildMonstersPerLvl(0);
   _buildMonstersPerLvl(1);
@@ -76,6 +82,7 @@ _buildMonsters() async {
   _buildMonstersPerLvl(6);
 }
 
+/// Create all levels.
 _buildLevels() async {
   _buildLevel(0);
   _buildLevel(1);
@@ -86,12 +93,14 @@ _buildLevels() async {
   _buildLevel(6);
 }
 
+/// Create the [Player].
 _buildPlayer() async {
   await _requestData(Settings.getDataPath() + 'player/player.json').then((response) {
     player = new Player.fromMap(JSON.decode(response).asMap()[0]);
   });
 }
 
+/// Create a specific weapon type.
 _buildWeaponType(String type) async {
   await _requestData(Settings.getDataPath() + 'item/weapons/$type.json').then((response) {
     Map w = JSON.decode(response).asMap();
@@ -111,6 +120,7 @@ _buildWeaponType(String type) async {
   });
 }
 
+/// Create a specific armor type.
 _buildArmorType(String type) async {
   await _requestData(Settings.getDataPath() + 'item/armor/$type.json').then((response) {
     Map a = JSON.decode(response).asMap();
@@ -130,6 +140,7 @@ _buildArmorType(String type) async {
   });
 }
 
+/// Create all [Skill]s.
 _buildSkills() async {
   await _requestData(Settings.getDataPath() + 'skill/skills.json').then((response) {
     JSON.decode(response).forEach((s) {
@@ -138,6 +149,7 @@ _buildSkills() async {
   });
 }
 
+/// Create all potions.
 _buildPotions() async {
   await _requestData(Settings.getDataPath() + 'item/potions.json').then((response) {
     Map p = JSON.decode(response).asMap();
@@ -146,6 +158,7 @@ _buildPotions() async {
   });
 }
 
+/// Create all monster per level.
 _buildMonstersPerLvl(int lvl) async {
   _requestData(Settings.getDataPath() + 'monster/monster.json').then((response) {
     Map<int, Monster> mnstr = new Map();
@@ -158,6 +171,7 @@ _buildMonstersPerLvl(int lvl) async {
   });
 }
 
+/// Create all bosses.
 _buildBosses() async {
   _requestData(Settings.getDataPath() + 'monster/bosses.json').then((response) {
     JSON.decode(response).forEach((m) {
@@ -166,6 +180,7 @@ _buildBosses() async {
   });
 }
 
+/// Create a specific level.
 _buildLevel(int lvl) async {
   var response = await _requestData(Settings.getDataPath() + 'level/level$lvl.json');
   JSON.decode(response).asMap().forEach((int key, Map value) {
@@ -173,6 +188,7 @@ _buildLevel(int lvl) async {
   });
 }
 
+/// Request JSON file.
 Future<String> _requestData(String url) async {
   return HttpRequest.getString(url);
 }

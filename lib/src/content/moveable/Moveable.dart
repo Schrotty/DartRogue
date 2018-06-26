@@ -1,5 +1,6 @@
 part of rogue;
 
+/// Class representing a moveable entity.
 abstract class Moveable {
   int id;
   int lvl;
@@ -38,6 +39,7 @@ abstract class Moveable {
 
   double get currHealthPercent => (_currHealth / maxHealth) * 100;
 
+  /// Take [damage] an loose health and/ or die.
   takeDamage(int damage) {
     if ((_currHealth - damage) <= 0) {
       _currHealth = 0;
@@ -50,12 +52,15 @@ abstract class Moveable {
     }
   }
 
+  /// Calculate the damage an enemy will take.
   int calcDamage();
 
+  /// die
   _die() {
     this.isAlive = false;
   }
 
+  /// Update the position and sprites, based on movement direction.
   move() {
     if (start != null && start.predecessor != null && !isStatic) {
       if (start.predecessor.field.isAccessible) {
@@ -88,6 +93,7 @@ abstract class Moveable {
     }
   }
 
+  /// Calculate a path to [target].
   calcPath(Field target) {
     this.target = target;
 
@@ -95,6 +101,7 @@ abstract class Moveable {
     start = new Pathfinding().calcPath(position, target);
   }
 
+  /// Is [Moveable] looping around?
   bool _detectLoop() {
     return start.predecessor == start || start.predecessor.predecessor == start;
   }
