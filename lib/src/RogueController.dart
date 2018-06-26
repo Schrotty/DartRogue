@@ -320,7 +320,7 @@ class RogueController {
       view.dungeon.scrollTop = ((player.position.row) * mod);
       view.dungeon.scrollLeft = ((player.position.col - 5) * mod);
     } else {
-      view.dungeon.scrollTop = ((player.position.row + 1.5) * (mod + 16));
+      view.dungeon.scrollTop = ((player.position.row + 1.5) * (mod + 16)).floor();
       view.dungeon.scrollLeft = ((player.position.col - 2) * (mod + 16));
     }
   }
@@ -329,14 +329,14 @@ class RogueController {
     DivElement e = querySelector("#tile-${entity.position.id}");
     e.children[0].classes.addAll([entity.skin, "entity"]);
 
-    entity.position.accessible = false;
+    entity.position.isAccessible = false;
   }
 
   _despawnEntity(Moveable entity) {
     DivElement e = querySelector("#tile-${entity.position.id}");
     e.children[0].classes.removeAll([entity.skin, "entity"]);
 
-    entity.position.accessible = true;
+    entity.position.isAccessible = true;
   }
 
   _spawnPlayer(int lvl) {
@@ -430,14 +430,14 @@ class RogueController {
 
     if (t.isEmpty && !tmp.isMonsterDrop) {
       levels[player.currentStage].treasures.remove(t);
-      tmp.treasure = false;
+      tmp.hasTreasure = false;
     }
 
     if (tmp.isMonsterDrop && t.isEmpty) {
       DivElement el = querySelector("#tile-${tmp.id}");
       el.children[0].classes.clear();
       levels[player.currentStage].monsterDrops.remove(tmp.id);
-      tmp.accessible = true;
+      tmp.isAccessible = true;
     }
   }
 
@@ -532,7 +532,7 @@ class RogueController {
 
   _updateFightScreen() {
     view.monsterFightHealth.text = attacker.currHealth;
-    view.monsterFightMaxHealth.text = attacker.maxHealth;
+    view.monsterFightMaxHealth.text = attacker.maxHealth.toString();
     view.monsterFightHealthBar.style.setProperty("width", "${attacker.currHealthPercent}%");
 
     view.playerFightHealth.text = player.currHealth;
@@ -586,7 +586,7 @@ class RogueController {
         .grantedXP} XP!";
 
     if (attacker.grantedXP >= player.leftXpUntilLvlUp) {
-      msg += " You reached level ${player.level + 1}!";
+      msg += " You reached level ${player.lvl + 1}!";
     }
 
     if (0 < attacker.loot.length || attacker.pots.isNotEmpty) {
@@ -646,9 +646,9 @@ class RogueController {
 
     if (attacker.loot.isNotEmpty) {
       Field tmp = attacker.position;
-      tmp.treasure = true;
-      tmp.accessible = false;
-      tmp.monsterDrop = true;
+      tmp.hasTreasure = true;
+      tmp.isAccessible = false;
+      tmp.isMonsterDrop = true;
 
       Treasure t = new Treasure();
       t.treasureLoot = attacker.loot;
@@ -826,9 +826,9 @@ class RogueController {
     view.heroMaxLife.text = player.maxHealth;
 
     /* ADVENTURE */
-    view.heroLevel.text = player.level;
+    view.heroLevel.text = player.lvl.toString();
     view.heroLuck.text = player.luck;
-    view.heroSpeed.text = player.speed;
+    view.heroSpeed.text = player.speed.toString();
     view.heroScore.text = player.highscorePoints.toString();
   }
 
@@ -985,7 +985,7 @@ class RogueController {
   }
 
   _addHighScorePoints() {
-    player.highscorePoints += attacker.level * (attacker.isBoss ? 50 : 10);
+    player.highscorePoints += attacker.lvl * (attacker.isBoss ? 50 : 10);
   }
 
   _calcAndUpdateHighscore() {
