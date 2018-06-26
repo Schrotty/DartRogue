@@ -60,11 +60,11 @@ class RogueController {
       }
 
       /* GAME TIMER */
-      const oneSec = const Duration(milliseconds: 16);
+      const oneSec = const Duration(milliseconds: Settings.gameRefreshTime);
       gameTimer = new Timer.periodic(oneSec, (Timer t) => _update());
 
       /* MOVEMENT TIMER */
-      const ti = const Duration(milliseconds: 320);
+      const ti = const Duration(milliseconds: Settings.movementRefreshTime);
       movementTimer = new Timer.periodic(ti, (Timer t) => _updateMoveablePositions());
 
       _renderLevel(player.currentStage);

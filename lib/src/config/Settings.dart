@@ -15,7 +15,8 @@ class Settings {
   static double _playerStatScaling = 1.15;
   static double _playerXpScaling = 1.3;
 
-  static const _refreshRate = 1/60; // 60Hz => 16,67ms
+  static const gameRefreshTime = 16;
+  static const movementRefreshTime = 320;
 
   static String getDataPath() {
     return _dataPath;
@@ -51,7 +52,5 @@ class Settings {
 
   static get playerXpScaling => _playerXpScaling;
 
-  static get refreshRate => _refreshRate;
-
-  static bool get debugMode => _debugMode;
+  static get debugMode => _debugMode;
 }
