@@ -1,3 +1,5 @@
+/* ##### OVERWORLD ##### */
+
 /*demon skins*/
 .demon-right {
     background: url(../img/monsters/map/demon.png) 0 0 !important;
@@ -258,5 +260,30 @@
 
     0% {
         background: url(../img/monsters/map/mimic.png) 0 0;
+    }
+}
+
+/* ##### FIGHT ##### */
+
+#sprite-monster {
+    animation: sprite-monster 1s steps(4) infinite;
+    left: 80%;
+}
+
+@keyframes sprite-monster {
+    100% {
+        background-position: -256px;
+    }
+}
+
+#sprite-mimic {
+    width: 96px;
+    animation: sprite-mimic 1s steps(6) infinite;
+    left: 80%
+}
+
+@keyframes sprite-mimic {
+    100% {
+        background-position: -576px;
     }
 }
