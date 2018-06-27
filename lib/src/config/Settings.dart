@@ -5,7 +5,6 @@ class Settings {
   static String _imgPath = 'img/';
   static String _weaponImgPath = 'img/items/weapon/';
   static String _armorImgPath = 'img/items/armor/';
-  static bool _debugMode = false;
 
   static int _strengthMod = 1;
   static int _constMod = 2;
@@ -51,6 +50,4 @@ class Settings {
   static get playerStatScaling => _playerStatScaling;
 
   static get playerXpScaling => _playerXpScaling;
-
-  static get debugMode => _debugMode;
 }

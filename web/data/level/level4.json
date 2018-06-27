@@ -2,7 +2,6 @@
   {
     "id": 4,
     "name": "Prison of Executioner Smough",
-    "monster": [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11],
     "boss": 4,
     "treasures": [
       {

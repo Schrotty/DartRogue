@@ -2,7 +2,6 @@
   {
     "id": 0,
     "name": "The Breach",
-    "monster": [0, 1, 2, 3, 5],
     "boss": 0,
     "treasures": [
       {
