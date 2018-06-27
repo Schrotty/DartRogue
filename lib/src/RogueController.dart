@@ -441,7 +441,7 @@ class RogueController {
     }
   }
 
-  _treasureMessage(Treasure t) {
+  String _treasureMessage(Treasure t) {
     String msg = "You found: ";
     if (0 < t.treasureLoot.length || t.treasurePotions.isNotEmpty) {
       // add items
