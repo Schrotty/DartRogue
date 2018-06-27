@@ -3,7 +3,6 @@ part of rogue;
 Player player;
 Monster attacker = new Monster();
 int attackerId;
-int monsterCount_DEBUG = 8;
 
 Map<String, Map<int, List<Item>>> weapons = new Map();
 Map<String, Map<int, List<Item>>> armors = new Map();
